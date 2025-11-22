@@ -1,158 +1,118 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 
 export default function HeaderGroup() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
+  const [shrink, setShrink] = useState(false);
 
   const navItems = [
-  { label: "HOME", to: "/" },
-  { label: "ABOUT US", to: "/aboutus" },
-  { label: "DOCTORS", to: "/healthcare" },
-  { label: "SPECIALITIES", to: "/specialities" },
-  { label: "FACILITIES", to: "/facilities" },
-  { label: "TESTIMONIALS", to: "/testimonials" },
-  { label: "CAREERS", to: "/careers" },
-  { label: "NEWS & MEDIA", to: "/news" },
-  { label: "CONTACT", to: "/contact" },
-];
+    { label: "HOME", to: "/" },
+    { label: "ABOUT US", to: "/aboutus" },
+    { label: "DOCTORS", to: "/healthcare" },
+    { label: "SPECIALITIES", to: "/specialities" },
+    { label: "FACILITIES", to: "/facilities" },
+    { label: "TESTIMONIALS", to: "/testimonials" },
+    { label: "CAREERS", to: "/careers" },
+    { label: "NEWS & MEDIA", to: "/news" },
+    { label: "CONTACT", to: "/contact" },
+  ];
 
+  // Save Theme
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+    localStorage.setItem("theme", dark ? "dark" : "light");
+  }, [dark]);
+
+  // Shrink navbar on scroll
+  useEffect(() => {
+    const handleScroll = () => setShrink(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50">
+      {/* 🚨 Fixed Emergency Bar (Only Text Scrolls) */}
+      <div className="fixed top-0 left-0 w-full bg-red-600 text-white py-[7px] text-center z-[70] overflow-hidden shadow-md">
+        <span className="inline-block scrolling-text whitespace-nowrap font-semibold">
+          🚑 Emergency Hotline: +91 98765 43210 — Available 24x7 🚑 Emergency Hotline: +91 98765 43210 — Available 24x7
+        </span>
+      </div>
 
-        {/* ================================
-            TOP LAYER — GLASS BLUR EFFECT
-        ================================= */}
-        <div className="backdrop-blur-md bg-white/70 border-b-[3px] border-transparent bg-clip-padding"
-          style={{
-            borderImage: "linear-gradient(to right, #2563eb, #ef4444) 1",
-          }}>
+      {/* 🧊 Floating Glass Navbar */}
+      <header
+        className={`fixed w-[94vw] md:w-[80vw] left-1/2 -translate-x-1/2 z-[60] transition-all duration-400 backdrop-blur-2xl border border-white/30 ${
+          dark ? "bg-gray-900/60 text-white" : "bg-white/65 text-black"
+        } shadow-xl rounded-2xl ${
+          shrink ? "top-[30px] scale-[0.94]" : "top-[40px]"
+        }`}
+      >
+        <div className="flex justify-between items-center px-6 py-3">
+          <img src={logo} alt="logo" className={`transition-all ${shrink ? "w-24 md:w-32" : "w-32 md:w-44"}`} />
 
-          <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-3 gap-3">
-
-            {/* LOGO */}
-            <img src={logo} className="w-36 md:w-44" />
-
-            {/* EMERGENCY BAR — with glow */}
-            {/* EMERGENCY BAR — UPDATED WITH PAUSE ON HOVER */}
-            <div
-              className="bg-red-600 text-white px-6 py-1 rounded-full shadow-lg 
-             overflow-hidden w-[420px] max-w-[420px] md:w-[420px] 
-             glowing emergency-bar group cursor-pointer"
-            >
-              <div className="marquee-text whitespace-nowrap font-semibold text-xs md:text-sm group-hover:[animation-play-state:paused]">
-                🚑 Emergency Hotline: +91 98765 43210 — 24x7 Ambulance
-                &nbsp;&nbsp;&nbsp; 🚑 Emergency Hotline: +91 98765 43210 — 24x7 Ambulance
-              </div>
-            </div>
+          {/* Desktop Right */}
+          <div className="hidden md:flex items-center gap-6 font-semibold">
+            <span className="text-blue-700">Nava India ,Coimbatore</span>
+            <span className="text-blue-700">📞 +91 98765 43210</span>
 
 
-            {/* RIGHT SIDE: ADDRESS + PHONE + BUTTON */}
-            <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
-
-              {/* ADDRESS */}
-              <div className="text-xs text-blue-900 leading-tight md:text-right text-center">
-                Nava India Road, Udaiyampalayam,<br />
-                Coimbatore – 641028
-              </div>
-
-              {/* PHONE */}
-              <p className="text-sm text-blue-900 font-semibold">
-                +91 98765 43210
-              </p>
-
-              {/* BUTTON */}
-              <button className="border border-blue-700 text-blue-700 px-4 py-2 
-                                 rounded-full hover:bg-blue-700 hover:text-white 
-                                 text-sm font-semibold transition-all duration-300">
-                Book Appointment
-              </button>
-
-            </div>
-          </div>
-        </div>
-
-        {/* ================================
-            NAVBAR — Animated Underline
-        ================================= */}
-        <nav className="bg-blue-700 text-white shadow-md">
-
-          {/* DESKTOP NAV */}
-          <div className="hidden md:flex justify-center gap-10 py-3 text-sm font-semibold tracking-wide">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className="relative group"
-              >
-                {item.label}
-
-                {/* underline animation */}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
-              </NavLink>
-            ))}
-          </div>
-
-          {/* MOBILE NAV BUTTON */}
-          <div className="flex md:hidden justify-between items-center px-4 py-3">
-            <span className="font-bold">Menu</span>
             <button
-              className="text-2xl"
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => setDark(!dark)}
+              className="border px-3 py-1 rounded-full hover:bg-blue-700 hover:text-white transition"
             >
-              <i className={`fas ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
+              {dark ? "☀ Light" : "🌙 Dark"}
+            </button>
+
+            <button className="border border-blue-700 px-5 py-2 rounded-full hover:bg-blue-700 hover:text-white transition">
+              Book Appointment
             </button>
           </div>
 
-          {/* MOBILE NAV */}
-          {menuOpen && (
-            <div className="md:hidden bg-blue-800 text-white px-4 py-4 flex flex-col gap-3 text-sm font-semibold">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setMenuOpen(false)}
-                  className="relative group"
-                >
-                  {item.label}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-yellow-300 transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              ))}
-            </div>
-          )}
+          {/* Mobile Menu Trigger */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-3xl">
+            {menuOpen ? "✖" : "☰"}
+          </button>
+        </div>
 
+        {/* NAVIGATION */}
+        <nav className="hidden md:flex justify-center gap-9 pb-3 text-sm font-semibold">
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to} className="relative group hover:text-blue-600 transition">
+              {item.label}
+              <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-gradient-to-r from-blue-600 to-purple-400 transition-all duration-300 group-hover:w-full rounded-full"></span>
+            </NavLink>
+          ))}
         </nav>
 
+        {/* Mobile Slide Menu */}
+        {menuOpen && (
+          <div className="md:hidden bg-blue-700 text-white px-6 py-5 flex flex-col gap-4 text-lg transition">
+            {navItems.map((item) => (
+              <NavLink key={item.to} to={item.to} onClick={() => setMenuOpen(false)}>
+                {item.label}
+              </NavLink>
+            ))}
+
+            <button className="border px-4 py-2 rounded-full">Book Appointment</button>
+          </div>
+        )}
       </header>
 
-      {/* Spacer for fixed header */}
-      <div className="pt-[10px] md:pt-[5px]"></div>
+      {/* Fix Hero Spacing */}
+      <div className="pt-[130px] md:pt-[1px]"></div>
 
-      {/* GLOWING EFFECT CSS */}
-      <style>
-        {`
-  .marquee-text {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-  }
-
-  /* Pause on hover handled by group-hover */
-
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  /* Softer Glow */
-  .glowing {
-    box-shadow: 0 0 6px rgba(255, 0, 0, 0.45),
-                0 0 12px rgba(255, 0, 0, 0.35);
-  }
-`}
-      </style>
-
+      {/* 🔧 CSS Animations */}
+      <style>{`
+        .scrolling-text {
+          animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+          from { transform: translateX(100%); }
+          to { transform: translateX(-100%); }
+        }
+      `}</style>
     </>
   );
 }
