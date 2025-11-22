@@ -35,7 +35,7 @@ export default function HeaderGroup() {
   return (
     <>
       {/* 🔴 EMERGENCY SCROLL BAR */}
-      <div className="fixed top-0 left-0 w-full bg-red-600 text-white py-[7px] text-center z-[80] overflow-hidden">
+      <div className="fixed top-0 left-0 w-full bg-red-600 text-white py-[5px] text-center z-[80] overflow-hidden">
         <span
           className="inline-block scrolling-text whitespace-nowrap font-semibold"
           onMouseEnter={() => setIsEmergencyPaused(true)}
@@ -121,7 +121,7 @@ export default function HeaderGroup() {
       </header>
 
       {/* PUSH PAGE DOWN */}
-      <div className="pt-[140px] md:pt-[1px]"></div>
+<div id="navSpacer"></div>
 
       <style>{`
         .scrolling-text { animation: scroll 13s linear infinite; }
