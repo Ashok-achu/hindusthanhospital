@@ -11,7 +11,7 @@ export default function SiteLayout() {
 
       {/* 🔹 Main Content Area */}
       {/* Padding prevents the sticky navbar from overlapping hero section */}
-      <main className="flex-1 bg-white pt-[180px] md:pt-[10px] transition-all duration-500">
+<main className="flex-1 bg-white pt-[1px] md:pt-[10px] transition-all duration-500">
         <Outlet />
       </main>
 

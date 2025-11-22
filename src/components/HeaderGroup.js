@@ -6,6 +6,8 @@ export default function HeaderGroup() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
   const [shrink, setShrink] = useState(false);
+  const [isEmergencyPaused, setIsEmergencyPaused] = useState(false);
+
 
   const navItems = [
     { label: "HOME", to: "/" },
@@ -36,10 +38,19 @@ export default function HeaderGroup() {
     <>
       {/* 🚨 Fixed Emergency Bar (Only Text Scrolls) */}
       <div className="fixed top-0 left-0 w-full bg-red-600 text-white py-[7px] text-center z-[70] overflow-hidden shadow-md">
-        <span className="inline-block scrolling-text whitespace-nowrap font-semibold">
-          🚑 Emergency Hotline: +91 98765 43210 — Available 24x7 🚑 Emergency Hotline: +91 98765 43210 — Available 24x7
-        </span>
-      </div>
+  <span
+    className="inline-block scrolling-text whitespace-nowrap font-semibold"
+    onMouseEnter={() => setIsEmergencyPaused(true)}
+    onMouseLeave={() => setIsEmergencyPaused(false)}
+    onTouchStart={() => setIsEmergencyPaused(true)}
+    onTouchEnd={() => setIsEmergencyPaused(false)}
+    onTouchCancel={() => setIsEmergencyPaused(false)}
+    style={{ animationPlayState: isEmergencyPaused ? "paused" : "running" }}
+  >
+    🚑 Emergency Hotline: +91 98765 43210 — Available 24x7 🚑 Emergency Hotline: +91 98765 43210 — Available 24x7
+  </span>
+</div>
+
 
       {/* 🧊 Floating Glass Navbar */}
       <header
@@ -101,17 +112,18 @@ export default function HeaderGroup() {
       </header>
 
       {/* Fix Hero Spacing */}
-      <div className="pt-[130px] md:pt-[1px]"></div>
+      <div className="pt-[1px] md:pt-[1px]"></div>
 
       {/* 🔧 CSS Animations */}
       <style>{`
         .scrolling-text {
-          animation: scroll 10s linear infinite;
-        }
-        @keyframes scroll {
-          from { transform: translateX(100%); }
-          to { transform: translateX(-100%); }
-        }
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
       `}</style>
     </>
   );
