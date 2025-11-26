@@ -49,10 +49,11 @@ export default function AboutUs() {
             Overview
           </h2>
           <p className="text-gray-700 mt-4 leading-relaxed">
-            Hindusthan Hospital stands as a trusted multi-speciality healthcare provider,
-            offering advanced medical care backed by expert doctors, modern infrastructure,
-            and 24×7 emergency support. Our focus is on patient-first care with cutting-edge
-            technology and medical excellence.
+            A tertiary care hospital, it is part of the Hindusthan Group of Educational Institutions and Companies, which has wide spectrum of activities viz. Chemical Industries, Distilleries, Transformers and LT switch board manufacturing, Plantation, Real Estates and Transportation.
+
+Hindusthan is a 200 bedded multi - speciality hospital offering 24 hours emergency services, family medicine services, health screening and a wide range of multi-disciplinary specialist clinics. It is equipped with beautifully appointed wards, day surgery, angiography, bronchoscopy, endoscopy, colonoscopy & urology suites, delivery suites, modular operating theatres and intensive care unit.
+
+Our specialist clinics are organized as convenient one-stop centres, which collectively offer a comprehensive range of medical services to meet the specific needs of our patients. As a group practice, our specialists work as a team, leveraging on individual strengths, to provide you with holistic care.
           </p>
 
           <ul className="mt-5 space-y-2 text-gray-700">
@@ -73,8 +74,7 @@ export default function AboutUs() {
             Vision & Mission
           </h2>
           <p className="text-gray-700 mt-4 leading-relaxed">
-            <strong>Vision:</strong> To be the most trusted healthcare destination
-            providing superior clinical outcomes with empathy.
+            <strong>Vision:</strong>To provide excellent health care by dedicated efforts in bringing the wellness of the community through medical expertise and compassion. Also in partnering communities for healthy life and start research facility with post- graduate program.
             <br /><br />
             <strong>Mission:</strong> Deliver high-quality and affordable healthcare,
             continuously train professionals, and adopt global medical standards.
