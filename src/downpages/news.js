@@ -1,37 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import news1 from "../assets/hospital.jpg";
 import news2 from "../assets/pediatrics.jpg";
 import news3 from "../assets/surgery.jpg";
 
 export default function News() {
   const [activeArticle, setActiveArticle] = useState(null);
+  const [newsList, setNewsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const newsList = [
-    {
-      id: 1,
-      title: "Hindusthan Hospital Launches Advanced Cardiac Wing",
-      image: news1,
-      date: "05 Nov 2025",
-      content:
-        "Hindusthan Hospital has inaugurated a state-of-the-art cardiac facility featuring advanced diagnostic labs, ICU, and 24x7 emergency care...",
-    },
-    {
-      id: 2,
-      title: "New Pediatrics Intensive Care Unit Unveiled",
-      image: news2,
-      date: "27 Oct 2025",
-      content:
-        "The new PICU includes world-class ventilators, neonatal monitoring, and a multi-disciplinary specialist team available round-the-clock...",
-    },
-    {
-      id: 3,
-      title: "Robotic Surgery Department Now Operational",
-      image: news3,
-      date: "18 Oct 2025",
-      content:
-        "Hindusthan Hospital introduces next-gen robotic surgical equipment enabling minimally invasive procedures...",
-    },
-  ];
+  // 🔥 Load data from backend (Dynamic)
+  useEffect(() => {
+    fetch("https://your-backend-url/api/news")
+      .then((res) => res.json())
+      .then((data) => {
+        setNewsList(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error loading news:", err);
+
+        // fallback: load your existing static list if server fails
+        setNewsList([
+          {
+            id: 1,
+            title: "Hindusthan Hospital Launches Advanced Cardiac Wing",
+            image: news1,
+            date: "05 Nov 2025",
+            content:
+              "Hindusthan Hospital has inaugurated a state-of-the-art cardiac facility featuring advanced diagnostic labs, ICU, and 24x7 emergency care...",
+          },
+          {
+            id: 2,
+            title: "New Pediatrics Intensive Care Unit Unveiled",
+            image: news2,
+            date: "27 Oct 2025",
+            content:
+              "The new PICU includes world-class ventilators, neonatal monitoring, and a multi-disciplinary specialist team available round-the-clock...",
+          },
+          {
+            id: 3,
+            title: "Robotic Surgery Department Now Operational",
+            image: news3,
+            date: "18 Oct 2025",
+            content:
+              "Hindusthan Hospital introduces next-gen robotic surgical equipment enabling minimally invasive procedures...",
+          },
+        ]);
+
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="pt-[10rem] font-[Poppins]">
@@ -46,27 +64,35 @@ export default function News() {
         </h2>
       </div>
 
+      {/* Loading Screen */}
+      {loading && (
+        <div className="text-center py-20 text-lg font-semibold text-gray-500">
+          Loading news...
+        </div>
+      )}
+
       {/* News Cards */}
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 mt-10 pb-20">
-        {newsList.map((n) => (
-          <div
-            key={n.id}
-            className="bg-white rounded-2xl shadow hover:shadow-xl transition p-4 cursor-pointer"
-            onClick={() => setActiveArticle(n)}
-          >
-            <img
-              src={n.image}
-              alt="news"
-              className="h-48 w-full object-cover rounded-xl"
-            />
-            <p className="text-xs text-gray-400 mt-2">{n.date}</p>
-            <h3 className="text-blue-900 font-bold text-lg mt-1">{n.title}</h3>
+        {!loading &&
+          newsList.map((n) => (
+            <div
+              key={n._id || n.id}
+              className="bg-white rounded-2xl shadow hover:shadow-xl transition p-4 cursor-pointer"
+              onClick={() => setActiveArticle(n)}
+            >
+              <img
+                src={n.image}
+                alt="news"
+                className="h-48 w-full object-cover rounded-xl"
+              />
+              <p className="text-xs text-gray-400 mt-2">{n.date}</p>
+              <h3 className="text-blue-900 font-bold text-lg mt-1">{n.title}</h3>
 
-            <button className="mt-4 px-4 py-2 text-sm rounded-full border border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition">
-              Read More
-            </button>
-          </div>
-        ))}
+              <button className="mt-4 px-4 py-2 text-sm rounded-full border border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition">
+                Read More
+              </button>
+            </div>
+          ))}
       </div>
 
       {/* Article Popup */}

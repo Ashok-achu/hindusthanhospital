@@ -1,33 +1,35 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SiteLayout from "./layouts/sitelayout";
+import ScrollToTop from "./components/ScrollToTop";
 
-// Header
+// 🔹 Header
 import HeaderGroup from "./components/HeaderGroup";
 
-// Top navigation pages
+// 🔹 Layout Wrapper
+import SiteLayout from "./layouts/sitelayout";
+
+// 🔹 Top Navigation Pages
 import Home from "./toppages/home";
+import Doctor from "./downpages/DoctorProfile";
 import AboutUs from "./toppages/aboutus";
 import Academics from "./toppages/academics";
 import Testimonials from "./toppages/testimonials";
 import Careers from "./toppages/careers";
 import Contact from "./toppages/contact";
 
-// About Us Subpages
+// 🔹 About Us Subpages
 import Abouttrust from "./toppages/abouttrust";
 import Mission from "./toppages/Mission";
 import Profile from "./toppages/Profile";
 import Milestones from "./toppages/Milestones";
-import ScrollToTop from "./components/ScrollToTop";
 
-
-// Down navigation pages
+// 🔹 Bottom Navigation Pages
 import Healthcare from "./downpages/healthcare";
 import Specialities from "./downpages/specialities";
 import FacilitiesPage from "./downpages/Facilities";
 import Blog from "./downpages/blog";
 import News from "./downpages/news";
 
-// Facilities Subpages
+// 🔹 Facilities Subpages
 import Ambulance from "./facilities/Ambulance";
 import Birthing from "./facilities/Birthing";
 import BloodBank from "./facilities/BloodBank";
@@ -35,41 +37,52 @@ import Insurance from "./facilities/Insurance";
 import LabServices from "./facilities/LabServices";
 import RadiologyServices from "./facilities/RadiologyServices";
 
-// Department dynamic
+// 🔹 Dynamic Department Detail Page
 import DepartmentDetail from "./departments/DepartmentDetail";
 
 export default function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
-      <HeaderGroup />
+      <ScrollToTop />
+      <HeaderGroup /> {/* FIXED NAVBAR — Should have only Link, no <a> */}
 
       <div className="pt-28 md:pt-32">
         <Routes>
+
+          {/* Parent layout wrapper */}
           <Route element={<SiteLayout />}>
 
-            {/* Main Navigation */}
+            {/* ----------------------- */}
+            {/* MAIN TOP MENU ROUTES   */}
+            {/* ----------------------- */}
             <Route path="/" element={<Home />} />
+            <Route path="/doctors" element={<Doctor />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/academics" element={<Academics />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
 
-            {/* About Us inside pages */}
+            {/* ----------------------- */}
+            {/* ABOUT US SUB-PAGES      */}
+            {/* ----------------------- */}
             <Route path="/abouttrust" element={<Abouttrust />} />
             <Route path="/mission" element={<Mission />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/milestones" element={<Milestones />} />
 
-            {/* Down Navigation */}
+            {/* ----------------------- */}
+            {/* BOTTOM NAVIGATION       */}
+            {/* ----------------------- */}
             <Route path="/healthcare" element={<Healthcare />} />
             <Route path="/specialities" element={<Specialities />} />
             <Route path="/facilities" element={<FacilitiesPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/news" element={<News />} />
 
-            {/* Facilities Subpages */}
+            {/* ----------------------- */}
+            {/* FACILITIES SUB-PAGES    */}
+            {/* ----------------------- */}
             <Route path="/facilities/ambulance" element={<Ambulance />} />
             <Route path="/facilities/birthing-centre" element={<Birthing />} />
             <Route path="/facilities/blood-bank" element={<BloodBank />} />
@@ -77,11 +90,22 @@ export default function App() {
             <Route path="/facilities/lab-services" element={<LabServices />} />
             <Route path="/facilities/radiology-services" element={<RadiologyServices />} />
 
-            {/* Dynamic Department Pages */}
+            {/* ----------------------- */}
+            {/* DYNAMIC DEPARTMENTS     */}
+            {/* ----------------------- */}
             <Route path="/departments/:slug" element={<DepartmentDetail />} />
 
-            {/* 404 Page */}
-            <Route path="*" element={<h2 className="text-center py-20">404 — Page Not Found</h2>} />
+            {/* ----------------------- */}
+            {/* 404 PAGE                */}
+            {/* ----------------------- */}
+            <Route
+              path="*"
+              element={
+                <h2 className="text-center py-20 text-2xl font-bold text-red-600">
+                  404 — Page Not Found
+                </h2>
+              }
+            />
 
           </Route>
         </Routes>

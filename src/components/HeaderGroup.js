@@ -38,10 +38,12 @@ export default function HeaderGroup() {
     "Surgical Oncology": "surgical-oncology",
     "Urology": "urology",
   };
+
   const toSlug = (label) => "/departments/" + slugMap[label];
 
   const nav = [
     { label: "HOME", to: "/" },
+
     {
       label: "ABOUT US",
       children: [
@@ -51,8 +53,19 @@ export default function HeaderGroup() {
         { label: "OUR MILESTONES", to: "/milestones" },
       ],
     },
+
     { label: "DOCTORS", to: "/doctors" },
+
     { label: "DEPARTMENTS", mega: true, children: Object.keys(slugMap) },
+
+    {
+      label: "GALLERY",
+      children: [
+        { label: "MEDIA", to: "/gallery/media" },
+        { label: "NEWS", to: "/gallery/news" },
+      ],
+    },
+
     {
       label: "FACILITIES",
       children: [
@@ -64,15 +77,17 @@ export default function HeaderGroup() {
         { label: "INSURANCE", to: "/facilities/insurance" },
       ],
     },
+
     { label: "HEALTH PACKAGE", to: "/health" },
+
     {
       label: "ACADEMICS",
       children: [
         { label: "EDUCATIONAL INSTITUTIONS", to: "https://hindusthan.net" },
-        { label: "COURSES", to: "/courses" },
-        { label: "EVENTS & NEWS", to: "/events" },
+        { label: "COURSES", to: "/academics/courses" },
       ],
     },
+
     {
       label: "CONTACT",
       children: [
@@ -95,7 +110,7 @@ export default function HeaderGroup() {
 
   return (
     <>
-      {/* 🚑 EMERGENCY BAR */}
+      {/* 🔴 EMERGENCY SCROLL */}
       <div className="fixed top-0 w-full bg-red-600 text-white py-[6px] text-center z-[100] overflow-hidden">
         <span
           onMouseEnter={() => setPaused(true)}
@@ -107,19 +122,20 @@ export default function HeaderGroup() {
         </span>
       </div>
 
-      {/* HEADER MAIN */}
+      {/* HEADER */}
       <header
         className={`fixed left-1/2 -translate-x-1/2 w-[94vw] md:w-[90vw] rounded-2xl shadow-xl z-[90]
-        backdrop-blur-xl border border-white/40 transition-all duration-300
-        ${dark ? "bg-gray-900/90 text-white" : "bg-white/90 text-black"}
-        ${shrink ? "top-[45px] md:top-[40px] scale-[0.94]" : "top-[75px] md:top-[60px]"}`}
+          backdrop-blur-xl border border-white/40 transition-all duration-300
+          ${dark ? "bg-gray-900/90 text-white" : "bg-white/90 text-black"}
+          ${shrink ? "top-[45px] md:top-[40px] scale-[0.94]" : "top-[75px] md:top-[60px]"}`}
       >
-
-        {/* TOP DESKTOP INFO */}
+        {/* ⭐ TOP DESKTOP LOGO SECTION (RESTORED) */}
         <div className="hidden md:flex justify-between items-center px-6 py-3">
           <div className="flex flex-col">
             <img src={logo} className="w-44" />
-            <p className="text-[12px] text-gray-500 uppercase">A Unit of Hindusthan Educational Trust</p>
+            <p className="text-[12px] text-gray-500 uppercase">
+              A Unit of Hindusthan Educational Trust
+            </p>
           </div>
 
           <p className="font-bold text-[14px] leading-tight">
@@ -131,15 +147,20 @@ export default function HeaderGroup() {
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="bg-red-700 text-white px-5 py-2 rounded-full font-bold">BOOK APPOINTMENT</button>
+            <button className="bg-red-700 text-white px-5 py-2 rounded-full font-bold">
+              BOOK APPOINTMENT
+            </button>
             <img src={certLogo} className="w-14" />
-            <button onClick={() => setDark(!dark)} className="px-3 py-1 border rounded-full">
+            <button
+              onClick={() => setDark(!dark)}
+              className="px-3 py-1 border rounded-full"
+            >
               {dark ? "☀" : "🌙"}
             </button>
           </div>
         </div>
 
-        {/* DESKTOP NAVIGATION */}
+        {/* ⭐ DESKTOP NAVIGATION */}
         <nav className="hidden md:flex justify-center gap-8 py-3 text-sm font-extrabold tracking-wide uppercase">
           {nav.map((item, i) => (
             <div
@@ -148,39 +169,50 @@ export default function HeaderGroup() {
               onMouseEnter={() => setActiveDropdown(i)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <span className="flex items-center gap-1">
-                {item.label}
-                {item.children && <span className="text-[10px]">▼</span>}
-              </span>
+              {/* Top Level */}
+              {item.to ? (
+                <NavLink to={item.to} className="flex items-center gap-1">
+                  {item.label}
+                </NavLink>
+              ) : (
+                <span className="flex items-center gap-1">
+                  {item.label}
+                  {item.children && <span className="text-[10px]">▼</span>}
+                </span>
+              )}
 
+              {/* Dropdown */}
               {item.children && (
                 <div
-                  className={`absolute left-0 top-full mt-3 bg-white text-black shadow-2xl rounded-xl p-6 border
-                  transition-all duration-200 
-                  ${activeDropdown === i ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}
-                  ${item.mega ? "w-[850px] grid grid-cols-3 gap-10" : "w-56 flex flex-col"} `}
+                  className={`absolute left-0 top-full mt-3 bg-white text-black shadow-2xl rounded-xl p-6 border transition-all duration-200
+                  ${
+                    activeDropdown === i
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95 pointer-events-none"
+                  }
+                  ${
+                    item.mega
+                      ? "w-[850px] grid grid-cols-3 gap-10"
+                      : "w-56 flex flex-col"
+                  }`}
                 >
-                  {/* MEGA MENU */}
                   {item.mega &&
                     item.children.map((name, j) => (
                       <NavLink
                         key={j}
                         to={toSlug(name)}
                         className="hover:text-red-600 py-1 text-sm"
-                        onClick={() => setActiveDropdown(null)}
                       >
                         {name}
                       </NavLink>
                     ))}
 
-                  {/* NORMAL MENU */}
                   {!item.mega &&
                     item.children.map((sub, j) => (
                       <NavLink
                         key={j}
                         to={sub.to}
                         className="hover:text-red-600 py-1 text-sm"
-                        onClick={() => setActiveDropdown(null)}
                       >
                         {sub.label}
                       </NavLink>
@@ -191,7 +223,7 @@ export default function HeaderGroup() {
           ))}
         </nav>
 
-        {/* MOBILE HEADER */}
+        {/* ⭐ MOBILE NAVIGATION (unchanged) */}
         <div className="md:hidden flex justify-between px-5 py-3 items-center">
           <img src={logo} className="w-24" />
           <img src={certLogo} className="w-10" />
@@ -200,7 +232,7 @@ export default function HeaderGroup() {
           </button>
         </div>
 
-        {/* MOBILE MENU */}
+        {/* MOBILE DROPDOWN */}
         {menuOpen && (
           <div className="md:hidden bg-red-700 text-white px-6 py-5 flex flex-col gap-3 font-bold text-lg max-h-[70vh] overflow-y-scroll">
             {nav.map((item, index) => (
@@ -208,7 +240,9 @@ export default function HeaderGroup() {
                 <div
                   className="flex justify-between items-center"
                   onClick={() =>
-                    item.children ? setActiveDropdown(activeDropdown === index ? null : index) : setMenuOpen(false)
+                    item.children
+                      ? setActiveDropdown(activeDropdown === index ? null : index)
+                      : setMenuOpen(false)
                   }
                 >
                   {item.to ? (
@@ -240,7 +274,6 @@ export default function HeaderGroup() {
         )}
       </header>
 
-      {/* FIXED: space below header */}
       <div className="h-[10px] md:h-[9px]"></div>
     </>
   );
