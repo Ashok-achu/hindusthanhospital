@@ -1,49 +1,47 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 import certLogo from "../assets/NABH.jpg";
 
 export default function HeaderGroup() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
   const [shrink, setShrink] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const closeTimer = useRef(null);
 
   const slugMap = {
-    "Anaesthesiology": "anaesthesiology",
-    "Cardiology": "cardiology",
-    "Dermatology": "dermatology",
-    "Dentistry": "dentistry",
-    "Diabetology": "diabetology",
+    Anaesthesiology: "anaesthesiology",
+    Cardiology: "cardiology",
+    Dermatology: "dermatology",
+    Dentistry: "dentistry",
+    Diabetology: "diabetology",
     "Emergency Care": "emergency-care",
-    "ENT": "ent",
+    ENT: "ent",
     "General Medicine": "general-medicine",
     "General Surgery": "general-surgery",
-    "Gastroenterology": "gastroenterology",
+    Gastroenterology: "gastroenterology",
     "Internal Medicine": "internal-medicine",
-    "ICU": "icu",
-    "Neonatology": "neonatology",
+    ICU: "icu",
+    Neonatology: "neonatology",
     "Neuro & Vascular Surgery": "neurovascular-surgery",
-    "Nephrology": "nephrology",
+    Nephrology: "nephrology",
     "Obstetrics & Gynaecology": "obgyn",
-    "Orthopaedics": "orthopaedics",
-    "Rehabilitation": "rehab",
-    "Paediatrics": "paediatrics",
+    Orthopaedics: "orthopaedics",
+    Rehabilitation: "rehab",
+    Paediatrics: "paediatrics",
     "Paediatric Surgery": "paediatric-surgery",
-    "Psychiatry": "psychiatry",
+    Psychiatry: "psychiatry",
     "Plastic Surgery": "plastic-surgery",
-    "Pulmonology": "pulmonology",
-    "Radiology": "radiology",
+    Pulmonology: "pulmonology",
+    Radiology: "radiology",
     "Surgical Oncology": "surgical-oncology",
-    "Urology": "urology",
+    Urology: "urology",
   };
 
   const toSlug = (label) => "/departments/" + slugMap[label];
 
   const nav = [
     { label: "HOME", to: "/" },
-
     {
       label: "ABOUT US",
       children: [
@@ -53,19 +51,20 @@ export default function HeaderGroup() {
         { label: "OUR MILESTONES", to: "/milestones" },
       ],
     },
-
     { label: "DOCTORS", to: "/doctors" },
-
     { label: "DEPARTMENTS", mega: true, children: Object.keys(slugMap) },
-
     {
       label: "GALLERY",
       children: [
         { label: "MEDIA", to: "/gallery/media" },
         { label: "NEWS", to: "/gallery/news" },
+        {
+          label: "BROCHURE",
+          to: "/brochure/hindusthan-hospital-brochure.pdf",
+          external: true,
+        },
       ],
     },
-
     {
       label: "FACILITIES",
       children: [
@@ -77,9 +76,7 @@ export default function HeaderGroup() {
         { label: "INSURANCE", to: "/facilities/insurance" },
       ],
     },
-
     { label: "HEALTH PACKAGE", to: "/health" },
-
     {
       label: "ACADEMICS",
       children: [
@@ -87,7 +84,6 @@ export default function HeaderGroup() {
         { label: "COURSES", to: "/academics/courses" },
       ],
     },
-
     {
       label: "CONTACT",
       children: [
@@ -98,174 +94,169 @@ export default function HeaderGroup() {
   ];
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-    localStorage.setItem("theme", dark ? "dark" : "light");
-  }, [dark]);
-
-  useEffect(() => {
     const sc = () => setShrink(window.scrollY > 40);
     window.addEventListener("scroll", sc);
     return () => window.removeEventListener("scroll", sc);
   }, []);
 
+  const openDropdown = (i) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setActiveDropdown(i);
+  };
+
+  const closeDropdown = () => {
+    closeTimer.current = setTimeout(() => setActiveDropdown(null), 200);
+  };
+
   return (
     <>
-      {/* 🔴 EMERGENCY SCROLL */}
-      <div className="fixed top-0 w-full bg-red-600 text-white py-[6px] text-center z-[100] overflow-hidden">
-        <span
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          className="inline-block font-bold uppercase whitespace-nowrap"
-          style={{ animation: paused ? "none" : "scroll 14s linear infinite" }}
-        >
-          🚑 EMERGENCY HOTLINE: +91 422 432 7799 — AVAILABLE 24x7 🚑
-        </span>
-      </div>
-
-      {/* HEADER */}
       <header
-        className={`fixed left-1/2 -translate-x-1/2 w-[94vw] md:w-[90vw] rounded-2xl shadow-xl z-[90]
-          backdrop-blur-xl border border-white/40 transition-all duration-300
-          ${dark ? "bg-gray-900/90 text-white" : "bg-white/90 text-black"}
-          ${shrink ? "top-[45px] md:top-[40px] scale-[0.94]" : "top-[75px] md:top-[60px]"}`}
+        className={`fixed left-1/2 -translate-x-1/2 w-[95vw] md:w-[90vw]
+        bg-white z-[90] border border-gray-200 transition-all duration-300
+        ${shrink ? "top-2" : "top-4"}`}
       >
-        {/* ⭐ TOP DESKTOP LOGO SECTION (RESTORED) */}
-        <div className="hidden md:flex justify-between items-center px-6 py-3">
-          <div className="flex flex-col">
+        {/* DESKTOP LOGO SECTION */}
+        <div className="hidden md:flex justify-between items-center px-6 py-4">
+          <div>
             <img src={logo} className="w-44" />
-            <p className="text-[12px] text-gray-500 uppercase">
+            <p className="text-xs text-gray-500 uppercase">
               A Unit of Hindusthan Educational Trust
             </p>
           </div>
 
-          <p className="font-bold text-[14px] leading-tight">
-            522/3 HINDUSTHAN HOSPITAL ROAD <br /> COIMBATORE — 641028
+          <p className="font-semibold text-sm">
+            522/3 Hindusthan Hospital Road <br /> Coimbatore – 641028
           </p>
 
-          <p className="font-bold text-[14px] leading-tight text-right">
+          <p className="font-semibold text-sm text-right">
             +91 422 432 7777 <br /> +91 422 432 7778
           </p>
 
           <div className="flex items-center gap-4">
-            <button className="bg-red-700 text-white px-5 py-2 rounded-full font-bold">
+            <button className="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-full font-bold">
               BOOK APPOINTMENT
             </button>
             <img src={certLogo} className="w-14" />
-            <button
-              onClick={() => setDark(!dark)}
-              className="px-3 py-1 border rounded-full"
-            >
-              {dark ? "☀" : "🌙"}
-            </button>
           </div>
         </div>
 
-        {/* ⭐ DESKTOP NAVIGATION */}
-        <nav className="hidden md:flex justify-center gap-8 py-3 text-sm font-extrabold tracking-wide uppercase">
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex justify-center gap-8 py-3 text-sm font-extrabold uppercase">
           {nav.map((item, i) => (
             <div
               key={i}
-              className="relative group cursor-pointer pb-2"
-              onMouseEnter={() => setActiveDropdown(i)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              className="relative"
+              onMouseEnter={() => openDropdown(i)}
+              onMouseLeave={closeDropdown}
             >
-              {/* Top Level */}
-              {item.to ? (
-                <NavLink to={item.to} className="flex items-center gap-1">
-                  {item.label}
-                </NavLink>
-              ) : (
-                <span className="flex items-center gap-1">
-                  {item.label}
-                  {item.children && <span className="text-[10px]">▼</span>}
-                </span>
-              )}
+              <div
+                onClick={() =>
+                  item.children &&
+                  setActiveDropdown(activeDropdown === i ? null : i)
+                }
+                className="flex items-center gap-1 cursor-pointer hover:text-red-700"
+              >
+                {item.to ? <NavLink to={item.to}>{item.label}</NavLink> : item.label}
+                {item.children && <span className="text-xs">▼</span>}
+              </div>
 
-              {/* Dropdown */}
-              {item.children && (
+              {item.children && activeDropdown === i && (
                 <div
-                  className={`absolute left-0 top-full mt-3 bg-white text-black shadow-2xl rounded-xl p-6 border transition-all duration-200
-                  ${
-                    activeDropdown === i
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-95 pointer-events-none"
-                  }
-                  ${
-                    item.mega
-                      ? "w-[850px] grid grid-cols-3 gap-10"
-                      : "w-56 flex flex-col"
-                  }`}
+                  className={`absolute top-full mt-4 bg-red-700 text-white p-6
+                  ${item.mega ? "w-[850px] grid grid-cols-3 gap-4" : "w-64"}`}
                 >
-                  {item.mega &&
-                    item.children.map((name, j) => (
+                  {item.children.map((sub, j) =>
+                    typeof sub === "string" ? (
                       <NavLink
                         key={j}
-                        to={toSlug(name)}
-                        className="hover:text-red-600 py-1 text-sm"
+                        to={toSlug(sub)}
+                        className="block py-1 hover:text-yellow-300"
                       >
-                        {name}
+                        {sub}
                       </NavLink>
-                    ))}
-
-                  {!item.mega &&
-                    item.children.map((sub, j) => (
+                    ) : sub.external ? (
+                      <a
+                        key={j}
+                        href={sub.to}
+                        target="_blank"
+                        className="block py-1 hover:text-yellow-300"
+                      >
+                        {sub.label}
+                      </a>
+                    ) : (
                       <NavLink
                         key={j}
                         to={sub.to}
-                        className="hover:text-red-600 py-1 text-sm"
+                        className="block py-1 hover:text-yellow-300"
                       >
                         {sub.label}
                       </NavLink>
-                    ))}
+                    )
+                  )}
                 </div>
               )}
             </div>
           ))}
         </nav>
 
-        {/* ⭐ MOBILE NAVIGATION (unchanged) */}
-        <div className="md:hidden flex justify-between px-5 py-3 items-center">
-          <img src={logo} className="w-24" />
-          <img src={certLogo} className="w-10" />
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-3xl font-bold">
+        {/* MOBILE HEADER */}
+        <div className="md:hidden flex justify-between items-center px-4 py-4">
+          <div className="flex items-center gap-3">
+            <img src={logo} className="w-28" />
+            <img src={certLogo} className="w-10" />
+          </div>
+
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-3xl font-bold"
+          >
             {menuOpen ? "✖" : "☰"}
           </button>
         </div>
 
-        {/* MOBILE DROPDOWN */}
+        {/* MOBILE MENU */}
         {menuOpen && (
-          <div className="md:hidden bg-red-700 text-white px-6 py-5 flex flex-col gap-3 font-bold text-lg max-h-[70vh] overflow-y-scroll">
-            {nav.map((item, index) => (
-              <div key={index}>
+          <div className="md:hidden bg-red-700 text-white px-5 py-6 space-y-4 font-semibold">
+            {nav.map((item, i) => (
+              <div key={i}>
                 <div
                   className="flex justify-between items-center"
                   onClick={() =>
-                    item.children
-                      ? setActiveDropdown(activeDropdown === index ? null : index)
-                      : setMenuOpen(false)
+                    item.children &&
+                    setActiveDropdown(activeDropdown === i ? null : i)
                   }
                 >
-                  {item.to ? (
-                    <NavLink to={item.to} onClick={() => setMenuOpen(false)}>
-                      {item.label}
-                    </NavLink>
-                  ) : (
-                    item.label
-                  )}
-                  {item.children && <span>{activeDropdown === index ? "▲" : "▼"}</span>}
+                  {item.label}
+                  {item.children && <span>▼</span>}
                 </div>
 
-                {activeDropdown === index && item.children && (
-                  <div className="flex flex-col pl-4 py-2 gap-2 text-sm font-semibold bg-red-800 rounded-lg">
-                    {item.children.map((sub, idx) => {
-                      const label = typeof sub === "string" ? sub : sub.label;
-                      const link = item.mega ? toSlug(label) : sub.to;
-                      return (
-                        <NavLink key={idx} to={link} onClick={() => setMenuOpen(false)}>
-                          {label}
+                {activeDropdown === i && item.children && (
+                  <div className="pl-4 pt-3 space-y-2">
+                    {item.children.map((sub, j) =>
+                      typeof sub === "string" ? (
+                        <NavLink
+                          key={j}
+                          to={toSlug(sub)}
+                          onClick={() => setMenuOpen(false)}
+                          className="block"
+                        >
+                          {sub}
                         </NavLink>
-                      );
-                    })}
+                      ) : sub.external ? (
+                        <a key={j} href={sub.to} target="_blank" className="block">
+                          {sub.label}
+                        </a>
+                      ) : (
+                        <NavLink
+                          key={j}
+                          to={sub.to}
+                          onClick={() => setMenuOpen(false)}
+                          className="block"
+                        >
+                          {sub.label}
+                        </NavLink>
+                      )
+                    )}
                   </div>
                 )}
               </div>
@@ -273,8 +264,6 @@ export default function HeaderGroup() {
           </div>
         )}
       </header>
-
-      <div className="h-[10px] md:h-[9px]"></div>
     </>
   );
 }
