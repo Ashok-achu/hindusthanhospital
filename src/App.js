@@ -15,6 +15,7 @@ import Academics from "./toppages/academics";
 import Testimonials from "./toppages/testimonials";
 import Careers from "./toppages/careers";
 import Contact from "./toppages/contact";
+import Media from "./toppages/Media";
 
 // 🔹 About Us Subpages
 import Abouttrust from "./toppages/abouttrust";
@@ -46,7 +47,7 @@ export default function App() {
       <ScrollToTop />
       <HeaderGroup /> {/* FIXED NAVBAR — Should have only Link, no <a> */}
 
-      <div className="pt-28 md:pt-32">
+      <div className="">
         <Routes>
 
           {/* Parent layout wrapper */}
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery/media" element={<Media />} />
 
             {/* ----------------------- */}
             {/* ABOUT US SUB-PAGES      */}
