@@ -2,7 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaChevronRight, FaHeartbeat, FaStethoscope, FaBaby, FaBone, FaCalendarAlt, FaUser, FaArrowRight, FaUserMd, FaAmbulance, FaMicroscope, FaHandHoldingHeart } from 'react-icons/fa';
+import {
+  FaHeartbeat,
+  FaStethoscope,
+  FaBaby,
+  FaBone,
+  FaCalendarAlt,
+  FaUser,
+  FaArrowRight,
+  FaUserMd,
+  FaAmbulance,
+  FaMicroscope,
+  FaHandHoldingHeart
+} from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -14,7 +26,6 @@ import cardiology from "../assets/team.jpg";
 import surgery from "../assets/team.jpg";
 import pediatrics from "../assets/team.jpg";
 import doctorTeam from "../assets/h12.jpg";
-import appointment from "../assets/h3.jpg";
 import testimonial from "../assets/testimonial.jpg";
 import news1 from "../assets/hero.jpg";
 import news2 from "../assets/team.jpg";
@@ -26,7 +37,6 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  // Hero Slider Settings
   const heroSliderSettings = {
     dots: false,
     arrows: false,
@@ -38,7 +48,6 @@ export default function Home() {
     pauseOnHover: false,
   };
 
-  // Card Slider Settings
   const sliderSettings = {
     dots: true,
     arrows: false,
@@ -59,28 +68,17 @@ export default function Home() {
 
       {/* ================= HERO SECTION (SLIDER) ================= */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-
-        {/* Background Image Slider */}
         <div className="absolute inset-0 z-0">
           <Slider {...heroSliderSettings}>
             {[hero1, hero2, hero3].map((img, index) => (
               <div key={index} className="w-full h-[85vh] relative">
-                <img
-                  src={img}
-                  alt="Hero"
-                  className="w-full h-full object-cover"
-                />
+                <img src={img} alt="Hero" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent mix-blend-multiply"></div>
               </div>
             ))}
           </Slider>
         </div>
 
-        {/* Decorative Blobs */}
-        <div className="absolute top-10 left-10 w-72 h-72 bg-rose-400 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute top-0 right-10 w-72 h-72 bg-purple-400 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-
-        {/* Content Overlay */}
         <motion.div
           className="relative z-10 text-center px-4 max-w-5xl mx-auto"
           initial="hidden"
@@ -91,34 +89,30 @@ export default function Home() {
           <span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-6 shadow-lg">
             WELCOME TO HINDUSTHAN HOSPITAL 👋
           </span>
+
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl">
             Healing Hands, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-orange-200">Caring Hearts</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-orange-200">
+              Caring Hearts
+            </span>
           </h1>
+
           <p className="mt-8 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-            Delivering advanced medical care with a touch of humanity. We are dedicated to your well-being with 24/7 support and world-class facilities.
+            Delivering advanced medical care with a touch of humanity.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
-            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600 text-white font-bold shadow-xl shadow-rose-500/20 transition transform hover:-translate-y-1">
+            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-xl transition">
               Book Appointment
             </button>
             <Link
-  to="/mettupalayam"
-  className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition transform hover:-translate-y-1 shadow-lg"
->
-  Explore Mettupalayam Branch
-</Link>
-
+              to="/mettupalayam"
+              className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition shadow-lg"
+            >
+              Explore Mettupalayam Branch
+            </Link>
           </div>
         </motion.div>
-
-        {/* Bottom Wave Divider */}
-        <div className="absolute bottom-0 w-full leading-none z-20">
-          <svg className="relative block w-full h-[60px] md:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
-          </svg>
-        </div>
       </section>
 
 
