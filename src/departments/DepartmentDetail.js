@@ -13,7 +13,7 @@ export default function DepartmentDetail() {
   }, [slug]);
 
   if (!dept) {
-    return <div className="text-center py-20 text-xl font-bold">Department Not Found</div>;
+    return <div className="text-center py-0 text-xl font-bold">Department Not Found</div>;
   }
 
   return (

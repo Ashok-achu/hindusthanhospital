@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaChevronRight, FaHeartbeat, FaStethoscope, FaBaby, FaBone, FaCalendarAlt, FaUser, FaArrowRight, FaUserMd, FaAmbulance, FaMicroscope, FaHandHoldingHeart } from 'react-icons/fa';
@@ -102,9 +103,13 @@ export default function Home() {
             <button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600 text-white font-bold shadow-xl shadow-rose-500/20 transition transform hover:-translate-y-1">
               Book Appointment
             </button>
-            <button className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition transform hover:-translate-y-1 shadow-lg">
-              Explore Services
-            </button>
+            <Link
+  to="/mettupalayam"
+  className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition transform hover:-translate-y-1 shadow-lg"
+>
+  Explore Mettupalayam Branch
+</Link>
+
           </div>
         </motion.div>
 
@@ -299,7 +304,7 @@ export default function Home() {
                   { title: "World-Class Doctors", icon: <FaUserMd />, desc: "Expert specialists from around the globe." },
                   { title: "24/7 Emergency", icon: <FaAmbulance />, desc: "Round-the-clock critical care support." },
                   { title: "Advanced Tech", icon: <FaMicroscope />, desc: "Cutting-edge diagnostic equipment." },
-                  { title: "Affordable Care", icon: <FaHandHoldingHeart />, desc: "Quality healthcare that fits your budget." },
+                  { title: "Advanced Hospital Beds", icon: <FaHandHoldingHeart />, desc: "Supporting modern medical care" },
                 ].map((feature, i) => (
                   <motion.div
                     key={i}

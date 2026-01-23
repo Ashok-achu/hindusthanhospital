@@ -7,9 +7,11 @@ export default function DepartmentSidebar() {
 
   return (
     <div className="w-full md:w-1/4">
-      
-      {/* Mobile Dropdown */}
-      <div className="md:hidden">
+
+      {/* ======================
+          MOBILE DROPDOWN
+      ====================== */}
+      <div className="md:hidden mt-[180px]">
         <button
           onClick={() => setOpen(!open)}
           className="w-full bg-red-600 text-white px-4 py-3 rounded-lg font-semibold flex justify-between items-center"
@@ -20,9 +22,8 @@ export default function DepartmentSidebar() {
           </span>
         </button>
 
-        {/* Accordion Dropdown */}
         {open && (
-          <ul className="mt-2 bg-white shadow-md rounded-lg overflow-hidden">
+          <ul className="mt-2 bg-white shadow-lg rounded-lg overflow-hidden">
             {departmentsData.map((dept) => (
               <li key={dept.slug}>
                 <NavLink
@@ -38,9 +39,13 @@ export default function DepartmentSidebar() {
         )}
       </div>
 
-      {/* Desktop Sidebar */}
-      <div className="hidden md:block bg-white shadow rounded-lg p-5 sticky top-28">
-        <h2 className="text-2xl font-bold mb-4 text-red-600">Our Specialities</h2>
+      {/* ======================
+          DESKTOP SIDEBAR
+      ====================== */}
+      <div className="hidden md:block bg-white shadow-lg rounded-lg p-5 sticky top-[180px] z-20">
+        <h2 className="text-2xl font-bold mb-4 text-red-600">
+          Our Specialities
+        </h2>
 
         <ul className="space-y-2">
           {departmentsData.map((dept) => (
@@ -48,7 +53,7 @@ export default function DepartmentSidebar() {
               <NavLink
                 to={`/departments/${dept.slug}`}
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded-md font-medium ${
+                  `block px-4 py-2 rounded-md font-medium transition ${
                     isActive
                       ? "bg-red-600 text-white"
                       : "hover:bg-gray-100 text-gray-700"
