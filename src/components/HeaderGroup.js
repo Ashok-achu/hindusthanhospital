@@ -52,6 +52,7 @@ export default function HeaderGroup() {
   /* ================= NAV ================= */
   const nav = [
     { label: "Home", to: "/" },
+
     {
       label: "About",
       children: [
@@ -61,6 +62,7 @@ export default function HeaderGroup() {
         { label: "Milestones", to: "/milestones" },
       ],
     },
+
     { label: "Doctors", to: "/doctors" },
 
     { label: "Departments", mega: true, children: Object.keys(slugMap) },
@@ -71,7 +73,6 @@ export default function HeaderGroup() {
         { label: "Ambulance", to: "/facilities/ambulance" },
         { label: "Birth Center", to: "/facilities/birthing-centre" },
         { label: "Blood Bank", to: "/facilities/blood-bank" },
-
         {
           label: "Diagnostic",
           children: [
@@ -79,7 +80,6 @@ export default function HeaderGroup() {
             { label: "Radiology", to: "/facilities/radiology-services" },
           ],
         },
-
         { label: "Insurance", to: "/facilities/insurance" },
         { label: "MHC", to: "/facilities/mhc" },
         { label: "Rooms", to: "/facilities/rooms" },
@@ -90,6 +90,21 @@ export default function HeaderGroup() {
     },
 
     { label: "Packages", to: "/health" },
+
+    /* ✅ NEW MEDIA MENU */
+    {
+      label: "Media",
+      children: [
+        { label: "Gallery", to: "/gallery" },
+        { label: "News", to: "/news" },
+        {
+          label: "Brochure",
+          to: "/myapp/public/brochure/hindusthan-hospital-brochure.pdf", // change path if needed
+          external: true,
+        },
+      ],
+    },
+
     {
       label: "Academics",
       children: [
@@ -97,10 +112,11 @@ export default function HeaderGroup() {
         { label: "Courses", to: "/academics/courses" },
       ],
     },
+
     {
       label: "Contact",
       children: [
-        { label: "Careers", to: "../toppages/careers.js" },
+        { label: "Careers", to: "/careers" },
         { label: "Testimonials", to: "/testimonials" },
         { label: "Reach Us", to: "/contact" },
       ],
@@ -130,7 +146,6 @@ export default function HeaderGroup() {
   /* ================= JSX ================= */
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-
       {/* TOP BAR */}
       <div
         className={`w-full bg-gradient-to-r from-rose-700 to-rose-600 text-white transition-all duration-500 ${
@@ -158,7 +173,6 @@ export default function HeaderGroup() {
       {/* NAVBAR */}
       <div className="w-full flex justify-center mt-4">
         <div className="bg-white w-[95%] max-w-7xl rounded-full shadow-xl px-6 py-3 flex justify-between items-center">
-
           <NavLink to="/">
             <img src={logo} alt="Logo" className="w-36" />
           </NavLink>
@@ -174,7 +188,13 @@ export default function HeaderGroup() {
               >
                 <div className="flex items-center gap-1 font-bold text-sm cursor-pointer">
                   {item.to ? (
-                    <NavLink to={item.to}>{item.label}</NavLink>
+                    item.external ? (
+                      <a href={item.to} target="_blank" rel="noopener noreferrer">
+                        {item.label}
+                      </a>
+                    ) : (
+                      <NavLink to={item.to}>{item.label}</NavLink>
+                    )
                   ) : (
                     <span>{item.label}</span>
                   )}
@@ -188,14 +208,10 @@ export default function HeaderGroup() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
                       className={`absolute top-full mt-3 bg-white rounded-xl shadow-xl p-2 z-50 ${
-                        item.mega
-                          ? "w-[900px] grid grid-cols-4"
-                          : "w-64"
+                        item.mega ? "w-[900px] grid grid-cols-4" : "w-64"
                       }`}
                     >
                       {item.children.map((sub, j) => {
-
-                        /* DEPARTMENTS (string array) */
                         if (typeof sub === "string") {
                           return (
                             <NavLink
@@ -208,7 +224,6 @@ export default function HeaderGroup() {
                           );
                         }
 
-                        /* FACILITIES → DIAGNOSTIC (SIDE SUBMENU) */
                         if (sub.children) {
                           return (
                             <div key={j} className="relative group">
@@ -216,7 +231,6 @@ export default function HeaderGroup() {
                                 {sub.label}
                                 <FaChevronDown className="text-[10px]" />
                               </div>
-
                               <div className="absolute top-0 left-full ml-1 w-56 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                                 {sub.children.map((child, k) => (
                                   <NavLink
@@ -232,8 +246,17 @@ export default function HeaderGroup() {
                           );
                         }
 
-                        /* NORMAL ITEM */
-                        return (
+                        return sub.external ? (
+                          <a
+                            key={j}
+                            href={sub.to}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-sm hover:text-rose-600"
+                          >
+                            {sub.label}
+                          </a>
+                        ) : (
                           <NavLink
                             key={j}
                             to={sub.to}
@@ -257,7 +280,6 @@ export default function HeaderGroup() {
               APPOINTMENT
             </button>
           </div>
-
         </div>
       </div>
     </header>
