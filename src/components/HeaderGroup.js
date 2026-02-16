@@ -9,6 +9,7 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+
 import logo from "../assets/logo.png";
 import certLogo from "../assets/NABH.jpg";
 
@@ -70,13 +71,6 @@ export default function HeaderGroup() {
         { label: "Ambulance", to: "/facilities/ambulance" },
         { label: "Birth Center", to: "/facilities/birthing-centre" },
         { label: "Blood Bank", to: "/facilities/blood-bank" },
-        {
-          label: "Diagnostic",
-          children: [
-            { label: "Lab Services", to: "/facilities/lab-services" },
-            { label: "Radiology", to: "/facilities/radiology-services" },
-          ],
-        },
         { label: "Insurance", to: "/facilities/insurance" },
         { label: "MHC", to: "/facilities/mhc" },
         { label: "Rooms", to: "/facilities/rooms" },
@@ -135,126 +129,133 @@ export default function HeaderGroup() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[2px]">
-      {/* TOP BAR */}
-      <div
-        className={`w-full bg-gradient-to-r from-rose-700 to-rose-600 text-white transition-all duration-500 ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-20 py-2"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 text-[11px] sm:text-xs font-semibold">
-          <div className="flex items-center gap-2 justify-center sm:justify-start text-center sm:text-left">
-            <FaMapMarkerAlt className="shrink-0" />
-            <span className="leading-tight">
-              522/3 Hindusthan Hospital Road, Coimbatore
-            </span>
-          </div>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-[9999] w-full">
 
-          <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-4 text-center sm:text-right">
-            <div className="flex gap-2 items-center justify-center sm:justify-end">
-              <FaPhoneAlt className="shrink-0" />
-              <span>+91 422 432 7777</span>
+        {/* TOP BAR */}
+        <div
+          className={`w-full bg-gradient-to-r from-rose-700 to-rose-600 text-white 
+          transition-all duration-500 overflow-hidden
+          ${
+            scrolled
+              ? "h-0 opacity-0 pointer-events-none"
+              : "h-auto py-2 opacity-100"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row sm:justify-between sm:items-center text-xs font-semibold">
+            <div className="flex items-center gap-2">
+              <FaMapMarkerAlt />
+              <span>522/3 Hindusthan Hospital Road, Coimbatore</span>
             </div>
-            <div className="flex gap-2 items-center justify-center sm:justify-end">
-              <FaEnvelope className="shrink-0" />
-              <span>info@hindusthanhospital.com</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* NAVBAR */}
-      <div className="w-full flex justify-center mt-4">
-        <div className="bg-white w-[94%] sm:w-[95%] max-w-7xl rounded-full shadow-xl px-4 sm:px-6 py-3 flex justify-between items-center">
-          <NavLink to="/">
-            <img src={logo} alt="Logo" className="w-32 sm:w-36" />
-          </NavLink>
-
-          {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex gap-6">
-            {nav.map((item, i) => (
-              <div
-                key={i}
-                className="relative"
-                onMouseEnter={() => openDropdown(i)}
-                onMouseLeave={closeDropdown}
-              >
-                <div className="flex items-center gap-1 font-bold text-sm cursor-pointer">
-                  {item.to ? (
-                    <NavLink to={item.to}>{item.label}</NavLink>
-                  ) : (
-                    <span>{item.label}</span>
-                  )}
-                  {item.children && <FaChevronDown className="text-xs" />}
-                </div>
-
-                <AnimatePresence>
-                  {item.children && activeDropdown === i && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      className={`absolute top-full mt-3 bg-white rounded-xl shadow-xl p-2 z-50 ${
-                        item.mega
-                          ? "w-[95vw] max-w-[900px] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
-                          : "w-64"
-                      }`}
-                    >
-                      {item.children.map((sub, j) =>
-                        typeof sub === "string" ? (
-                          <NavLink
-                            key={j}
-                            to={toSlug(sub)}
-                            className="block px-4 py-2 text-sm hover:text-rose-600"
-                          >
-                            {sub}
-                          </NavLink>
-                        ) : (
-                          <NavLink
-                            key={j}
-                            to={sub.to}
-                            className="block px-4 py-2 text-sm hover:text-rose-600"
-                          >
-                            {sub.label}
-                          </NavLink>
-                        )
-                      )}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+            <div className="flex gap-4 items-center">
+              <div className="flex gap-2 items-center">
+                <FaPhoneAlt />
+                <span>+91 422 432 7777</span>
               </div>
-            ))}
-          </nav>
-
-          {/* RIGHT SIDE DESKTOP */}
-          <div className="hidden lg:flex items-center gap-3">
-            <img src={certLogo} alt="NABH" className="w-10" />
-            <button className="bg-rose-600 text-white px-5 py-2 rounded-full text-xs font-bold">
-              APPOINTMENT
-            </button>
-          </div>
-
-          {/* MOBILE RIGHT */}
-          <div className="flex items-center gap-3 lg:hidden">
-            <img src={certLogo} alt="NABH" className="w-8" />
-            <button
-              className="text-2xl text-rose-700"
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              {menuOpen ? <FaTimes /> : <FaBars />}
-            </button>
+              <div className="flex gap-2 items-center">
+                <FaEnvelope />
+                <span>info@hindusthanhospital.com</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* MOBILE MENU */}
+        {/* NAVBAR */}
+        <div className="w-full flex justify-center relative z-50">
+          <div className="bg-white w-[94%] max-w-7xl rounded-full shadow-xl px-6 py-3 flex justify-between items-center">
+
+            <NavLink to="/">
+              <img src={logo} alt="Logo" className="w-36" />
+            </NavLink>
+
+            {/* DESKTOP NAV */}
+            <nav className="hidden lg:flex gap-6">
+              {nav.map((item, i) => (
+                <div
+                  key={i}
+                  className="relative"
+                  onMouseEnter={() => openDropdown(i)}
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="flex items-center gap-1 font-bold text-sm cursor-pointer">
+                    {item.to ? (
+                      <NavLink to={item.to}>{item.label}</NavLink>
+                    ) : (
+                      <span>{item.label}</span>
+                    )}
+                    {item.children && <FaChevronDown className="text-xs" />}
+                  </div>
+
+                  <AnimatePresence>
+                    {item.children && activeDropdown === i && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        className={`absolute top-full mt-3 bg-white rounded-xl shadow-xl p-2 z-50 ${
+                          item.mega
+                            ? "w-[900px] grid grid-cols-4"
+                            : "w-64"
+                        }`}
+                      >
+                        {item.children.map((sub, j) =>
+                          typeof sub === "string" ? (
+                            <NavLink
+                              key={j}
+                              to={toSlug(sub)}
+                              className="block px-4 py-2 text-sm hover:text-rose-600"
+                            >
+                              {sub}
+                            </NavLink>
+                          ) : (
+                            <NavLink
+                              key={j}
+                              to={sub.to}
+                              className="block px-4 py-2 text-sm hover:text-rose-600"
+                            >
+                              {sub.label}
+                            </NavLink>
+                          )
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </nav>
+
+            {/* RIGHT SIDE DESKTOP */}
+            <div className="hidden lg:flex items-center gap-3">
+              <img src={certLogo} alt="NABH" className="w-10" />
+              <button className="bg-rose-600 text-white px-5 py-2 rounded-full text-xs font-bold">
+                APPOINTMENT
+              </button>
+            </div>
+
+            {/* MOBILE ICON */}
+            <div className="lg:hidden flex items-center gap-3">
+              <img src={certLogo} alt="NABH" className="w-8" />
+              <button
+                className="text-2xl text-rose-700"
+                onClick={() => setMenuOpen(!menuOpen)}
+              >
+                {menuOpen ? <FaTimes /> : <FaBars />}
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      {/* MOBILE MENU OUTSIDE HEADER */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: "auto" }}
             exit={{ height: 0 }}
-            className="lg:hidden bg-white shadow-xl mx-4 mt-2 rounded-xl overflow-hidden"
+            className="lg:hidden fixed top-[95px] left-0 right-0 bg-white shadow-xl mx-4 rounded-xl overflow-hidden z-[9998]"
           >
             {nav.map((item, i) => (
               <div key={i} className="border-b">
@@ -303,6 +304,6 @@ export default function HeaderGroup() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
