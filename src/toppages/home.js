@@ -365,35 +365,85 @@ export default function Home() {
       </section>
 
       {/* ================= TESTIMONIALS (Chat Bubbles) ================= */}
-      <section className="py-20 bg-gray-50 overflow-hidden">
-        <div className="container px-6 mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-12">Happy <span className="text-teal-600">Stories</span></h2>
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-blue-50/40 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-6 text-center">
 
-          <div className="flex flex-wrap justify-center gap-8">
-            {[1, 2, 3].map((i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white p-8 rounded-t-3xl rounded-br-3xl rounded-bl-none shadow-sm hover:shadow-xl transition-all max-w-sm text-left relative"
-              >
-                <div className="text-teal-500 text-4xl font-serif absolute -top-4 left-6">“</div>
-                <p className="text-gray-600 italic mb-6 pt-4">
-                  "The doctors here are incredible. I felt so cared for during my entire recovery process. Highly recommended!"
-                </p>
-                <div className="flex items-center gap-4">
-                  <img src={testimonial} alt="User" className="w-12 h-12 rounded-full border-2 border-teal-100 object-cover" />
-                  <div>
-                    <h4 className="font-bold text-gray-800">Anjali Sharma</h4>
-                    <p className="text-xs text-gray-400">Recovered Patient</p>
-                  </div>
+    {/* Heading */}
+    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-16">
+      Happy <span className="text-blue-700">Stories</span>
+    </h2>
+
+    {/* Testimonials Data */}
+    {(() => {
+      const testimonials = [
+        {
+          id: 1,
+          name: "Nandhini Anandhan",
+          role: "C-Section Patient",
+          text: "Excellent care from Dr. Abinaya and the entire team. The experience was comforting and professional."
+        },
+        {
+          id: 2,
+          name: "Saravanan Saro",
+          role: "Pulmonology Patient",
+          text: "Dr. Srikanth explains everything clearly and ensures patients feel confident and relaxed."
+        },
+        {
+          id: 3,
+          name: "Punitha",
+          role: "Surgery Patient",
+          text: "We trusted Dr. V.P. Shanmugasundaram for decades. His expertise and kindness are unmatched."
+        }
+      ];
+
+      return (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -10 }}
+              className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 relative border border-gray-100"
+            >
+
+              {/* Decorative Quote */}
+              <div className="absolute -top-6 left-6 bg-blue-700 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-xl">
+                “
+              </div>
+
+              {/* Stars */}
+              <div className="flex gap-1 text-yellow-400 mt-4 mb-4">
+                ⭐⭐⭐⭐⭐
+              </div>
+
+              {/* Text */}
+              <p className="text-gray-600 italic leading-relaxed mb-6">
+                {item.text}
+              </p>
+
+              {/* Profile */}
+              <div className="flex items-center gap-4 mt-4">
+                <img
+                  src={testimonial}
+                  alt={item.name}
+                  className="w-14 h-14 rounded-full object-cover border-2 border-blue-100"
+                />
+                <div>
+                  <h4 className="font-semibold text-gray-800">{item.name}</h4>
+                  <p className="text-sm text-gray-500">{item.role}</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+
+            </motion.div>
+          ))}
         </div>
-      </section>
+      );
+    })()}
+
+  </div>
+</section>
 
       {/* ================= LATEST NEWS (Youthful & Vibrant) ================= */}
       <section className="py-24 bg-white relative overflow-hidden">
