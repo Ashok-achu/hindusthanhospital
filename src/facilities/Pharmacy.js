@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/hospital/Pharmacy1.png";
 
 // ADD THESE IMAGES IN assets/pharmacy/
 import medicinesImg from "../assets/h10.jpg";
@@ -41,9 +41,9 @@ export default function Pharmacy() {
           <img
             src={hero}
             alt="Pharmacy"
-            className="w-full h-64 md:h-80 object-cover brightness-75"
+            className="w-full h-120 md:h-140 object-cover brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 to-transparent flex items-center">
+          <div className="absolute inset-0  flex items-center">
             <motion.h1
               initial="hidden"
               animate="visible"

@@ -49,19 +49,47 @@ export default function Home() {
   };
 
   const sliderSettings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-    ],
-  };
+
+dots:true,
+arrows:false,
+infinite:true,
+autoplay:true,
+autoplaySpeed:3000,
+speed:800,
+
+slidesToShow:3,
+slidesToScroll:1,
+
+responsive:[
+
+{
+breakpoint:1280,
+settings:{
+slidesToShow:2
+}
+},
+
+{
+breakpoint:768,
+settings:{
+slidesToShow:1,
+centerMode:true,
+centerPadding:"40px"
+}
+},
+
+{
+breakpoint:480,
+settings:{
+slidesToShow:1,
+centerMode:true,
+centerPadding:"20px"
+}
+}
+
+]
+
+};
 
   return (
     <div className="bg-gray-50 overflow-x-hidden font-sans">
@@ -87,7 +115,7 @@ className="w-full min-h-[calc(100vh-110px)] relative"
 <img
 src={img}
 alt="Hero"
-className="w-full h-full object-contain"
+className="w-full h-full object-cover md:object-contain"
 />
 
 {/* Overlay */}
@@ -270,11 +298,11 @@ Explore Mettupalayam Branch
               { img: pediatrics, title: "Pediatrics", desc: "Care for your little ones", icon: <FaBaby /> },
               { img: doctorTeam, title: "Orthopaedics", desc: "Bone & Joint specialized care", icon: <FaBone /> },
             ].map((item, i) => (
-              <div key={i} className="px-4 py-6">
+              <div key={i} className="px-2 sm:px-4">
                 <div className="group relative bg-white rounded-[2.5rem] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] border border-transparent hover:border-rose-100">
 
                   {/* Image Section with Curve */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-52 sm:h-64 overflow-hidden">
                     <img
                       src={item.img}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -328,20 +356,20 @@ Explore Mettupalayam Branch
             <div className="relative order-2 lg:order-1">
               <div className="flex flex-col gap-6">
                 {/* Image 1: Main Large Image */}
-                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-64 md:h-80 w-full group">
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-56 sm:h-64 md:h-80 w-full group">
                   <img src={hero2} className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" alt="Hospital Interior" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white font-bold text-xl">State-of-the-art Facilities</div>
                 </div>
 
                 {/* Linear Row of Smaller Images */}
-                <div className="flex gap-4 overflow-x-auto pb-4 snap-x scrollbar-hide">
+                <div className="flex gap-4 flex gap-4 overflow-x-auto pb-4 snap-x scrollbar-hide px-1">
                   {[
                     { img: hero3, label: "Expert Doctors" },
                     { img: cardiology, label: "Cardiology" },
                     { img: surgery, label: "Surgery" }
                   ].map((item, idx) => (
-                    <div key={idx} className="min-w-[140px] h-32 rounded-2xl overflow-hidden relative shadow-lg group snap-center flex-shrink-0">
+                    <div key={idx} className="min-w-[120px] sm:min-w-[140px] h-32 rounded-2xl overflow-hidden relative shadow-lg group snap-center flex-shrink-0">
                       <img src={item.img} className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500" alt={item.label} />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                     </div>
@@ -353,7 +381,7 @@ Explore Mettupalayam Branch
             {/* Right: Content */}
             <div>
               <span className="text-rose-500 font-bold tracking-widest text-sm uppercase mb-2 block">Why Choose Us</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
                 Redefining Healthcare <br />
                 <span className="relative inline-block z-10">
                   Standards
