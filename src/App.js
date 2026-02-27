@@ -10,7 +10,7 @@ import SiteLayout from "./layouts/sitelayout";
 // 🔹 Top Navigation Pages
 import Home from "./toppages/home";
 import Mettupalayam from "./toppages/Mettupalayam";
-import Doctor from "./downpages/DoctorProfile";
+import Doctor from "./downpages/healthcare";
 import AboutUs from "./toppages/aboutus";
 import Academics from "./toppages/academics";
 import Testimonials from "./toppages/testimonials";
@@ -25,7 +25,7 @@ import Profile from "./toppages/Profile";
 import Milestones from "./toppages/Milestones";
 
 // 🔹 Bottom Navigation Pages
-import Healthcare from "./downpages/healthcare";
+
 import Specialities from "./downpages/specialities";
 import FacilitiesPage from "./downpages/Facilities";
 import Blog from "./downpages/blog";
@@ -76,7 +76,6 @@ export default function App() {
           <Route path="/milestones" element={<Milestones />} />
 
           {/* BOTTOM NAV */}
-          <Route path="/healthcare" element={<Healthcare />} />
           <Route path="/specialities" element={<Specialities />} />
           <Route path="/facilities" element={<FacilitiesPage />} />
           <Route path="/blog" element={<Blog />} />

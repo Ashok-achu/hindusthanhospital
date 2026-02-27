@@ -19,13 +19,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Assets
-import hero1 from "../assets/hero.jpg";
-import hero2 from "../assets/h1.jpg";
-import hero3 from "../assets/h2.jpg";
-import cardiology from "../assets/team.jpg";
-import surgery from "../assets/team.jpg";
+import hero1 from "../assets/hospital/1920_1080 Green removed.jpg";
+import hero2 from "../assets/Equipments/Equipments-1.jpg";
+import hero3 from "../assets/Equipments/Equipments-3.jpg";
+import cardiology from "../assets/Equipments/Equipments-2.jpg";
+import surgery from "../assets/Equipments/Equipments-6.jpg";
 import pediatrics from "../assets/team.jpg";
-import doctorTeam from "../assets/h12.jpg";
+import doctorTeam from "../assets/hospital/1920_1080 Green removed.jpg";
 import testimonial from "../assets/testimonial.jpg";
 import news1 from "../assets/hero.jpg";
 import news2 from "../assets/team.jpg";
@@ -67,53 +67,124 @@ export default function Home() {
     <div className="bg-gray-50 overflow-x-hidden font-sans">
 
       {/* ================= HERO SECTION (SLIDER) ================= */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Slider {...heroSliderSettings}>
-            {[hero1, hero2, hero3].map((img, index) => (
-              <div key={index} className="w-full h-[85vh] relative">
-                <img src={img} alt="Hero" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent mix-blend-multiply"></div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+      {/* ================= HERO SECTION (FULL SCREEN FIXED) ================= */}
 
-        <motion.div
-          className="relative z-10 text-center px-4 max-w-5xl mx-auto"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-        >
-          <span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-6 shadow-lg">
-            WELCOME TO HINDUSTHAN HOSPITAL 👋
-          </span>
+<section className="relative min-h-[calc(100vh-90px)] flex items-center justify-center overflow-hidden mt-[80px]">
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl">
-            Healing Hands, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-orange-200">
-              Caring Hearts
-            </span>
-          </h1>
+{/* Background Slider */}
 
-          <p className="mt-8 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-            Delivering advanced medical care with a touch of humanity.
-          </p>
+<div className="absolute inset-0 z-0">
 
-          <div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
-            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-xl transition">
-              Book Appointment
-            </button>
-            <Link
-              to="/mettupalayam"
-              className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition shadow-lg"
-            >
-              Explore Mettupalayam Branch
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+<Slider {...heroSliderSettings}>
+
+{[hero1, hero2, hero3].map((img,index)=>(
+
+<div
+key={index}
+className="w-full min-h-[calc(100vh-110px)] relative"
+>
+
+<img
+src={img}
+alt="Hero"
+className="w-full h-full object-contain"
+/>
+
+{/* Overlay */}
+
+<div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent mix-blend-multiply"></div>
+
+</div>
+
+))}
+
+</Slider>
+
+</div>
+
+
+
+{/* Hero Content */}
+
+<motion.div
+
+className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+
+initial="hidden"
+
+whileInView="visible"
+
+viewport={{once:true}}
+
+variants={fadeUp}
+
+>
+
+{/* Badge */}
+
+<span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-6 shadow-lg">
+
+WELCOME TO HINDUSTHAN HOSPITAL 👋
+
+</span>
+
+
+{/* Heading */}
+
+<h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl">
+
+Healing Hands,
+
+<br/>
+
+<span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-orange-200">
+
+Caring Hearts
+
+</span>
+
+</h1>
+
+
+
+{/* Description */}
+
+<p className="mt-8 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
+
+Delivering advanced medical care with a touch of humanity.
+
+</p>
+
+
+
+{/* Buttons */}
+
+<div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
+
+<button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-xl hover:scale-105 transition">
+
+Book Appointment
+
+</button>
+
+
+<Link
+
+to="/mettupalayam"
+
+className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition shadow-lg"
+
+>
+
+Explore Mettupalayam Branch
+
+</Link>
+
+</div>
+
+</motion.div>
+
+</section>
 
 
       {/* ================= TRANSFORMING HEALTHCARE (New Section) ================= */}

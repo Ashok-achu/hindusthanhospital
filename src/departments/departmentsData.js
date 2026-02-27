@@ -1,3 +1,4 @@
+import cardiologyImg from "../assets/hospital/1920_1080 Green removed.jpg";
 const departmentsData = [
 
 /* =======================
@@ -6,8 +7,8 @@ const departmentsData = [
 {
   slug: "anaesthesiology",
   name: "Anaesthesiology",
-  image: "/images/departments/anaesthesia.jpg",
-  description: `
+image: cardiologyImg,  
+description: `
 The Department of Anaesthesiology provides safe, comprehensive, and modern anaesthesia services for a wide range of surgical, diagnostic, and emergency procedures. The department plays a crucial role in peri-operative patient care, pain management, and critical care support.
 
 Our team of experienced anaesthesiologists ensures patient safety through thorough pre-operative assessment, careful intra-operative monitoring, and effective post-operative pain control. Advanced monitoring systems and evidence-based protocols are followed to achieve optimal surgical outcomes.
@@ -34,7 +35,7 @@ The department offers General Anaesthesia, Regional Anaesthesia including spinal
 {
   slug: "cardiology",
   name: "Cardiology",
-  image: "/images/departments/cardiology.jpg",
+  image: "../assets/hospital/1920_1080 Green removed.jpg",
   description: `
 The Department of Cardiology provides comprehensive and advanced care for disorders of the heart and blood vessels. Hindusthan Hospital is a 200-bedded multi-speciality hospital equipped with 24-hour emergency services and a fully functional Cath Lab.
 

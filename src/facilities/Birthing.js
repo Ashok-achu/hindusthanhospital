@@ -1,14 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import hero from "../assets/hero.jpg";
+import birth1 from "../assets/Equipments/Equipments-9.jpg";
+import birth2 from "../assets/Equipments/Equipments-8.jpg";
+import birth3 from "../assets/Equipments/Equipments-10.jpg";
 
 export default function BirthingCentre() {
   const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } };
 
   const images = [
-    "https://via.placeholder.com/400x300?text=Birthing+Centre+1",
-    "https://via.placeholder.com/400x300?text=Birthing+Centre+2",
-    "https://via.placeholder.com/400x300?text=Birthing+Centre+3",
+    birth1,
+    birth2,
+    birth3,
   ];
 
   return (

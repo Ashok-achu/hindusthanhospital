@@ -1,16 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import hero from "../assets/hero.jpg";
+import ambulance1 from "../assets/hospital/Ambulance1.png";
+import ambulance2 from "../assets/hospital/Ambulance2.png";
 
 export default function Ambulance() {
   const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } };
 
   // Placeholder images
   const images = [
-    "https://images.unsplash.com/photo-1602014750256-c8c98c464f72",
-    "https://images.unsplash.com/photo-1602014750256-c8c98c464f72",
-    "https://images.unsplash.com/photo-1602014750256-c8c98c464f72",
-  ];
+  ambulance1,
+  ambulance2,
+];
 
   return (
     <div className="pt-[9rem] pb-20 bg-gradient-to-b from-blue-50 to-white font-[Poppins]">
@@ -50,16 +51,22 @@ export default function Ambulance() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">
-        {images.map((img, i) => (
-          <motion.img
-            key={i}
-            src={img}
-            whileHover={{ scale: 1.03 }}
-            className="w-full h-64 object-cover rounded-2xl shadow-lg"
-          />
-        ))}
-      </section>
+      {/* IMAGE GALLERY */}
+
+<section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">
+
+{images.map((img,i)=>(
+
+<motion.img
+key={i}
+src={img}
+whileHover={{scale:1.03}}
+className="w-full h-64 object-scale-down bg-white rounded-2xl shadow-lg p-3"
+/>
+
+))}
+
+</section>
 
       {/* HIGHLIGHTS */}
       <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">
