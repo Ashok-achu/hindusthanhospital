@@ -2,19 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
-  FaHeartbeat,
-  FaStethoscope,
-  FaBaby,
-  FaBone,
-  FaCalendarAlt,
-  FaUser,
-  FaArrowRight,
-  FaUserMd,
-  FaAmbulance,
-  FaMicroscope,
-  FaHandHoldingHeart
+FaHeartbeat,
+FaStethoscope,
+FaBaby,
+FaBone,
+FaCalendarAlt,
+FaUser,
+FaArrowRight,
+FaUserMd,
+FaAmbulance,
+FaMicroscope,
+FaHandHoldingHeart,
+
+// ✅ ADD THESE ONLY
+
+FaBrain,
+FaLungs,
+FaProcedures,
+FaTooth
+
 } from "react-icons/fa";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -37,6 +47,8 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
+  const navigate = useNavigate();
+
   const heroSliderSettings = {
     dots: false,
     arrows: false,
@@ -50,8 +62,8 @@ export default function Home() {
 
   const sliderSettings = {
 
-dots:true,
-arrows:false,
+dots:false,
+arrows:true,
 infinite:true,
 autoplay:true,
 autoplaySpeed:3000,
@@ -150,7 +162,7 @@ variants={fadeUp}
 
 {/* Badge */}
 
-<span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-6 shadow-lg">
+<span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-80 shadow-lg">
 
 WELCOME TO HINDUSTHAN HOSPITAL 👋
 
@@ -159,19 +171,7 @@ WELCOME TO HINDUSTHAN HOSPITAL 👋
 
 {/* Heading */}
 
-<h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl">
 
-Healing Hands,
-
-<br/>
-
-<span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-orange-200">
-
-Caring Hearts
-
-</span>
-
-</h1>
 
 
 
@@ -272,74 +272,269 @@ Explore Mettupalayam Branch
                   </li>
                 ))}
               </ul>
-
-              <button className="bg-gray-900 hover:bg-black text-white px-8 py-3.5 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
-                More About Us
-              </button>
+                
+             <button
+  onClick={() => navigate("./abouttrust")}
+  className="bg-gray-900 hover:bg-black text-white px-8 py-3.5 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1"
+>
+  More About Us
+</button>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ================= CENTRES OF EXCELLENCE (Glass Cards) ================= */}
-      <section className="py-20 relative bg-gray-50">
-        <div className="container px-6 mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-              Centres of <span className="text-rose-500">Excellence</span>
-            </h2>
-            <p className="text-gray-500 mt-2">Specialized care for every need</p>
-          </div>
+      {/* ================= TRENDY OUR SPECIALITIES ================= */}
 
-          <Slider {...sliderSettings} className="pb-10">
-            {[
-              { img: cardiology, title: "Cardiology", desc: "Advanced heart care & surgery", icon: <FaHeartbeat /> },
-              { img: surgery, title: "Surgery", desc: "Minimally invasive procedures", icon: <FaStethoscope /> },
-              { img: pediatrics, title: "Pediatrics", desc: "Care for your little ones", icon: <FaBaby /> },
-              { img: doctorTeam, title: "Orthopaedics", desc: "Bone & Joint specialized care", icon: <FaBone /> },
-            ].map((item, i) => (
-              <div key={i} className="px-2 sm:px-4">
-                <div className="group relative bg-white rounded-[2.5rem] overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(244,63,94,0.3)] border border-transparent hover:border-rose-100">
+{/* ================= OUR SPECIALITIES (ROYAL CARE STYLE) ================= */}
 
-                  {/* Image Section with Curve */}
-                  <div className="relative h-52 sm:h-64 overflow-hidden">
-                    <img
-                      src={item.img}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      alt={item.title}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+{/* ================= OUR SPECIALITIES ================= */}
 
-                    {/* Floating Icon Badge */}
-                    <div className="absolute -bottom-6 right-8 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg transform rotate-6 group-hover:rotate-0 group-hover:scale-110 transition-all duration-300 z-10 border-4 border-gray-50 text-3xl text-rose-500">
-                      {item.icon}
-                    </div>
-                  </div>
+{/* ================= OUR SPECIALITIES ================= */}
 
-                  {/* Content Section */}
-                  <div className="pt-10 pb-8 px-8 relative">
-                    <h3 className="text-2xl font-extrabold text-gray-800 group-hover:text-rose-500 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm mt-3 leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
+<section className="py-24 bg-gradient-to-b from-white to-gray-50">
 
-                    <div className="mt-6 flex items-center justify-between">
-                      <button className="text-rose-500 font-bold text-sm tracking-wide group-hover:underline">
-                        View Specialists
-                      </button>
-                      <span className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-all cursor-pointer">
-                        ➜
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-      </section>
+<div className="max-w-7xl mx-auto px-6">
+
+{/* Heading */}
+
+<div className="text-center mb-16">
+
+<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+
+Our Medical <span className="text-rose-600">Specialities</span>
+
+</h2>
+
+<p className="text-gray-500 mt-3">
+
+Expert care across advanced departments
+
+</p>
+
+</div>
+
+
+{(() => {
+
+const departments=[
+
+{ name:"Cardiology",slug:"cardiology",icon:<FaHeartbeat/>},
+
+{ name:"Pulmonology",slug:"pulmonology",icon:<FaLungs/>},
+
+{ name:"Orthopaedics",slug:"orthopaedics",icon:<FaBone/>},
+
+{ name:"Paediatrics",slug:"paediatrics",icon:<FaBaby/>},
+
+{ name:"General Medicine",slug:"general-medicine",icon:<FaUserMd/>},
+
+{ name:"General Surgery",slug:"general-surgery",icon:<FaStethoscope/>},
+
+{ name:"Nephrology",slug:"nephrology",icon:<FaUserMd/>},
+
+{ name:"Urology",slug:"urology",icon:<FaProcedures/>},
+
+{ name:"ENT",slug:"ent",icon:<FaUserMd/>},
+
+// PAGE 2
+
+{ name:"Dermatology",slug:"dermatology",icon:<FaUserMd/>},
+
+{ name:"Dentistry",slug:"dentistry",icon:<FaTooth/>},
+
+{ name:"Radiology",slug:"radiology",icon:<FaMicroscope/>},
+
+{ name:"Psychiatry",slug:"psychiatry",icon:<FaBrain/>},
+
+{ name:"Diabetology",slug:"diabetology",icon:<FaHeartbeat/>},
+
+{ name:"Emergency Care",slug:"emergency-care",icon:<FaAmbulance/>},
+
+{ name:"ICU",slug:"icu",icon:<FaHandHoldingHeart/>},
+
+{ name:"Neonatology",slug:"neonatology",icon:<FaBaby/>},
+
+{ name:"Plastic Surgery",slug:"plastic-surgery",icon:<FaUserMd/>},
+
+// PAGE 3
+
+{ name:"Gastroenterology",slug:"gastroenterology",icon:<FaUserMd/>},
+
+{ name:"Internal Medicine",slug:"internal-medicine",icon:<FaUserMd/>},
+
+{ name:"Oncology",slug:"surgical-oncology",icon:<FaUserMd/>},
+
+{ name:"Anaesthesiology",slug:"anaesthesiology",icon:<FaUserMd/>},
+
+{ name:"Rehabilitation",slug:"rehab",icon:<FaHandHoldingHeart/>},
+
+{ name:"Paediatric Surgery",slug:"paediatric-surgery",icon:<FaUserMd/>},
+
+{ name:"Neuro Surgery",slug:"neurovascular-surgery",icon:<FaBrain/>},
+
+{ name:"Obstetrics & Gynaecology",slug:"obgyn",icon:<FaBaby/>}
+
+];
+
+
+// Split into pages of 9
+
+const pages=[];
+
+for(let i=0;i<departments.length;i+=9){
+
+pages.push(departments.slice(i,i+9));
+
+}
+
+
+const settings={
+
+dots:false,
+
+arrows:true,
+
+infinite:true,
+
+autoplay:true,
+
+autoplaySpeed:4500,
+
+speed:1000,
+
+slidesToShow:1,
+
+slidesToScroll:1,
+
+pauseOnHover:true
+
+};
+
+
+return(
+
+<Slider {...settings}>
+
+{pages.map((group,index)=>(
+
+<div key={index}>
+
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+{group.map((dept,i)=>(
+
+<motion.div
+
+key={i}
+
+initial={{opacity:0,y:40}}
+
+whileInView={{opacity:1,y:0}}
+
+transition={{duration:.5,delay:i*.05}}
+
+>
+
+<Link
+
+to={`/departments/${dept.slug}`}
+
+className="group relative block rounded-3xl overflow-hidden"
+
+>
+
+{/* Glow Border */}
+
+<div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-rose-400 via-orange-400 to-pink-400 opacity-0 group-hover:opacity-100 blur-lg transition duration-500"></div>
+
+
+{/* Card */}
+
+<div className="relative bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition duration-500 p-10 text-center group-hover:-translate-y-2">
+
+{/* Icon */}
+
+<div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl bg-rose-50 text-rose-600 group-hover:bg-gradient-to-r group-hover:from-rose-600 group-hover:to-orange-500 group-hover:text-white transition duration-500">
+
+{dept.icon}
+
+</div>
+
+
+<h3 className="mt-6 font-bold text-xl tracking-wide text-black-1000 group-hover:text-rose-600 transition">
+
+{dept.name}
+
+</h3>
+
+
+
+
+</div>
+
+</Link>
+
+</motion.div>
+
+))}
+
+</div>
+
+</div>
+
+))}
+
+</Slider>
+
+);
+
+})()}
+
+</div>
+
+</section>
+
+
+
+<style>
+{`
+.slick-prev,
+.slick-next {
+  width: 45px;
+  height: 45px;
+  background: white !important;
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: linear-gradient(45deg,#f43f5e,#f97316) !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: #111827;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: white;
+}
+
+.slick-prev {
+  left: -60px;
+}
+
+.slick-next {
+  right: -60px;
+}
+`}
+</style>
 
       {/* ================= WHY CHOOSE US (Redesigned) ================= */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -436,11 +631,11 @@ Explore Mettupalayam Branch
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2 bg-white/20 backdrop-blur rounded-lg px-4 py-2">
                     <span>📞</span>
-                    <span className="font-semibold">+91 98765 43210</span>
+                    <span className="font-semibold">0422 - 4327777</span>
                   </div>
                   <div className="flex items-center gap-2 bg-white/20 backdrop-blur rounded-lg px-4 py-2">
                     <span>📧</span>
-                    <span className="font-semibold">help@hindusthan.com</span>
+                    <span className="font-semibold">info@hindusthanhospital.com</span>
                   </div>
                 </div>
               </div>
@@ -464,86 +659,168 @@ Explore Mettupalayam Branch
       </section>
 
       {/* ================= TESTIMONIALS (Chat Bubbles) ================= */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-blue-50/40 overflow-hidden">
-  <div className="max-w-7xl mx-auto px-6 text-center">
+{/* ================= PREMIUM TESTIMONIALS ================= */}
 
-    {/* Heading */}
-    <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-16">
-      Happy <span className="text-blue-700">Stories</span>
-    </h2>
+<section className="py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
 
-    {/* Testimonials Data */}
-    {(() => {
-      const testimonials = [
-        {
-          id: 1,
-          name: "Nandhini Anandhan",
-          role: "C-Section Patient",
-          text: "Excellent care from Dr. Abinaya and the entire team. The experience was comforting and professional."
-        },
-        {
-          id: 2,
-          name: "Saravanan Saro",
-          role: "Pulmonology Patient",
-          text: "Dr. Srikanth explains everything clearly and ensures patients feel confident and relaxed."
-        },
-        {
-          id: 3,
-          name: "Punitha",
-          role: "Surgery Patient",
-          text: "We trusted Dr. V.P. Shanmugasundaram for decades. His expertise and kindness are unmatched."
-        }
-      ];
+<div className="max-w-7xl mx-auto px-6">
 
-      return (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              whileHover={{ y: -10 }}
-              className="bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 relative border border-gray-100"
-            >
+{/* Heading */}
 
-              {/* Decorative Quote */}
-              <div className="absolute -top-6 left-6 bg-blue-700 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg text-xl">
-                “
-              </div>
+<div className="text-center mb-20">
+<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+Patient <span className="text-rose-600">Testimonials</span>
+</h2>
+<p className="text-gray-500 mt-4 text-lg">
+Real experiences from our valued patients
+</p>
+</div>
 
-              {/* Stars */}
-              <div className="flex gap-1 text-yellow-400 mt-4 mb-4">
-                ⭐⭐⭐⭐⭐
-              </div>
+{(() => {
 
-              {/* Text */}
-              <p className="text-gray-600 italic leading-relaxed mb-6">
-                {item.text}
-              </p>
+const testimonials = [
 
-              {/* Profile */}
-              <div className="flex items-center gap-4 mt-4">
-                <img
-                  src={testimonial}
-                  alt={item.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-blue-100"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-800">{item.name}</h4>
-                  <p className="text-sm text-gray-500">{item.role}</p>
-                </div>
-              </div>
+{
+id:1,
+name:"Nandhini Anandhan",
+text:"The doctors and nurses were extremely caring. The entire treatment process was smooth and professional."
+},
 
-            </motion.div>
-          ))}
-        </div>
-      );
-    })()}
+{
+id:2,
+name:"Saravanan Saro",
+text:"The hospital environment is very clean and the doctors explain everything clearly. Highly satisfied."
+},
 
-  </div>
+{
+id:3,
+name:"Punitha",
+text:"We have trusted this hospital for years. Their expertise and compassion are truly commendable."
+},
+
+{
+id:4,
+name:"Arun Kumar",
+text:"Emergency care response was quick and efficient. Staff handled everything calmly."
+},
+
+{
+id:5,
+name:"Divya Lakshmi",
+text:"Excellent maternity care experience. Doctors ensured complete comfort."
+},
+
+{
+id:6,
+name:"Ravi Prakash",
+text:"Advanced medical equipment and very experienced specialists."
+},
+
+{
+id:7,
+name:"Keerthana",
+text:"Doctors made us feel confident and safe during the treatment."
+},
+
+{
+id:8,
+name:"Manoj Kumar",
+text:"ICU care and post-treatment support were exceptional."
+},
+
+{
+id:9,
+name:"Lakshmi Priya",
+text:"Very satisfied with pediatric services and friendly doctors."
+}
+
+];
+
+const settings = {
+dots:false,
+arrows:false,
+infinite:true,
+autoplay:true,
+autoplaySpeed:4000,
+speed:1000,
+slidesToShow:3,
+slidesToScroll:1,
+pauseOnHover:true,
+responsive:[
+{
+breakpoint:1024,
+settings:{ slidesToShow:2 }
+},
+{
+breakpoint:768,
+settings:{ slidesToShow:1 }
+}
+]
+};
+
+return(
+
+<Slider {...settings}>
+
+{testimonials.map((item,index)=>(
+
+<div key={item.id} className="px-4">
+
+<motion.div
+initial={{opacity:0,y:30}}
+whileInView={{opacity:1,y:0}}
+transition={{duration:.6}}
+whileHover={{y:-6}}
+className="
+bg-white/80 backdrop-blur-lg
+rounded-3xl
+p-10
+shadow-lg
+hover:shadow-2xl
+transition-all duration-500
+border border-gray-100
+relative
+h-full
+"
+>
+
+{/* Decorative Quote */}
+
+<div className="absolute -top-6 left-8 text-6xl text-rose-200 font-serif">
+“
+</div>
+
+{/* Review Text */}
+
+<p className="text-gray-700 leading-relaxed text-lg italic mt-6">
+{item.text}
+</p>
+
+{/* Divider */}
+
+<div className="w-12 h-1 bg-rose-500 rounded-full mt-8 mb-6"></div>
+
+{/* Name */}
+
+<h4 className="font-semibold text-gray-900 text-lg">
+{item.name}
+</h4>
+
+</motion.div>
+
+</div>
+
+))}
+
+</Slider>
+
+);
+
+})()}
+
+</div>
+
 </section>
-
       {/* ================= LATEST NEWS (Youthful & Vibrant) ================= */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}

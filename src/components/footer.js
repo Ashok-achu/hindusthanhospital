@@ -5,8 +5,7 @@ export default function Footer() {
         
         {/* Column 1 */}
         <div>
-          <img src="/logo.png" alt="Hindusthan Hospital" className="w-44 mb-4" />
-
+  
           <p className="mb-2">
             <span className="font-semibold">Email:</span>{" "}
             <a href="mailto:info@hindusthanhospital.com" className="hover:text-gray-300">
@@ -15,11 +14,11 @@ export default function Footer() {
           </p>
 
           <p className="mb-2">
-            <span className="font-semibold">Contact:</span> +91 422 432 7777, +91 422 432 7778
+            <span className="font-semibold">Contact:</span> 0422 4327777, 0422 4327778
           </p>
 
           <p className="mb-4">
-            <span className="font-semibold">Emergency No:</span> +91 89258 68782
+            <span className="font-semibold">Emergency No:</span> 0422 - 4327799
           </p>
 
           <div className="flex space-x-4 items-center text-xl">
@@ -90,9 +89,7 @@ export default function Footer() {
 
       </div>
 
-      <div className="text-center mt-10 text-xs border-t border-gray-400 pt-4">
-        © {new Date().getFullYear()} Hindusthan Hospital. All Rights Reserved.
-      </div>
+     
     </footer>
   );
 }

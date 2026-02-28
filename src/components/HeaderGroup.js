@@ -226,12 +226,37 @@ export default function HeaderGroup() {
             </nav>
 
             {/* RIGHT SIDE DESKTOP */}
-            <div className="hidden lg:flex items-center gap-3">
-              <img src={certLogo} alt="NABH" className="w-10" />
-              <button className="bg-rose-600 text-white px-5 py-2 rounded-full text-xs font-bold">
-                APPOINTMENT
-              </button>
-            </div>
+            {/* RIGHT SIDE DESKTOP */}
+
+<div className="hidden lg:flex items-center gap-5">
+
+{/* NABH */}
+
+<img
+  src={certLogo}
+  alt="NABH"
+  className="w-10"
+/>
+
+
+{/* Appointment */}
+
+<button className="bg-rose-600 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-rose-700 transition">
+
+APPOINTMENT
+
+</button>
+
+
+{/* Coimbatore Branch */}
+
+<button className="bg-green-600 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-green-700 transition">
+
+COIMBATORE
+
+</button>
+
+</div>
 
             {/* MOBILE ICON */}
             <div className="lg:hidden flex items-center gap-3">
