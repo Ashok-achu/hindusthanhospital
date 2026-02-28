@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -127,6 +127,7 @@ export default function HeaderGroup() {
   const closeDropdown = () => {
     closeTimer.current = setTimeout(() => setActiveDropdown(null), 200);
   };
+const navigate = useNavigate();
 
   return (
     <>
@@ -250,10 +251,11 @@ APPOINTMENT
 
 {/* Coimbatore Branch */}
 
-<button className="bg-green-600 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-green-700 transition">
-
-COIMBATORE
-
+<button
+  onClick={() => navigate("./Mettupalayam")}
+  className="bg-green-600 text-white px-5 py-2 rounded-full text-xs font-bold hover:bg-green-700 transition"
+>
+  BRANCH
 </button>
 
 </div>

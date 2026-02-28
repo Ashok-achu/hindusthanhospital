@@ -104,12 +104,39 @@ centerPadding:"20px"
 };
 
   return (
-    <div className="bg-gray-50 overflow-x-hidden font-sans">
+   <div className="relative overflow-x-hidden font-sans bg-gradient-to-b from-white via-rose-50/30 to-blue-50">
+
+  {/* Global Soft Gradient Blobs */}
+  <div className="fixed inset-0 -z-10 pointer-events-none">
+
+    <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-rose-200 opacity-30 blur-[160px] rounded-full"></div>
+
+    <div className="absolute top-[40%] -right-60 w-[700px] h-[700px] bg-blue-200 opacity-30 blur-[180px] rounded-full"></div>
+
+    <div className="absolute bottom-0 left-[30%] w-[500px] h-[500px] bg-orange-200 opacity-20 blur-[150px] rounded-full"></div>
+
+  </div>
+      {/* Animated Medical Background */}
+<div className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+
+  <div className="absolute top-10 left-10 opacity-10 animate-float">
+    <FaHeartbeat className="text-rose-500 text-[120px]" />
+  </div>
+
+  <div className="absolute bottom-20 right-20 opacity-10 animate-float-slow">
+    <FaStethoscope className="text-blue-500 text-[140px]" />
+  </div>
+
+  <div className="absolute top-[40%] right-[30%] opacity-10 animate-float">
+    <FaUserMd className="text-orange-500 text-[110px]" />
+  </div>
+
+</div>
 
       {/* ================= HERO SECTION (SLIDER) ================= */}
       {/* ================= HERO SECTION (FULL SCREEN FIXED) ================= */}
 
-<section className="relative min-h-[calc(100vh-90px)] flex items-center justify-center overflow-hidden mt-[80px]">
+<section className="relative min-h-[calc(100vh-90px)] flex items-end overflow-hidden mt-[80px]">
 
 {/* Background Slider */}
 
@@ -147,73 +174,59 @@ className="w-full h-full object-cover md:object-contain"
 {/* Hero Content */}
 
 <motion.div
-
-className="relative z-10 text-center px-4 max-w-5xl mx-auto"
+className="relative z-10 h-full w-full max-w-6xl mx-auto px-6 flex flex-col justify-end pb-16"
 
 initial="hidden"
-
 whileInView="visible"
-
-viewport={{once:true}}
-
+viewport={{ once:true }}
 variants={fadeUp}
-
 >
 
-{/* Badge */}
-
-<span className="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold tracking-wider mb-80 shadow-lg">
-
-WELCOME TO HINDUSTHAN HOSPITAL 👋
-
-</span>
+{/* Bottom Buttons */}
 
 
-{/* Heading */}
+<div className="flex flex-col sm:flex-row justify-center gap-6">
 
+  
 
-
-
-
-{/* Description */}
-
-<p className="mt-8 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
-
-Delivering advanced medical care with a touch of humanity.
-
-</p>
-
-
-
-{/* Buttons */}
-
-<div className="flex flex-col sm:flex-row justify-center gap-5 mt-10">
-
-<button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-xl hover:scale-105 transition">
+<button
+onClick={()=>navigate("/appointment")}
+className="
+px-8 py-4
+rounded-full
+bg-gradient-to-r from-rose-600 to-orange-500
+text-white font-bold
+shadow-xl
+hover:scale-105
+transition
+"
+>
 
 Book Appointment
 
 </button>
 
 
-<Link
 
-to="/mettupalayam"
-
-className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold hover:bg-white hover:text-rose-600 transition shadow-lg"
-
->
-
-Explore Mettupalayam Branch
-
-</Link>
 
 </div>
 
 </motion.div>
 
 </section>
+<div className="absolute bottom-0 left-0 w-full overflow-hidden opacity-70">
 
+  <svg viewBox="0 0 1440 100" className="w-full h-[80px]">
+    <path
+      d="M0 50 L200 50 L250 20 L300 80 L350 50 L1440 50"
+      fill="none"
+      stroke="#f43f5e"
+      strokeWidth="3"
+      className="animate-ecg"
+    />
+  </svg>
+
+</div>
 
       {/* ================= TRANSFORMING HEALTHCARE (New Section) ================= */}
       <section className="py-24 bg-white relative">
@@ -284,12 +297,8 @@ Explore Mettupalayam Branch
         </div>
       </section>
 
-      {/* ================= CENTRES OF EXCELLENCE (Glass Cards) ================= */}
-      {/* ================= TRENDY OUR SPECIALITIES ================= */}
+     {/* ECG Line Animation */}
 
-{/* ================= OUR SPECIALITIES (ROYAL CARE STYLE) ================= */}
-
-{/* ================= OUR SPECIALITIES ================= */}
 
 {/* ================= OUR SPECIALITIES ================= */}
 
@@ -498,6 +507,7 @@ className="group relative block rounded-3xl overflow-hidden"
 
 
 
+
 <style>
 {`
 .slick-prev,
@@ -614,6 +624,19 @@ className="group relative block rounded-3xl overflow-hidden"
           </div>
         </div>
       </section>
+<div className="absolute bottom-0 left-0 w-full overflow-hidden opacity-70">
+
+  <svg viewBox="0 0 1440 100" className="w-full h-[80px]">
+    <path
+      d="M0 50 L150 50 L200 20 L250 80 L300 50 L1440 50"
+      fill="none"
+      stroke="#f43f5e"
+      strokeWidth="3"
+      className="animate-ecg"
+    />
+  </svg>
+
+</div>
 
       {/* ================= APPOINTMENT CTA ================= */}
       <section className="py-20">
@@ -659,84 +682,107 @@ className="group relative block rounded-3xl overflow-hidden"
       </section>
 
       {/* ================= TESTIMONIALS (Chat Bubbles) ================= */}
+
 {/* ================= PREMIUM TESTIMONIALS ================= */}
 
-<section className="py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+<section className="py-28 bg-gradient-to-b from-white via-rose-50/30 to-gray-50 overflow-hidden relative">
 
-<div className="max-w-7xl mx-auto px-6">
+{/* Soft Background Glow */}
+<div className="absolute top-20 left-0 w-72 h-72 bg-rose-100 blur-3xl opacity-40 rounded-full"></div>
+<div className="absolute bottom-10 right-0 w-72 h-72 bg-orange-100 blur-3xl opacity-40 rounded-full"></div>
+
+<div className="max-w-7xl mx-auto px-6 relative z-10">
 
 {/* Heading */}
 
 <div className="text-center mb-20">
+
 <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+
 Patient <span className="text-rose-600">Testimonials</span>
+
 </h2>
+
 <p className="text-gray-500 mt-4 text-lg">
+
 Real experiences from our valued patients
+
 </p>
+
 </div>
 
-{(() => {
 
-const testimonials = [
+{(()=>{
+
+const testimonials=[
 
 {
 id:1,
 name:"Nandhini Anandhan",
+rating:5,
 text:"The doctors and nurses were extremely caring. The entire treatment process was smooth and professional."
 },
 
 {
 id:2,
 name:"Saravanan Saro",
+rating:4,
 text:"The hospital environment is very clean and the doctors explain everything clearly. Highly satisfied."
 },
 
 {
 id:3,
 name:"Punitha",
+rating:5,
 text:"We have trusted this hospital for years. Their expertise and compassion are truly commendable."
 },
 
 {
 id:4,
 name:"Arun Kumar",
+rating:4,
 text:"Emergency care response was quick and efficient. Staff handled everything calmly."
 },
 
 {
 id:5,
 name:"Divya Lakshmi",
+rating:5,
 text:"Excellent maternity care experience. Doctors ensured complete comfort."
 },
 
 {
 id:6,
 name:"Ravi Prakash",
+rating:3,
 text:"Advanced medical equipment and very experienced specialists."
 },
 
 {
 id:7,
 name:"Keerthana",
+rating:5,
 text:"Doctors made us feel confident and safe during the treatment."
 },
 
 {
 id:8,
 name:"Manoj Kumar",
+rating:5,
 text:"ICU care and post-treatment support were exceptional."
 },
 
 {
 id:9,
 name:"Lakshmi Priya",
+rating:4,
 text:"Very satisfied with pediatric services and friendly doctors."
 }
 
 ];
 
-const settings = {
+const settings={
+
 dots:false,
 arrows:false,
 infinite:true,
@@ -746,16 +792,25 @@ speed:1000,
 slidesToShow:3,
 slidesToScroll:1,
 pauseOnHover:true,
+
 responsive:[
+
 {
 breakpoint:1024,
-settings:{ slidesToShow:2 }
+settings:{slidesToShow:2}
 },
+
 {
 breakpoint:768,
-settings:{ slidesToShow:1 }
+settings:{
+slidesToShow:1,
+centerMode:true,
+centerPadding:"40px"
 }
+}
+
 ]
+
 };
 
 return(
@@ -764,47 +819,100 @@ return(
 
 {testimonials.map((item,index)=>(
 
-<div key={item.id} className="px-4">
+<div key={item.id} className="px-3 sm:px-4 py-6">
 
 <motion.div
+
 initial={{opacity:0,y:30}}
 whileInView={{opacity:1,y:0}}
-transition={{duration:.6}}
-whileHover={{y:-6}}
+transition={{duration:.6,delay:index*.05}}
+whileHover={{y:-8}}
+
 className="
-bg-white/80 backdrop-blur-lg
+
+bg-white/80 backdrop-blur-xl
 rounded-3xl
 p-10
 shadow-lg
-hover:shadow-2xl
+hover:shadow-[0_25px_60px_-15px_rgba(244,63,94,0.35)]
 transition-all duration-500
 border border-gray-100
 relative
 h-full
+group
+
 "
+
 >
 
-{/* Decorative Quote */}
+{/* Quote */}
 
-<div className="absolute -top-6 left-8 text-6xl text-rose-200 font-serif">
+<div className="absolute -top-6 left-8 text-7xl text-rose-200 font-serif">
+
 “
+
 </div>
 
-{/* Review Text */}
 
-<p className="text-gray-700 leading-relaxed text-lg italic mt-6">
+{/* Stars */}
+
+<div className="flex gap-1 text-yellow-400 mt-4">
+
+{[...Array(item.rating)].map((_,i)=>(
+
+<span
+key={i}
+className="text-lg group-hover:scale-110 transition">
+
+⭐
+
+</span>
+
+))}
+
+</div>
+
+
+{/* Review */}
+
+<p className="text-gray-700 leading-relaxed text-lg italic mt-5">
+
 {item.text}
+
 </p>
+
 
 {/* Divider */}
 
-<div className="w-12 h-1 bg-rose-500 rounded-full mt-8 mb-6"></div>
+<div className="w-14 h-[3px] bg-gradient-to-r from-rose-500 to-orange-400 rounded-full mt-8 mb-6"></div>
 
-{/* Name */}
+
+{/* Profile */}
+
+<div className="flex items-center gap-4">
+
+{/* Avatar */}
+
+<div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-orange-400 text-white font-bold flex items-center justify-center shadow-lg">
+
+{item.name.charAt(0)}
+
+</div>
+
+
+<div>
 
 <h4 className="font-semibold text-gray-900 text-lg">
+
 {item.name}
+
 </h4>
+
+
+
+</div>
+
+</div>
 
 </motion.div>
 
@@ -821,6 +929,7 @@ h-full
 </div>
 
 </section>
+
       {/* ================= LATEST NEWS (Youthful & Vibrant) ================= */}
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
