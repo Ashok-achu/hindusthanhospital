@@ -188,7 +188,8 @@ return(
 
 {/* ---------- TOP HEADER ---------- */}
 
-{isHome &&(
+
+{/* ---------- TOP HEADER ---------- */}
 
 <div
 className={`w-full bg-gray-100 border-b transition-all duration-500 overflow-hidden
@@ -203,63 +204,37 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[200px] opacity-100 py-3"}
 <img src={logo} className="w-44 lg:w-60"/>
 
 <div className="text-sm font-medium">
-
 <div className="flex gap-3">
-
 <FaPhoneAlt/>
-
 <div>
-
 <div>+91 4224327777</div>
 <div>+91 4224327778</div>
-
 </div>
-
 </div>
 
 <div className="ml-7">
-
 Emergency <b>+91 4224327799</b>
-
 </div>
-
 </div>
-
 
 <div className="flex gap-3">
-
 <FaMapMarkerAlt/>
-
 <div>
-
 522/3 Hindusthan Hospital Road<br/>
-
 Avinashi Road Coimbatore
-
 </div>
-
 </div>
-
 
 <div className="flex justify-end gap-6">
-
 <button className="bg-purple-600 text-white px-8 py-3 rounded-full">
-
 BOOK AN APPOINTMENT
-
 </button>
-
 <img src={certLogo} className="w-24"/>
-
 </div>
 
 </div>
-
 </div>
-
 </div>
-
-)}
 
 
 
