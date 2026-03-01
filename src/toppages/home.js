@@ -15,203 +15,115 @@ FaUserMd,
 FaAmbulance,
 FaMicroscope,
 FaHandHoldingHeart,
-
-// ✅ ADD THESE ONLY
-
 FaBrain,
 FaLungs,
 FaProcedures,
 FaTooth
-
 } from "react-icons/fa";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Assets
 import hero1 from "../assets/hospital/1920_1080 Green removed.jpg";
 import hero2 from "../assets/Equipments/Equipments-1.jpg";
 import hero3 from "../assets/Equipments/Equipments-3.jpg";
 import cardiology from "../assets/Equipments/Equipments-2.jpg";
 import surgery from "../assets/Equipments/Equipments-6.jpg";
-import pediatrics from "../assets/team.jpg";
 import doctorTeam from "../assets/hospital/1920_1080 Green removed.jpg";
-import testimonial from "../assets/testimonial.jpg";
 import news1 from "../assets/hero.jpg";
 import news2 from "../assets/team.jpg";
 import news3 from "../assets/appointment.jpg";
 
 export default function Home() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
 
-  const navigate = useNavigate();
+const navigate = useNavigate();
 
-  const heroSliderSettings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 1500,
-    fade: true,
-    pauseOnHover: false,
-  };
-
-  const sliderSettings = {
-
-dots:false,
-arrows:true,
-infinite:true,
-autoplay:true,
-autoplaySpeed:3000,
-speed:800,
-
-slidesToShow:3,
-slidesToScroll:1,
-
-responsive:[
-
-{
-breakpoint:1280,
-settings:{
-slidesToShow:2
-}
-},
-
-{
-breakpoint:768,
-settings:{
-slidesToShow:1,
-centerMode:true,
-centerPadding:"40px"
-}
-},
-
-{
-breakpoint:480,
-settings:{
-slidesToShow:1,
-centerMode:true,
-centerPadding:"20px"
-}
-}
-
-]
-
+const fadeUp = {
+hidden: { opacity: 0, y: 40 },
+visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-  return (
-   <div className="relative overflow-x-hidden font-sans bg-gradient-to-b from-white via-rose-50/30 to-blue-50">
+const heroSliderSettings = {
+dots: false,
+arrows: false,
+infinite: true,
+autoplay: true,
+autoplaySpeed: 4000,
+speed: 1500,
+fade: true,
+pauseOnHover: false,
+};
 
-  {/* Global Soft Gradient Blobs */}
-  <div className="fixed inset-0 -z-10 pointer-events-none">
+return (
 
-    <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-rose-200 opacity-30 blur-[160px] rounded-full"></div>
+<div className="relative overflow-x-hidden font-sans bg-gradient-to-b from-white via-rose-50/30 to-blue-50">
 
-    <div className="absolute top-[40%] -right-60 w-[700px] h-[700px] bg-blue-200 opacity-30 blur-[180px] rounded-full"></div>
+{/* ================= GLOBAL SOFT GRADIENT BLOBS ================= */}
+<div className="fixed inset-0 -z-20 pointer-events-none">
 
-    <div className="absolute bottom-0 left-[30%] w-[500px] h-[500px] bg-orange-200 opacity-20 blur-[150px] rounded-full"></div>
+<div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-rose-200 opacity-30 blur-[160px] rounded-full"></div>
 
-  </div>
-      {/* Animated Medical Background */}
-<div className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+<div className="absolute top-[40%] -right-60 w-[700px] h-[700px] bg-blue-200 opacity-30 blur-[180px] rounded-full"></div>
 
-  <div className="absolute top-10 left-10 opacity-10 animate-float">
-    <FaHeartbeat className="text-rose-500 text-[120px]" />
-  </div>
-
-  <div className="absolute bottom-20 right-20 opacity-10 animate-float-slow">
-    <FaStethoscope className="text-blue-500 text-[140px]" />
-  </div>
-
-  <div className="absolute top-[40%] right-[30%] opacity-10 animate-float">
-    <FaUserMd className="text-orange-500 text-[110px]" />
-  </div>
+<div className="absolute bottom-0 left-[30%] w-[500px] h-[500px] bg-orange-200 opacity-20 blur-[150px] rounded-full"></div>
 
 </div>
 
-      {/* ================= HERO SECTION (SLIDER) ================= */}
-      {/* ================= HERO SECTION (FULL SCREEN FIXED) ================= */}
+{/* ================= FLOATING MEDICAL ICONS ================= */}
+<div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
 
-<section className="relative min-h-[calc(100vh-90px)] flex items-end overflow-hidden mt-[80px]">
+<FaHeartbeat className="absolute top-20 left-20 text-rose-500 opacity-10 text-[120px] animate-float" />
 
-{/* Background Slider */}
+<FaStethoscope className="absolute bottom-20 right-20 text-blue-500 opacity-10 text-[140px] animate-float-slow" />
+
+<FaUserMd className="absolute top-[40%] right-[30%] text-orange-500 opacity-10 text-[110px] animate-float" />
+
+</div>
+
+{/* ================= HERO SECTION ================= */}
+<section className="relative w-full h-screen pt-[130px] overflow-hidden">
 
 <div className="absolute inset-0 z-0">
-
 <Slider {...heroSliderSettings}>
-
-{[hero1, hero2, hero3].map((img,index)=>(
-
-<div
-key={index}
-className="w-full min-h-[calc(100vh-110px)] relative"
->
-
-<img
-src={img}
-alt="Hero"
-className="w-full h-full object-cover md:object-contain"
-/>
-
-{/* Overlay */}
-
-<div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent mix-blend-multiply"></div>
-
+{[hero1, hero2, hero3].map((img, index) => (
+<div key={index} className="w-full h-screen relative">
+<img src={img} alt="Hero" className="w-full h-full object-cover" />
+<div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent"></div>
 </div>
-
 ))}
-
 </Slider>
-
 </div>
-
-
-
-{/* Hero Content */}
 
 <motion.div
-className="relative z-10 h-full w-full max-w-6xl mx-auto px-6 flex flex-col justify-end pb-16"
-
+className="relative z-10 h-full w-full max-w-6xl mx-auto px-6 flex flex-col justify-end pb-20"
 initial="hidden"
 whileInView="visible"
-viewport={{ once:true }}
 variants={fadeUp}
 >
 
-{/* Bottom Buttons */}
-
-
-<div className="flex flex-col sm:flex-row justify-center gap-6">
-
-  
-
+<div className="flex justify-center">
 <button
-onClick={()=>navigate("/appointment")}
-className="
-px-8 py-4
-rounded-full
-bg-gradient-to-r from-rose-600 to-orange-500
-text-white font-bold
-shadow-xl
-hover:scale-105
-transition
-"
+onClick={() => navigate("/appointment")}
+className="px-10 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-2xl hover:scale-105 transition"
 >
-
 Book Appointment
-
 </button>
-
-
-
-
 </div>
 
 </motion.div>
+
+{/* ECG LINE INSIDE HERO (FIXED POSITION) */}
+<div className="absolute bottom-0 left-0 w-full z-10 opacity-80">
+<svg viewBox="0 0 1440 100" className="w-full h-[80px]">
+<path
+d="M0 50 L150 50 L200 20 L250 80 L300 50 L450 50 L500 20 L550 80 L600 50 L1440 50"
+fill="none"
+stroke="#f43f5e"
+strokeWidth="3"
+className="animate-ecg"
+/>
+</svg>
+</div>
 
 </section>
 <div className="absolute bottom-0 left-0 w-full overflow-hidden opacity-70">
@@ -228,6 +140,40 @@ Book Appointment
 
 </div>
 
+<style>{`
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-25px); }
+100% { transform: translateY(0px); }
+}
+
+@keyframes floatSlow {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-40px); }
+100% { transform: translateY(0px); }
+}
+
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+animation: floatSlow 10s ease-in-out infinite;
+}
+
+@keyframes ecg {
+0% { stroke-dashoffset: 1000; }
+100% { stroke-dashoffset: 0; }
+}
+
+.animate-ecg {
+stroke-dasharray: 1000;
+stroke-dashoffset: 1000;
+animation: ecg 3s linear infinite;
+}
+
+`}</style>
       {/* ================= TRANSFORMING HEALTHCARE (New Section) ================= */}
       <section className="py-24 bg-white relative">
         <div className="container px-6 mx-auto">

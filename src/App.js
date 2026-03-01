@@ -53,7 +53,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <HeaderGroup />
+      
 
       <Routes>
         <Route element={<SiteLayout />}>
