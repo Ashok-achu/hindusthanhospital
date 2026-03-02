@@ -24,6 +24,8 @@ FaTooth
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import doctorTeams from "../assets/Final/DSC03825.jpg";
+
 import hero1 from "../assets/hospital/1920_1080 Green removed.jpg";
 import hero2 from "../assets/Equipments/Equipments-1.jpg";
 import hero3 from "../assets/Equipments/Equipments-3.jpg";
@@ -44,14 +46,14 @@ visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
 const heroSliderSettings = {
-dots: false,
-arrows: false,
-infinite: true,
-autoplay: true,
-autoplaySpeed: 4000,
-speed: 1500,
-fade: true,
-pauseOnHover: false,
+dots:false,
+arrows:false,
+infinite:true,
+autoplay:true,
+autoplaySpeed:4000,
+speed:1500,
+fade:true,
+pauseOnHover:false
 };
 
 return (
@@ -81,36 +83,29 @@ return (
 </div>
 
 {/* ================= HERO SECTION ================= */}
-<section className="relative w-full h-screen pt-[130px] overflow-hidden">
+<section className="relative w-full h-[85vh] md:h-screen pt-[90px] overflow-hidden">
 
 <div className="absolute inset-0 z-0">
 <Slider {...heroSliderSettings}>
-{[hero1, hero2, hero3].map((img, index) => (
-<div key={index} className="w-full h-screen relative">
-<img src={img} alt="Hero" className="w-full h-full object-cover" />
-<div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-rose-900/40 to-transparent"></div>
+{[hero1,hero2,hero3].map((img,i)=>(
+<div key={i} className="w-full h-[85vh] md:h-screen relative">
+<img src={img} className="w-full h-full object-cover object-center"/>
+<div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-rose-900/40 to-transparent"/>
 </div>
 ))}
 </Slider>
 </div>
 
-<motion.div
-className="relative z-10 h-full w-full max-w-6xl mx-auto px-6 flex flex-col justify-end pb-20"
-initial="hidden"
-whileInView="visible"
-variants={fadeUp}
->
-
-<div className="flex justify-center">
+<div className="relative z-10 h-full flex items-end justify-center pb-16">
 <button
-onClick={() => navigate("/appointment")}
+onClick={()=>navigate("/appointment")}
 className="px-10 py-4 rounded-full bg-gradient-to-r from-rose-600 to-orange-500 text-white font-bold shadow-2xl hover:scale-105 transition"
 >
 Book Appointment
 </button>
 </div>
 
-</motion.div>
+
 
 {/* ECG LINE INSIDE HERO (FIXED POSITION) */}
 <div className="absolute bottom-0 left-0 w-full z-10 opacity-80">
@@ -246,127 +241,125 @@ animation: ecg 3s linear infinite;
      {/* ECG Line Animation */}
 
 
-{/* ================= OUR SPECIALITIES ================= */}
-
-<section className="py-24 bg-gradient-to-b from-white to-gray-50">
+     <section className="py-24 bg-white relative overflow-hidden">
 
 <div className="max-w-7xl mx-auto px-6">
 
-{/* Heading */}
-
 <div className="text-center mb-16">
-
 <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
-
-Our Medical <span className="text-rose-600">Specialities</span>
-
+Meet Our <span className="text-rose-600">Expert Doctors</span>
 </h2>
-
-<p className="text-gray-500 mt-3">
-
-Expert care across advanced departments
-
+<p className="text-gray-500 mt-4 text-lg">
+Dedicated specialists committed to your health and wellbeing
 </p>
+</div>
+
+<div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+
+<img 
+src={doctorTeams}
+alt="Doctors Team"
+className="w-full h-[450px] object-cover group-hover:scale-105 transition duration-700"
+/>
+
+<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"/>
+
+<div className="absolute bottom-10 left-10 text-white">
+<h3 className="text-3xl font-bold mb-2">
+25+ Specialist Doctors
+</h3>
+<p className="text-lg text-white/90">
+Providing compassionate and advanced medical care
+</p>
+</div>
 
 </div>
 
+</div>
 
-{(() => {
+</section>
+
+
+{/* ================= OUR SPECIALITIES ================= */}
+
+<section className="py-28 relative bg-white overflow-hidden">
+
+{/* OUTSIDE PREMIUM DESIGN */}
+<div className="absolute inset-0">
+
+  {/* Soft Glow Blobs */}
+  <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-rose-200 opacity-30 blur-[160px] rounded-full"></div>
+  <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-orange-200 opacity-30 blur-[140px] rounded-full"></div>
+
+  {/* Subtle Pattern */}
+  <div className="absolute inset-0 opacity-[0.04] 
+  bg-[radial-gradient(circle_at_30%_30%,#f43f5e_1px,transparent_1px)] 
+  bg-[length:40px_40px]"></div>
+
+</div>
+
+<div className="max-w-7xl mx-auto px-6 relative z-10">
+
+{/* Heading */}
+<div className="text-center mb-20">
+<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+Our Medical <span className="text-rose-600">Specialities</span>
+</h2>
+<p className="text-gray-500 mt-4 text-lg">
+Expert care across advanced departments
+</p>
+</div>
+
+{(()=>{
 
 const departments=[
 
 { name:"Cardiology",slug:"cardiology",icon:<FaHeartbeat/>},
-
 { name:"Pulmonology",slug:"pulmonology",icon:<FaLungs/>},
-
 { name:"Orthopaedics",slug:"orthopaedics",icon:<FaBone/>},
-
 { name:"Paediatrics",slug:"paediatrics",icon:<FaBaby/>},
-
 { name:"General Medicine",slug:"general-medicine",icon:<FaUserMd/>},
-
 { name:"General Surgery",slug:"general-surgery",icon:<FaStethoscope/>},
-
 { name:"Nephrology",slug:"nephrology",icon:<FaUserMd/>},
-
 { name:"Urology",slug:"urology",icon:<FaProcedures/>},
-
 { name:"ENT",slug:"ent",icon:<FaUserMd/>},
 
-// PAGE 2
-
 { name:"Dermatology",slug:"dermatology",icon:<FaUserMd/>},
-
 { name:"Dentistry",slug:"dentistry",icon:<FaTooth/>},
-
 { name:"Radiology",slug:"radiology",icon:<FaMicroscope/>},
-
 { name:"Psychiatry",slug:"psychiatry",icon:<FaBrain/>},
-
 { name:"Diabetology",slug:"diabetology",icon:<FaHeartbeat/>},
-
 { name:"Emergency Care",slug:"emergency-care",icon:<FaAmbulance/>},
-
 { name:"ICU",slug:"icu",icon:<FaHandHoldingHeart/>},
-
 { name:"Neonatology",slug:"neonatology",icon:<FaBaby/>},
-
 { name:"Plastic Surgery",slug:"plastic-surgery",icon:<FaUserMd/>},
 
-// PAGE 3
-
 { name:"Gastroenterology",slug:"gastroenterology",icon:<FaUserMd/>},
-
 { name:"Internal Medicine",slug:"internal-medicine",icon:<FaUserMd/>},
-
 { name:"Oncology",slug:"surgical-oncology",icon:<FaUserMd/>},
-
 { name:"Anaesthesiology",slug:"anaesthesiology",icon:<FaUserMd/>},
-
 { name:"Rehabilitation",slug:"rehab",icon:<FaHandHoldingHeart/>},
-
 { name:"Paediatric Surgery",slug:"paediatric-surgery",icon:<FaUserMd/>},
-
 { name:"Neuro Surgery",slug:"neurovascular-surgery",icon:<FaBrain/>},
-
 { name:"Obstetrics & Gynaecology",slug:"obgyn",icon:<FaBaby/>}
 
 ];
 
-
-// Split into pages of 9
-
-const pages=[];
-
-for(let i=0;i<departments.length;i+=9){
-
-pages.push(departments.slice(i,i+9));
-
+const pages = [];
+for (let i = 0; i < departments.length; i += 9) {
+  pages.push(departments.slice(i, i + 9));
 }
 
-
-const settings={
-
-dots:false,
-
-arrows:true,
-
-infinite:true,
-
-autoplay:true,
-
-autoplaySpeed:4500,
-
-speed:1000,
-
-slidesToShow:1,
-
-slidesToScroll:1,
-
-pauseOnHover:true
-
+const settings = {
+  dots: false,
+  arrows: true,        // IMPORTANT
+  infinite: false,     // Avoid hidden page issue
+  autoplay: false,
+  speed: 800,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  pauseOnHover: true
 };
-
 
 return(
 
@@ -375,68 +368,66 @@ return(
 {pages.map((group,index)=>(
 
 <div key={index}>
-
-<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 
 {group.map((dept,i)=>(
 
-<motion.div
-
-key={i}
-
-initial={{opacity:0,y:40}}
-
-whileInView={{opacity:1,y:0}}
-
-transition={{duration:.5,delay:i*.05}}
-
->
-
 <Link
-
+key={i}
 to={`/departments/${dept.slug}`}
-
-className="group relative block rounded-3xl overflow-hidden"
-
+className="group relative rounded-3xl overflow-hidden"
 >
 
-{/* Glow Border */}
+<div className="relative bg-white rounded-3xl p-12 border border-gray-100 shadow-lg transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl overflow-hidden">
 
-<div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-rose-400 via-orange-400 to-pink-400 opacity-0 group-hover:opacity-100 blur-lg transition duration-500"></div>
+{/* Gradient Fill */}
+<div className="absolute bottom-0 left-0 w-full h-0 
+bg-gradient-to-br from-rose-600 to-orange-500 
+transition-all duration-500 group-hover:h-full z-0"/>
 
+{/* Watermark Icon */}
+<div className="absolute -right-10 -bottom-10 text-[140px] text-rose-100 opacity-40 group-hover:text-white/10 transition duration-500">
+{dept.icon}
+</div>
 
-{/* Card */}
+{/* ECG Animation */}
+<div className="absolute bottom-6 left-0 w-full opacity-0 group-hover:opacity-100 transition duration-500 z-10">
+<svg viewBox="0 0 300 50" className="w-full h-8">
+<path
+d="M0 25 L40 25 L55 5 L70 45 L85 25 L120 25 L135 5 L150 45 L165 25 L300 25"
+fill="none"
+stroke="#0839dd"
+strokeWidth="2"
+className="ecg-line"
+/>
+</svg>
+</div>
 
-<div className="relative bg-white rounded-3xl border border-gray-100 shadow-md hover:shadow-2xl transition duration-500 p-10 text-center group-hover:-translate-y-2">
+{/* Content */}
+<div className="relative z-20 transition duration-500 group-hover:text-white">
 
-{/* Icon */}
-
-<div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl bg-rose-50 text-rose-600 group-hover:bg-gradient-to-r group-hover:from-rose-600 group-hover:to-orange-500 group-hover:text-white transition duration-500">
+<div className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-3xl 
+bg-rose-50 text-rose-600 shadow-md 
+group-hover:bg-white group-hover:text-rose-600 
+transition duration-500">
 
 {dept.icon}
 
 </div>
 
-
-<h3 className="mt-6 font-bold text-xl tracking-wide text-black-1000 group-hover:text-rose-600 transition">
-
+<h3 className="mt-6 font-bold text-xl tracking-wide">
 {dept.name}
-
 </h3>
 
-
-
+</div>
 
 </div>
 
 </Link>
 
-</motion.div>
-
 ))}
 
 </div>
-
 </div>
 
 ))}
@@ -449,10 +440,20 @@ className="group relative block rounded-3xl overflow-hidden"
 
 </div>
 
-</section>
+<style>{`
 
+@keyframes ecgMove {
+0% { stroke-dashoffset: 300; }
+100% { stroke-dashoffset: 0; }
+}
 
+.ecg-line {
+stroke-dasharray: 300;
+stroke-dashoffset: 300;
+animation: ecgMove 2s linear infinite;
+}
 
+`}</style>
 
 <style>
 {`
@@ -463,7 +464,7 @@ className="group relative block rounded-3xl overflow-hidden"
   background: white !important;
   border-radius: 50%;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  z-index: 10;
+  z-index: 20;
 }
 
 .slick-prev:hover,
@@ -491,6 +492,8 @@ className="group relative block rounded-3xl overflow-hidden"
 }
 `}
 </style>
+
+</section>
 
       {/* ================= WHY CHOOSE US (Redesigned) ================= */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -631,25 +634,25 @@ className="group relative block rounded-3xl overflow-hidden"
 
 {/* ================= PREMIUM TESTIMONIALS ================= */}
 
-<section className="py-28 bg-gradient-to-b from-white via-rose-50/30 to-gray-50 overflow-hidden relative">
+<section className="py-24 sm:py-28 bg-gradient-to-b from-white via-rose-50/30 to-gray-50 overflow-hidden relative">
 
 {/* Soft Background Glow */}
 <div className="absolute top-20 left-0 w-72 h-72 bg-rose-100 blur-3xl opacity-40 rounded-full"></div>
 <div className="absolute bottom-10 right-0 w-72 h-72 bg-orange-100 blur-3xl opacity-40 rounded-full"></div>
 
-<div className="max-w-7xl mx-auto px-6 relative z-10">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
 {/* Heading */}
 
-<div className="text-center mb-20">
+<div className="text-center mb-14 sm:mb-20">
 
-<h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+<h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900">
 
 Patient <span className="text-rose-600">Testimonials</span>
 
 </h2>
 
-<p className="text-gray-500 mt-4 text-lg">
+<p className="text-gray-500 mt-4 text-base sm:text-lg">
 
 Real experiences from our valued patients
 
@@ -734,7 +737,7 @@ arrows:false,
 infinite:true,
 autoplay:true,
 autoplaySpeed:4000,
-speed:1000,
+speed:900,
 slidesToShow:3,
 slidesToScroll:1,
 pauseOnHover:true,
@@ -743,7 +746,9 @@ responsive:[
 
 {
 breakpoint:1024,
-settings:{slidesToShow:2}
+settings:{
+slidesToShow:2
+}
 },
 
 {
@@ -751,7 +756,16 @@ breakpoint:768,
 settings:{
 slidesToShow:1,
 centerMode:true,
-centerPadding:"40px"
+centerPadding:"60px"   // better breathing space
+}
+},
+
+{
+breakpoint:480,
+settings:{
+slidesToShow:1,
+centerMode:true,
+centerPadding:"35px"
 }
 }
 
@@ -765,7 +779,7 @@ return(
 
 {testimonials.map((item,index)=>(
 
-<div key={item.id} className="px-3 sm:px-4 py-6">
+<div key={item.id} className="px-2 sm:px-4 py-6">
 
 <motion.div
 
@@ -778,13 +792,14 @@ className="
 
 bg-white/80 backdrop-blur-xl
 rounded-3xl
-p-10
+p-6 sm:p-10
 shadow-lg
 hover:shadow-[0_25px_60px_-15px_rgba(244,63,94,0.35)]
 transition-all duration-500
 border border-gray-100
 relative
 h-full
+min-h-[260px] sm:min-h-[300px]
 group
 
 "
@@ -793,7 +808,7 @@ group
 
 {/* Quote */}
 
-<div className="absolute -top-6 left-8 text-7xl text-rose-200 font-serif">
+<div className="absolute -top-5 left-6 sm:-top-6 sm:left-8 text-6xl sm:text-7xl text-rose-200 font-serif">
 
 “
 
@@ -821,7 +836,7 @@ className="text-lg group-hover:scale-110 transition">
 
 {/* Review */}
 
-<p className="text-gray-700 leading-relaxed text-lg italic mt-5">
+<p className="text-gray-700 leading-relaxed text-base sm:text-lg italic mt-5">
 
 {item.text}
 
@@ -839,7 +854,7 @@ className="text-lg group-hover:scale-110 transition">
 
 {/* Avatar */}
 
-<div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-500 to-orange-400 text-white font-bold flex items-center justify-center shadow-lg">
+<div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-rose-500 to-orange-400 text-white font-bold flex items-center justify-center shadow-lg">
 
 {item.name.charAt(0)}
 
@@ -848,13 +863,11 @@ className="text-lg group-hover:scale-110 transition">
 
 <div>
 
-<h4 className="font-semibold text-gray-900 text-lg">
+<h4 className="font-semibold text-gray-900 text-base sm:text-lg">
 
 {item.name}
 
 </h4>
-
-
 
 </div>
 

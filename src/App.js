@@ -23,6 +23,7 @@ import Abouttrust from "./toppages/abouttrust";
 import Mission from "./toppages/Mission";
 import Profile from "./toppages/Profile";
 import Milestones from "./toppages/Milestones";
+import Appointment from "./toppages/appointment";
 
 // 🔹 Bottom Navigation Pages
 
@@ -98,6 +99,7 @@ export default function App() {
 
           {/* DYNAMIC DEPARTMENT */}
           <Route path="/departments/:slug" element={<DepartmentDetail />} />
+          <Route path="/appointment" element={<Appointment/>}/>
 
           {/* 404 */}
           <Route

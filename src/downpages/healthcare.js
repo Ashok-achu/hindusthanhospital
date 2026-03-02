@@ -10,6 +10,8 @@ FaTimes,
 
 import appointmentImg from "../assets/appointment.jpg";
 
+import dummyDoctor from "../assets/Final/Dummydoctor.jpg";
+
 import jaymohan from "../assets/Final/DR. M.R. JAYMOHAN UNNITHAN.jpg";
 import sathish from "../assets/Final/DR.  M.SATHISH KUMAR .jpg";
 import vaidyanathan from "../assets/Final/DR. P.R.VAIDYNATHAN.jpg";
@@ -55,63 +57,127 @@ gender:""
 const [selectedDoctor,setSelectedDoctor]=useState(null);
 
 
+// ONLY DOCTORS ARRAY REPLACED
+
 const doctors=[
+
+// PULMONOLOGY
 
 {id:1,name:"Dr. M.R. Jaymohan Unnithan",speciality:"Pulmonology",gender:"Male",image:jaymohan},
 
-{id:2,name:"Dr. K. Srikanth",speciality:"Pulmonology",gender:"Male",image:srikanth},
+{id:2,name:"Prof. Dr. K. Srikanth",speciality:"Pulmonology",gender:"Male",image:srikanth},
 
-{id:3,name:"Dr. V. Nandagopal",speciality:"Pulmonology",gender:"Male",image:ramalingam},
+{id:3,name:"Dr. V. Nandagopal",speciality:"Pulmonology",gender:"Male",image:dummyDoctor},
 
-{id:4,name:"Dr. M. Sathish Kumar",speciality:"Cardiology",gender:"Male",image:sathish},
+{id:4,name:"Dr. S. Nagarajan",speciality:"Pulmonology",gender:"Male",image:nagarajan},
 
-{id:5,name:"Dr. P.R. Vaidyanathan",speciality:"Cardiology",gender:"Male",image:vaidyanathan},
+// CARDIOLOGY
 
-{id:6,name:"Dr. S. Balakumar",speciality:"General and Laproscopic Surgery",gender:"Male",image:balakumar},
+{id:5,name:"Dr. M. Sathish Kumar",speciality:"Cardiology",gender:"Male",image:sathish},
 
-{id:7,name:"Dr. V.P. Shanmuga Sundaram",speciality:" General and Laproscopic Surgery",gender:"Male",image:shanmuga},
+{id:6,name:"Dr. P.R. Vaidyanathan",speciality:"Cardiology",gender:"Male",image:vaidyanathan},
 
-{id:8,name:"Dr. K. Vinodh",speciality:"Orthopaedics",gender:"Male",image:vinodh},
+// GENERAL SURGERY
 
-{id:9,name:"Dr. S. Nagarajan",speciality:"Pulmonology",gender:"Male",image:nagarajan},
+{id:7,name:"Dr. S. Balakumar",speciality:"General & Laparoscopic Surgery",gender:"Male",image:balakumar},
 
-{id:10,name:"Dr. M. Senthil Kumar",speciality:"Paediatrics",gender:"Male",image:senthilkumar},
+{id:8,name:"Dr. V.P. Shanmuga Sundaram",speciality:"General & Laparoscopic Surgery",gender:"Male",image:shanmuga},
 
-{id:11,name:"Dr. G. Murugesan",speciality:"Neuro & Endo Vacular  Surgery",gender:"Male",image:murugesan},
+// ORTHO
 
-{id:12,name:"Dr. N. Madhan",speciality:"Neuro Surgery",gender:"Male",image:madhan},
+{id:9,name:"Dr. K. Vinodh",speciality:"Orthopaedics",gender:"Male",image:vinodh},
 
-{id:13,name:"Dr. V. Venkataraman",speciality:"ENT",gender:"Male",image:venkataraman},
+{id:10,name:"Dr. N. Balasubramanian",speciality:"Orthopaedics",gender:"Male",image:dummyDoctor},
 
-{id:14,name:"Dr. Eswaran Moorthy",speciality:"Neuro & Endo Vacular  Surgery",gender:"Male",image:eswaran},
+{id:11,name:"Dr. Jeff Walter Rajadurai",speciality:"Orthopaedics",gender:"Male",image:dummyDoctor},
 
-{id:15,name:"Dr. S. Abinaya",speciality:"Obstetrics & Gynaecology",gender:"Female",image:saranya},
+// DIABETOLOGY
 
-{id:16,name:"Dr. Ponni Sunder",speciality:"Obstetrics & Gynaecology",gender:"Female",image:ponni},
+{id:12,name:"Dr. M. Senthil Kumar",speciality:"Diabetology",gender:"Male",image:senthilkumar},
 
-{id:17,name:"Dr. K. Kokila",speciality:"Obstetrics & Gynaecology",gender:"Female",image:kokila},
+// RADIOLOGY
 
-{id:18,name:"Dr. R. Gandhimohan",speciality:"Nephrology & Kidney Transformation" ,gender:"Male",image:gandhimohan},
+{id:13,name:"Dr. S. Sangeetha",speciality:"Radiology",gender:"Female",image:sangeetha},
 
-{id:19,name:"Dr. R. Jayakumar",speciality:"Psychiatry",gender:"Male",image:jayakumar},
+// NEURO
 
-{id:20,name:"Dr. M. Ramalingam",speciality:"Urology & Kidney Transplant Surgey",gender:"Male",image:ramalingam},
+{id:14,name:"Dr. G. Murugesan",speciality:"Neuro & Endovascular Surgery",gender:"Male",image:murugesan},
 
-{id:21,name:"Dr. V. Shanumgapriya",speciality:" Paediatrics",gender:"Female",image:shanumgapriya},
+{id:15,name:"Dr. A. Anand Shanmugaraj",speciality:"Neuro & Endovascular Surgery",gender:"Male",image:anand},
 
-{id:22,name:"Dr. A. Anand Shanmugaraj",speciality:"Neuro & Endo Vacular Surgery",gender:"Male",image:anand},
+{id:16,name:"Dr. S. Eswaran Moorthy",speciality:"Neuro & Endovascular Surgery",gender:"Male",image:eswaran},
 
-{id:23,name:"Dr. S. Sangeetha",speciality:"Radiology",gender:"Female",image:sangeetha},
+{id:17,name:"Dr. N. Madhan",speciality:"Neuro Surgery",gender:"Male",image:madhan},
 
-{id:24,name:"Dr. Pradeep Raja S",speciality:"Dental & Facio Maxillary",gender:"Male",image:pradeep},
+{id:18,name:"Dr. Selva Kumar",speciality:"Neurology",gender:"Male",image:dummyDoctor},
 
-{id:25,name:"Dr. N. Selvaraj",speciality:"Oncology",gender:"Male",image:selvaraj},
+// ENT
 
-{id:26,name:"Dr. P. Senthil Kumar",speciality:"Paediatrics",gender:"Male",image:psenthilkumar},
+{id:19,name:"Dr. V. Venkataraman",speciality:"ENT",gender:"Male",image:venkataraman},
 
+// CARDIO THORACIC
+
+{id:20,name:"Prof. Dr. Ganesan K.S",speciality:"Cardiovascular & Thoracic Surgery",gender:"Male",image:dummyDoctor},
+
+// OBG
+
+{id:21,name:"Dr. S. Abinaya",speciality:"Obstetrics & Gynaecology",gender:"Female",image:abinaya},
+
+{id:22,name:"Dr. Ponni Sunder",speciality:"Obstetrics & Gynaecology",gender:"Female",image:ponni},
+
+{id:23,name:"Dr. K. Kokila",speciality:"Obstetrics & Gynaecology",gender:"Female",image:kokila},
+
+// PAEDIATRICS
+
+{id:24,name:"Dr. P. Senthil Kumar",speciality:"Paediatrics",gender:"Male",image:psenthilkumar},
+
+{id:25,name:"Dr. V. Shanmugapriya",speciality:"Paediatrics",gender:"Female",image:shanumgapriya},
+
+{id:26,name:"Dr. Sathyan V.K",speciality:"Paediatrics",gender:"Male",image:dummyDoctor},
+
+{id:27,name:"Dr. R.P. Dharmendra",speciality:"Paediatrics",gender:"Male",image:dummyDoctor},
+
+// UROLOGY
+
+{id:28,name:"Dr. M. Ramalingam",speciality:"Urology & Kidney Transplant Surgery",gender:"Male",image:ramalingam},
+
+{id:29,name:"Dr. K. Senthil",speciality:"Urology & Kidney Transplant Surgery",gender:"Male",image:ksenthil},
+
+{id:30,name:"Dr. N. Sivasankaran",speciality:"Urology & Kidney Transplant Surgery",gender:"Male",image:dummyDoctor},
+
+// NEPHROLOGY
+
+{id:31,name:"Dr. R. Gandhimohan",speciality:"Nephrology & Kidney Transplantation",gender:"Male",image:gandhimohan},
+
+// PSYCHIATRY
+
+{id:32,name:"Dr. Vinod Balaji K",speciality:"Psychiatry",gender:"Male",image:dummyDoctor},
+
+{id:33,name:"Dr. R. Jayakumar",speciality:"Psychiatry",gender:"Male",image:jayakumar},
+
+{id:34,name:"Dr. S. Rajakumar",speciality:"Psychiatry",gender:"Male",image:dummyDoctor},
+
+// DENTAL
+
+{id:35,name:"Dr. Pradeep Raja S",speciality:"Dental & Facio Maxillary",gender:"Male",image:pradeep},
+
+{id:36,name:"Dr. Manasa V Prabhu",speciality:"Dental & Facio Maxillary",gender:"Female",image:dummyDoctor},
+
+// DERMATOLOGY
+
+{id:37,name:"Dr. Manveen Kaur",speciality:"Dermatology",gender:"Female",image:dummyDoctor},
+
+// PLASTIC
+
+{id:38,name:"Dr. V. Radhakrishnan",speciality:"Plastic Surgery",gender:"Male",image:dummyDoctor},
+
+{id:39,name:"Prof. Dr. R. Senthil Kumar",speciality:"Plastic Surgery",gender:"Male",image:dummyDoctor},
+
+// ONCOLOGY
+
+{id:40,name:"Dr. N. Selvaraj",speciality:"Oncology",gender:"Male",image:selvaraj},
 
 ];
-
 
 // ⭐ AUTO SPECIALITY DROPDOWN
 const specialities=[

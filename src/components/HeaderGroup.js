@@ -24,7 +24,6 @@ const closeTimer=useRef(null);
 const location=useLocation();
 const navigate=useNavigate();
 
-const isHome = location.pathname === "/";
 
 
 /* ---------- SLUG MAP ---------- */
@@ -63,7 +62,6 @@ Urology:"urology",
 const toSlug=(label)=>"/departments/"+slugMap[label];
 
 
-
 /* ---------- NAV ---------- */
 
 const nav=[
@@ -91,7 +89,6 @@ children:[
 {label:"Birth Center",to:"/facilities/birthing-centre"},
 {label:"Blood Bank",to:"/facilities/blood-bank"},
 {label:"Insurance",to:"/facilities/insurance"},
-{label:"MHC",to:"/facilities/mhc"},
 {label:"Rooms",to:"/facilities/rooms"},
 {label:"IT",to:"/facilities/it"},
 {label:"Canteen",to:"/facilities/canteen"},
@@ -99,7 +96,7 @@ children:[
 ],
 },
 
-{label:"Packages",to:"/health"},
+{label:"Packages",to:"/facilities/mhc"},
 
 {
 label:"Media",
@@ -156,6 +153,7 @@ setActiveDropdown(null);
 };
 
 
+
 useEffect(()=>{
 
 setMenuOpen(false);
@@ -163,8 +161,6 @@ setMenuOpen(false);
 },[location]);
 
 
-
-/* ---------- SCROLL ---------- */
 
 useEffect(()=>{
 
@@ -188,66 +184,89 @@ return(
 
 {/* ---------- TOP HEADER ---------- */}
 
-
-{/* ---------- TOP HEADER ---------- */}
-
 <div
-className={`w-full bg-gray-100 border-b transition-all duration-500 overflow-hidden
-${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[200px] opacity-100 py-3"}
+className={`w-full bg-white border-b transition-all duration-500 overflow-hidden
+${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[120px] opacity-100 py-2"}
 `}
 >
 
-<div className="max-w-[1400px] mx-auto px-8 py-3">
+<div className="max-w-[1400px] mx-auto px-6 py-2">
 
-<div className="flex flex-col lg:grid lg:grid-cols-4 gap-4 items-center">
+<div className="flex flex-col lg:grid lg:grid-cols-4 gap-3 items-center">
 
-<img src={logo} className="w-44 lg:w-60"/>
+<img src={logo} className="w-36 lg:w-48"/>
 
 <div className="text-sm font-medium">
+
 <div className="flex gap-3">
+
 <FaPhoneAlt/>
+
 <div>
+
 <div>+91 4224327777</div>
+
 <div>+91 4224327778</div>
+
 </div>
+
 </div>
 
 <div className="ml-7">
+
 Emergency <b>+91 4224327799</b>
+
 </div>
+
 </div>
+
 
 <div className="flex gap-3">
+
 <FaMapMarkerAlt/>
+
 <div>
+
 522/3 Hindusthan Hospital Road<br/>
+
 Avinashi Road Coimbatore
-</div>
+
 </div>
 
-<div className="flex justify-end gap-6">
-<button className="bg-purple-600 text-white px-8 py-3 rounded-full">
-BOOK AN APPOINTMENT
+</div>
+
+
+<div className="flex justify-end gap-4 items-center">
+
+<button
+onClick={() => navigate("/appointment")}
+className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full shadow-xl hover:scale-105 transition"
+>
+BOOK APPOINTMENT
 </button>
-<img src={certLogo} className="w-24"/>
+
+<img src={certLogo} className="w-14 object-contain"/>
+
 </div>
 
 </div>
+
 </div>
+
 </div>
 
 
 
 {/* ---------- NAVBAR ---------- */}
 
-<div className="sticky top-0 z-[9999] w-full flex justify-center bg-white py-3 shadow">
+<div className="sticky top-0 z-[9999] w-full flex justify-center bg-white/80 backdrop-blur-md py-2 shadow-md">
 
-<div className="bg-white w-[94%] max-w-7xl rounded-full shadow-xl px-6 py-3 flex items-center gap-8">
+<div className="bg-white w-[95%] max-w-7xl rounded-full shadow-xl px-6 py-2 flex items-center">
 
 
 {/* DESKTOP MENU */}
 
-<nav className="hidden lg:flex gap-6 flex-1">
+<nav className="hidden lg:flex gap-7 flex-1 justify-center">
 
 {nav.map((item,i)=>(
 
@@ -263,7 +282,7 @@ onMouseLeave={closeDropdown}
 
 >
 
-<div className="flex items-center gap-1 font-bold text-sm cursor-pointer">
+<div className="flex items-center gap-1 font-semibold text-sm cursor-pointer hover:text-rose-600 transition">
 
 {item.to?
 
@@ -280,11 +299,22 @@ onMouseLeave={closeDropdown}
 </div>
 
 
-{/* DESKTOP DROPDOWN */}
+
+<AnimatePresence>
 
 {activeDropdown===i && item.children &&(
 
-<div className={`absolute top-full mt-3 bg-white rounded-xl shadow-xl p-2 z-50
+<motion.div
+
+initial={{opacity:0,y:10}}
+
+animate={{opacity:1,y:0}}
+
+exit={{opacity:0,y:10}}
+
+transition={{duration:.2}}
+
+className={`absolute top-full mt-3 bg-white rounded-xl shadow-2xl p-2 z-50
 
 ${item.mega ? "w-[900px] grid grid-cols-4":"w-64"}
 
@@ -328,9 +358,11 @@ className="block px-4 py-2 text-sm hover:text-rose-600"
 
 }
 
-</div>
+</motion.div>
 
 )}
+
+</AnimatePresence>
 
 </div>
 
@@ -340,15 +372,15 @@ className="block px-4 py-2 text-sm hover:text-rose-600"
 
 
 
-{/* RIGHT BUTTON */}
+{/* BRANCH BUTTON */}
 
-<div className="hidden lg:flex ml-auto">
+<div className="hidden lg:flex">
 
 <button
 
 onClick={()=>navigate("/Mettupalayam")}
 
-className="bg-green-600 text-white px-5 py-2 rounded-full text-xs font-bold"
+className="bg-green-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow hover:bg-green-700 transition"
 
 >
 
@@ -372,7 +404,6 @@ BRANCH
 
 </div>
 
-
 </div>
 
 </div>
@@ -393,7 +424,7 @@ animate={{height:"auto"}}
 
 exit={{height:0}}
 
-className="lg:hidden fixed top-[95px] left-0 right-0 bg-white shadow-xl mx-4 rounded-xl overflow-hidden z-[9998]"
+className="lg:hidden fixed top-[80px] left-0 right-0 bg-white shadow-xl mx-4 rounded-xl overflow-hidden z-[9998]"
 
 >
 
