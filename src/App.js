@@ -16,7 +16,7 @@ import Academics from "./toppages/academics";
 import Testimonials from "./toppages/testimonials";
 import Careers from "./toppages/careers";
 import Contact from "./toppages/contact";
-import Media from "./toppages/Media";
+import Gallery from "./toppages/Media";
 
 // 🔹 About Us Subpages
 import Abouttrust from "./toppages/abouttrust";
@@ -68,7 +68,7 @@ export default function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery/media" element={<Media />} />
+          <Route path="/gallery" element={<Gallery />} />
 
           {/* ABOUT SUB ROUTES */}
           <Route path="/abouttrust" element={<Abouttrust />} />

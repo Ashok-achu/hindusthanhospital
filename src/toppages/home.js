@@ -324,7 +324,6 @@ const departments=[
 { name:"Urology",slug:"urology",icon:<FaProcedures/>},
 { name:"ENT",slug:"ent",icon:<FaUserMd/>},
 
-{ name:"Dermatology",slug:"dermatology",icon:<FaUserMd/>},
 { name:"Dentistry",slug:"dentistry",icon:<FaTooth/>},
 { name:"Radiology",slug:"radiology",icon:<FaMicroscope/>},
 { name:"Psychiatry",slug:"psychiatry",icon:<FaBrain/>},
