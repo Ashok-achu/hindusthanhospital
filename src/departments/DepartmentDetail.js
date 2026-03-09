@@ -10,7 +10,7 @@ const department = departmentsData.find(
 (d)=> d.slug === slug
 );
 
-if(!department) return <h2>Department Not Found</h2>;
+if(!department) return <h2 className="text-center mt-20 text-xl font-semibold">Department Not Found</h2>;
 
 return(
 
@@ -18,7 +18,7 @@ return(
 
 <div className="max-w-7xl mx-auto px-4">
 
-{/* 🔽 MOBILE DROPDOWN ONLY */}
+{/* MOBILE DROPDOWN */}
 <div className="lg:hidden mb-6">
 
 <select
@@ -38,12 +38,11 @@ className="w-full border border-gray-300 bg-white rounded-md px-4 py-2 text-sm s
 </div>
 
 
-
 {/* MAIN GRID */}
 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
 
-{/* LEFT SIDEBAR (DESKTOP ONLY) */}
+{/* SIDEBAR */}
 <div className="hidden lg:block lg:col-span-3">
 
 <div className="bg-white rounded-lg shadow-sm overflow-hidden">
@@ -56,8 +55,7 @@ className={`block px-5 py-3 border-b text-sm font-medium transition
 ${dept.slug===slug
 ? "bg-red-600 text-white"
 : "text-gray-700 hover:bg-red-600 hover:text-white"
-}
-`}
+}`}
 >
 {dept.name}
 </Link>
@@ -69,10 +67,11 @@ ${dept.slug===slug
 
 
 
-{/* RIGHT CONTENT */}
+{/* CONTENT */}
 <div className="lg:col-span-9">
 
 <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+
 
 {/* IMAGE */}
 <img
@@ -81,12 +80,15 @@ alt={department.name}
 className="w-full h-[220px] sm:h-[300px] lg:h-[350px] object-cover"
 />
 
+
 <div className="p-6 sm:p-8 lg:p-12">
+
 
 {/* TITLE */}
 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-600 mb-6">
 {department.name}
 </h1>
+
 
 
 {/* DESCRIPTION */}
@@ -95,7 +97,7 @@ className="w-full h-[220px] sm:h-[300px] lg:h-[350px] object-cover"
 <ul className="space-y-2">
 
 {
-department.description.split("\n").map((line,index)=>{
+(department.description || "").split("\n").map((line,index)=>{
 
 const clean=line.trim();
 if(!clean) return null;
@@ -160,21 +162,88 @@ return(
 
 
 {/* SERVICES */}
+{department.services && department.services.length > 0 && (
+
+<>
 <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-4 text-red-600">
 Services Offered
 </h2>
 
 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-gray-700 text-sm sm:text-base">
 
-{
-department.services.map((service,i)=>(
+{department.services.map((service,i)=>(
 <li key={i} className="list-disc ml-5">
 {service}
 </li>
-))
-}
+))}
 
 </ul>
+</>
+
+)}
+
+
+
+{/* DOCTORS SECTION */}
+{/* DOCTORS SECTION */}
+{department.doctors && department.doctors.length > 0 && (
+
+<>
+<h2 className="text-2xl sm:text-3xl font-bold text-red-600 mt-14 mb-8">
+Our Doctors
+</h2>
+
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+{department.doctors.map((doc,i)=>(
+
+<div
+key={i}
+className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+>
+
+{/* IMAGE BOX */}
+
+<div className="w-full h-[260px] bg-gray-50 flex items-center justify-center p-4">
+
+<img
+  src={doc.image}
+  alt={doc.name}
+  className="w-full h-full object-contain"
+/>
+
+</div>
+
+
+{/* CONTENT */}
+
+<div className="p-6 text-center">
+
+<h3 className="text-lg font-semibold text-gray-800">
+{doc.name}
+</h3>
+
+<p className="text-red-600 text-sm font-medium mt-1">
+{doc.designation}
+</p>
+
+<p className="text-gray-600 text-sm mt-3 leading-relaxed">
+{doc.description}
+</p>
+
+</div>
+
+</div>
+
+))}
+
+</div>
+
+</>
+
+)}
+
+
 
 </div>
 

@@ -1,4 +1,31 @@
 import cardiologyImg from "../assets/hospital/1920_1080 Green removed.jpg";
+
+
+
+/* Doctor Images */
+
+import jaymohan from "../assets/Final/DR. M.R. JAYMOHAN UNNITHAN.jpg";
+import sathish from "../assets/Final/DR.  M.SATHISH KUMAR .jpg";
+import vaidyanathan from "../assets/Final/DR. P.R.VAIDYNATHAN.jpg";
+import balakumar from "../assets/Final/DR. S. BALAKUMAR.jpg";
+import vinodh from "../assets/Final/DR. K.VINODH.jpg";
+import nagarajan from "../assets/Final/DR. S. NAGARAJAN.jpg";
+import senthilkumar from "../assets/Final/DR. M. SENTHILKUMAR.jpg";
+import murugesan from "../assets/Final/DR.G. MURUGESAN.jpg";
+import madhan from "../assets/Final/DR. N. MADHAN.jpg";
+import venkataraman from "../assets/Final/DR. V. VENKATRAMAN.jpg";
+import eswaran from "../assets/Final/DR. ESWARAN MOORTHY.jpg";
+import srikanth from "../assets/Final/DR. K.SRIKANTH.jpg";
+import abinaya from "../assets/Final/DR.S.ABINAYA.jpg";
+import ponni from "../assets/Final/DR.PONNI SUNDER.jpg";
+import kokila from "../assets/Final/DR.K.KOKILA.jpg";
+import ramalingam from "../assets/Final/DR. M. RAMALINGAM.jpg";
+import gandhimohan from "../assets/Final/DR. R. GANDHIMOHAN.jpg";
+import jayakumar from "../assets/Final/DR.R. JAYAKUMAR.jpg";
+import shanmugapriya from "../assets/Final/DR. V. SHANUMGAPRIYA.jpg";
+import psenthilkumar from "../assets/Final/DR. P. SENTHILKUMAR.jpg";
+import sangeetha from "../assets/Final/DR.S. SANGEETHA.jpg";
+import selvaraj from "../assets/Final/DR.N.SELVARAJ.jpg";
 const departmentsData = [
 
 /* =======================
@@ -47,7 +74,18 @@ Education and Research. In addition to providing exceptional clinical care, our 
     "Cardiac Anaesthesia",
     "Neuro & Onco Anaesthesia",
     "Day Care Anaesthesia"
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. M. Sathish Kumar",
+designation:"Senior Anaesthesiologist",
+image:sathish,
+description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+}
+]
+
+  
 },
 
 /* =======================
@@ -79,7 +117,24 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
     "EPS & RFA",
     "Heart Failure Management",
     "Cardiac Rehabilitation"
-  ]
+  ],
+
+  doctors: [
+  {
+    name: "Dr. M. Sathish Kumar",
+    designation: "Consultant Cardiologist",
+    image: sathish,
+    description:
+      "Dr. M. Sathish Kumar is a senior cardiologist specializing in interventional cardiology, heart failure treatment, and advanced cardiac diagnostics."
+  },
+  {
+    name: "Dr. P.R. Vaidyanathan",
+    designation: "Senior Cardiologist",
+    image: vaidyanathan,
+    description:
+      "Dr. P.R. Vaidyanathan has extensive experience in non-invasive cardiology, cardiac rehabilitation, and preventive cardiac care."
+  }
+]
 },
 
 /* =======================
@@ -201,7 +256,16 @@ Sub-specialties:
     "Voice Disorder Treatment",
     "Snoring & Sleep Surgery",
     "Head & Neck Cancer Surgery"
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. V. Venkatraman",
+designation:"Chief ENT Surgeon",
+image:venkataraman,
+description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, voice disorders and head & neck conditions."
+}
+]
 },
 
 {
@@ -280,7 +344,24 @@ OUR SERVICES
     "Voice Disorder Treatment",
     "Snoring & Sleep Surgery",
     "Head & Neck Cancer Surgery"
-  ]
+  ],
+
+doctors:[
+{
+name:"Dr. G. Murugesan",
+designation:"Neurosurgeon",
+image:murugesan,
+description:"Specialist in neurovascular surgery, brain tumor treatment and complex neurosurgical procedures."
+},
+{
+name:"Dr. N. Madhan",
+designation:"Neurosurgeon",
+image:madhan,
+description:"Expert in spine surgery, trauma neurosurgery and neuro critical care."
+}
+]
+
+
 },
 /* =======================
    GENERAL MEDICINE
@@ -326,7 +407,16 @@ IV. SPECIALIZED CARE
     "Geriatric Medicine",
     "Adult Vaccinations",
     "Preventive Health Checkups"
-  ]
+  ],
+  doctors: [
+  {
+    name: "Dr. M. Senthil Kumar",
+    designation: "General Physician & Diabetologist",
+    image: senthilkumar,
+    description:
+      "Dr. M. Senthil Kumar specializes in diabetes management, chronic disease treatment, and preventive healthcare."
+  }
+]
 },
 
 /* =======================
@@ -514,7 +604,18 @@ Dialysis services and long-term renal care are provided with a focus on improvin
     "CKD Management",
     "Kidney Stone Evaluation",
     "Renal Biopsy"
-  ]
+  ],
+
+
+
+  doctors:[
+{
+name:"Dr. R. Gandhimohan",
+designation:"Nephrologist",
+image:gandhimohan,
+description:"Specialist in kidney diseases, dialysis care and chronic kidney disease management."
+}
+]
 },
 
 /* =======================
@@ -574,7 +675,17 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
     "Fracture Management",
     "Arthroscopy",
     "Spine Surgery"
-  ]
+  ],
+
+  doctors: [
+  {
+    name: "Dr. K. Vinodh",
+    designation: "Orthopaedic Surgeon",
+    image: vinodh,
+    description:
+      "Dr. K. Vinodh specializes in joint replacement surgery, trauma care, and arthroscopic procedures."
+  }
+]
 },
 
 /* =======================
@@ -609,7 +720,24 @@ We assess and manage growth and developmental delays , speech and hearing diffic
     "Pediatric Emergency",
     "Growth Monitoring",
     "Chronic Pediatric Care"
-  ]
+  ],
+
+
+
+  doctors:[
+{
+name:"Dr. P. Senthil Kumar",
+designation:"Neonatologist",
+image:psenthilkumar,
+description:"Specialist in neonatal intensive care and newborn health management."
+},
+{
+name:"Dr. V. Shanmugapriya",
+designation:"Paediatrician",
+image:shanmugapriya,
+description:"Expert in pediatric medicine, child growth monitoring and immunization care."
+}
+]
 },
 
 /* =======================
@@ -737,7 +865,30 @@ Soon to be added is cardiopulmonary exercise testing)
     "Pulmonary Function Testing",
     "Bronchoscopy",
     "Pulmonary Rehabilitation"
-  ]
+  ],
+  doctors: [
+  {
+    name: "Dr. M.R. Jayamohan Unnithan",
+    designation: "Senior Pulmonologist",
+    image: jaymohan,
+    description:
+      "Dr. Jayamohan Unnithan is one of the most experienced pulmonologists in Coimbatore with over four decades of expertise in respiratory medicine."
+  },
+  {
+    name: "Dr. K. Srikanth",
+    designation: "Pulmonologist",
+    image: srikanth,
+    description:
+      "Dr. Srikanth is an expert in obstructive airway diseases, pulmonary research, and advanced respiratory diagnostics."
+  },
+  {
+    name: "Dr. S. Nagarajan",
+    designation: "Pulmonologist",
+    image: nagarajan,
+    description:
+      "Dr. Nagarajan specializes in allergy testing, smoking cessation programs, and pulmonary rehabilitation."
+  }
+]
 },
 
 /* =======================
@@ -758,7 +909,16 @@ Modern imaging equipment and experienced radiologists ensure high-quality and ti
     "CT Scan",
     "MRI Scan",
     "Interventional Radiology"
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. S. Sangeetha",
+designation:"Radiologist",
+image:sangeetha,
+description:"Expert in diagnostic imaging including ultrasound, CT and MRI interpretation."
+}
+]
 },
 
 /* =======================
@@ -826,7 +986,16 @@ Advanced surgical techniques and compassionate care aim to improve survival and 
     "Head & Neck Oncology",
     "GI Cancer Surgery",
     "Palliative Care"
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. N. Selvaraj",
+designation:"Oncologist",
+image:selvaraj,
+description:"Specialist in surgical oncology and multidisciplinary cancer treatment."
+}
+]
 },
 
 /* =======================
@@ -858,7 +1027,16 @@ Urology Clinic Coimbatore was established in 1992 as a one stop solution to all 
 `,
   services: [
     
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. M. Ramalingam",
+designation:"Urologist",
+image:ramalingam,
+description:"Experienced urologist specializing in kidney stone treatment, prostate disorders and urinary surgeries."
+}
+]
 }
 
 ];

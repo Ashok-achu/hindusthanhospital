@@ -26,33 +26,56 @@ const navigate=useNavigate();
 
 /* ---------- SLUG MAP ---------- */
 
-const slugMap={
+const slugMap = {
+
 Anaesthesiology:"anaesthesiology",
 Cardiology:"cardiology",
 Dermatology:"dermatology",
 Dentistry:"dentistry",
 Diabetology:"diabetology",
+
 "Emergency Care":"emergency-care",
+
 ENT:"ent",
+
 "General Medicine":"general-medicine",
+
 "General Surgery":"general-surgery",
+
 Gastroenterology:"gastroenterology",
+
 "Internal Medicine":"internal-medicine",
+
 ICU:"icu",
+
 Neonatology:"neonatology",
-"Neuro & Vascular Surgery":"neurovascular-surgery",
+
+"Neuro & Vascular Surgery":"neuro",
+
 Nephrology:"nephrology",
+
 "Obstetrics & Gynaecology":"obgyn",
+
 Orthopaedics:"orthopaedics",
+
 Rehabilitation:"rehab",
+
 Paediatrics:"paediatrics",
+
 "Paediatric Surgery":"paediatric-surgery",
+
 Psychiatry:"psychiatry",
+
 "Plastic Surgery":"plastic-surgery",
+
 Pulmonology:"pulmonology",
+
 Radiology:"radiology",
-"Surgical Oncology":"surgical-oncology",
+
+"Surgical Oncology":"oncology",
+
 Urology:"urology",
+
 };
 
 const toSlug=(label)=>"/departments/"+slugMap[label];
