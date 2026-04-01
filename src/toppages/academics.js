@@ -27,6 +27,18 @@ export default function Academics() {
       desc: "Clinical internships with hands-on training across key departments.",
       full: "Students are trained across departments such as Emergency, ICU, Radiology, OT, Cardiology and more. This program ensures real-time exposure to advanced hospital operations and case handling."
     },
+    {
+      id: 4,
+      title: "DTP – Diagnostic & Treatment Procedures",
+      desc: "Comprehensive diploma covering core diagnostic protocols and clinical treatment procedures.",
+      full: "The Diploma in Diagnostic & Treatment Procedures (DTP) equips healthcare professionals with in-depth knowledge of diagnostic methodologies and evidence-based treatment protocols. The curriculum covers laboratory diagnostics, imaging interpretation, patient assessment, wound management, IV therapy, surgical assistance, and emergency response procedures — preparing students for confident, competent clinical practice."
+    },
+    {
+      id: 5,
+      title: "Patient Care & Safety Management",
+      desc: "Specialized training in safe patient handling, infection control & quality care standards.",
+      full: "This program focuses on the principles of patient safety, infection prevention and control (IPC), safe medication administration, fall prevention, pressure injury management, and documentation standards. Participants learn how to uphold quality benchmarks in clinical environments aligned with NABH and JCI guidelines, ensuring a safe and supportive experience for every patient."
+    },
   ];
 
   return (

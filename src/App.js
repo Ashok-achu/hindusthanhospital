@@ -46,6 +46,9 @@ import Rooms from "./facilities/Rooms";
 import IT from "./facilities/IT";
 import Canteen from "./facilities/Canteen";
 import Pharmacy from "./facilities/Pharmacy";
+import Courses from "./academics/Courses";
+
+
 
 // 🔹 Dynamic Department Detail Page
 import DepartmentDetail from "./departments/DepartmentDetail";
@@ -96,6 +99,7 @@ export default function App() {
           <Route path="/facilities/it" element={<IT />} />
           <Route path="/facilities/canteen" element={<Canteen />} />
           <Route path="/facilities/pharmacy" element={<Pharmacy />} />
+          <Route path="./academics/Courses.js" element={<Courses />} />
 
           {/* DYNAMIC DEPARTMENT */}
           <Route path="/departments/:slug" element={<DepartmentDetail />} />
