@@ -382,13 +382,7 @@ export default function Home() {
               </button>
             </div>
 
-            <Link to="/departments"
-              className="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-rose-400 transition-colors duration-300 group">
-              View All Departments
-              <div className="w-7 h-7 rounded-full border border-gray-700 group-hover:border-rose-500 flex items-center justify-center transition-colors duration-300">
-                <FaArrowRight className="text-xs group-hover:translate-x-0.5 transition-transform" />
-              </div>
-            </Link>
+           
           </div>
 
         </div>
