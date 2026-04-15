@@ -125,7 +125,7 @@ export default function HeaderGroup() {
             label: "Academics",
             children: [
                 { label: "Institutions", to: "https://hindusthan.net", external: true },
-                { label: "Courses", to: "Courses" },
+                { label: "Courses", to: "/academics/courses" },
             ],
         },
         {

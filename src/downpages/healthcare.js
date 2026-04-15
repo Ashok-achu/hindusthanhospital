@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
     FaSearch,
     FaUserMd,
@@ -47,6 +48,7 @@ import psenthilkumar from "../assets/Final/DR. P. SENTHILKUMAR.jpg";
 
 
 export default function Healthcare() {
+    const navigate = useNavigate();
 
     const [filters, setFilters] = useState({
         name: "",
@@ -314,12 +316,20 @@ export default function Healthcare() {
 
                             </button>
 
-                            <button
-                                className="px-5 py-2 bg-blue-700 text-white rounded-full">
-
-                                Book
-
-                            </button>
+                           <button
+  onClick={() =>
+    navigate("/appointment", {
+      state: {
+        doctorName: doc.name,
+        speciality: doc.speciality,
+        image: doc.image,
+      },
+    })
+  }
+  className="px-5 py-2 bg-blue-700 text-white rounded-full"
+>
+  Book
+</button>
 
                         </div>
 
