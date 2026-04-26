@@ -46,7 +46,7 @@ import Rooms from "./facilities/Rooms";
 import IT from "./facilities/IT";
 import Canteen from "./facilities/Canteen";
 import Pharmacy from "./facilities/Pharmacy";
-import Courses from "./academics/courses";
+import Courses from "./academics/Courses";
 
 
 
@@ -100,7 +100,7 @@ export default function App() {
           <Route path="/facilities/canteen" element={<Canteen />} />
           <Route path="/facilities/pharmacy" element={<Pharmacy />} />
           {/* ✅ ACADEMICS */}
-          <Route path="/academics/courses" element={<Courses />} />
+          <Route path="/academics/Courses" element={<Courses />} />
 
           {/* DYNAMIC DEPARTMENT */}
           <Route path="/departments/:slug" element={<DepartmentDetail />} />

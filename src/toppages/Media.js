@@ -19,7 +19,7 @@ import eq12 from "../assets/Equipments/Equipments-12.jpg";
 import eq13 from "../assets/Equipments/Equipments-13.jpg";
 import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
 import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
-import emergencyImg from "../assets/Equipments/Emergency medicine_.jpg";
+import emergencyImg from "../assets/Equipments/Emergency_medicine_.jpg";
 import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
 import emrImg from "../assets/Equipments/EMR_.jpg";
 import labImg from "../assets/Equipments/Laboratory_.jpg";
