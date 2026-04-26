@@ -17,11 +17,42 @@ import eq10 from "../assets/Equipments/Equipments-10.jpg";
 import eq11 from "../assets/Equipments/Equipments-11.jpg";
 import eq12 from "../assets/Equipments/Equipments-12.jpg";
 import eq13 from "../assets/Equipments/Equipments-13.jpg";
+import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
+import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
+import emergencyImg from "../assets/Equipments/Emergency medicine_.jpg";
+import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
+import emrImg from "../assets/Equipments/EMR_.jpg";
+import labImg from "../assets/Equipments/Laboratory_.jpg";
+import paediatricsImg from "../assets/Equipments/Paediatrics.jpg";
+import gynaeImg from "../assets/Equipments/Gynaecology.jpg";
+import pulmonologyImg from "../assets/Equipments/PULMONOLOGY_.jpg";
+import nicuImg from "../assets/Equipments/NICU PHOTOTHERAPY.jpg";
+import nephrologyImg from "../assets/Equipments/Nephrology_(1).jpg";
+import physioImg from "../assets/Equipments/Physiotherapy_.jpg";
+import pftImg from "../assets/Equipments/PFT PROCEDURE_.jpg";
+import ecgImg from "../assets/Equipments/ECG.jpg";
+import radiologyImg from "../assets/Equipments/RADIANT WARMER_.jpg";
+import spirometerImg from "../assets/Equipments/SPIROMETER.jpg";
 
 /* ================= IMAGE LIST ================= */
 
 const mediaItems = [
-eq1,eq2,eq3,eq4,eq5,eq6,eq7,eq8,eq9,eq10,eq11,eq12,eq13
+eq1,eq2,eq3,eq4,eq5,eq6,eq7,eq8,eq9,eq10,eq11,eq12,eq13,cardiologyImg,
+  diabetologyImg,
+  emergencyImg,
+  endoscopyImg,
+  emrImg,
+  labImg,
+  paediatricsImg,
+  gynaeImg,
+  pulmonologyImg,
+  nicuImg,
+  nephrologyImg,
+  physioImg,
+  pftImg,
+  ecgImg,
+  radiologyImg,
+  spirometerImg
 ];
 
 export default function Media(){

@@ -74,11 +74,26 @@ ${dept.slug===slug
 
 
 {/* IMAGE */}
-<img
-src={department.image}
-alt={department.name}
-className="w-full h-[220px] sm:h-[300px] lg:h-[350px] object-cover"
-/>
+{/* IMAGE BANNER */}
+<div className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px]">
+
+  <img
+    src={department.image}
+    alt={department.name}
+    className="w-full h-full object-cover object-center"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/30"></div>
+
+  {/* Title on image */}
+  <div className="absolute bottom-6 left-6 sm:left-10">
+    <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold">
+      {department.name}
+    </h1>
+  </div>
+
+</div>
 
 
 <div className="p-6 sm:p-8 lg:p-12">

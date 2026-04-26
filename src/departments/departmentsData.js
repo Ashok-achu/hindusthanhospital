@@ -1,5 +1,21 @@
-import cardiologyImg from "../assets/hospital/1920_1080 Green removed.jpg";
 
+// Department Images
+import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
+import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
+import emergencyImg from "../assets/Equipments/Emergency medicine_.jpg";
+import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
+import emrImg from "../assets/Equipments/EMR_.jpg";
+import labImg from "../assets/Equipments/Laboratory_.jpg";
+import paediatricsImg from "../assets/Equipments/Paediatrics.jpg";
+import gynaeImg from "../assets/Equipments/Gynaecology.jpg";
+import pulmonologyImg from "../assets/Equipments/PULMONOLOGY_.jpg";
+import nicuImg from "../assets/Equipments/NICU PHOTOTHERAPY.jpg";
+import nephrologyImg from "../assets/Equipments/Nephrology_(1).jpg";
+import physioImg from "../assets/Equipments/Physiotherapy_.jpg";
+import pftImg from "../assets/Equipments/PFT PROCEDURE_.jpg";
+import ecgImg from "../assets/Equipments/ECG.jpg";
+import radiologyImg from "../assets/Equipments/RADIANT WARMER_.jpg";
+import spirometerImg from "../assets/Equipments/SPIROMETER.jpg";
 
 
 /* Doctor Images */
@@ -94,7 +110,7 @@ description:"Experienced anaesthesiologist specializing in perioperative anesthe
 {
   slug: "cardiology",
   name: "Cardiology",
-  image: "../assets/hospital/1920_1080 Green removed.jpg",
+  image: cardiologyImg,
   description: `
 The Department of Cardiology provides comprehensive and advanced care for disorders of the heart and blood vessels. Hindusthan Hospital is a 200-bedded multi-speciality hospital equipped with 24-hour emergency services and a fully functional Cath Lab.
 
@@ -191,7 +207,7 @@ Preventive, restorative, cosmetic, and surgical dental procedures are offered un
 {
   slug: "diabetology",
   name: "Diabetology",
-  image: "/images/departments/diabetology.jpg",
+  image: diabetologyImg,
   description: `
 The Department of Diabetology provides dedicated and holistic care for patients with diabetes mellitus. The department focuses on prevention, early diagnosis, and effective management of diabetes and its complications.
 
@@ -214,7 +230,7 @@ Comprehensive care includes blood sugar monitoring, insulin therapy, lifestyle m
 {
   slug: "emergency-care",
   name: "Emergency Care",
-  image: "/images/departments/emergency.jpg",
+  image: emergencyImg,
   description: `
 The Emergency Care Department provides immediate and life-saving medical care for critical and urgent conditions. Emergency services operate 24x7 with rapid response teams trained to handle trauma, cardiac emergencies, stroke, and accidents.
 
@@ -236,7 +252,7 @@ The department is supported by advanced resuscitation units, intensive care faci
 {
   slug: "ent",
   name: "ENT & Head and Neck Surgery",
-  image: "/images/departments/ent.jpg",
+  image: endoscopyImg,
   description: `
 The department is headed by Dr. V. Venkatraman, HOD and Chief Endoscopic ENT surgeon who has been practising in Coimbatore for more than a decade. He completed his MS from the prestigious institute JIPMER, Pondicherry. The department provide all services forwards diagnosis and treatment of ENT disorders including cancers of the head and neck region.
 
@@ -271,7 +287,7 @@ description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, v
 {
   slug: "neuro",
   name: "NEUROSCIENCE",
-  image: "/images/departments/ent.jpg",
+  image: nephrologyImg,
   description: `
 The management of Neurological diseases like head injury, stroke and other neurological illnesses are unique, which needs Meticulous, Dedicated work and a Comprehensive team.
 We a group of Neurosurgeon, Neurologist, Psychiatrist along with paramedical team of Neuro ICU staff, Neurophysiotherapy, Neurorehabilitative therapy  are giving Comprehensive Neuro care. 
@@ -369,7 +385,7 @@ description:"Expert in spine surgery, trauma neurosurgery and neuro critical car
 {
   slug: "general-medicine",
   name: "General Medicine",
-  image: "/images/departments/generalmedicine.jpg",
+  image: emrImg,
   description: `
 1. DISEASE PREVENTION
 
@@ -511,7 +527,7 @@ Highly trained critical care specialists ensure continuous monitoring and timely
 {
   slug: "neonatology",
   name: "Neonatology",
-  image: "/images/departments/neonatology.jpg",
+  image: nicuImg,
   description: `
 STATE OF ART NEONATAL INTENSIVE CARE UNIT HINDUSTHAN HOSPITAL
                      Our NICU has 20 beds out of which 10 beds are equipped for level 3 Intensive care,for managing very preterm and sick babies.The management staffs, neonatal and perinatal staffs of HINDUSTHAN are committed to deliver high quality neonatal care.
@@ -593,7 +609,7 @@ Common conditions encountered in our NICU include
 {
   slug: "nephrology",
   name: "Nephrology",
-  image: "/images/departments/nephrology.jpg",
+  image: nephrologyImg,
   description: `
 The Department of Nephrology offers comprehensive care for kidney-related diseases including acute and chronic kidney disorders.
 
@@ -624,7 +640,7 @@ description:"Specialist in kidney diseases, dialysis care and chronic kidney dis
 {
   slug: "obgyn",
   name: "Obstetrics & Gynaecology",
-  image: "/images/departments/obgyn.jpg",
+  image: gynaeImg,
   description: `
 The Department of Obstetrics & Gynaecology provides comprehensive healthcare for women at all stages of life.
 
@@ -694,7 +710,7 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
 {
   slug: "paediatrics",
   name: "Paediatrics",
-  image: "/images/departments/pediatrics.jpg",
+  image: paediatricsImg,
   description: `
 HINDUSTHAN HOSPITAL is proudly recognized as the best child care hospital in Coimbatore offering a comprehensive range of services for children.Our paediatric department provides outpatient care for immunizations and routine check-ups ,while our emergency services cater to all acute and chronic illnesses . Our well-equipped paediatric ward and PICU are staffed with highly trained professionals who ensure round-the-clock medical care in a child-friendly environment.
          
@@ -836,7 +852,7 @@ Individualized treatment plans ensure optimal aesthetic and functional outcomes.
 {
   slug: "pulmonology",
   name: "Pulmonology",
-  image: "/images/departments/pulmonology.jpg",
+  image: spirometerImg,
   description: `
 ILCR is the most prominent department of Hindusthan Hospital and is its first department that that started its operations on 30th September 2019 immediately after Hindusthan hospital as an institution was conceived. Today it stands out as one of the most sought after pulmonology services in the city. The department was the first to use Oscillometry in lung function test first time in Coimbatore. It is run by four eminent pulmonologists of the city with vast experience in the field of respiratory medicine.
 Dr. Jayamohan Unnithan is the most senior qualified Pulmonologist in Coimbatore with an Experience of 42 years in the field of respirstory medicine. He is involved in treating patients with obstructive airways disease and general pulmonology with special interest in pulmonary rehabilitation, bronchoscopy and thoracoscopy. He had been instrumental in organizing many academic programmes both for medical as well as paramedics. He has been involved in many philanthropic activities as well.
@@ -897,7 +913,7 @@ Soon to be added is cardiopulmonary exercise testing)
 {
   slug: "radiology",
   name: "Radiology",
-  image: "/images/departments/radiology.jpg",
+  image: radiologyImg,
   description: `
 The Department of Radiology provides comprehensive diagnostic imaging services essential for accurate diagnosis and treatment planning.
 
@@ -927,7 +943,7 @@ description:"Expert in diagnostic imaging including ultrasound, CT and MRI inter
 {
   slug: "rehab",
   name: "Physical Medicine & Rehabilitation",
-  image: "/images/departments/rehab.jpg",
+  image: physioImg,
   description: `
 Hindusthan Hospital’s physiotherapy department is dedicated to aiding individuals in regaining mobility and function after injury or  surgery, ultimately accelerating recovery and enhancing overall quality of life. Moreover, it plays a crucial role in minimizing the risk of future injuries. This type of therapy offers significant advantages to individuals of all ages and health conditions, from older individuals recuperating from joint replacement to young athletes dealing with injuries. The Department of Physiotherapy at Hindusthan Hospital is staffed with top-notch Physiotherapists in Coimbatore who have successfully treated a diverse range of patients. Every aspect of the department, from advanced rehabilitation tools to large therapy areas, is crafted to cater to the varied requirements of patients as they work towards better health.
 
