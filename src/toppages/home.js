@@ -187,7 +187,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div initial={{ opacity:0, x:50 }} whileInView={{ opacity:1, x:0 }} transition={{ duration:0.8, delay:0.2 }}>
-              <span className="text-rose-500 font-bold tracking-widest text-sm uppercase mb-2 block">Who We Are</span>
+              <span className="text-rose-500 font-bold tracking-widest text-sm uppercase mb-2 block">Why Choose Us</span>
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
                 Transforming Healthcare<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-400">For A Better Tomorrow</span>
@@ -262,7 +262,7 @@ export default function Home() {
                 </h2>
               </div>
               <p className="text-gray-400 text-lg max-w-md leading-relaxed lg:text-right">
-                25+ departments staffed by senior consultants, equipped with cutting-edge technology
+                15+ departments staffed by senior consultants, equipped with cutting-edge technology
                 for precise diagnosis and world-class treatment.
               </p>
             </div>
@@ -514,7 +514,7 @@ export default function Home() {
               { icon:<FaUser />,            value:50000, suffix:"+", label:"Patients Treated",   delay:0   },
               { icon:<FaUserMd />,          value:45,     suffix:"+", label:"Specialist Doctors", delay:0.1 },
               { icon:<FaBed />,             value:50,    suffix:"+", label:"Hospital Beds",       delay:0.2 },
-              { icon:<FaHospital />,        value:25,     suffix:"+", label:"Years of Service",    delay:0.3 },
+              { icon:<FaHospital />,        value:45,     suffix:"+", label:"Years of Service",    delay:0.3 },
             ].map((s,i) => <StatCard key={i} {...s} />)}
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function Courses() {
     },
     {
       id: 2,
-      title: "DNB - Diplomate of National Board",
+      title: "DMLT",
       image: dnbImg,
       duration: "3 Years",
       description:

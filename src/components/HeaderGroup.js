@@ -30,7 +30,7 @@ export default function HeaderGroup() {
 
         Anaesthesiology: "anaesthesiology",
         Cardiology: "cardiology",
-        Dermatology: "dermatology",
+       
         Dentistry: "dentistry",
         Diabetology: "diabetology",
 
@@ -44,7 +44,7 @@ export default function HeaderGroup() {
 
         Gastroenterology: "gastroenterology",
 
-        "Internal Medicine": "internal-medicine",
+        
 
         ICU: "icu",
 
@@ -64,7 +64,7 @@ export default function HeaderGroup() {
 
         "Paediatric Surgery": "paediatric-surgery",
 
-        Psychiatry: "psychiatry",
+       
 
         "Plastic Surgery": "plastic-surgery",
 
@@ -72,7 +72,7 @@ export default function HeaderGroup() {
 
         Radiology: "radiology",
 
-        "Surgical Oncology": "oncology",
+       
 
         Urology: "urology",
 
@@ -103,7 +103,7 @@ export default function HeaderGroup() {
                 { label: "Blood Bank", to: "/facilities/blood-bank" },
                 { label: "Insurance", to: "/facilities/insurance" },
                 { label: "Rooms", to: "/facilities/rooms" },
-                { label: "IT", to: "/facilities/it" },
+                { label: "IP", to: "/facilities/it" },
                 { label: "Canteen", to: "/facilities/canteen" },
                 { label: "Pharmacy", to: "/facilities/pharmacy" },
             ],

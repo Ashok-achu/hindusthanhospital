@@ -89,7 +89,9 @@ Education and Research. In addition to providing exceptional clinical care, our 
     "Paediatric Anaesthesia",
     "Cardiac Anaesthesia",
     "Neuro & Onco Anaesthesia",
-    "Day Care Anaesthesia"
+    "Day Care Anaesthesia",
+    "Cardiovascular Anaesthesia",
+"Acute Pain Management",
   ],
 
   doctors:[
@@ -120,20 +122,26 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 `,
   services: [
     "12 Lead ECG",
-    "2D Echocardiography",
-    "Stress Test / TMT",
-    "Stress ECHO",
-    "TEE",
+    "2D Echocardiogram",
+    "TMT (Stress Test)",
     "Holter Monitoring",
-    "ABPM",
-    "Coronary Angiography",
+    "ABPM"
+  ],
+
+  // 🔹 CATH LAB SERVICES
+  cathLab: [
+    "Coronary Angiogram",
     "Coronary Angioplasty",
-    "Pacemaker Implantation",
-    "ICD Implantation",
-    "EPS & RFA",
+    "Pacemaker Implantation"
+  ],
+
+  // 🔹 SUB SPECIALITIES
+  subSpecialities: [
+    "Interventional Cardiology",
     "Heart Failure Management",
     "Cardiac Rehabilitation"
   ],
+
 
   doctors: [
   {
@@ -153,28 +161,6 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 ]
 },
 
-/* =======================
-   DERMATOLOGY
-======================= */
-{
-  slug: "dermatology",
-  name: "Dermatology",
-  image: "/images/departments/dermatology.jpg",
-  description: `
-The Department of Dermatology offers expert diagnosis and treatment for a wide range of skin, hair, and nail disorders. The department combines medical expertise with advanced technology to deliver safe and effective dermatological care.
-
-Both medical and cosmetic dermatology services are provided with personalized treatment plans. Special attention is given to chronic skin conditions, allergic disorders, and aesthetic concerns to improve patient confidence and quality of life.
-`,
-  services: [
-    "Skin Allergy Treatment",
-    "Acne & Scar Management",
-    "Psoriasis & Eczema Treatment",
-    "Hair Loss Treatment",
-    "Pigmentation Disorders",
-    "Laser Dermatology",
-    "Cosmetic Dermatology"
-  ]
-},
 
 /* =======================
    DENTISTRY
@@ -271,7 +257,10 @@ Sub-specialties:
     "Microscopic Ear Surgery",
     "Voice Disorder Treatment",
     "Snoring & Sleep Surgery",
-    "Head & Neck Cancer Surgery"
+    "Voice improvement",
+    "Phonosurgery",
+
+    
   ],
 
   doctors:[
@@ -480,26 +469,6 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
   ]
 },
 
-/* =======================
-   INTERNAL MEDICINE
-======================= */
-{
-  slug: "internal-medicine",
-  name: "Internal Medicine",
-  image: "/images/departments/internalmedicine.jpg",
-  description: `
-The Department of Internal Medicine provides holistic adult healthcare with emphasis on chronic disease management and preventive care.
-
-Patients benefit from coordinated treatment plans that focus on long-term health maintenance and quality of life.
-`,
-  services: [
-    "Diabetes & BP Management",
-    "Thyroid Disorders",
-    "Infectious Diseases Care",
-    "Preventive Health Screening",
-    "Chronic Disease Management"
-  ]
-},
 
 /* =======================
    ICU
@@ -619,7 +588,9 @@ Dialysis services and long-term renal care are provided with a focus on improvin
     "Hemodialysis",
     "CKD Management",
     "Kidney Stone Evaluation",
-    "Renal Biopsy"
+    "Renal Biopsy",
+    "Renal replacement therapy",
+    "Renal transplant",
   ],
 
 
@@ -651,7 +622,8 @@ Services include antenatal care, safe deliveries, fertility management, and mini
     "High-risk Pregnancy",
     "Normal & Caesarean Delivery",
     "Laparoscopic Gynecology",
-    "Menopause Care"
+    "Menopause Care",
+    "Cancer screening"
   ]
 },
 
@@ -660,7 +632,7 @@ Services include antenatal care, safe deliveries, fertility management, and mini
 ======================= */
 {
   slug: "orthopaedics",
-  name: "Orthopaedics & Joint Replacement",
+  name: "Orthopaedics",
   image: "/images/departments/ortho.jpg",
   description: `
 Our department of orthopaedics and joint replacement surgery provides a range of musculoskeletal services from orthopaedic medicine to complex surgery.
@@ -687,6 +659,7 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
 
 `,
   services: [
+    "Trauma",
     "Joint Replacement Surgery",
     "Fracture Management",
     "Arthroscopy",
@@ -805,26 +778,7 @@ Drainage of  various abscesses in childhood.
   ]
 },
 
-/* =======================
-   PSYCHIATRY
-======================= */
-{
-  slug: "psychiatry",
-  name: "Psychiatry",
-  image: "/images/departments/psychiatry.jpg",
-  description: `
-The Department of Psychiatry promotes mental health and emotional well-being through compassionate and confidential care.
 
-Evidence-based treatments are provided for a wide range of psychiatric and behavioural disorders.
-`,
-  services: [
-    "Depression & Anxiety",
-    "Bipolar Disorder",
-    "Schizophrenia",
-    "De-addiction",
-    "Child Psychiatry"
-  ]
-},
 
 /* =======================
    PLASTIC SURGERY
@@ -876,12 +830,28 @@ Soon to be added is cardiopulmonary exercise testing)
 11. ILCR boasts of having special focus on patient education and programmes for publicwithout charging any remuneration.
 12. Many other charity activities happen which have to be experi
 `,
-  services: [
-    "Asthma & COPD Clinics",
-    "Pulmonary Function Testing",
+  // 🔹 PROCEDURES
+  procedures: [
     "Bronchoscopy",
-    "Pulmonary Rehabilitation"
+    "Thoracoscopy",
+    "Pleural Procedures"
   ],
+
+  // 🔹 SPECIAL CLINICS
+  specialClinics: [
+    "TB & ILD",
+    "COPD & Asthma",
+    "Sleep Disorders",
+    "Allergy & Smoking Cessation"
+  ],
+
+  // 🔹 SERVICES
+  services: [
+    "Pulmonary Function Testing",
+    "Pulmonary Rehabilitation",
+    "Clinical Research"
+  ],
+
   doctors: [
   {
     name: "Dr. M.R. Jayamohan Unnithan",
@@ -920,10 +890,10 @@ The Department of Radiology provides comprehensive diagnostic imaging services e
 Modern imaging equipment and experienced radiologists ensure high-quality and timely reporting.
 `,
   services: [
-    "X-Ray",
-    "Ultrasound",
-    "CT Scan",
-    "MRI Scan",
+    "Neonal Care",
+    "Oncology",
+    "rental transplant",
+    "Cardio - Thoracic Studies",
     "Interventional Radiology"
   ],
 
@@ -1025,23 +995,30 @@ description:"Specialist in surgical oncology and multidisciplinary cancer treatm
 Urology Clinic Coimbatore was established in 1992 as a one stop solution to all urological diseases. At this well equipped Urology centre all the needed Urological Investigations are available. A stand alone day care surgery centre with laser, ESWL, Laser for urinary stones, operating microscope Andrology equipments (Viberect, Electroejaculator) are attached to this clinic wherein all the ambulatory surgical procedures can be performed for the convenience of the patient. Centrally located in Coimbatore, Urology Clinic caters to both walk-in patients and and those with a prior appointment.
 
 	Ultra Sound Scan Diagnosis
+ Cystoscopy
+ Infertility surgery (Micro Varicocelectomy)
+ AV Fistula
+ Uro-oncology & reconstruction
+*Adrenal
+*Kidney
+*Ureter
+*Bladder
+*Prostate
+*Penis
 	Prostatic Enlargement
-	Bladder Cancer
-	Infertility
 	Birth Defects of Urinary Tract in Children
 	Laparoscopic Pyeloplasty
 	Kidney stone
 	Urinary Tract infection 
-	Penile Cancer
 	Erectile Dysfunction
 	Neurogenic Bladder
 	Blood in the Urine
-	Kidney cancer
 	Testicular Pain and Swellings
 	Urinary Problems in Women
 	Ejaculatory Dysfunction
 `,
   services: [
+    
     
   ],
 
