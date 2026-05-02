@@ -75,9 +75,10 @@ export default function Healthcare() {
 
         // CARDIOLOGY
 
+        { id: 6, name: "Dr. P.R. Vaidyanathan", speciality: "Cardiology", gender: "Male", image: vaidyanathan },
         { id: 5, name: "Dr. M. Sathish Kumar", speciality: "Cardiology", gender: "Male", image: sathish },
 
-        { id: 6, name: "Dr. P.R. Vaidyanathan", speciality: "Cardiology", gender: "Male", image: vaidyanathan },
+        
 
         // GENERAL SURGERY
 
@@ -95,7 +96,7 @@ export default function Healthcare() {
 
         // DIABETOLOGY
 
-        { id: 12, name: "Dr. M. Senthil Kumar", speciality: "Diabetology", gender: "Male", image: senthilkumar },
+        { id: 12, name: "Dr. M. Senthil Kumar", speciality: "Diabetology & General Medicine", gender: "Male", image: senthilkumar },
 
         // RADIOLOGY
 
@@ -109,9 +110,11 @@ export default function Healthcare() {
 
         { id: 16, name: "Dr. S. Eswaran Moorthy", speciality: "Neuro & Endovascular Surgery", gender: "Male", image: eswaran },
 
+         { id: 18, name: "Dr. Selva Kumar", speciality: "Neurology", gender: "Male", image: dummyDoctor },
+
         { id: 17, name: "Dr. N. Madhan", speciality: "Intensivists", gender: "Male", image: madhan },
 
-        { id: 18, name: "Dr. Selva Kumar", speciality: "Neurology", gender: "Male", image: dummyDoctor },
+       
 
         // ENT
 
@@ -122,10 +125,10 @@ export default function Healthcare() {
         { id: 20, name: "Prof. Dr. Ganesan K.S", speciality: "Cardiovascular & Thoracic Surgery", gender: "Male", image: dummyDoctor },
 
         // OBG
+        { id: 22, name: "Dr. Ponni Sunder", speciality: "Obstetrics & Gynaecology", gender: "Female", image: ponni },
 
         { id: 21, name: "Dr. S. Abinaya", speciality: "Obstetrics & Gynaecology", gender: "Female", image: abinaya },
 
-        { id: 22, name: "Dr. Ponni Sunder", speciality: "Obstetrics & Gynaecology", gender: "Female", image: ponni },
 
         { id: 23, name: "Dr. K. Kokila", speciality: "Obstetrics & Gynaecology", gender: "Female", image: kokila },
 

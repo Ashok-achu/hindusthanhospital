@@ -1,21 +1,75 @@
 
 // Department Images
+/* =======================
+   DEPARTMENT IMAGES
+======================= */
+
 import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
+import cardiologyImg1 from "../assets/Equipments/Cardiology_(1).jpg";
+
 import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
+
 import emergencyImg from "../assets/Equipments/Emergency_medicine_.jpg";
+
 import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
+
 import emrImg from "../assets/Equipments/EMR_.jpg";
+
 import labImg from "../assets/Equipments/Laboratory_.jpg";
+import labImg1 from "../assets/Equipments/Laboratory_(1).jpg";
+import labImg2 from "../assets/Equipments/Laboratory_(2).jpg";
+
 import paediatricsImg from "../assets/Equipments/Paediatrics.jpg";
+import paediatricsImg1 from "../assets/Equipments/Paediatrics_(1).jpg";
+import paediatricsImg2 from "../assets/Equipments/Paediatrics_(2).jpg";
+
 import gynaeImg from "../assets/Equipments/Gynaecology.jpg";
+
 import pulmonologyImg from "../assets/Equipments/PULMONOLOGY_.jpg";
+import pulmonologyImg1 from "../assets/Equipments/PULMONOLOGY_(1).jpg";
+
 import nicuImg from "../assets/Equipments/NICU PHOTOTHERAPY.jpg";
-import nephrologyImg from "../assets/Equipments/Nephrology_(1).jpg";
+import nicuImg1 from "../assets/Equipments/NICU.jpg";
+
+import nephrologyImg from "../assets/Equipments/Nephrology_.jpg";
+import nephrologyImg1 from "../assets/Equipments/Nephrology_(1).jpg";
+
 import physioImg from "../assets/Equipments/Physiotherapy_.jpg";
+import physioImg1 from "../assets/Equipments/Physiotherapy_(1).jpg";
+
 import pftImg from "../assets/Equipments/PFT PROCEDURE_.jpg";
+
 import ecgImg from "../assets/Equipments/ECG.jpg";
+import defibrillatorImg from "../assets/Equipments/ECG & DEFIBRILATOR.jpg";
+
 import radiologyImg from "../assets/Equipments/RADIANT WARMER_.jpg";
+
 import spirometerImg from "../assets/Equipments/SPIROMETER.jpg";
+
+import echoImg from "../assets/Equipments/ECHOMACHINE.jpg";
+import scopeCabinetImg from "../assets/Equipments/SCOPE STORAGE CABINET.jpg";
+
+import labourRoomImg from "../assets/Equipments/LABOUR & DELIVERY ROOM.jpg";
+
+
+/* =======================
+   EQUIPMENT SERIES
+======================= */
+
+import eq1 from "../assets/Equipments/Equipments-1.jpg";
+import eq2 from "../assets/Equipments/Equipments-2.jpg";
+import eq3 from "../assets/Equipments/Equipments-3.jpg";
+import eq4 from "../assets/Equipments/Equipments-4.jpg";
+import eq5 from "../assets/Equipments/Equipments-5.jpg";
+import eq6 from "../assets/Equipments/Equipments-6.jpg";
+import eq7 from "../assets/Equipments/Equipments-7.jpg";
+import eq8 from "../assets/Equipments/Equipments-8.jpg";
+import eq9 from "../assets/Equipments/Equipments-9.jpg";
+import eq10 from "../assets/Equipments/Equipments-10.jpg";
+import eq11 from "../assets/Equipments/Equipments-11.jpg";
+import eq12 from "../assets/Equipments/Equipments-12.jpg";
+import eq13 from "../assets/Equipments/Equipments-13.jpg";
+import hospital from "../assets/hospital/1920_1080 Green removed.jpg";
 
 
 /* Doctor Images */
@@ -42,6 +96,11 @@ import shanmugapriya from "../assets/Final/DR. V. SHANUMGAPRIYA.jpg";
 import psenthilkumar from "../assets/Final/DR. P. SENTHILKUMAR.jpg";
 import sangeetha from "../assets/Final/DR.S. SANGEETHA.jpg";
 import selvaraj from "../assets/Final/DR.N.SELVARAJ.jpg";
+import dummyprofile from "../assets/Final/Dummydoctor.jpg";
+import pradeep from "../assets/Final/DR. PRADEEP RAJA.jpg";
+import saranya from "../assets/Final/DR. S.SARANYA VISHUMATHY.jpg";
+import shanmugam from "../assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg";
+import senthil from "../assets/Final/DR.K. SENTHILjpg.jpg";
 const departmentsData = [
 
 /* =======================
@@ -50,7 +109,7 @@ const departmentsData = [
 {
   slug: "anaesthesiology",
   name: "Anaesthesiology",
-image: cardiologyImg,  
+image: hospital,
 description: `
 General Anesthesia: We offer general anesthesia services for a wide range of surgical procedures, ensuring patients are comfortably sedated and pain-free throughout the duration of their surgery.
 
@@ -96,11 +155,21 @@ Education and Research. In addition to providing exceptional clinical care, our 
 
   doctors:[
 {
-name:"Dr. M. Sathish Kumar",
+name:"S.SARANYA VISHUMATHY",
 designation:"Senior Anaesthesiologist",
-image:sathish,
+image:saranya,
+description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+},
+{
+name:"DR. N. MADHAN",
+designation:"Intensivists",
+image:madhan,
 description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
 }
+],
+gallery: [
+  ecgImg,
+  emrImg
 ]
 
   
@@ -112,7 +181,7 @@ description:"Experienced anaesthesiologist specializing in perioperative anesthe
 {
   slug: "cardiology",
   name: "Cardiology",
-  image: cardiologyImg,
+  image: hospital,
   description: `
 The Department of Cardiology provides comprehensive and advanced care for disorders of the heart and blood vessels. Hindusthan Hospital is a 200-bedded multi-speciality hospital equipped with 24-hour emergency services and a fully functional Cath Lab.
 
@@ -144,20 +213,28 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 
 
   doctors: [
+
+    {
+    name: "Dr. P.R. Vaidyanathan",
+    designation: "Senior Cardiologist",
+    image: vaidyanathan,
+    description:
+      "Dr. P.R. Vaidyanathan has extensive experience in non-invasive cardiology, cardiac rehabilitation, and preventive cardiac care."
+  },
   {
     name: "Dr. M. Sathish Kumar",
     designation: "Consultant Cardiologist",
     image: sathish,
     description:
       "Dr. M. Sathish Kumar is a senior cardiologist specializing in interventional cardiology, heart failure treatment, and advanced cardiac diagnostics."
-  },
-  {
-    name: "Dr. P.R. Vaidyanathan",
-    designation: "Senior Cardiologist",
-    image: vaidyanathan,
-    description:
-      "Dr. P.R. Vaidyanathan has extensive experience in non-invasive cardiology, cardiac rehabilitation, and preventive cardiac care."
   }
+  
+],
+
+gallery: [
+  cardiologyImg,
+  cardiologyImg1,
+  
 ]
 },
 
@@ -167,8 +244,8 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 ======================= */
 {
   slug: "dentistry",
-  name: "Dentistry",
-  image: "/images/departments/dentistry.jpg",
+  name: "Dental & Facio Maxillary",
+ image: hospital,
   description: `
 The Department of Dentistry provides comprehensive oral healthcare for patients of all age groups. Using modern dental equipment and patient-friendly techniques, the department ensures painless and comfortable dental treatments.
 
@@ -184,30 +261,75 @@ Preventive, restorative, cosmetic, and surgical dental procedures are offered un
     "Teeth Whitening",
     "Cosmetic Dentistry",
     "Paediatric Dentistry"
-  ]
+  ],
+
+  doctors: [
+
+    {
+    name: "Dr. Pradeep Raja S",
+    designation: "Dental & Facio Maxillary",
+    image: pradeep,
+
+  },
+  {
+    name: "Dr. Manasa V Prabhu",
+    designation: "Dental & Facio Maxillary",
+    image: dummyprofile,
+    
+  }
+],
+gallery: [
+  endoscopyImg
+]
 },
 
 /* =======================
    DIABETOLOGY
 ======================= */
 {
-  slug: "diabetology",
-  name: "Diabetology",
-  image: diabetologyImg,
+  slug: "diabetology-general-medicine",
+  name: "Diabetology & General Medicine",
+  image: hospital,
   description: `
-The Department of Diabetology provides dedicated and holistic care for patients with diabetes mellitus. The department focuses on prevention, early diagnosis, and effective management of diabetes and its complications.
+The Department of Diabetology & General Medicine offers comprehensive, patient-centered care focusing on prevention, early diagnosis, and effective treatment of a wide range of acute and chronic medical conditions.
 
-Comprehensive care includes blood sugar monitoring, insulin therapy, lifestyle modification, dietary counselling, and regular screening for diabetic complications. Patient education plays a key role in achieving long-term glycaemic control.
+The department specializes in the management of diabetes mellitus, including Type 1, Type 2, and gestational diabetes. Services include blood sugar monitoring, insulin therapy, lifestyle modification, dietary counselling, and regular screening for complications. A strong emphasis is placed on patient education to ensure long-term glycaemic control and prevention of complications such as diabetic foot, vascular issues, and metabolic disorders.
+
+In addition to diabetes care, the department provides expert diagnosis and treatment for general medical conditions. This includes management of infections, autoimmune diseases, deficiency disorders, hypertension, thyroid disorders, coronary artery disease, asthma, and other chronic illnesses.
+
+Preventive healthcare is a key focus area, offering adult vaccinations, lifestyle guidance, nutrition counselling, and comprehensive health check-ups including pre-employment and master health screenings. Special attention is given to geriatric care, ensuring quality healthcare for elderly patients.
+
+With advanced diagnostic facilities and a holistic treatment approach, the department ensures complete medical care under one roof.
 `,
   services: [
     "Blood Sugar Monitoring",
     "Type 1 & Type 2 Diabetes Care",
-    "Gestational Diabetes",
+    "Gestational Diabetes Management",
     "Insulin Therapy",
     "Diet & Lifestyle Counselling",
     "Diabetic Foot Care",
-    "Complication Screening"
-  ]
+    "Complication Screening",
+    "Fever & Infection Treatment",
+    "Hypertension & Thyroid Care",
+    "Chronic Disease Management",
+    "Geriatric Care",
+    "Adult Vaccinations",
+    "Preventive Health Checkups",
+    "Autoimmune & Deficiency Disorder Treatment"
+  ],
+  doctors: [
+    {
+      name: "Dr. M. Senthil Kumar",
+      designation: "General Physician & Diabetologist",
+      image: senthilkumar,
+      description:
+        "Dr. M. Senthil Kumar specializes in diabetes management, chronic disease treatment, geriatric care, and preventive healthcare with a patient-focused approach."
+    }
+  ],
+  gallery: [
+  diabetologyImg,
+  
+]
 },
 
 /* =======================
@@ -216,7 +338,7 @@ Comprehensive care includes blood sugar monitoring, insulin therapy, lifestyle m
 {
   slug: "emergency-care",
   name: "Emergency Care",
-  image: emergencyImg,
+ image: hospital,
   description: `
 The Emergency Care Department provides immediate and life-saving medical care for critical and urgent conditions. Emergency services operate 24x7 with rapid response teams trained to handle trauma, cardiac emergencies, stroke, and accidents.
 
@@ -229,7 +351,10 @@ The department is supported by advanced resuscitation units, intensive care faci
     "Stroke Management",
     "Emergency Resuscitation",
     "Ambulance Services"
-  ]
+  ],
+  gallery: [
+  emergencyImg
+]
 },
 
 /* =======================
@@ -238,7 +363,7 @@ The department is supported by advanced resuscitation units, intensive care faci
 {
   slug: "ent",
   name: "ENT & Head and Neck Surgery",
-  image: endoscopyImg,
+  image: hospital,
   description: `
 The department is headed by Dr. V. Venkatraman, HOD and Chief Endoscopic ENT surgeon who has been practising in Coimbatore for more than a decade. He completed his MS from the prestigious institute JIPMER, Pondicherry. The department provide all services forwards diagnosis and treatment of ENT disorders including cancers of the head and neck region.
 
@@ -270,13 +395,17 @@ designation:"Chief ENT Surgeon",
 image:venkataraman,
 description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, voice disorders and head & neck conditions."
 }
+],
+gallery: [
+  
+  
 ]
 },
 
 {
   slug: "neuro",
   name: "NEUROSCIENCE",
-  image: nephrologyImg,
+  image: hospital,
   description: `
 The management of Neurological diseases like head injury, stroke and other neurological illnesses are unique, which needs Meticulous, Dedicated work and a Comprehensive team.
 We a group of Neurosurgeon, Neurologist, Psychiatrist along with paramedical team of Neuro ICU staff, Neurophysiotherapy, Neurorehabilitative therapy  are giving Comprehensive Neuro care. 
@@ -364,65 +493,15 @@ designation:"Neurosurgeon",
 image:madhan,
 description:"Expert in spine surgery, trauma neurosurgery and neuro critical care."
 }
+],
+gallery: [
+ 
+  
 ]
 
 
 },
-/* =======================
-   GENERAL MEDICINE
-======================= */
-{
-  slug: "general-medicine",
-  name: "General Medicine",
-  image: emrImg,
-  description: `
-1. DISEASE PREVENTION
 
-•	Adult Vaccinations
-•	Lifestyle Preventive Measures
-•	Educating Importance of Exercise and Nutrition
-•	Assessment of Risk for Metabolic and Chronic diseases (Hypertension ,CAD,Hypothyroidism,Diabetes Mellitus and Dyslipidemia,Bronchial Ashtma)
-•	Preventive and pre-employment Master Health Check ups
-
-II. DIAGNOSIS AND TREATMENT:
-
-•	State of art facilities for quick diagnosis
-•	Managing Acute and Chronic Medical conditions
-
-Acute:  AFI, Infections, Auto immune Disease, Deficiency related Disorders.
-
-Chronic: (Hypertension ,CAD,Hypothyroidism,Diabetes Mellitus and Dyslipidemia,Bronchial Ashtma)
-
-III. SPECIAL INTEREST IN DIABETES MANAGEMENT AND GERIATRIC CARE
- 	
-•	Management of Type I , Type II and Gestational Diabetes
-•	Preventing Micro and Macro Vascular Complications of Diabetes.
-•	Managing Diabetic Medical Emergencies.
-•	Prevention of Diabetic Foot Ulcer and Amputation
-•	Comprehensive Diabetic Care under one roof.
-
-IV. SPECIALIZED CARE
-
-•	Educating patients about their Health conditions ,Daily Diet, Medications and Lifestyle Measures.
-`,
-  services: [
-    "Fever & Infection Care",
-    "Hypertension & Thyroid Disorders",
-    "Diabetes Management",
-    "Geriatric Medicine",
-    "Adult Vaccinations",
-    "Preventive Health Checkups"
-  ],
-  doctors: [
-  {
-    name: "Dr. M. Senthil Kumar",
-    designation: "General Physician & Diabetologist",
-    image: senthilkumar,
-    description:
-      "Dr. M. Senthil Kumar specializes in diabetes management, chronic disease treatment, and preventive healthcare."
-  }
-]
-},
 
 /* =======================
    GENERAL SURGERY
@@ -430,7 +509,7 @@ IV. SPECIALIZED CARE
 {
   slug: "general-surgery",
   name: "General & Laparoscopic Surgery",
-  image: "/images/departments/generalsurgery.jpg",
+ image: hospital,
   description: `
 Department of General Surgery and Laparoscopic Surgery offers a wide range of comprehensive and high quality surgical procedures. The Department is well equipped with the latest and advanced Technology and with the state of the art modern operation theaters.
 
@@ -445,7 +524,24 @@ General Surgery focuses on surgeries of piles ( Hemorrhoids ), Fissures, Fistula
     "Appendicectomy",
     "Piles, Fissure & Fistula Surgery",
     "Breast & Thyroid Surgery"
-  ]
+  ],
+
+  doctors:[
+{
+name:"Dr. S. Balakumar",
+designation:"General & Laparoscopic surgeon",
+image:balakumar,
+},
+{
+name:"Dr. V.P. Shanmuga Sundaram",
+designation:"General & Laparoscopic surgeon",
+image:shanmugam,
+}
+],
+gallery: [
+ 
+]
+
 },
 
 /* =======================
@@ -454,7 +550,7 @@ General Surgery focuses on surgeries of piles ( Hemorrhoids ), Fissures, Fistula
 {
   slug: "gastroenterology",
   name: "Gastroenterology",
-  image: "/images/departments/gastro.jpg",
+  image: hospital,
   description: `
 The Department of Gastroenterology provides specialized care for diseases of the digestive system, liver, pancreas, and biliary tract.
 
@@ -466,7 +562,10 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
     "ERCP",
     "Liver Disease Management",
     "Pancreatic Disorders Care"
-  ]
+  ],
+  gallery: [
+  
+]
 },
 
 
@@ -476,7 +575,7 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
 {
   slug: "icu",
   name: "Intensive Care Unit",
-  image: "/images/departments/icu.jpg",
+  image: hospital,
   description: `
 The Intensive Care Unit provides round-the-clock critical care for severely ill patients using advanced life-support systems.
 
@@ -487,90 +586,30 @@ Highly trained critical care specialists ensure continuous monitoring and timely
     "Sepsis Management",
     "Post-operative ICU Care",
     "Multi-organ Support"
-  ]
-},
+  ],
 
-/* =======================
-   NEONATOLOGY
-======================= */
+  doctors:[
 {
-  slug: "neonatology",
-  name: "Neonatology",
-  image: nicuImg,
-  description: `
-STATE OF ART NEONATAL INTENSIVE CARE UNIT HINDUSTHAN HOSPITAL
-                     Our NICU has 20 beds out of which 10 beds are equipped for level 3 Intensive care,for managing very preterm and sick babies.The management staffs, neonatal and perinatal staffs of HINDUSTHAN are committed to deliver high quality neonatal care.
-
-SALIENT FEATURES
-24/7  availability of  affordable , ethical and hassle free intensive care .
-•	Provides NICU  care for babies as early as 24 weeks of gestation .
-•	Managing birth weight as low as 500 grams.
-•	Over 500 NICU admissions annually.
-•	Equipped with advanced Neonatal facilities.
-•	Multidisciplinary team approach providing excellent Neonatal outcome.
-
-
-PROCEDURE DONE IN NICU AT HINDUSTHAN HOSPITAL
-NICU at HINDUSTHAN  provides excellent care in management of all premature and sick neonates.
- All essential and advanced procedures in managing neonates are carried out in Hindusthan NICU with high expertise.                   
-•	Resuscitation 
-•	Surfactant therapy
-•	Non – invasive ventilation including HFNC
-•	CPAP ventilation
-•	HFOV ventilation both Non-invasive and Invasive
-•	Invasive ventilation with pulmonary graphic display
-•	Blood and Blood product transfusion
-•	Therapeutic hypothermia (whole body cooling )
-•	Exchange transfusion
-•	Umbilical venous and arterial line catheterisation
-•	Percutaneous central venous line insertion
-•	Peripheral arterial line catheterisation 
-•	Intercostal chest drain insertion
-•	Suprapubic Bladder catheterisation
-•	Bone marrow aspiration 
-•	Lumbar puncture 
-•	Bedside Neonatal Ultrasound imaging
-•	Bedside Echocardiography
-•	ROP screening
-•	OAE screening
-•	Peritoneal dialysis 
-•	Liver / Renal Biopsy 
-•	Extra Ventricular Drain 
-
-VARIOUS CONDITIONS IN NEONATAL PERIOD LIKE
-•	Respiratory Distress Syndromes (RDS,TTN,MAS,Pneumonia)
-•	Prematurity related conditions
-•	Infant of Diabetic mother 
-•	Perinatal asphyxia
-•	Neonatal jaundice
-•	Congenital Heart Diseases
-•	Sepsis / Meningitis / DIVC
-•	TORCH Infection
-•	Acute Renal Failure / RTA
-•	Necrotizing Enterocolitis
-•	Neonatal seizures
-•	Bleeding disorders
-were managed successfully in our NICU
-COMMON NEONATAL GENETIC CONDITIONS
-Our neonatal services include early recognition , initial management and counselling for babies with suspected or confirmed genetic and chromosomal disorders.
-Common conditions encountered in our NICU include
-•	Chromosomal abnormalities (Downe’s syndrome , Edward syndrome)
-•	Congenital hypothyroidism
-•	Congenital Adrenal Hyperplasia (CAH )
-•	Cystic fibrosis , Bartter syndrome 
-•	OHVIRA  syndrome   
-•	VACTERL anomaly
-•	Inborn Errors of Metabolism like Urea Cycle Defects , Organic Acidemia , Fatty Acid Oxidation Disorders,Mitochondrial disorders
-•	Rare neuromuscular and skeletal disorders like SMA ( Spinal Muscular Atrophy ) and Congenital myopathies
-`,
-  services: [
-    "NICU Level III Care",
-    "Neonatal Ventilation",
-    "Premature Baby Care",
-    "Neonatal Emergency Care",
-    "Newborn Screening"
-  ]
+name:"S.SARANYA VISHUMATHY",
+designation:"Senior Anaesthesiologist",
+image:saranya,
+description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
 },
+{
+name:"DR. N. MADHAN",
+designation:"Intensivists",
+image:madhan,
+description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+}
+],
+gallery: [
+  emergencyImg
+  
+]
+
+},
+
+
 
 /* =======================
    NEPHROLOGY
@@ -578,7 +617,7 @@ Common conditions encountered in our NICU include
 {
   slug: "nephrology",
   name: "Nephrology",
-  image: nephrologyImg,
+  image: hospital,
   description: `
 The Department of Nephrology offers comprehensive care for kidney-related diseases including acute and chronic kidney disorders.
 
@@ -602,7 +641,12 @@ designation:"Nephrologist",
 image:gandhimohan,
 description:"Specialist in kidney diseases, dialysis care and chronic kidney disease management."
 }
+],
+gallery: [
+  nephrologyImg,nephrologyImg1
+  
 ]
+
 },
 
 /* =======================
@@ -611,7 +655,7 @@ description:"Specialist in kidney diseases, dialysis care and chronic kidney dis
 {
   slug: "obgyn",
   name: "Obstetrics & Gynaecology",
-  image: gynaeImg,
+  image: hospital,
   description: `
 The Department of Obstetrics & Gynaecology provides comprehensive healthcare for women at all stages of life.
 
@@ -624,7 +668,28 @@ Services include antenatal care, safe deliveries, fertility management, and mini
     "Laparoscopic Gynecology",
     "Menopause Care",
     "Cancer screening"
-  ]
+  ],
+  doctors: [
+    {
+      name: "Dr. Ponni Sunder",
+      designation: "Obstetrics & Gynaecology",
+      image: ponni,
+    },
+    {
+      name: "Dr. S. Abinaya",
+      designation: "Obstetrics & Gynaecology",
+      image: abinaya,
+    },
+     {
+      name: "Dr. K. Kokila",
+      designation: "Obstetrics & Gynaecology",
+      image: kokila,
+    }
+  ],
+  gallery: [
+  gynaeImg
+  
+]
 },
 
 /* =======================
@@ -633,7 +698,7 @@ Services include antenatal care, safe deliveries, fertility management, and mini
 {
   slug: "orthopaedics",
   name: "Orthopaedics",
-  image: "/images/departments/ortho.jpg",
+  image: hospital,
   description: `
 Our department of orthopaedics and joint replacement surgery provides a range of musculoskeletal services from orthopaedic medicine to complex surgery.
 SCOPE OF SERVICES
@@ -674,6 +739,9 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
     description:
       "Dr. K. Vinodh specializes in joint replacement surgery, trauma care, and arthroscopic procedures."
   }
+],
+gallery: [
+  
 ]
 },
 
@@ -681,51 +749,56 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
    PAEDIATRICS
 ======================= */
 {
-  slug: "paediatrics",
-  name: "Paediatrics",
-  image: paediatricsImg,
+  slug: "neonatology-paediatrics",
+  name: "Neonatology & Paediatrics",
+  image: hospital,
   description: `
-HINDUSTHAN HOSPITAL is proudly recognized as the best child care hospital in Coimbatore offering a comprehensive range of services for children.Our paediatric department provides outpatient care for immunizations and routine check-ups ,while our emergency services cater to all acute and chronic illnesses . Our well-equipped paediatric ward and PICU are staffed with highly trained professionals who ensure round-the-clock medical care in a child-friendly environment.
-         
-COMMON PAEDIATRIC CONDITIONS TREATED
-               We diagnose and manage a wide range of childhood illnesses affecting infant , children and adolescents
-•	Respiratory Infections (Pneumonia,Asthma,Pleural effusion,TB)
-•	Gastrointestinal Disorders ( Vomiting , Diarrhea)
-•	Febrile illnesses like Dengue, Typhoid, Scrub typhus,Leptospirosis etc…
-•	Nutritional Deficiencies and anemia
-•	Urinary Tract Infections / Voiding dysfunction 
-•	Seizure disorders 
-•	Rheumatological – JIA / SLE
-•	Inborn errors of metabolism
-•	Accidental poisoning / Dry toxicity
-•	Failure to thrive
-•	Type I  Diabetes
-•	Developmental Delays / Cerebral palsy
-We assess and manage growth and developmental delays , speech and hearing difficulties and behavioural concerns such as ADHD and autism spectrum disorders , with timely referrals when required.
-                   Preventive and promotive care forms a core part of our practice , include routine immunization , growth monitoring, nutrition counselling and  adolescent health care.We emphasize family – centred and evidence based care to ensure the best outcomes for every child.
+The Department of Neonatology & Paediatrics at Hindusthan Hospital provides comprehensive and specialized care for newborns, infants, children, and adolescents. With advanced infrastructure and a highly experienced multidisciplinary team, the department ensures quality care from birth through childhood.
+
+Our state-of-the-art Neonatal Intensive Care Unit (NICU) is equipped with 20 beds, including Level III intensive care facilities for managing extremely premature and critically ill newborns. We provide care for babies as early as 24 weeks of gestation and those with very low birth weights. With over 500 NICU admissions annually, our team is committed to delivering ethical, affordable, and high-quality neonatal care round the clock.
+
+The NICU is equipped with advanced technologies including ventilators, CPAP, HFNC, HFOV, therapeutic hypothermia, neonatal imaging, and bedside diagnostic facilities. We perform a wide range of neonatal procedures such as resuscitation, surfactant therapy, blood transfusions, catheterization, dialysis, and advanced monitoring techniques.
+
+We successfully manage various neonatal conditions including respiratory distress syndromes, prematurity-related complications, neonatal jaundice, congenital heart diseases, infections, metabolic disorders, seizures, and genetic conditions. Our services also include early diagnosis, management, and counselling for congenital and chromosomal disorders.
+
+In addition to neonatal care, our Paediatrics department offers comprehensive services for children, including outpatient consultations, immunization programs, emergency care, and management of acute and chronic illnesses. Our well-equipped paediatric ward and PICU ensure continuous care in a safe and child-friendly environment.
+
+We treat a wide range of paediatric conditions such as respiratory infections, gastrointestinal disorders, febrile illnesses, nutritional deficiencies, urinary infections, seizure disorders, developmental delays, and chronic diseases. Preventive healthcare is a major focus, including growth monitoring, nutrition counselling, adolescent health care, and early intervention for developmental concerns.
+
+With a patient-centered approach and evidence-based practices, our department ensures holistic care and better health outcomes for every child.
 `,
   services: [
-    "Immunization",
-    "Pediatric Emergency",
-    "Growth Monitoring",
-    "Chronic Pediatric Care"
+    "NICU Level III Care",
+    "Neonatal Intensive Care",
+    "Premature Baby Management",
+    "Neonatal Ventilation (CPAP, HFNC, HFOV)",
+    "Newborn Emergency Care",
+    "Newborn Screening & Genetic Evaluation",
+    "Pediatric Emergency Care",
+    "Immunization & Vaccination",
+    "Growth & Development Monitoring",
+    "Management of Childhood Diseases",
+    "Chronic Pediatric Care",
+    "Nutrition & Adolescent Health Care"
   ],
-
-
-
-  doctors:[
-{
-name:"Dr. P. Senthil Kumar",
-designation:"Neonatologist",
-image:psenthilkumar,
-description:"Specialist in neonatal intensive care and newborn health management."
-},
-{
-name:"Dr. V. Shanmugapriya",
-designation:"Paediatrician",
-image:shanmugapriya,
-description:"Expert in pediatric medicine, child growth monitoring and immunization care."
-}
+  doctors: [
+    {
+      name: "Dr. P. Senthil Kumar",
+      designation: "Neonatologist",
+      image: psenthilkumar,
+      description:
+        "Specialist in neonatal intensive care, premature baby management, and advanced newborn treatments."
+    },
+    {
+      name: "Dr. V. Shanmugapriya",
+      designation: "Paediatrician",
+      image: shanmugapriya,
+      description:
+        "Expert in pediatric medicine, child growth monitoring, immunization, and comprehensive child healthcare."
+    }
+  ],
+  gallery: [
+  paediatricsImg,paediatricsImg1
 ]
 },
 
@@ -735,7 +808,7 @@ description:"Expert in pediatric medicine, child growth monitoring and immunizat
 {
   slug: "paediatric-surgery",
   name: "Paediatric Surgery",
-  image: "/images/departments/pedsurgery.jpg",
+  image: hospital,
   description: `
 CONSULTANT
 Dr. Dharmendra . R  M.S., M.ch
@@ -775,7 +848,10 @@ Drainage of  various abscesses in childhood.
     "Hernia & Hydrocele Repair",
     "Hypospadias Surgery",
     "Paediatric Laparoscopy"
-  ]
+  ],
+  gallery: [
+  paediatricsImg2
+]
 },
 
 
@@ -786,7 +862,7 @@ Drainage of  various abscesses in childhood.
 {
   slug: "plastic-surgery",
   name: "Plastic & Reconstructive Surgery",
-  image: "/images/departments/plasticsurgery.jpg",
+  image: hospital,
   description: `
 The Department of Plastic & Reconstructive Surgery offers reconstructive and cosmetic procedures aimed at restoring form and function.
 
@@ -797,7 +873,10 @@ Individualized treatment plans ensure optimal aesthetic and functional outcomes.
     "Reconstructive Surgery",
     "Burn Care",
     "Scar Revision"
-  ]
+  ],
+  gallery: [
+  
+]
 },
 
 /* =======================
@@ -806,7 +885,7 @@ Individualized treatment plans ensure optimal aesthetic and functional outcomes.
 {
   slug: "pulmonology",
   name: "Pulmonology",
-  image: spirometerImg,
+  image: hospital,
   description: `
 ILCR is the most prominent department of Hindusthan Hospital and is its first department that that started its operations on 30th September 2019 immediately after Hindusthan hospital as an institution was conceived. Today it stands out as one of the most sought after pulmonology services in the city. The department was the first to use Oscillometry in lung function test first time in Coimbatore. It is run by four eminent pulmonologists of the city with vast experience in the field of respiratory medicine.
 Dr. Jayamohan Unnithan is the most senior qualified Pulmonologist in Coimbatore with an Experience of 42 years in the field of respirstory medicine. He is involved in treating patients with obstructive airways disease and general pulmonology with special interest in pulmonary rehabilitation, bronchoscopy and thoracoscopy. He had been instrumental in organizing many academic programmes both for medical as well as paramedics. He has been involved in many philanthropic activities as well.
@@ -857,23 +936,25 @@ Soon to be added is cardiopulmonary exercise testing)
     name: "Dr. M.R. Jayamohan Unnithan",
     designation: "Senior Pulmonologist",
     image: jaymohan,
-    description:
-      "Dr. Jayamohan Unnithan is one of the most experienced pulmonologists in Coimbatore with over four decades of expertise in respiratory medicine."
   },
   {
     name: "Dr. K. Srikanth",
     designation: "Pulmonologist",
     image: srikanth,
-    description:
-      "Dr. Srikanth is an expert in obstructive airway diseases, pulmonary research, and advanced respiratory diagnostics."
   },
   {
     name: "Dr. S. Nagarajan",
     designation: "Pulmonologist",
     image: nagarajan,
-    description:
-      "Dr. Nagarajan specializes in allergy testing, smoking cessation programs, and pulmonary rehabilitation."
+  },
+  {
+      name: "Dr. V. Nandagopal",
+      designation: "Pulmonology",
+      image: dummyprofile,
   }
+],
+gallery: [
+  pulmonologyImg,pulmonologyImg1
 ]
 },
 
@@ -883,7 +964,7 @@ Soon to be added is cardiopulmonary exercise testing)
 {
   slug: "radiology",
   name: "Radiology",
-  image: radiologyImg,
+  image: hospital,
   description: `
 The Department of Radiology provides comprehensive diagnostic imaging services essential for accurate diagnosis and treatment planning.
 
@@ -904,6 +985,9 @@ designation:"Radiologist",
 image:sangeetha,
 description:"Expert in diagnostic imaging including ultrasound, CT and MRI interpretation."
 }
+],
+gallery: [
+  radiologyImg
 ]
 },
 
@@ -913,7 +997,7 @@ description:"Expert in diagnostic imaging including ultrasound, CT and MRI inter
 {
   slug: "rehab",
   name: "Physical Medicine & Rehabilitation",
-  image: physioImg,
+ image: hospital,
   description: `
 Hindusthan Hospital’s physiotherapy department is dedicated to aiding individuals in regaining mobility and function after injury or  surgery, ultimately accelerating recovery and enhancing overall quality of life. Moreover, it plays a crucial role in minimizing the risk of future injuries. This type of therapy offers significant advantages to individuals of all ages and health conditions, from older individuals recuperating from joint replacement to young athletes dealing with injuries. The Department of Physiotherapy at Hindusthan Hospital is staffed with top-notch Physiotherapists in Coimbatore who have successfully treated a diverse range of patients. Every aspect of the department, from advanced rehabilitation tools to large therapy areas, is crafted to cater to the varied requirements of patients as they work towards better health.
 
@@ -951,7 +1035,10 @@ Pediatric Services Provided
     "Stroke Rehabilitation",
     "Post-operative Rehab",
     "Occupational Therapy"
-  ]
+  ],
+  gallery: [
+  
+]
 },
 
 /* =======================
@@ -960,7 +1047,7 @@ Pediatric Services Provided
 {
   slug: "surgical-oncology",
   name: "Surgical Oncology",
-  image: "/images/departments/onco.jpg",
+  image: hospital,
   description: `
 The Department of Surgical Oncology provides comprehensive cancer surgery with a patient-centred and multidisciplinary approach.
 
@@ -981,6 +1068,9 @@ designation:"Oncologist",
 image:selvaraj,
 description:"Specialist in surgical oncology and multidisciplinary cancer treatment."
 }
+],
+gallery: [
+  
 ]
 },
 
@@ -990,7 +1080,7 @@ description:"Specialist in surgical oncology and multidisciplinary cancer treatm
 {
   slug: "urology",
   name: "Urology",
-  image: "/images/departments/urology.jpg",
+  image: hospital,
   description: `
 Urology Clinic Coimbatore was established in 1992 as a one stop solution to all urological diseases. At this well equipped Urology centre all the needed Urological Investigations are available. A stand alone day care surgery centre with laser, ESWL, Laser for urinary stones, operating microscope Andrology equipments (Viberect, Electroejaculator) are attached to this clinic wherein all the ambulatory surgical procedures can be performed for the convenience of the patient. Centrally located in Coimbatore, Urology Clinic caters to both walk-in patients and and those with a prior appointment.
 
@@ -1027,8 +1117,20 @@ Urology Clinic Coimbatore was established in 1992 as a one stop solution to all 
 name:"Dr. M. Ramalingam",
 designation:"Urologist",
 image:ramalingam,
-description:"Experienced urologist specializing in kidney stone treatment, prostate disorders and urinary surgeries."
-}
+},
+{
+    name: "Dr. K. Senthil",
+    designation: "Urology & Kidney Transplant Surgery",
+    image:senthil ,
+  },
+  {
+      name: "Dr. N. Sivasankaran",
+      designation: "Urology & Kidney Transplant Surgery",
+      image: dummyprofile,
+  }
+],
+gallery: [
+  
 ]
 }
 

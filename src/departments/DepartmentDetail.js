@@ -1,11 +1,11 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { useState } from "react"; // ✅ ADD THIS
 import departmentsData from "../departments/departmentsData";
-
 export default function DepartmentDetail() {
 
   const { slug } = useParams();
   const navigate = useNavigate();
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const department = departmentsData.find(
     (d) => d.slug === slug
   );
@@ -64,7 +64,7 @@ export default function DepartmentDetail() {
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
 
               {/* IMAGE BANNER */}
-              <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px]">
+              <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[420px]">
                 <img
                   src={department.image}
                   alt={department.name}
@@ -234,6 +234,35 @@ Special Clinics
                     </div>
                   </>
                 )}
+                {/* GALLERY */}
+{/* GALLERY */}
+{/* GALLERY */}
+{department.gallery?.length > 0 && (
+  <section className="mt-16">
+    
+    <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mb-10 text-left">
+      Department Gallery
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      {department.gallery.map((img, i) => (
+        <div
+          key={i}
+          className="bg-white p-4 rounded-3xl shadow-md hover:shadow-xl transition duration-300"
+        >
+          <img
+            src={img}
+            alt={`gallery-${i}`}
+            onClick={() => setSelectedImage(img)} // ✅ CLICK TO OPEN
+            className="w-full h-[300px] md:h-[380px] object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
+          />
+        </div>
+      ))}
+
+    </div>
+  </section>
+)}
 
               </div>
             </div>
@@ -242,7 +271,30 @@ Special Clinics
         </div>
 
       </div>
+{/* FULL SCREEN IMAGE VIEW */}
+{selectedImage && (
+  <div
+    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+    onClick={() => setSelectedImage(null)}
+  >
+    
+    {/* CLOSE BUTTON */}
+    <button
+      className="absolute top-6 right-6 text-white text-3xl font-bold"
+      onClick={() => setSelectedImage(null)}
+    >
+      ✕
+    </button>
 
+    {/* IMAGE */}
+    <img
+      src={selectedImage}
+      alt="Full View"
+      className="max-w-[90%] max-h-[85%] rounded-xl shadow-2xl"
+    />
+
+  </div>
+)}
     </div>
   );
 }

@@ -2,9 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import hero from "../assets/hero.jpg";
 
-import room1 from "../assets/Equipments/Equipments-1.jpg";
-import room2 from "../assets/Equipments/Equipments-2.jpg";
-import room3 from "../assets/Equipments/Equipments-7.jpg";
+
 import room4 from "../assets/Equipments/Equipments-13.jpg";
 
 import {
@@ -91,7 +89,7 @@ features: [
 },
 ];
 
-const roomImages = [room1, room2, room3, room4];
+const roomImages = [room4];
 
 return (
 

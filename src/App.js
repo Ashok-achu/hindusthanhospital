@@ -53,11 +53,14 @@ import Courses from "./academics/Courses";
 // 🔹 Dynamic Department Detail Page
 import DepartmentDetail from "./departments/DepartmentDetail";
 
+
+
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      
+
 
       <Routes>
         <Route element={<SiteLayout />}>
@@ -104,7 +107,11 @@ export default function App() {
 
           {/* DYNAMIC DEPARTMENT */}
           <Route path="/departments/:slug" element={<DepartmentDetail />} />
-          <Route path="/appointment" element={<Appointment/>}/>
+          <Route path="/appointment" element={<Appointment />} />
+
+
+         
+
 
           {/* 404 */}
           <Route

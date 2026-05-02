@@ -179,7 +179,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-8 -right-8 w-48 bg-white p-4 rounded-2xl shadow-xl border border-rose-100 hidden md:block">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold">25+</div>
+                  <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold">15+</div>
                   <div className="text-sm font-bold text-gray-800">Years of<br />Experience</div>
                 </div>
                 <p className="text-xs text-gray-500">Trusted by thousands of families for three decades.</p>
@@ -448,55 +448,73 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════ HEALTH PACKAGES ════════ */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-60" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-50 rounded-full blur-3xl opacity-60" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div initial={{ opacity:0, y:30 }} whileInView={{ opacity:1, y:0 }} transition={{ duration:0.7 }}
-            className="text-center mb-16">
-            <span className="text-rose-500 font-bold tracking-widest text-sm uppercase mb-2 block">Master Health Checkup</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">Health <span className="text-rose-600">Packages</span></h2>
-            <p className="text-gray-500 mt-4 text-lg">Comprehensive checkup plans tailored for every stage of life</p>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { name:"Basic Wellness",  price:"₹999",   badge:null,          btnColor:"bg-gray-900 hover:bg-black",                                    tests:25, features:["CBC & Blood Sugar","Liver & Kidney Function","Urine Analysis","ECG","BMI Assessment","Doctor Consultation"] },
-              { name:"Comprehensive",  price:"₹2,499", badge:"Most Popular", btnColor:"bg-gradient-to-r from-rose-600 to-orange-500 hover:opacity-90", tests:55, features:["All Basic Tests","Thyroid Profile","Vitamin B12 & D3","Lipid Profile","Chest X-Ray","Ultrasound Abdomen","Eye & Dental Check"] },
-              { name:"Executive Plus", price:"₹4,999", badge:"Premium",      btnColor:"bg-gray-900 hover:bg-black",                                    tests:90, features:["All Comprehensive Tests","Cardiac Risk Markers","Cancer Screening","Stress Test (TMT)","Pulmonary Function","Diet Counselling","Priority Reporting"] },
-            ].map((pkg,i) => (
-              <motion.div key={i} initial={{ opacity:0, y:40 }} whileInView={{ opacity:1, y:0 }}
-                transition={{ duration:0.6, delay:i*0.12 }}
-                className={`relative bg-white rounded-3xl border-2 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col
-                  ${pkg.badge==="Most Popular" ? "border-rose-500" : pkg.badge==="Premium" ? "border-amber-400" : "border-gray-200"}`}>
-                {pkg.badge && (
-                  <div className={`absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full text-xs font-bold text-white shadow-lg ${pkg.badge==="Premium" ? "bg-amber-500" : "bg-rose-600"}`}>
-                    {pkg.badge}
-                  </div>
-                )}
-                <div className="text-center mb-8 pt-2">
-                  <h3 className="text-2xl font-extrabold text-gray-900">{pkg.name}</h3>
-                  <div className="text-4xl font-black text-rose-600 mt-3">{pkg.price}</div>
-                  <p className="text-sm text-gray-400 mt-1">{pkg.tests}+ tests included</p>
-                </div>
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {pkg.features.map((f,j) => (
-                    <li key={j} className="flex items-center gap-3 text-gray-700 text-sm">
-                      <FaCheckCircle className="text-green-500 flex-shrink-0" />{f}
-                    </li>
-                  ))}
-                </ul>
-                <button onClick={() => navigate("/facilities/mhc")}
-                  className={`w-full py-3.5 rounded-2xl text-white font-bold transition ${pkg.btnColor}`}>
-                  Book This Package
-                </button>
-              </motion.div>
-            ))}
+      {/* ════════ HEALTH PACKAGES (SIMPLE) ════════ */}
+<section className="py-24 bg-white relative overflow-hidden">
+  <div className="absolute top-0 right-0 w-96 h-96 bg-orange-50 rounded-full blur-3xl opacity-60" />
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-50 rounded-full blur-3xl opacity-60" />
+
+  <div className="max-w-7xl mx-auto px-6 relative z-10">
+    
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <span className="text-rose-500 font-bold tracking-widest text-sm uppercase mb-2 block">
+        Master Health Checkup
+      </span>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        Health <span className="text-rose-600">Packages</span>
+      </h2>
+      <p className="text-gray-500 mt-4 text-lg">
+        Click below to explore our complete health checkup packages
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {[
+        { name: "Basic Wellness", color: "from-rose-600 to-red-500" },
+        { name: "Comprehensive", color: "from-rose-600 to-orange-500" },
+        { name: "Executive Plus", color: "from-amber-500 to-yellow-400" },
+      ].map((pkg, i) => (
+        
+        <div
+          key={i}
+          onClick={() => navigate("/facilities/mhc")}
+          className="cursor-pointer group bg-white border rounded-3xl p-10 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          
+          {/* Icon Circle */}
+          <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${pkg.color} flex items-center justify-center text-white text-xl font-bold`}>
+            {i + 1}
           </div>
+
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-gray-900 group-hover:text-rose-600 transition">
+            {pkg.name}
+          </h3>
+
+          {/* Subtitle */}
+          <p className="text-gray-500 mt-3 text-sm">
+            View package details
+          </p>
+
         </div>
-      </section>
+      ))}
 
+    </div>
 
+    {/* View All Button */}
+    <div className="text-center mt-12">
+      <button
+        onClick={() => navigate("/facilities/mhc")}
+        className="px-8 py-3 bg-rose-600 text-white font-bold rounded-xl hover:bg-rose-700 transition"
+      >
+        View All Packages
+      </button>
+    </div>
+
+  </div>
+</section>
  {/* ════════ STATS ════════ */}
       <section className="py-24 relative overflow-hidden bg-gradient-to-br from-rose-600 via-rose-700 to-orange-600">
         <div className="absolute inset-0 opacity-10"
@@ -513,8 +531,8 @@ export default function Home() {
             {[
               { icon:<FaUser />,            value:50000, suffix:"+", label:"Patients Treated",   delay:0   },
               { icon:<FaUserMd />,          value:45,     suffix:"+", label:"Specialist Doctors", delay:0.1 },
-              { icon:<FaBed />,             value:50,    suffix:"+", label:"Hospital Beds",       delay:0.2 },
-              { icon:<FaHospital />,        value:45,     suffix:"+", label:"Years of Service",    delay:0.3 },
+              { icon:<FaBed />,             value:150,    suffix:"+", label:"Hospital Beds",       delay:0.2 },
+              { icon:<FaHospital />,        value:15,     suffix:"+", label:"Years of Service",    delay:0.3 },
             ].map((s,i) => <StatCard key={i} {...s} />)}
           </div>
         </div>
@@ -591,12 +609,10 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 mt-4 text-lg">Recognised for excellence in patient care and clinical standards</p>
           </motion.div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
             {[
-              { icon:<FaMedal />,    title:"NABH Accredited",    year:"2018", desc:"National Accreditation Board for Hospitals & Healthcare Providers.", color:"from-amber-400 to-yellow-500"  },
-              { icon:<FaTrophy />,   title:"Best Hospital Award", year:"2022", desc:"Recognised as the Best Multi-Specialty Hospital in Coimbatore.",    color:"from-rose-500 to-red-500"      },
-              { icon:<FaStar />,     title:"ISO 9001:2015",       year:"2019", desc:"Certified for quality management systems in healthcare delivery.",   color:"from-blue-500 to-indigo-500"   },
-              { icon:<FaShieldAlt />,title:"Patient Safety Gold", year:"2023", desc:"Awarded for exemplary patient safety practices and protocols.",      color:"from-green-500 to-emerald-500" },
+              { icon:<FaMedal />,    title:"NABH Accredited",     desc:"National Accreditation Board for Hospitals & Healthcare Providers.", color:"from-amber-400 to-yellow-500"  },
+              { icon:<FaTrophy />,   title:"CAHO Certified", desc:"Certified for advancing healthcare quality, patient safety, and diagnostic excellence in India and beyond.",    color:"from-rose-500 to-red-500"      },
             ].map((award,i) => (
               <motion.div key={i} initial={{ opacity:0, scale:0.9 }} whileInView={{ opacity:1, scale:1 }}
                 transition={{ duration:0.5, delay:i*0.1 }}
@@ -612,7 +628,7 @@ export default function Home() {
           <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
             <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-widest mb-8">Recognised & Partnered With</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {["NABH","ISO","NMC","IMA","AHPI","FICCI"].map((logo,i) => (
+              {["NABH","CAHO"].map((logo,i) => (
                 <motion.div key={i} whileHover={{ scale:1.1 }}
                   className="text-2xl font-extrabold text-gray-300 hover:text-rose-500 transition-colors duration-300 cursor-default">
                   {logo}
