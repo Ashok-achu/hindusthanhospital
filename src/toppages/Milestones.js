@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/Equipments/Emergency_medicine_.jpg";
 
 // Placeholder images (professional headshots)
 const placeholder = "https://via.placeholder.com/300x350.png?text=Trustee+Photo";

@@ -49,16 +49,46 @@ export default function Insurance() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">
-        {images.map((img, i) => (
-          <motion.img
-            key={i}
-            src={img}
-            whileHover={{ scale: 1.03 }}
-            className="w-full h-64 object-cover rounded-2xl shadow-lg"
-          />
-        ))}
-      </section>
+      {/* CASHLESS INSURANCE BENEFITS */}
+<section className="max-w-7xl mx-auto px-6 mt-12">
+  <div className="grid md:grid-cols-3 gap-8">
+
+    {[
+      {
+        icon: "🏥",
+        title: "Cashless Hospitalization",
+        desc: "Avail seamless cashless treatment through empanelled insurance providers and TPAs."
+      },
+      {
+        icon: "📋",
+        title: "Documentation Support",
+        desc: "Dedicated insurance desk assists with approvals, claims and paperwork."
+      },
+      {
+        icon: "⚡",
+        title: "Fast Claim Processing",
+        desc: "Quick coordination with insurers for hassle-free treatment approvals."
+      }
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ y: -8 }}
+        className="bg-white rounded-3xl p-8 shadow-xl border border-blue-100"
+      >
+        <div className="text-5xl mb-4">{item.icon}</div>
+
+        <h3 className="text-2xl font-bold text-blue-700 mb-3">
+          {item.title}
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          {item.desc}
+        </p>
+      </motion.div>
+    ))}
+
+  </div>
+</section>
 
       {/* HIGHLIGHTS */}
       <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">

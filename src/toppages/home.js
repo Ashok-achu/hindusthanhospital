@@ -17,8 +17,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import doctorTeams  from "../assets/Final/DSC03825.jpg";
-import hero1        from "../assets/hospital/1920_1080 Green removed.jpg";
-import hero2        from "../assets/Equipments/Equipments-1.jpg";
+
 import hero3        from "../assets/Equipments/Equipments-3.jpg";
 import cardiology   from "../assets/Equipments/Equipments-2.jpg";
 import surgery      from "../assets/Equipments/Equipments-6.jpg";
@@ -26,6 +25,8 @@ import doctorTeam   from "../assets/hospital/1920_1080 Green removed.jpg";
 import news1        from "../assets/hero.jpg";
 import news2        from "../assets/team.jpg";
 import news3        from "../assets/appointment.jpg";
+import hero1 from "../assets/set1/Front page hospital photo.jpg";
+import hero2 from "../assets/set1/Hospital front page_.jpg";
 
 /* ─────────────────────────────────────────
    Animated Counter Hook
@@ -78,31 +79,153 @@ function StatCard({ icon, value, suffix, label, delay }) {
    Departments data
 ───────────────────────────────────────── */
 const DEPARTMENTS = [
-  { name:"Cardiology",              slug:"cardiology",            icon:<FaHeartbeat />,        color:"#ef4444", desc:"Advanced heart care & interventional cardiology"      },
-  { name:"Pulmonology",             slug:"pulmonology",           icon:<FaLungs />,             color:"#f97316", desc:"Complete respiratory & lung disease management"       },
-  { name:"Orthopaedics",            slug:"orthopaedics",          icon:<FaBone />,              color:"#eab308", desc:"Bone, joint & sports injury specialists"              },
-  { name:"Paediatrics",             slug:"paediatrics",           icon:<FaBaby />,              color:"#22c55e", desc:"Expert child health & developmental care"             },
-  { name:"General Medicine",        slug:"general-medicine",      icon:<FaUserMd />,            color:"#0ea5e9", desc:"Comprehensive primary & internal medicine"            },
-  { name:"General Surgery",         slug:"general-surgery",       icon:<FaStethoscope />,       color:"#6366f1", desc:"Minimally invasive & open surgical procedures"        },
-  { name:"Nephrology",              slug:"nephrology",            icon:<FaUserMd />,            color:"#8b5cf6", desc:"Kidney disease diagnosis & renal therapy"             },
-  { name:"Urology",                 slug:"urology",               icon:<FaProcedures />,        color:"#ec4899", desc:"Urinary tract & male reproductive health"             },
-  { name:"ENT",                     slug:"ent",                   icon:<FaUserMd />,            color:"#14b8a6", desc:"Ear, nose & throat surgical specialists"              },
-  { name:"Dentistry",               slug:"dentistry",             icon:<FaTooth />,             color:"#f43f5e", desc:"Complete oral health & cosmetic dentistry"            },
-  { name:"Radiology",               slug:"radiology",             icon:<FaMicroscope />,        color:"#0284c7", desc:"Advanced diagnostic imaging & interventions"          },
-  { name:"Psychiatry",              slug:"psychiatry",            icon:<FaBrain />,             color:"#7c3aed", desc:"Mental health, therapy & behavioural care"            },
-  { name:"Diabetology",             slug:"diabetology",           icon:<FaHeartbeat />,         color:"#dc2626", desc:"Diabetes management & metabolic disorders"            },
-  { name:"Emergency Care",          slug:"emergency-care",        icon:<FaAmbulance />,         color:"#b91c1c", desc:"24/7 trauma & critical emergency response"            },
-  { name:"ICU",                     slug:"icu",                   icon:<FaHandHoldingHeart />,  color:"#0f766e", desc:"Intensive monitoring & critical care support"         },
-  { name:"Neonatology",             slug:"neonatology",           icon:<FaBaby />,              color:"#d97706", desc:"Newborn & premature infant specialist care"           },
-  { name:"Plastic Surgery",         slug:"plastic-surgery",       icon:<FaUserMd />,            color:"#db2777", desc:"Reconstructive, cosmetic & burn surgery"             },
-  { name:"Gastroenterology",        slug:"gastroenterology",      icon:<FaUserMd />,            color:"#16a34a", desc:"Digestive system diseases & endoscopy"               },
-  { name:"Internal Medicine",       slug:"internal-medicine",     icon:<FaUserMd />,            color:"#2563eb", desc:"Adult disease diagnosis & long-term care"             },
-  { name:"Oncology",                slug:"surgical-oncology",     icon:<FaUserMd />,            color:"#9333ea", desc:"Cancer diagnosis, surgery & oncology care"           },
-  { name:"Anaesthesiology",         slug:"anaesthesiology",       icon:<FaUserMd />,            color:"#0369a1", desc:"Perioperative & pain management experts"             },
-  { name:"Rehabilitation",          slug:"rehab",                 icon:<FaHandHoldingHeart />,  color:"#15803d", desc:"Physiotherapy & functional recovery programs"        },
-  { name:"Paediatric Surgery",      slug:"paediatric-surgery",    icon:<FaUserMd />,            color:"#65a30d", desc:"Surgical care tailored for children & infants"       },
-  { name:"Neuro Surgery",           slug:"neurovascular-surgery", icon:<FaBrain />,             color:"#4f46e5", desc:"Brain, spine & complex neurovascular surgery"        },
-  { name:"Obstetrics & Gynaecology",slug:"obgyn",                 icon:<FaBaby />,              color:"#e11d48", desc:"Women's health, maternity & gynaecology"             },
+  {
+    name: "Anaesthesiology",
+    slug: "anaesthesiology",
+    icon: <FaUserMd />,
+    color: "#0369a1",
+    desc: "Perioperative care and pain management"
+  },
+  {
+    name: "Cardiology",
+    slug: "cardiology",
+    icon: <FaHeartbeat />,
+    color: "#ef4444",
+    desc: "Advanced cardiac care and interventions"
+  },
+  {
+    name: "Dental & Facial Maxillary",
+    slug: "dental-facial-maxillary",
+    icon: <FaTooth />,
+    color: "#f43f5e",
+    desc: "Comprehensive dental and maxillofacial care"
+  },
+  {
+    name: "Diabetology & General Medicine",
+    slug: "diabetology-general-medicine",
+    icon: <FaStethoscope />,
+    color: "#dc2626",
+    desc: "Diabetes and internal medicine specialists"
+  },
+  {
+    name: "Emergency Care",
+    slug: "emergency-care",
+    icon: <FaAmbulance />,
+    color: "#b91c1c",
+    desc: "24/7 emergency and trauma services"
+  },
+  {
+    name: "ENT & Head and Neck Surgery",
+    slug: "ent-head-neck-surgery",
+    icon: <FaUserMd />,
+    color: "#14b8a6",
+    desc: "Expert ENT and head-neck surgical care"
+  },
+  {
+    name: "Neuroscience",
+    slug: "neuroscience",
+    icon: <FaBrain />,
+    color: "#4f46e5",
+    desc: "Brain, spine and neurological care"
+  },
+  {
+    name: "General & Laparoscopic Surgery",
+    slug: "general-laparoscopic-surgery",
+    icon: <FaStethoscope />,
+    color: "#6366f1",
+    desc: "Minimally invasive and general surgery"
+  },
+  {
+    name: "Gastroenterology",
+    slug: "gastroenterology",
+    icon: <FaUserMd />,
+    color: "#16a34a",
+    desc: "Digestive and gastrointestinal care"
+  },
+  {
+    name: "Intensive Care Unit",
+    slug: "icu",
+    icon: <FaHandHoldingHeart />,
+    color: "#0f766e",
+    desc: "Critical care and intensive monitoring"
+  },
+  {
+    name: "Nephrology",
+    slug: "nephrology",
+    icon: <FaUserMd />,
+    color: "#8b5cf6",
+    desc: "Kidney disease and renal care"
+  },
+  {
+    name: "Obstetrics & Gynaecology",
+    slug: "obgyn",
+    icon: <FaBaby />,
+    color: "#e11d48",
+    desc: "Women's health and maternity care"
+  },
+  {
+    name: "Orthopaedics",
+    slug: "orthopaedics",
+    icon: <FaBone />,
+    color: "#eab308",
+    desc: "Bone, joint and trauma specialists"
+  },
+  {
+    name: "Neonatology & Paediatrics",
+    slug: "neonatology-paediatrics",
+    icon: <FaBaby />,
+    color: "#22c55e",
+    desc: "Comprehensive child and newborn care"
+  },
+  {
+    name: "Paediatric Surgery",
+    slug: "paediatric-surgery",
+    icon: <FaUserMd />,
+    color: "#65a30d",
+    desc: "Specialized surgical care for children"
+  },
+  {
+    name: "Plastic & Reconstructive Surgery",
+    slug: "plastic-reconstructive-surgery",
+    icon: <FaUserMd />,
+    color: "#db2777",
+    desc: "Cosmetic and reconstructive procedures"
+  },
+  {
+    name: "Pulmonology",
+    slug: "pulmonology",
+    icon: <FaLungs />,
+    color: "#f97316",
+    desc: "Respiratory and lung disease treatment"
+  },
+  {
+    name: "Radiology",
+    slug: "radiology",
+    icon: <FaMicroscope />,
+    color: "#0284c7",
+    desc: "Advanced diagnostic imaging services"
+  },
+  {
+    name: "Physical Medicine & Rehabilitation",
+    slug: "physical-medicine-rehabilitation",
+    icon: <FaWheelchair />,
+    color: "#15803d",
+    desc: "Physiotherapy and rehabilitation services"
+  },
+  {
+    name: "Surgical Oncology",
+    slug: "surgical-oncology",
+    icon: <FaUserMd />,
+    color: "#9333ea",
+    desc: "Comprehensive cancer surgery care"
+  },
+  {
+    name: "Urology",
+    slug: "urology",
+    icon: <FaProcedures />,
+    color: "#ec4899",
+    desc: "Urinary tract and urological treatments"
+  }
 ];
 
 const PAGE_SIZE = 9;
@@ -182,7 +305,7 @@ export default function Home() {
                   <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold">15+</div>
                   <div className="text-sm font-bold text-gray-800">Years of<br />Experience</div>
                 </div>
-                <p className="text-xs text-gray-500">Trusted by thousands of families for three decades.</p>
+                <p className="text-xs text-gray-500">Trusted by thousands of families.</p>
               </div>
             </motion.div>
 
@@ -208,10 +331,12 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button onClick={() => navigate("./abouttrust")}
-                className="bg-gray-900 hover:bg-black text-white px-8 py-3.5 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1">
-                More About Us
-              </button>
+              <button
+  onClick={() => window.open("https://www.hindusthan.net/about-us", "_blank")}
+  className="bg-gray-900 hover:bg-black text-white px-8 py-3.5 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1"
+>
+  More About Us
+</button>
             </motion.div>
           </div>
         </div>

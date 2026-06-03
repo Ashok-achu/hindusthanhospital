@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import hero from "../assets/hero.jpg";
 import ambulance1 from "../assets/hospital/Ambulance1.png";
-import ambulance2 from "../assets/hospital/Ambulance2.png";
+import ambulance3 from "../assets/hospital/Ambulance2.png";
+import ambulance2 from "../assets/set1/Ambulance_.jpg";
 
 export default function Ambulance() {
   const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } };
@@ -11,6 +12,7 @@ export default function Ambulance() {
   const images = [
   ambulance1,
   ambulance2,
+  ambulance3,
 ];
 
   return (

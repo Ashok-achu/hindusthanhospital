@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import hero from "../assets/Equipments/Hospital profile_.jpg";
+import hero from "../assets/set1/Front page hospital photo.jpg";
 
 export default function Profile() {
 

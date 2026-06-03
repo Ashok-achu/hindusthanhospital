@@ -49,16 +49,51 @@ export default function BloodBank() {
       </section>
 
       {/* IMAGE GALLERY */}
-      <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">
-        {images.map((img, i) => (
-          <motion.img
-            key={i}
-            src={img}
-            whileHover={{ scale: 1.03 }}
-            className="w-full h-64 object-cover rounded-2xl shadow-lg"
-          />
-        ))}
-      </section>
+      {/* BLOOD COMPONENTS */}
+<section className="max-w-7xl mx-auto px-6 mt-12">
+  <div className="grid md:grid-cols-4 gap-6">
+
+    {[
+      {
+        title: "Whole Blood",
+        desc: "Used for major blood loss and emergency transfusions.",
+        icon: "🩸"
+      },
+      {
+        title: "Packed RBC",
+        desc: "Supports patients with anemia and blood disorders.",
+        icon: "❤️"
+      },
+      {
+        title: "Platelets",
+        desc: "Essential for cancer, dengue and bleeding patients.",
+        icon: "🧬"
+      },
+      {
+        title: "Fresh Frozen Plasma",
+        desc: "Used for clotting factor deficiencies and surgeries.",
+        icon: "💉"
+      }
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        whileHover={{ y: -8 }}
+        className="bg-white rounded-3xl shadow-lg p-8 text-center border border-red-100"
+      >
+        <div className="text-5xl mb-4">{item.icon}</div>
+
+        <h3 className="text-xl font-bold text-red-700 mb-3">
+          {item.title}
+        </h3>
+
+        <p className="text-gray-600 text-sm leading-6">
+          {item.desc}
+        </p>
+      </motion.div>
+    ))}
+
+  </div>
+</section>
 
       {/* HIGHLIGHTS */}
       <section className="max-w-7xl mx-auto px-6 mt-12 grid md:grid-cols-3 gap-8">

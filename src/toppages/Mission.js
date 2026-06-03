@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/set1/Hospital front page_.jpg";
 
 export default function Mission() {
   const fadeUp = {

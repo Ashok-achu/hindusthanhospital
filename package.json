@@ -26,6 +26,7 @@
     "react-router-dom": "^7.9.5",
     "react-scripts": "5.0.1",
     "react-slick": "^0.31.0",
+    "react-social-media-embed": "^2.5.18",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
@@ -69,7 +70,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-
   "bugs": {
     "url": "https://github.com/Ashok-achu/hindusthanhospital/issues"
   },

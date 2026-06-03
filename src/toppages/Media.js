@@ -20,14 +20,14 @@ import eq13 from "../assets/Equipments/Equipments-13.jpg";
 import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
 import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
 import emergencyImg from "../assets/Equipments/Emergency_medicine_.jpg";
-import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
+import endoscopyImg from "../assets/set1/ENDOSCOPY.jpg";
 import emrImg from "../assets/Equipments/EMR_.jpg";
 import labImg from "../assets/Equipments/Laboratory_.jpg";
 import paediatricsImg from "../assets/Equipments/Paediatrics.jpg";
 import gynaeImg from "../assets/Equipments/Gynaecology.jpg";
 import pulmonologyImg from "../assets/Equipments/PULMONOLOGY_.jpg";
 import nicuImg from "../assets/Equipments/NICU PHOTOTHERAPY.jpg";
-import nephrologyImg from "../assets/Equipments/Nephrology_(1).jpg";
+
 import physioImg from "../assets/Equipments/Physiotherapy_.jpg";
 import pftImg from "../assets/Equipments/PFT PROCEDURE_.jpg";
 import ecgImg from "../assets/Equipments/ECG.jpg";
@@ -37,22 +37,32 @@ import spirometerImg from "../assets/Equipments/SPIROMETER.jpg";
 /* ================= IMAGE LIST ================= */
 
 const mediaItems = [
-eq1,eq2,eq3,eq4,eq5,eq6,eq7,eq8,eq9,eq10,eq11,eq12,eq13,cardiologyImg,
+  eq1,
+  eq2,
+  eq3,
+  eq4,
+  eq5,
+  eq6,
+  eq7,
+  eq8,
+  eq9,
+  eq10,
+  eq11,
+  eq12,
+  eq13,
+  cardiologyImg,
   diabetologyImg,
   emergencyImg,
-  endoscopyImg,
   emrImg,
   labImg,
   paediatricsImg,
   gynaeImg,
   pulmonologyImg,
   nicuImg,
-  nephrologyImg,
   physioImg,
   pftImg,
   ecgImg,
-  radiologyImg,
-  spirometerImg
+  radiologyImg
 ];
 
 export default function Media(){

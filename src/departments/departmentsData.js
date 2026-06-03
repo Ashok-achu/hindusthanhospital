@@ -4,53 +4,86 @@
    DEPARTMENT IMAGES
 ======================= */
 
-import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";
-import cardiologyImg1 from "../assets/Equipments/Cardiology_(1).jpg";
+// Cardiology
+import cardiologyImg from "../assets/set1/Cardiology_.jpg";
+import cardiologyImg1 from "../assets/set1/Cardiology_(1).jpg";
 
-import diabetologyImg from "../assets/Equipments/Diabteology_.jpg";
+// Diabetology
+import diabetologyImg from "../assets/set1/Diabteology_.jpg"; // verify exact filename
+import diabeticFootCareImg from "../assets/set1/Diabetic foot care lab.jpg";
 
-import emergencyImg from "../assets/Equipments/Emergency_medicine_.jpg";
+// Emergency
+import emergencyImg from "../assets/set1/Emergency medicine_.jpg";
+import ambulanceImg from "../assets/set1/Ambulance_.jpg";
 
-import endoscopyImg from "../assets/Equipments/ENDOSCOPY.jpg";
+// Endoscopy
+import endoscopyImg from "../assets/set1/ENDOSCOPY.jpg";
 
-import emrImg from "../assets/Equipments/EMR_.jpg";
+// EMR
+import emrImg from "../assets/set1/EMR_.jpg";
 
-import labImg from "../assets/Equipments/Laboratory_.jpg";
-import labImg1 from "../assets/Equipments/Laboratory_(1).jpg";
-import labImg2 from "../assets/Equipments/Laboratory_(2).jpg";
+// Laboratory
+import labImg from "../assets/set1/Laboratory_.jpg";
+import labImg1 from "../assets/set1/Laboratory_(1).jpg";
+import labImg2 from "../assets/set1/Laboratory_(2).jpg";
 
-import paediatricsImg from "../assets/Equipments/Paediatrics.jpg";
-import paediatricsImg1 from "../assets/Equipments/Paediatrics_(1).jpg";
-import paediatricsImg2 from "../assets/Equipments/Paediatrics_(2).jpg";
+// Paediatrics
+import paediatricsImg from "../assets/set1/Paediatrics.jpg";
+import paediatricsImg1 from "../assets/set1/Paediatrics_(1).jpg";
+import paediatricsImg2 from "../assets/set1/Paediatrics_.jpg";
 
-import gynaeImg from "../assets/Equipments/Gynaecology.jpg";
+// Gynaecology
+import gynaeImg from "../assets/set1/Gynaecology.jpg";
+import labourRoomImg from "../assets/set1/LABOUR & DELIVERY ROOM.jpg";
 
-import pulmonologyImg from "../assets/Equipments/PULMONOLOGY_.jpg";
-import pulmonologyImg1 from "../assets/Equipments/PULMONOLOGY_(1).jpg";
+// NICU
+import nicuImg from "../assets/set1/NICU.jpg";
+import nicuPhotoImg from "../assets/set1/NICU PHOTOTHERAPY.jpg";
+import radiantWarmerImg from "../assets/set1/RADIANT WARMER paediatrics_.jpg";
+import transportIncubatorImg from "../assets/set1/TRANSPORT INCUBATOR.jpg";
 
-import nicuImg from "../assets/Equipments/NICU PHOTOTHERAPY.jpg";
-import nicuImg1 from "../assets/Equipments/NICU.jpg";
+// Pulmonology
+import pulmonologyImg from "../assets/set1/PULMONOLOGY_.jpg";
+import pulmonologyImg1 from "../assets/set1/PULMONOLOGY_(1).jpg";
+import pulmonologyCopyImg from "../assets/set1/PULMONOLOGY_ copy.jpg";
+import pulmonologyCopyImg1 from "../assets/set1/PULMONOLOGY_(1) copy.jpg";
 
-import nephrologyImg from "../assets/Equipments/Nephrology_.jpg";
-import nephrologyImg1 from "../assets/Equipments/Nephrology_(1).jpg";
+import pftImg from "../assets/set1/PFT PROCEDURE_.jpg";
+import spirometryImg from "../assets/set1/SPIROMETRY pulmo.jpg";
+import scopeStorageImg from "../assets/set1/SCOPE STORAGE CABINET pulmo.jpg";
 
-import physioImg from "../assets/Equipments/Physiotherapy_.jpg";
-import physioImg1 from "../assets/Equipments/Physiotherapy_(1).jpg";
+import scopyImg from "../assets/set1/Scopy.jpg";
+import scopyImg1 from "../assets/set1/Scopy(1).jpg";
+import scopyImg2 from "../assets/set1/Scopy(2).jpg";
 
-import pftImg from "../assets/Equipments/PFT PROCEDURE_.jpg";
+// Nephrology
+import nephrologyImg from "../assets/set1/Nephrology_.jpg";
+import nephrologyImg1 from "../assets/set1/Nephrology_(1).jpg";
 
-import ecgImg from "../assets/Equipments/ECG.jpg";
-import defibrillatorImg from "../assets/Equipments/ECG & DEFIBRILATOR.jpg";
+// Physiotherapy
+import physioImg from "../assets/set1/Physiotherapy_.jpg";
+import physioImg1 from "../assets/set1/Physiotherapy_(1).jpg";
+import physioImg2 from "../assets/set1/Physiotherapy_(2).jpg";
 
-import radiologyImg from "../assets/Equipments/RADIANT WARMER_.jpg";
+// Cardiology Equipment
+import ecgImg from "../assets/set1/ECG.jpg";
+import defibrillatorImg from "../assets/set1/ECG & DEFIBRILATOR.jpg";
 
-import spirometerImg from "../assets/Equipments/SPIROMETER.jpg";
+// Radiology
+import radiologyImg from "../assets/set1/Radiology_.jpg";
+import radiologyImg1 from "../assets/set1/Radiology_(1).jpg";
+import radiologyImg2 from "../assets/set1/Radiology_(2).jpg";
+import radiologyImg3 from "../assets/set1/Radiology_(3).jpg";
+import radiologyImg4 from "../assets/set1/Radiology_(4).jpg";
+import radiologyImg5 from "../assets/set1/Radiology_(5).jpg";
 
-import echoImg from "../assets/Equipments/ECHOMACHINE.jpg";
-import scopeCabinetImg from "../assets/Equipments/SCOPE STORAGE CABINET.jpg";
+// Hospital Images
+import hospitalFrontImg from "../assets/set1/Front page hospital photo.jpg";
+import hospitalFrontImg2 from "../assets/set1/Hospital front page_.jpg";
+import hospitalProfileImg from "../assets/set1/Hospital profile_.jpg";
 
-import labourRoomImg from "../assets/Equipments/LABOUR & DELIVERY ROOM.jpg";
-
+//ICU
+import icuImg from "../assets/set1/Icu.jpg";
 
 /* =======================
    EQUIPMENT SERIES
@@ -168,8 +201,8 @@ description:"Experienced anaesthesiologist specializing in perioperative anesthe
 }
 ],
 gallery: [
-  ecgImg,
-  emrImg
+  emrImg,
+  ecgImg
 ]
 
   
@@ -234,7 +267,8 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 gallery: [
   cardiologyImg,
   cardiologyImg1,
-  
+  ecgImg,
+  defibrillatorImg
 ]
 },
 
@@ -328,7 +362,7 @@ With advanced diagnostic facilities and a holistic treatment approach, the depar
   ],
   gallery: [
   diabetologyImg,
-  
+  diabeticFootCareImg
 ]
 },
 
@@ -353,7 +387,8 @@ The department is supported by advanced resuscitation units, intensive care faci
     "Ambulance Services"
   ],
   gallery: [
-  emergencyImg
+  emergencyImg,
+  ambulanceImg
 ]
 },
 
@@ -397,8 +432,8 @@ description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, v
 }
 ],
 gallery: [
-  
-  
+  scopyImg,
+  scopyImg1
 ]
 },
 
@@ -564,7 +599,10 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
     "Pancreatic Disorders Care"
   ],
   gallery: [
-  
+  endoscopyImg,
+  scopyImg,
+  scopyImg1,
+  scopyImg2
 ]
 },
 
@@ -603,8 +641,7 @@ description:"Experienced anaesthesiologist specializing in perioperative anesthe
 }
 ],
 gallery: [
-  emergencyImg
-  
+  icuImg
 ]
 
 },
@@ -643,8 +680,8 @@ description:"Specialist in kidney diseases, dialysis care and chronic kidney dis
 }
 ],
 gallery: [
-  nephrologyImg,nephrologyImg1
-  
+  nephrologyImg,
+  nephrologyImg1
 ]
 
 },
@@ -687,8 +724,8 @@ Services include antenatal care, safe deliveries, fertility management, and mini
     }
   ],
   gallery: [
-  gynaeImg
-  
+  gynaeImg,
+  labourRoomImg
 ]
 },
 
@@ -797,8 +834,14 @@ With a patient-centered approach and evidence-based practices, our department en
         "Expert in pediatric medicine, child growth monitoring, immunization, and comprehensive child healthcare."
     }
   ],
-  gallery: [
-  paediatricsImg,paediatricsImg1
+ gallery: [
+  paediatricsImg,
+  paediatricsImg1,
+  paediatricsImg2,
+  nicuImg,
+  nicuPhotoImg,
+  radiantWarmerImg,
+  transportIncubatorImg
 ]
 },
 
@@ -849,8 +892,9 @@ Drainage of  various abscesses in childhood.
     "Hypospadias Surgery",
     "Paediatric Laparoscopy"
   ],
-  gallery: [
-  paediatricsImg2
+ gallery: [
+  paediatricsImg2,
+  nicuImg
 ]
 },
 
@@ -953,9 +997,10 @@ Soon to be added is cardiopulmonary exercise testing)
       image: dummyprofile,
   }
 ],
-gallery: [
-  pulmonologyImg,pulmonologyImg1
-]
+ pulmonologyImg,
+  pulmonologyImg1,
+  pulmonologyCopyImg,
+  pulmonologyCopyImg1,
 },
 
 /* =======================
@@ -987,7 +1032,12 @@ description:"Expert in diagnostic imaging including ultrasound, CT and MRI inter
 }
 ],
 gallery: [
-  radiologyImg
+  radiologyImg,
+  radiologyImg1,
+  radiologyImg2,
+  radiologyImg3,
+  radiologyImg4,
+  radiologyImg5
 ]
 },
 
@@ -1037,7 +1087,9 @@ Pediatric Services Provided
     "Occupational Therapy"
   ],
   gallery: [
-  
+  physioImg,
+  physioImg1,
+  physioImg2
 ]
 },
 

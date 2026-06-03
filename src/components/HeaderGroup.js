@@ -27,56 +27,28 @@ export default function HeaderGroup() {
     /* ---------- SLUG MAP ---------- */
 
     const slugMap = {
-
-        Anaesthesiology: "anaesthesiology",
-        Cardiology: "cardiology",
-       
-        Dentistry: "dentistry",
-        Diabetology: "diabetology",
-
-        "Emergency Care": "emergency-care",
-
-        ENT: "ent",
-
-        "General Medicine": "general-medicine",
-
-        "General Surgery": "general-surgery",
-
-        Gastroenterology: "gastroenterology",
-
-        
-
-        ICU: "icu",
-
-        Neonatology: "neonatology",
-
-        "Neuro & Vascular Surgery": "neuro",
-
-        Nephrology: "nephrology",
-
-        "Obstetrics & Gynaecology": "obgyn",
-
-        Orthopaedics: "orthopaedics",
-
-        Rehabilitation: "rehab",
-
-        Paediatrics: "paediatrics",
-
-        "Paediatric Surgery": "paediatric-surgery",
-
-       
-
-        "Plastic Surgery": "plastic-surgery",
-
-        Pulmonology: "pulmonology",
-
-        Radiology: "radiology",
-
-       
-
-        Urology: "urology",
-
-    };
+  "Anaesthesiology": "anaesthesiology",
+  "Cardiology": "cardiology",
+  "Dental & Facial Maxillary": "dentistry",
+  "Diabetology & General Medicine": "diabetology",
+  "Emergency Care": "emergency-care",
+  "ENT & Head and Neck Surgery": "ent",
+  "Neuroscience": "neurovascular-surgery",
+  "General & Laparoscopic Surgery": "general-surgery",
+  "Gastroenterology": "gastroenterology",
+  "Intensive Care Unit": "icu",
+  "Nephrology": "nephrology",
+  "Obstetrics & Gynaecology": "obgyn",
+  "Orthopaedics": "orthopaedics",
+  "Neonatology & Paediatrics": "neonatology",
+  "Paediatric Surgery": "paediatric-surgery",
+  "Plastic & Reconstructive Surgery": "plastic-surgery",
+  "Pulmonology": "pulmonology",
+  "Radiology": "radiology",
+  "Physical Medicine & Rehabilitation": "rehab",
+  "Surgical Oncology": "surgical-oncology",
+  "Urology": "urology",
+};
 
     const toSlug = (label) => "/departments/" + slugMap[label];
 
