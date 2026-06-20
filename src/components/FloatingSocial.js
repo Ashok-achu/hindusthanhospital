@@ -86,7 +86,7 @@ className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-
 </a>
 
 <a
-href={`https://wa.me/${whatsappNumber}`}
+href={`https://wa.me/917339095561`}
 target="_blank"
 rel="noopener noreferrer"
 className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
@@ -139,7 +139,7 @@ className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl h
 </a>
 
 <a
-href={`https://wa.me/${whatsappNumber}`}
+href={`https://wa.me/917339095561`}
 target="_blank"
 rel="noopener noreferrer">
 
@@ -257,7 +257,7 @@ className="block w-full bg-orange-50 hover:bg-orange-100 p-4 rounded-xl font-sem
 
 <a
 
-href={`https://wa.me/${whatsappNumber}`}
+href={`https://wa.me/917339095561`}
 
 target="_blank"
 

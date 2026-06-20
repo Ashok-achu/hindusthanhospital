@@ -134,7 +134,7 @@ export default function Pharmacy() {
           initial="hidden"
           whileInView="visible"
           variants={fadeUp}
-          href="https://wa.me/919500000000?text=Hello%20I%20need%20pharmacy%20assistance"
+          href="https://wa.me/917339095561?text=Hello%20I%20need%20pharmacy%20assistance"
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl transition-all"

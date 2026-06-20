@@ -218,7 +218,7 @@ Book Appointment
 
 <a
 
-href={`https://wa.me/919XXXXXXXXX?text=I want to book ${pkg.name} Master Health Checkup`}
+href={`https://wa.me/917339095561?text=I want to book ${pkg.name} Master Health Checkup`}
 
 target="_blank"
 

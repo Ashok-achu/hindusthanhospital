@@ -234,6 +234,49 @@ Special Clinics
                     </div>
                   </>
                 )}
+
+
+
+{/* VISITING CONSULTANTS */}
+{department.visitingConsultants?.length > 0 && (
+  <>
+    <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mt-14 mb-8">
+      Visiting Consultants
+    </h2>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {department.visitingConsultants.map((doc, i) => (
+        <div
+          key={i}
+          className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+        >
+          <div className="w-full h-[260px] bg-gray-50 flex items-center justify-center p-4">
+            <img
+              src={doc.image}
+              alt={doc.name}
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          <div className="p-6 text-center">
+            <h3 className="text-lg font-semibold text-gray-800">
+              {doc.name}
+            </h3>
+            <p className="text-red-600 text-sm font-medium mt-1">
+              {doc.designation}
+            </p>
+
+            {doc.description && (
+              <p className="text-gray-600 text-sm mt-3">
+                {doc.description}
+              </p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </>
+)}
                 {/* GALLERY */}
 {/* GALLERY */}
 {/* GALLERY */}

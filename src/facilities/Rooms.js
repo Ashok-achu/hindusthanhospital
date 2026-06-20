@@ -188,7 +188,7 @@ className="bg-white rounded-2xl shadow-lg p-6 flex flex-col"
 </ul>
 
 <a
-href={`https://wa.me/919XXXXXXXXX?text=I would like to enquire about ${room.name} availability at Hindusthan Hospital`}
+href={`https://wa.me/917339095561?text=I would like to enquire about ${room.name} availability at Hindusthan Hospital`}
 target="_blank"
 rel="noopener noreferrer"
 className="mt-auto flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold transition"

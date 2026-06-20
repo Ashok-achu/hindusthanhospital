@@ -82,6 +82,10 @@ import hospitalFrontImg from "../assets/set1/Front page hospital photo.jpg";
 import hospitalFrontImg2 from "../assets/set1/Hospital front page_.jpg";
 import hospitalProfileImg from "../assets/set1/Hospital profile_.jpg";
 
+import robo1 from "../assets/dept/robo1.JPG";
+import robo2 from "../assets/dept/robo2.JPG";
+
+
 //ICU
 import icuImg from "../assets/set1/Icu.jpg";
 
@@ -431,6 +435,8 @@ image:venkataraman,
 description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, voice disorders and head & neck conditions."
 }
 ],
+
+
 gallery: [
   scopyImg,
   scopyImg1
@@ -721,7 +727,21 @@ Services include antenatal care, safe deliveries, fertility management, and mini
       name: "Dr. K. Kokila",
       designation: "Obstetrics & Gynaecology",
       image: kokila,
-    }
+    },
+    
+  {
+    name: "Dr. Geetharani",
+    designation: "Obstetrician & Gynaecologist",
+    image: dummyprofile,
+    
+  },
+  {
+    name: "Dr. Prema",
+    designation: "Obstetrician & Gynaecologist",
+    image: dummyprofile,
+    
+  }
+
   ],
   gallery: [
   gynaeImg,
@@ -775,6 +795,11 @@ The department of Orthopedics& Trauma is known for advanced joint replacement su
     image: vinodh,
     description:
       "Dr. K. Vinodh specializes in joint replacement surgery, trauma care, and arthroscopic procedures."
+  },
+  {
+    name: "Dr . Jayakumar",
+    designation: "Visiting Consultant - Orthopadics",
+    image: dummyprofile,
   }
 ],
 gallery: [
@@ -832,7 +857,12 @@ With a patient-centered approach and evidence-based practices, our department en
       image: shanmugapriya,
       description:
         "Expert in pediatric medicine, child growth monitoring, immunization, and comprehensive child healthcare."
-    }
+    },
+    {
+  name: "Dr. Sathiyan",
+  designation: "Consultant ENT Surgeon",
+  image: dummyprofile
+},
   ],
  gallery: [
   paediatricsImg,
@@ -892,12 +922,59 @@ Drainage of  various abscesses in childhood.
     "Hypospadias Surgery",
     "Paediatric Laparoscopy"
   ],
+
+  doctors: [
+  {
+    name: "Dr. Dharmendra R",
+    designation: "Senior Consultant Paediatric Surgeon",
+    image: dummyprofile,
+    description:
+      "Dr. Dharmendra R is a Senior Consultant Paediatric Surgeon specializing in neonatal surgery, congenital anomalies, minimally invasive paediatric surgery, paediatric urology, and emergency surgical care for infants and children."
+  }
+],
  gallery: [
   paediatricsImg2,
   nicuImg
 ]
+
+
 },
 
+{
+  slug: "neurology",
+  name: "Neurology",
+  image: hospital,
+  description: `
+The Department of Neurology provides comprehensive diagnosis and treatment for disorders affecting the brain, spinal cord, nerves, and muscles. Our specialists manage both acute neurological emergencies and chronic neurological conditions using advanced diagnostic facilities and evidence-based treatment.
+
+The department is committed to providing personalized care with a multidisciplinary approach, ensuring better outcomes and improved quality of life for patients.
+`,
+
+  services: [
+    "Stroke Management",
+    "Epilepsy Treatment",
+    "Headache & Migraine Clinic",
+    "Parkinson's Disease Care",
+    "Peripheral Neuropathy",
+    "Movement Disorder Management",
+    "Vertigo Evaluation",
+    "Dementia Assessment",
+    "Neuro Rehabilitation",
+    "Neurological Consultation"
+  ],
+
+  doctors: [
+    {
+      name: "Dr. Ram Kumar S",
+      designation: "Consultant Neurologist",
+      image: dummyprofile,
+      description:
+        "Consultant Neurologist specializing in stroke care, epilepsy, headache disorders, movement disorders, and neuro rehabilitation."
+    }
+  ],
+
+  gallery: []
+},
 
 
 /* =======================
@@ -917,6 +994,18 @@ Individualized treatment plans ensure optimal aesthetic and functional outcomes.
     "Reconstructive Surgery",
     "Burn Care",
     "Scar Revision"
+  ],
+  doctors: [
+    {
+      name: "Dr. Rajesh Kumar",
+      designation: "Consultant Plastic & Reconstructive Surgeon",
+      image: dummyprofile,
+    },
+    {
+  name: "Dr. Raghu",
+  designation: "Consultant Plastic & Reconstructive Surgeon",
+  image: dummyprofile
+},
   ],
   gallery: [
   
@@ -1184,6 +1273,55 @@ image:ramalingam,
 gallery: [
   
 ]
+},
+
+{
+  slug: "robotic-surgery",
+  name: "Robotic Surgery",
+  image: hospital,
+  description: `
+The Department of Robotic Surgery offers advanced minimally invasive surgical procedures using state-of-the-art robotic-assisted technology. Robotic surgery provides greater precision, enhanced visualization, smaller incisions, reduced pain, minimal blood loss, faster recovery, and shorter hospital stays.
+
+Our multidisciplinary team performs robotic-assisted procedures across various specialties while ensuring the highest standards of patient safety and clinical outcomes.
+`,
+
+  services: [
+    "Robotic General Surgery",
+    "Robotic Gastrointestinal Surgery",
+    "Robotic Urology Procedures",
+    "Robotic Gynaecology Surgery",
+    "Robotic Onco Surgery",
+    "Minimally Invasive Surgery",
+    "Precision Tumor Removal",
+    "Complex Reconstructive Procedures",
+    "Advanced Hernia Repair",
+    "Post-operative Robotic Follow-up"
+  ],
+
+  advantages: [
+    "Smaller Incisions",
+    "Less Blood Loss",
+    "Reduced Pain",
+    "Lower Risk of Infection",
+    "Faster Recovery",
+    "Shorter Hospital Stay",
+    "Greater Surgical Precision",
+    "Enhanced 3D Visualization"
+  ],
+
+  doctors: [
+    {
+      name: "Expert Robotic Surgery Team",
+      designation: "Multi-Speciality Robotic Surgery Unit",
+      image: dummyprofile,
+      description:
+        "Consultant details will be updated soon."
+    }
+  ],
+
+  gallery: [
+    robo1,robo2,
+  ]
 }
 
 ];
