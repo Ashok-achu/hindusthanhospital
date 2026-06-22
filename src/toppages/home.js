@@ -27,6 +27,8 @@ import news2        from "../assets/team.jpg";
 import news3        from "../assets/appointment.jpg";
 import hero1 from "../assets/set1/Front page hospital photo.jpg";
 import hero2 from "../assets/set1/Hospital front page_.jpg";
+import robo1 from "../assets/dept/robo1.JPG";
+import robo2 from "../assets/dept/robo2.JPG";
 
 /* ─────────────────────────────────────────
    Animated Counter Hook
@@ -268,7 +270,7 @@ export default function Home() {
       <section className="relative w-full h-[85vh] md:h-screen pt-[90px] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Slider {...heroSliderSettings}>
-            {[hero1, hero2, hero3].map((img, i) => (
+            {[hero1, hero2, robo1, robo2].map((img, i) => (
               <div key={i} className="w-full h-[85vh] md:h-screen relative">
                 <img src={img} className="w-full h-full object-cover object-center" alt="" />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-rose-900/40 to-transparent" />
