@@ -87,7 +87,7 @@ export default function HeaderGroup() {
                 { label: "Gallery", to: "/gallery" },
                 { label: "News", to: "/news" },
                 {
-                    label: "Brochure",
+                    label: "Brochuer",
                     to: "/brochure/hindusthan-hospital-brochure.pdf",
                     external: true,
                 },

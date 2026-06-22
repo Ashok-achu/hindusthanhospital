@@ -45,6 +45,7 @@ import pradeep from "../assets/Final/DR. PRADEEP RAJA.jpg";
 import selvaraj from "../assets/Final/DR.N.SELVARAJ.jpg";
 
 import psenthilkumar from "../assets/Final/DR. P. SENTHILKUMAR.jpg";
+import nandhagopal from "../assets/Final/Dr.nandhagopal.jpeg";
 
 
 export default function Healthcare() {
@@ -69,7 +70,7 @@ export default function Healthcare() {
 
         { id: 2, name: "Prof. Dr. K. Srikanth", speciality: "Pulmonology", gender: "Male", image: srikanth },
 
-        { id: 3, name: "Dr. V. Nandagopal", speciality: "Pulmonology", gender: "Male", image: dummyDoctor },
+        { id: 3, name: "Dr. V. Nandagopal", speciality: "Pulmonology", gender: "Male", image: nandhagopal },
 
         { id: 4, name: "Dr. S. Nagarajan", speciality: "Pulmonology", gender: "Male", image: nagarajan },
 

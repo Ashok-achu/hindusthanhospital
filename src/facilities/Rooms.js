@@ -4,6 +4,10 @@ import hero from "../assets/hero.jpg";
 
 
 import room4 from "../assets/Equipments/Equipments-13.jpg";
+import room3 from "../assets/set1/bed1.jpeg";
+import room2 from "../assets/set1/bed2.jpeg";
+import room1 from "../assets/set1/bed3.jpeg";
+import room0 from "../assets/set1/bed4.jpeg";
 
 import {
 FaBed,
@@ -89,7 +93,7 @@ features: [
 },
 ];
 
-const roomImages = [room4];
+const roomImages = [room4,room3,room2,room1,room0];
 
 return (
 

@@ -138,6 +138,7 @@ import pradeep from "../assets/Final/DR. PRADEEP RAJA.jpg";
 import saranya from "../assets/Final/DR. S.SARANYA VISHUMATHY.jpg";
 import shanmugam from "../assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg";
 import senthil from "../assets/Final/DR.K. SENTHILjpg.jpg";
+import nandhagopal from "../assets/Final/Dr.nandhagopal.jpeg";
 const departmentsData = [
 
 /* =======================
@@ -205,8 +206,7 @@ description:"Experienced anaesthesiologist specializing in perioperative anesthe
 }
 ],
 gallery: [
-  emrImg,
-  ecgImg
+ 
 ]
 
   
@@ -271,8 +271,7 @@ Services include ECG, echocardiography, stress testing, Holter monitoring, ambul
 gallery: [
   cardiologyImg,
   cardiologyImg1,
-  ecgImg,
-  defibrillatorImg
+  
 ]
 },
 
@@ -317,7 +316,7 @@ Preventive, restorative, cosmetic, and surgical dental procedures are offered un
   }
 ],
 gallery: [
-  endoscopyImg
+  
 ]
 },
 
@@ -438,8 +437,7 @@ description:"Experienced endoscopic ENT surgeon specializing in sinus surgery, v
 
 
 gallery: [
-  scopyImg,
-  scopyImg1
+  
 ]
 },
 
@@ -529,9 +527,9 @@ image:murugesan,
 description:"Specialist in neurovascular surgery, brain tumor treatment and complex neurosurgical procedures."
 },
 {
-name:"Dr. N. Madhan",
+name:"DR.ESWARAN MOORTHY.jpg",
 designation:"Neurosurgeon",
-image:madhan,
+image:eswaran,
 description:"Expert in spine surgery, trauma neurosurgery and neuro critical care."
 }
 ],
@@ -605,10 +603,7 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
     "Pancreatic Disorders Care"
   ],
   gallery: [
-  endoscopyImg,
-  scopyImg,
-  scopyImg1,
-  scopyImg2
+  
 ]
 },
 
@@ -661,19 +656,44 @@ gallery: [
   slug: "nephrology",
   name: "Nephrology",
   image: hospital,
-  description: `
-The Department of Nephrology offers comprehensive care for kidney-related diseases including acute and chronic kidney disorders.
+description: `
 
-Dialysis services and long-term renal care are provided with a focus on improving patient quality of life.
+
+The Department of Nephrology provides comprehensive care for patients with kidney diseases through advanced diagnostics, specialized treatments, and modern renal care services.
+
+COMPREHENSIVE TREATMENT
+
+• Acute Kidney Injury (AKI)
+• Chronic Kidney Disease (CKD)
+• Glomerulonephritis
+• Nephrotic Syndrome
+• Systemic Lupus Erythematosus (SLE)
+
+RENAL REPLACEMENT THERAPIES (RRT)
+
+• 24×7 Hemodialysis
+• Formalin-Free Dialysis
+• Low Flux / High Flux Dialysis
+• Home Hemodialysis
+• Acute Peritoneal Dialysis
+• CAPD (Continuous Ambulatory Peritoneal Dialysis)
+
+Kidney Transplant:
+• Live Donor
+• Cadaver Donor
+• ABO-Incompatible Transplant
+
+INTERVENTIONAL PROCEDURES
+
+• Temporary Dialysis Catheter Placement (IJC/SC)
+• Permcath Placement
+• CAPD Catheter Placement
+• Renal Biopsy
+• AV Fistula Creation
+• Plasmapheresis
+• Hemoperfusion for Poisoning
+• Bilirubin Removal Dialysis
 `,
-  services: [
-    "Hemodialysis",
-    "CKD Management",
-    "Kidney Stone Evaluation",
-    "Renal Biopsy",
-    "Renal replacement therapy",
-    "Renal transplant",
-  ],
 
 
 
@@ -686,8 +706,7 @@ description:"Specialist in kidney diseases, dialysis care and chronic kidney dis
 }
 ],
 gallery: [
-  nephrologyImg,
-  nephrologyImg1
+  
 ]
 
 },
@@ -1082,8 +1101,8 @@ Soon to be added is cardiopulmonary exercise testing)
   },
   {
       name: "Dr. V. Nandagopal",
-      designation: "Pulmonology",
-      image: dummyprofile,
+      designation: "Consultant Pulmonology",
+      image: nandhagopal,
   }
 ],
  pulmonologyImg,
@@ -1271,6 +1290,7 @@ image:ramalingam,
   }
 ],
 gallery: [
+  robo1,robo2,
   
 ]
 },

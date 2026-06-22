@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import dchImg from "../assets/pediatrics.jpg";
-import dnbImg from "../assets/surgery.jpg";
+import dchImg from "../assets/set1/course.jpg";
+import dnbImg from "../assets/set1/course.jpg";
+
 
 export default function Courses() {
   const [activeCourse, setActiveCourse] = useState(null);
@@ -19,7 +20,7 @@ export default function Courses() {
     },
     {
       id: 2,
-      title: "DMLT",
+      title: "DTCD",
       image: dnbImg,
       duration: "3 Years",
       description:
@@ -32,15 +33,76 @@ export default function Courses() {
   return (
     <div className="pt-[10rem] font-[Poppins]">
 
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-blue-900">
-          OUR COURSES
-        </h2>
-        <p className="text-gray-600 mt-2 text-lg">
-          Empowering future healthcare professionals with excellence
-        </p>
+     {/* Header */}
+<div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-16 mb-12">
+  <div className="max-w-6xl mx-auto px-6">
+
+    <div className="text-center">
+      <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wide uppercase">
+        Academics
+      </span>
+
+      <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-blue-900">
+        Our Courses
+      </h2>
+
+      <div className="w-24 h-1 bg-blue-700 mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <div className="mt-12 bg-white rounded-3xl shadow-lg border border-gray-100 p-8 md:p-10">
+
+      <h3 className="text-2xl font-bold text-blue-900 mb-5">
+        About NBEMS
+      </h3>
+
+      <p className="text-gray-700 leading-8 text-justify mb-6">
+        Established in <strong>1975</strong> by the Government of India,
+        the National Board of Examinations in Medical Sciences (NBEMS)
+        sets high, uniform standards for postgraduate medical education
+        across the country.
+      </p>
+
+      <p className="text-gray-700 leading-8 text-justify mb-8">
+        NBEMS conducts standardized examinations across various medical
+        specialties, ensuring consistent evaluation of medical knowledge,
+        competencies, and clinical skills while maintaining national and
+        international academic standards.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-8">
+
+        <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+          <h4 className="text-lg font-semibold text-blue-900 mb-4">
+            Recognized Qualifications
+          </h4>
+
+          <ul className="space-y-3 text-gray-700">
+            <li>✔ Diplomate of National Board (DNB)</li>
+            <li>✔ DrNB Super Speciality</li>
+            <li>✔ Fellow of National Board (FNB)</li>
+            <li>✔ NBEMS Diploma Courses</li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 rounded-2xl p-6 border border-green-100">
+          <h4 className="text-lg font-semibold text-green-700 mb-4">
+            Why Choose NBEMS?
+          </h4>
+
+          <ul className="space-y-3 text-gray-700">
+            <li>✔ Government Recognized</li>
+            <li>✔ National Standard Curriculum</li>
+            <li>✔ Excellent Clinical Exposure</li>
+            <li>✔ Career-Oriented Medical Education</li>
+          </ul>
+        </div>
+
       </div>
+
+    </div>
+
+  </div>
+</div>
 
       {/* Course Cards */}
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-10 px-6 mt-12 pb-20">
