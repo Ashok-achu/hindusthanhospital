@@ -1,4 +1,3 @@
-
 // Department Images
 /* =======================
    DEPARTMENT IMAGES
@@ -147,6 +146,11 @@ const departmentsData = [
 {
   slug: "anaesthesiology",
   name: "Anaesthesiology",
+  seo: {
+    title: "Anaesthesiology Department in Coimbatore | Hindusthan Hospitals",
+    description: "Anaesthesiology at Hindusthan Hospitals, Coimbatore covers general, regional, obstetric, paediatric, cardiac and critical care anaesthesia with a strong focus on patient safety.",
+    keywords: ["anaesthesiology Coimbatore", "anaesthesia hospital Coimbatore", "regional anaesthesia", "obstetric anaesthesia", "cardiac anaesthesia", "Hindusthan Hospitals"],
+  },
 image: hospital,
 description: `
 General Anesthesia: We offer general anesthesia services for a wide range of surgical procedures, ensuring patients are comfortably sedated and pain-free throughout the duration of their surgery.
@@ -218,6 +222,11 @@ gallery: [
 {
   slug: "cardiology",
   name: "Cardiology",
+  seo: {
+    title: "Cardiology Department in Coimbatore | Hindusthan Hospitals",
+    description: "Cardiology care at Hindusthan Hospitals, a 200-bed Coimbatore hospital with 24-hour emergency services and a fully functional Cath Lab for angiography, angioplasty and pacemaker implantation.",
+    keywords: ["cardiology hospital Coimbatore", "cath lab Coimbatore", "angioplasty Coimbatore", "pacemaker implantation", "heart specialist Coimbatore", "Hindusthan Hospitals cardiology"],
+  },
   image: hospital,
   description: `
 The Department of Cardiology provides comprehensive and advanced care for disorders of the heart and blood vessels. Hindusthan Hospital is a 200-bedded multi-speciality hospital equipped with 24-hour emergency services and a fully functional Cath Lab.
@@ -282,6 +291,11 @@ gallery: [
 {
   slug: "dentistry",
   name: "Dental & Facio Maxillary",
+  seo: {
+    title: "Dental & Facio Maxillary Department in Coimbatore | Hindusthan Hospitals",
+    description: "Comprehensive dental care at Hindusthan Hospitals, Coimbatore — root canal treatment, dental implants, cosmetic dentistry and paediatric dentistry under one roof.",
+    keywords: ["dental clinic Coimbatore", "facio maxillary surgery", "root canal treatment Coimbatore", "dental implants Coimbatore", "paediatric dentistry", "Hindusthan Hospitals dental"],
+  },
  image: hospital,
   description: `
 The Department of Dentistry provides comprehensive oral healthcare for patients of all age groups. Using modern dental equipment and patient-friendly techniques, the department ensures painless and comfortable dental treatments.
@@ -326,6 +340,11 @@ gallery: [
 {
   slug: "diabetology-general-medicine",
   name: "Diabetology & General Medicine",
+  seo: {
+    title: "Diabetology & General Medicine in Coimbatore | Hindusthan Hospitals",
+    description: "Diabetes and general medicine care at Hindusthan Hospitals, Coimbatore, covering Type 1 & 2 diabetes, gestational diabetes, chronic disease management and preventive health checkups.",
+    keywords: ["diabetologist Coimbatore", "diabetes care Coimbatore", "general medicine hospital Coimbatore", "diabetic foot care", "master health checkup Coimbatore", "Hindusthan Hospitals diabetology"],
+  },
   image: hospital,
   description: `
 The Department of Diabetology & General Medicine offers comprehensive, patient-centered care focusing on prevention, early diagnosis, and effective treatment of a wide range of acute and chronic medical conditions.
@@ -375,6 +394,11 @@ With advanced diagnostic facilities and a holistic treatment approach, the depar
 {
   slug: "emergency-care",
   name: "Emergency Care",
+  seo: {
+    title: "24x7 Emergency Care in Coimbatore | Hindusthan Hospitals",
+    description: "24x7 emergency care at Hindusthan Hospitals, Coimbatore with rapid response teams for trauma, cardiac emergencies and stroke, backed by ICU, blood bank and ambulance services.",
+    keywords: ["emergency hospital Coimbatore", "24x7 emergency care", "trauma care Coimbatore", "ambulance service Coimbatore", "stroke emergency Coimbatore", "Hindusthan Hospitals emergency"],
+  },
  image: hospital,
   description: `
 The Emergency Care Department provides immediate and life-saving medical care for critical and urgent conditions. Emergency services operate 24x7 with rapid response teams trained to handle trauma, cardiac emergencies, stroke, and accidents.
@@ -401,6 +425,11 @@ The department is supported by advanced resuscitation units, intensive care faci
 {
   slug: "ent",
   name: "ENT & Head and Neck Surgery",
+  seo: {
+    title: "ENT & Head and Neck Surgery in Coimbatore | Hindusthan Hospitals",
+    description: "ENT and Head & Neck Surgery at Hindusthan Hospitals, Coimbatore led by Dr. V. Venkatraman, covering sinus surgery, voice disorders, paediatric ENT and skull base surgery.",
+    keywords: ["ENT specialist Coimbatore", "ENT hospital Coimbatore", "sinus surgery Coimbatore", "head and neck surgery", "voice disorder treatment", "Hindusthan Hospitals ENT"],
+  },
   image: hospital,
   description: `
 The department is headed by Dr. V. Venkatraman, HOD and Chief Endoscopic ENT surgeon who has been practising in Coimbatore for more than a decade. He completed his MS from the prestigious institute JIPMER, Pondicherry. The department provide all services forwards diagnosis and treatment of ENT disorders including cancers of the head and neck region.
@@ -444,6 +473,11 @@ gallery: [
 {
   slug: "neuro",
   name: "NEUROSCIENCE",
+  seo: {
+    title: "Neuroscience Department in Coimbatore | Hindusthan Hospitals",
+    description: "Comprehensive neuro care at Hindusthan Hospitals, Coimbatore combining neurosurgery, neurology and psychiatry for stroke, spine, brain tumour and neuro-critical care.",
+    keywords: ["neurosurgery Coimbatore", "neurology hospital Coimbatore", "stroke treatment Coimbatore", "spine surgery Coimbatore", "neuro ICU Coimbatore", "Hindusthan Hospitals neuroscience"],
+  },
   image: hospital,
   description: `
 The management of Neurological diseases like head injury, stroke and other neurological illnesses are unique, which needs Meticulous, Dedicated work and a Comprehensive team.
@@ -548,6 +582,11 @@ gallery: [
 {
   slug: "general-surgery",
   name: "General & Laparoscopic Surgery",
+  seo: {
+    title: "General & Laparoscopic Surgery in Coimbatore | Hindusthan Hospitals",
+    description: "General and laparoscopic surgery at Hindusthan Hospitals, Coimbatore — hernia, gallbladder, appendix, piles, breast and thyroid surgery with minimally invasive techniques.",
+    keywords: ["general surgery Coimbatore", "laparoscopic surgery Coimbatore", "hernia surgery Coimbatore", "gallbladder surgery", "piles treatment Coimbatore", "Hindusthan Hospitals surgery"],
+  },
  image: hospital,
   description: `
 Department of General Surgery and Laparoscopic Surgery offers a wide range of comprehensive and high quality surgical procedures. The Department is well equipped with the latest and advanced Technology and with the state of the art modern operation theaters.
@@ -589,6 +628,11 @@ gallery: [
 {
   slug: "gastroenterology",
   name: "Gastroenterology",
+  seo: {
+    title: "Gastroenterology Department in Coimbatore | Hindusthan Hospitals",
+    description: "Gastroenterology care at Hindusthan Hospitals, Coimbatore for digestive, liver, pancreas and biliary disorders with advanced diagnostic and therapeutic endoscopy.",
+    keywords: ["gastroenterologist Coimbatore", "endoscopy Coimbatore", "colonoscopy Coimbatore", "liver disease treatment", "ERCP Coimbatore", "Hindusthan Hospitals gastroenterology"],
+  },
   image: hospital,
   description: `
 The Department of Gastroenterology provides specialized care for diseases of the digestive system, liver, pancreas, and biliary tract.
@@ -614,6 +658,11 @@ Advanced diagnostic and therapeutic endoscopy services are offered along with lo
 {
   slug: "icu",
   name: "Intensive Care Unit",
+  seo: {
+    title: "Intensive Care Unit in Coimbatore | Hindusthan Hospitals",
+    description: "Round-the-clock critical care at the Hindusthan Hospitals ICU in Coimbatore, with advanced life support and specialists for complex medical and surgical cases.",
+    keywords: ["ICU Coimbatore", "critical care hospital Coimbatore", "ventilator support Coimbatore", "intensive care unit", "Hindusthan Hospitals ICU"],
+  },
   image: hospital,
   description: `
 The Intensive Care Unit provides round-the-clock critical care for severely ill patients using advanced life-support systems.
@@ -661,6 +710,11 @@ gallery: [
 {
   slug: "nephrology",
   name: "Nephrology",
+  seo: {
+    title: "Nephrology & Dialysis in Coimbatore | Hindusthan Hospitals",
+    description: "Nephrology care at Hindusthan Hospitals, Coimbatore covering CKD management, 24x7 hemodialysis, CAPD and kidney transplant including ABO-incompatible transplants.",
+    keywords: ["nephrologist Coimbatore", "dialysis center Coimbatore", "kidney transplant Coimbatore", "CAPD Coimbatore", "chronic kidney disease treatment", "Hindusthan Hospitals nephrology"],
+  },
   image: hospital,
 description: `
 
@@ -723,6 +777,11 @@ gallery: [
 {
   slug: "obgyn",
   name: "Obstetrics & Gynaecology",
+  seo: {
+    title: "Obstetrics & Gynaecology in Coimbatore | Hindusthan Hospitals",
+    description: "Women's healthcare at Hindusthan Hospitals, Coimbatore — antenatal care, safe deliveries, high-risk pregnancy management and minimally invasive gynaecological surgery.",
+    keywords: ["gynaecologist Coimbatore", "obstetrician Coimbatore", "maternity hospital Coimbatore", "high-risk pregnancy care", "laparoscopic gynaecology", "Hindusthan Hospitals OBGYN"],
+  },
   image: hospital,
   description: `
 The Department of Obstetrics & Gynaecology provides comprehensive healthcare for women at all stages of life.
@@ -780,6 +839,11 @@ Services include antenatal care, safe deliveries, fertility management, and mini
 {
   slug: "orthopaedics",
   name: "Orthopaedics",
+  seo: {
+    title: "Orthopaedics & Joint Replacement in Coimbatore | Hindusthan Hospitals",
+    description: "Orthopaedic care at Hindusthan Hospitals, Coimbatore covering joint replacement, trauma, arthroscopy, paediatric orthopaedics and spine surgery.",
+    keywords: ["orthopaedic hospital Coimbatore", "joint replacement surgery Coimbatore", "knee replacement Coimbatore", "spine surgery Coimbatore", "fracture treatment Coimbatore", "Hindusthan Hospitals orthopaedics"],
+  },
   image: hospital,
   description: `
 Our department of orthopaedics and joint replacement surgery provides a range of musculoskeletal services from orthopaedic medicine to complex surgery.
@@ -838,6 +902,11 @@ gallery: [
 {
   slug: "neonatology-paediatrics",
   name: "Neonatology & Paediatrics",
+  seo: {
+    title: "Neonatology & Paediatrics in Coimbatore | Hindusthan Hospitals",
+    description: "A 20-bed Level III NICU and paediatric care at Hindusthan Hospitals, Coimbatore for premature and critically ill newborns plus comprehensive child healthcare.",
+    keywords: ["NICU Coimbatore", "paediatrician Coimbatore", "neonatologist Coimbatore", "premature baby care", "children's hospital Coimbatore", "Hindusthan Hospitals paediatrics"],
+  },
   image: hospital,
   description: `
 The Department of Neonatology & Paediatrics at Hindusthan Hospital provides comprehensive and specialized care for newborns, infants, children, and adolescents. With advanced infrastructure and a highly experienced multidisciplinary team, the department ensures quality care from birth through childhood.
@@ -906,6 +975,11 @@ With a patient-centered approach and evidence-based practices, our department en
 {
   slug: "paediatric-surgery",
   name: "Paediatric Surgery",
+  seo: {
+    title: "Paediatric Surgery in Coimbatore | Hindusthan Hospitals",
+    description: "Paediatric surgical care at Hindusthan Hospitals, Coimbatore led by Dr. Dharmendra R, covering congenital anomalies, hernia, hypospadias and minimally invasive paediatric surgery.",
+    keywords: ["paediatric surgeon Coimbatore", "child surgery Coimbatore", "hernia surgery children", "hypospadias surgery", "neonatal surgery Coimbatore", "Hindusthan Hospitals paediatric surgery"],
+  },
   image: hospital,
   description: `
 CONSULTANT
@@ -968,6 +1042,11 @@ Drainage of  various abscesses in childhood.
 {
   slug: "neurology",
   name: "Neurology",
+  seo: {
+    title: "Neurology Department in Coimbatore | Hindusthan Hospitals",
+    description: "Neurology care at Hindusthan Hospitals, Coimbatore for stroke, epilepsy, migraine, Parkinson's disease and other brain, spinal cord and nerve disorders.",
+    keywords: ["neurologist Coimbatore", "stroke treatment Coimbatore", "epilepsy treatment Coimbatore", "migraine clinic Coimbatore", "Parkinson's disease care", "Hindusthan Hospitals neurology"],
+  },
   image: hospital,
   description: `
 The Department of Neurology provides comprehensive diagnosis and treatment for disorders affecting the brain, spinal cord, nerves, and muscles. Our specialists manage both acute neurological emergencies and chronic neurological conditions using advanced diagnostic facilities and evidence-based treatment.
@@ -1008,6 +1087,11 @@ The department is committed to providing personalized care with a multidisciplin
 {
   slug: "plastic-surgery",
   name: "Plastic & Reconstructive Surgery",
+  seo: {
+    title: "Plastic & Reconstructive Surgery in Coimbatore | Hindusthan Hospitals",
+    description: "Cosmetic and reconstructive surgery at Hindusthan Hospitals, Coimbatore, including burn care and scar revision with individualised treatment plans.",
+    keywords: ["plastic surgeon Coimbatore", "reconstructive surgery Coimbatore", "cosmetic surgery Coimbatore", "burn care Coimbatore", "scar revision", "Hindusthan Hospitals plastic surgery"],
+  },
   image: hospital,
   description: `
 The Department of Plastic & Reconstructive Surgery offers reconstructive and cosmetic procedures aimed at restoring form and function.
@@ -1043,6 +1127,11 @@ Individualized treatment plans ensure optimal aesthetic and functional outcomes.
 {
   slug: "pulmonology",
   name: "Pulmonology",
+  seo: {
+    title: "Pulmonology Department (ILCR) in Coimbatore | Hindusthan Hospitals",
+    description: "ILCR at Hindusthan Hospitals, Coimbatore offers asthma, COPD, ILD and sleep disorder clinics, bronchoscopy, thoracoscopy and advanced pulmonary function testing.",
+    keywords: ["pulmonologist Coimbatore", "chest specialist Coimbatore", "asthma treatment Coimbatore", "COPD clinic Coimbatore", "bronchoscopy Coimbatore", "ILCR Hindusthan Hospitals"],
+  },
   image: hospital,
   description: `
 ILCR is the most prominent department of Hindusthan Hospital and is its first department that that started its operations on 30th September 2019 immediately after Hindusthan hospital as an institution was conceived. Today it stands out as one of the most sought after pulmonology services in the city. The department was the first to use Oscillometry in lung function test first time in Coimbatore. It is run by four eminent pulmonologists of the city with vast experience in the field of respiratory medicine.
@@ -1111,10 +1200,12 @@ Soon to be added is cardiopulmonary exercise testing)
       image: nandhagopal,
   }
 ],
- pulmonologyImg,
-  pulmonologyImg1,
-  pulmonologyCopyImg,
-  pulmonologyCopyImg1,
+  gallery: [
+    pulmonologyImg,
+    pulmonologyImg1,
+    pulmonologyCopyImg,
+    pulmonologyCopyImg1,
+  ],
 },
 
 /* =======================
@@ -1123,6 +1214,11 @@ Soon to be added is cardiopulmonary exercise testing)
 {
   slug: "radiology",
   name: "Radiology",
+  seo: {
+    title: "Radiology & Imaging in Coimbatore | Hindusthan Hospitals",
+    description: "Diagnostic imaging at Hindusthan Hospitals, Coimbatore including CT, MRI, ultrasound and interventional radiology reported by experienced radiologists.",
+    keywords: ["radiology center Coimbatore", "CT scan Coimbatore", "MRI scan Coimbatore", "interventional radiology", "diagnostic imaging Coimbatore", "Hindusthan Hospitals radiology"],
+  },
   image: hospital,
   description: `
 The Department of Radiology provides comprehensive diagnostic imaging services essential for accurate diagnosis and treatment planning.
@@ -1161,6 +1257,11 @@ gallery: [
 {
   slug: "rehab",
   name: "Physical Medicine & Rehabilitation",
+  seo: {
+    title: "Physiotherapy & Rehabilitation in Coimbatore | Hindusthan Hospitals",
+    description: "Physiotherapy at Hindusthan Hospitals, Coimbatore for post-surgical, neurological and orthopaedic rehabilitation using advanced therapy equipment and exercise programmes.",
+    keywords: ["physiotherapy Coimbatore", "rehabilitation center Coimbatore", "stroke rehabilitation Coimbatore", "post-surgery physiotherapy", "orthopaedic rehab Coimbatore", "Hindusthan Hospitals physiotherapy"],
+  },
  image: hospital,
   description: `
 Hindusthan Hospital’s physiotherapy department is dedicated to aiding individuals in regaining mobility and function after injury or  surgery, ultimately accelerating recovery and enhancing overall quality of life. Moreover, it plays a crucial role in minimizing the risk of future injuries. This type of therapy offers significant advantages to individuals of all ages and health conditions, from older individuals recuperating from joint replacement to young athletes dealing with injuries. The Department of Physiotherapy at Hindusthan Hospital is staffed with top-notch Physiotherapists in Coimbatore who have successfully treated a diverse range of patients. Every aspect of the department, from advanced rehabilitation tools to large therapy areas, is crafted to cater to the varied requirements of patients as they work towards better health.
@@ -1213,6 +1314,11 @@ Pediatric Services Provided
 {
   slug: "surgical-oncology",
   name: "Surgical Oncology",
+  seo: {
+    title: "Surgical Oncology in Coimbatore | Hindusthan Hospitals",
+    description: "Cancer surgery at Hindusthan Hospitals, Coimbatore with a multidisciplinary, patient-centred approach to tumour removal, breast, head & neck and GI cancer surgery.",
+    keywords: ["surgical oncologist Coimbatore", "cancer surgery Coimbatore", "breast cancer surgery Coimbatore", "tumour removal Coimbatore", "GI cancer surgery", "Hindusthan Hospitals oncology"],
+  },
   image: hospital,
   description: `
 The Department of Surgical Oncology provides comprehensive cancer surgery with a patient-centred and multidisciplinary approach.
@@ -1246,6 +1352,11 @@ gallery: [
 {
   slug: "urology",
   name: "Urology",
+  seo: {
+    title: "Urology Department in Coimbatore | Hindusthan Hospitals",
+    description: "Urology Clinic Coimbatore, established in 1992 at Hindusthan Hospitals, offers kidney stone treatment, uro-oncology, infertility surgery and kidney transplant care.",
+    keywords: ["urologist Coimbatore", "kidney stone treatment Coimbatore", "urology clinic Coimbatore", "kidney transplant Coimbatore", "prostate treatment Coimbatore", "Hindusthan Hospitals urology"],
+  },
   image: hospital,
   description: `
 Urology Clinic Coimbatore was established in 1992 as a one stop solution to all urological diseases. At this well equipped Urology centre all the needed Urological Investigations are available. A stand alone day care surgery centre with laser, ESWL, Laser for urinary stones, operating microscope Andrology equipments (Viberect, Electroejaculator) are attached to this clinic wherein all the ambulatory surgical procedures can be performed for the convenience of the patient. Centrally located in Coimbatore, Urology Clinic caters to both walk-in patients and and those with a prior appointment.
@@ -1304,6 +1415,11 @@ gallery: [
 {
   slug: "robotic-surgery",
   name: "Robotic Surgery",
+  seo: {
+    title: "Robotic Surgery in Coimbatore | Hindusthan Hospitals",
+    description: "Advanced robotic-assisted surgery at Hindusthan Hospitals, Coimbatore for greater precision, smaller incisions and faster recovery across multiple specialities.",
+    keywords: ["robotic surgery Coimbatore", "robotic surgery hospital Coimbatore", "minimally invasive surgery Coimbatore", "robotic urology surgery", "robotic gynaecology surgery", "Hindusthan Hospitals robotic surgery"],
+  },
   image: hospital,
   description: `
 The Department of Robotic Surgery offers advanced minimally invasive surgical procedures using state-of-the-art robotic-assisted technology. Robotic surgery provides greater precision, enhanced visualization, smaller incisions, reduced pain, minimal blood loss, faster recovery, and shorter hospital stays.
@@ -1351,8 +1467,13 @@ Our multidisciplinary team performs robotic-assisted procedures across various s
 },
 
 {
-  slug: "Surgical Gastroenterology",
+  slug: "surgical-gastroenterology",
   name: "Surgical Gastroenterology",
+  seo: {
+    title: "Surgical Gastroenterology in Coimbatore | Hindusthan Hospitals",
+    description: "Surgical Gastroenterology at Hindusthan Hospitals, Coimbatore led by Dr. Karthik Mathivanan, for the surgical management of digestive system conditions.",
+    keywords: ["surgical gastroenterologist Coimbatore", "GI surgery Coimbatore", "digestive surgery Coimbatore", "Hindusthan Hospitals gastroenterology surgery"],
+  },
   image: hospital,
   description: `
 The Department of Robotic Surgery offers advanced minimally invasive surgical procedures using state-of-the-art robotic-assisted technology. Robotic surgery provides greater precision, enhanced visualization, smaller incisions, reduced pain, minimal blood loss, faster recovery, and shorter hospital stays.
