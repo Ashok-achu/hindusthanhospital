@@ -108,25 +108,26 @@ export default function Pharmacy() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="max-w-7xl mx-auto px-6 mt-16">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeUp}
-          className="bg-teal-600 text-white p-10 rounded-3xl shadow-xl"
-        >
-          <h3 className="text-2xl font-bold mb-4">
-            Why Choose Our Pharmacy?
-          </h3>
-          <ul className="space-y-3 text-lg">
-            <li>✔ 24×7 availability including nights & holidays</li>
-            <li>✔ Qualified pharmacists and trained staff</li>
-            <li>✔ Genuine medicines with proper billing</li>
-            <li>✔ Quick dispensing for emergency cases</li>
-            <li>✔ Affordable pricing with ethical practices</li>
-          </ul>
-        </motion.div>
-      </section>
+      {/* HIGHLIGHTS */}
+<section className="max-w-7xl mx-auto px-6 mt-16">
+  <motion.div
+    initial="hidden"
+    whileInView="visible"
+    variants={fadeUp}
+    className="bg-teal-600 text-white p-10 rounded-3xl shadow-xl"
+  >
+    <h3 className="text-2xl font-bold mb-6">
+      Pharmacy Highlights
+    </h3>
+
+    <ul className="space-y-4 text-lg">
+      <li>✔ 24×7 Availability</li>
+      <li>✔ Qualified Pharmacists & Trained Staffs</li>
+      <li>✔ Genuine Medicines</li>
+      <li>✔ Quick Dispensing for Emergency Cases</li>
+    </ul>
+  </motion.div>
+</section>
 
       {/* WHATSAPP CTA */}
       <section className="max-w-7xl mx-auto px-6 mt-16 flex justify-center">

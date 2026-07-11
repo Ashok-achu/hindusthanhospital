@@ -1,11 +1,13 @@
+import { FaPhone, FaWhatsapp, FaInstagram, FaYoutube } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-700 text-white px-6 md:px-12 py-10">
       <div className="grid md:grid-cols-4 gap-10 text-sm">
-        
+
         {/* Column 1 */}
         <div>
-  
+
           <p className="mb-2">
             <span className="font-semibold">Email:</span>{" "}
             <a href="mailto:info@hindusthanhospital.com" className="hover:text-gray-300">
@@ -21,9 +23,19 @@ export default function Footer() {
             <span className="font-semibold">Emergency No:</span> 0422 - 4327799
           </p>
 
-          <div className="flex space-x-4 items-center text-xl">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition">📷</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition">▶️</a>
+          <div className="flex space-x-3 items-center mt-4">
+            <a href="tel:+914224327777" className="bg-orange-500 hover:bg-orange-600 text-white p-2.5 rounded-full hover:scale-110 transition" title="Call us">
+              <FaPhone size={16} />
+            </a>
+            <a href={`https://wa.me/917339095561`} target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white p-2.5 rounded-full hover:scale-110 transition" title="WhatsApp">
+              <FaWhatsapp size={16} />
+            </a>
+            <a href="https://www.instagram.com/hindusthan_hospital/" target="_blank" rel="noopener noreferrer" className="bg-pink-500 hover:bg-pink-600 text-white p-2.5 rounded-full hover:scale-110 transition" title="Instagram">
+              <FaInstagram size={16} />
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white p-2.5 rounded-full hover:scale-110 transition" title="YouTube">
+              <FaYoutube size={16} />
+            </a>
           </div>
         </div>
 
@@ -89,7 +101,7 @@ export default function Footer() {
 
       </div>
 
-     
+
     </footer>
   );
 }

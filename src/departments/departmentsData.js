@@ -639,7 +639,13 @@ name:"DR. N. MADHAN",
 designation:"Intensivists",
 image:madhan,
 description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
-}
+},
+{
+name:"Dr. Alwin",
+designation:"Intensivists",
+image:dummyprofile,
+description:"Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+},
 ],
 gallery: [
   icuImg
@@ -1342,7 +1348,40 @@ Our multidisciplinary team performs robotic-assisted procedures across various s
   gallery: [
     robo1,robo2,
   ]
+},
+
+{
+  slug: "Surgical Gastroenterology",
+  name: "Surgical Gastroenterology",
+  image: hospital,
+  description: `
+The Department of Robotic Surgery offers advanced minimally invasive surgical procedures using state-of-the-art robotic-assisted technology. Robotic surgery provides greater precision, enhanced visualization, smaller incisions, reduced pain, minimal blood loss, faster recovery, and shorter hospital stays.
+
+Our multidisciplinary team performs robotic-assisted procedures across various specialties while ensuring the highest standards of patient safety and clinical outcomes.
+`,
+
+  services: [
+    
+  ],
+
+  advantages: [
+    
+  ],
+
+  doctors: [
+    {
+      name: "Dr. Karthik Mathivanan",
+      designation: " Gastroenterology Surgeon",
+      image: dummyprofile,
+      
+    }
+  ],
+
+  gallery: [
+    
+  ]
 }
+
 
 ];
 

@@ -1,456 +1,363 @@
 import { useState } from "react";
 import {
-FaWhatsapp,
-FaInstagram,
-FaPhoneAlt,
-FaComments,
-FaTimes,
-FaYoutube
+    FaComments,
+    FaTimes
 } from "react-icons/fa";
 
-export default function FloatingSocial(){
+export default function FloatingSocial() {
 
-const whatsappNumber="918925868782";
+    const whatsappNumber = "918925868782";
 
-const [chatOpen,setChatOpen]=useState(false);
+    const [chatOpen, setChatOpen] = useState(false);
 
-const [step,setStep]=useState("menu");
+    const [step, setStep] = useState("menu");
 
-const [user,setUser]=useState({
+    const [user, setUser] = useState({
 
-name:"",
-phone:"",
-department:"",
-symptoms:""
+        name: "",
+        phone: "",
+        department: "",
+        symptoms: ""
 
-});
+    });
 
 
-// ================= EMAIL SEND =================
+    // ================= EMAIL SEND =================
 
-const sendEmail = async () => {
+    const sendEmail = async () => {
 
-try{
+        try {
 
-await fetch("http://localhost:5000/send-appointment",{
+            await fetch("http://localhost:5000/send-appointment", {
 
-method:"POST",
+                method: "POST",
 
-headers:{
-"Content-Type":"application/json"
-},
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-body:JSON.stringify(user)
+                body: JSON.stringify(user)
 
-});
+            });
 
-alert("Appointment Request Sent Successfully ✅");
+            alert("Appointment Request Sent Successfully ✅");
 
-setChatOpen(false);
+            setChatOpen(false);
 
-setStep("menu");
+            setStep("menu");
 
-setUser({
+            setUser({
 
-name:"",
-phone:"",
-department:"",
-symptoms:""
+                name: "",
+                phone: "",
+                department: "",
+                symptoms: ""
 
-});
+            });
 
-}catch(err){
+        } catch (err) {
 
-alert("Something went wrong");
+            alert("Something went wrong");
 
-}
+        }
 
-};
+    };
 
 
-// ================= FLOATING SOCIAL =================
+    // ================= FLOATING SOCIAL =================
 
-return(
+    return (
 
-<>
+        <>
 
-{/* ================= DESKTOP FLOAT ================= */}
+            {/* ================= CHATBOT BUTTON - BOTTOM FIXED ================= */}
 
-<div className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-[999] flex-col gap-4">
+            <button
+                onClick={() => setChatOpen(true)}
+                className="fixed bottom-6 right-6 z-[999] bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center"
+                title="Chat with us"
+            >
+                <FaComments size={24} />
+            </button>
 
-<a href="tel:+914224327777"
-className="bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
 
-<FaPhoneAlt size={20}/>
 
-</a>
+            {/* ================= CHATBOT ================= */}
 
-<a
-href={`https://wa.me/917339095561`}
-target="_blank"
-rel="noopener noreferrer"
-className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
+            {chatOpen && (
 
-<FaWhatsapp size={20}/>
+                <div
 
-</a>
-
-<a
-href="https://www.instagram.com/hindusthan_hospital/"
-target="_blank"
-rel="noopener noreferrer"
-className="bg-pink-500 hover:bg-pink-600 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
-
-<FaInstagram size={20}/>
-
-</a>
-
-<a
-href="https://youtube.com/"
-target="_blank"
-rel="noopener noreferrer"
-className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
-
-<FaYoutube size={20}/>
-
-</a>
-
-<button
-
-onClick={()=>setChatOpen(true)}
-
-className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl hover:scale-110 transition">
-
-<FaComments size={20}/>
-
-</button>
-
-</div>
-
-
-{/* ================= MOBILE FLOAT ================= */}
-
-<div className="md:hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-[999] bg-white shadow-2xl rounded-full px-6 py-3 flex gap-7 items-center border">
-
-<a href="tel:+914224327777">
-
-<FaPhoneAlt size={22} className="text-orange-500"/>
-
-</a>
-
-<a
-href={`https://wa.me/917339095561`}
-target="_blank"
-rel="noopener noreferrer">
-
-<FaWhatsapp size={24} className="text-green-500"/>
-
-</a>
-
-<a
-href="https://www.instagram.com/hindusthan_hospital/"
-target="_blank"
-rel="noopener noreferrer">
-
-<FaInstagram size={24} className="text-pink-500"/>
-
-</a>
-
-<a
-href="https://youtube.com/"
-target="_blank"
-rel="noopener noreferrer">
-
-<FaYoutube size={24} className="text-red-600"/>
-
-</a>
-
-<button onClick={()=>setChatOpen(true)}>
-
-<FaComments size={24} className="text-blue-600"/>
-
-</button>
-
-</div>
-
-
-
-{/* ================= CHATBOT ================= */}
-
-{chatOpen &&(
-
-<div
-
-className="fixed bottom-24 right-6 w-[380px] max-w-[95%]
+                    className="fixed bottom-24 right-6 w-[380px] max-w-[95%]
 bg-white rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.18)]
 z-[1000] overflow-hidden border animate-[fadeIn_.25s_ease]">
 
-{/* HEADER */}
+                    {/* HEADER */}
 
-<div className="bg-gradient-to-r from-blue-700 to-indigo-600 text-white px-6 py-5 flex justify-between items-start">
+                    <div className="bg-gradient-to-r from-blue-700 to-indigo-600 text-white px-6 py-5 flex justify-between items-start">
 
-<div>
+                        <div>
 
-<h3 className="font-semibold text-lg">
+                            <h3 className="font-semibold text-lg">
 
-Hindusthan Hospital
+                                Hindusthan Hospital
 
-</h3>
+                            </h3>
 
-<p className="text-sm opacity-90">
+                            <p className="text-sm opacity-90">
 
-Smart Care Assistant
+                                Smart Care Assistant
 
-</p>
+                            </p>
 
-</div>
+                        </div>
 
-<button
+                        <button
 
-onClick={()=>{
+                            onClick={() => {
 
-setChatOpen(false);
+                                setChatOpen(false);
 
-setStep("menu");
+                                setStep("menu");
 
-}}
+                            }}
 
-className="hover:scale-110 transition">
+                            className="hover:scale-110 transition">
 
-<FaTimes/>
+                            <FaTimes />
 
-</button>
+                        </button>
 
-</div>
+                    </div>
 
 
 
-{/* BODY */}
+                    {/* BODY */}
 
-<div className="p-6 bg-gray-50 space-y-5">
+                    <div className="p-6 bg-gray-50 space-y-5">
 
-{/* MENU */}
+                        {/* MENU */}
 
-{step==="menu" &&(
+                        {step === "menu" && (
 
-<>
+                            <>
 
-<button
+                                <button
 
-onClick={()=>setStep("name")}
+                                    onClick={() => setStep("name")}
 
-className="w-full bg-blue-50 hover:bg-blue-100 transition p-4 rounded-xl font-semibold">
+                                    className="w-full bg-blue-50 hover:bg-blue-100 transition p-4 rounded-xl font-semibold">
 
-📅 Book Appointment
+                                    📅 Book Appointment
 
-</button>
+                                </button>
 
-<a
+                                <a
 
-href="tel:+914224327777"
+                                    href="tel:+914224327777"
 
-className="block w-full bg-orange-50 hover:bg-orange-100 p-4 rounded-xl font-semibold">
+                                    className="block w-full bg-orange-50 hover:bg-orange-100 p-4 rounded-xl font-semibold">
 
-🚑 Emergency Call
+                                    🚑 Emergency Call
 
-</a>
+                                </a>
 
-<a
+                                <a
 
-href={`https://wa.me/917339095561`}
+                                    href={`https://wa.me/917339095561`}
 
-target="_blank"
+                                    target="_blank"
 
-rel="noopener noreferrer"
+                                    rel="noopener noreferrer"
 
-className="block w-full bg-green-50 hover:bg-green-100 p-4 rounded-xl font-semibold">
+                                    className="block w-full bg-green-50 hover:bg-green-100 p-4 rounded-xl font-semibold">
 
-💬 WhatsApp Chat
+                                    💬 WhatsApp Chat
 
-</a>
+                                </a>
 
-</>
+                            </>
 
-)}
+                        )}
 
 
 
-{/* NAME */}
+                        {/* NAME */}
 
-{step==="name" &&(
+                        {step === "name" && (
 
-<div>
+                            <div>
 
-<label className="text-sm font-semibold">
+                                <label className="text-sm font-semibold">
 
-Patient Name
+                                    Patient Name
 
-</label>
+                                </label>
 
-<input
+                                <input
 
-placeholder="Enter your name"
+                                    placeholder="Enter your name"
 
-className="mt-2 w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 outline-none"
+                                    className="mt-2 w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 outline-none"
 
-value={user.name}
+                                    value={user.name}
 
-onChange={(e)=>setUser({...user,name:e.target.value})}
+                                    onChange={(e) => setUser({ ...user, name: e.target.value })}
 
-/>
+                                />
 
-<button
+                                <button
 
-onClick={()=>setStep("phone")}
+                                    onClick={() => setStep("phone")}
 
-className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl">
+                                    className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl">
 
-Next
+                                    Next
 
-</button>
+                                </button>
 
-</div>
+                            </div>
 
-)}
+                        )}
 
 
 
-{/* PHONE */}
+                        {/* PHONE */}
 
-{step==="phone" &&(
+                        {step === "phone" && (
 
-<div>
+                            <div>
 
-<label className="text-sm font-semibold">
+                                <label className="text-sm font-semibold">
 
-Phone Number
+                                    Phone Number
 
-</label>
+                                </label>
 
-<input
+                                <input
 
-placeholder="Enter phone number"
+                                    placeholder="Enter phone number"
 
-className="mt-2 w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 outline-none"
+                                    className="mt-2 w-full border rounded-xl p-4 focus:ring-2 focus:ring-blue-600 outline-none"
 
-value={user.phone}
+                                    value={user.phone}
 
-onChange={(e)=>setUser({...user,phone:e.target.value})}
+                                    onChange={(e) => setUser({ ...user, phone: e.target.value })}
 
-/>
+                                />
 
-<button
+                                <button
 
-onClick={()=>setStep("department")}
+                                    onClick={() => setStep("department")}
 
-className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl">
+                                    className="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl">
 
-Next
+                                    Next
 
-</button>
+                                </button>
 
-</div>
+                            </div>
 
-)}
+                        )}
 
 
 
-{/* DEPARTMENT */}
+                        {/* DEPARTMENT */}
 
-{step==="department" &&(
+                        {step === "department" && (
 
-<div>
+                            <div>
 
-<label className="text-sm font-semibold">
+                                <label className="text-sm font-semibold">
 
-Department
+                                    Department
 
-</label>
+                                </label>
 
-<select
+                                <select
 
-className="mt-2 w-full border rounded-xl p-4"
+                                    className="mt-2 w-full border rounded-xl p-4"
 
-onChange={(e)=>{
+                                    onChange={(e) => {
 
-setUser({...user,department:e.target.value});
+                                        setUser({ ...user, department: e.target.value });
 
-setStep("symptoms");
+                                        setStep("symptoms");
 
-}}
+                                    }}
 
->
+                                >
 
-<option>Select Department</option>
+                                    <option>Select Department</option>
 
-<option>Cardiology</option>
+                                    <option>Cardiology</option>
 
-<option>Orthopaedics</option>
+                                    <option>Orthopaedics</option>
 
-<option>General Medicine</option>
+                                    <option>General Medicine</option>
 
-<option>ENT</option>
+                                    <option>ENT</option>
 
-<option>Paediatrics</option>
+                                    <option>Paediatrics</option>
 
-<option>Emergency Care</option>
+                                    <option>Emergency Care</option>
 
-</select>
+                                </select>
 
-</div>
+                            </div>
 
-)}
+                        )}
 
 
 
-{/* SYMPTOMS */}
+                        {/* SYMPTOMS */}
 
-{step==="symptoms" &&(
+                        {step === "symptoms" && (
 
-<div>
+                            <div>
 
-<label className="text-sm font-semibold">
+                                <label className="text-sm font-semibold">
 
-Symptoms / Message
+                                    Symptoms / Message
 
-</label>
+                                </label>
 
-<textarea
+                                <textarea
 
-rows="3"
+                                    rows="3"
 
-placeholder="Describe symptoms"
+                                    placeholder="Describe symptoms"
 
-className="mt-2 border w-full p-4 rounded-xl"
+                                    className="mt-2 border w-full p-4 rounded-xl"
 
-value={user.symptoms}
+                                    value={user.symptoms}
 
-onChange={(e)=>setUser({...user,symptoms:e.target.value})}
+                                    onChange={(e) => setUser({ ...user, symptoms: e.target.value })}
 
-/>
+                                />
 
-<button
+                                <button
 
-onClick={sendEmail}
+                                    onClick={sendEmail}
 
-className="mt-5 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold">
+                                    className="mt-5 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold">
 
-Send Appointment Request
+                                    Send Appointment Request
 
-</button>
+                                </button>
 
-</div>
+                            </div>
 
-)}
+                        )}
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-)}
+            )}
 
-</>
+        </>
 
-);
+    );
 
 }

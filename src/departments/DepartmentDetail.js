@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { useState } from "react"; // ✅ ADD THIS
+import { useState } from "react";
 import departmentsData from "../departments/departmentsData";
+
 export default function DepartmentDetail() {
 
   const { slug } = useParams();
@@ -87,45 +88,67 @@ export default function DepartmentDetail() {
                   {department.name}
                 </h1>
 
-                {/* DESCRIPTION */}
-                <div className="leading-7 sm:leading-8 text-gray-700 text-[15px] sm:text-[16px] space-y-3">
+                {/* DESCRIPTION — royal card treatment */}
+                <div className="relative bg-[#FDFBF6] border border-[#E7DCC0] rounded-2xl px-6 sm:px-10 py-8 sm:py-10 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
 
-                  <ul className="space-y-2">
+                  {/* corner ornaments */}
+                  <span className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-[#C6A15B]"></span>
+                  <span className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-[#C6A15B]"></span>
+                  <span className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-[#C6A15B]"></span>
+                  <span className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-[#C6A15B]"></span>
+
+                  <div className="space-y-4">
 
                     {(department.description || "").split("\n").map((line, index) => {
 
                       const clean = line.trim();
                       if (!clean) return null;
 
+                      // Section heading (ALL CAPS line)
                       if (clean === clean.toUpperCase() && clean.length > 6) {
                         return (
-                          <h3 key={index} className="text-lg sm:text-xl font-semibold text-gray-900 mt-6 mb-2">
-                            {clean}
-                          </h3>
+                          <div key={index} className="flex items-center gap-3 mt-8 mb-3 first:mt-0">
+                            <span className="w-8 h-[2px] bg-[#C6A15B]"></span>
+                            <h3 className="font-serif text-lg sm:text-xl tracking-wide text-[#6B0F2A]">
+                              {clean}
+                            </h3>
+                            <span className="flex-1 h-px bg-[#E7DCC0]"></span>
+                          </div>
                         );
                       }
 
+                      // Numbered sub-heading
                       if (clean.match(/^[0-9]+\./)) {
                         return (
-                          <h4 key={index} className="text-base sm:text-lg font-semibold text-gray-800 mt-4">
+                          <h4
+                            key={index}
+                            className="inline-flex items-center gap-2 text-[#6B0F2A] font-semibold text-base sm:text-lg mt-5 mb-1"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#C6A15B]"></span>
                             {clean}
                           </h4>
                         );
                       }
 
+                      // Bullet line
                       if (clean.startsWith("•")) {
                         return (
-                          <li key={index} className="ml-5 list-disc">
-                            {clean.replace("•", "")}
-                          </li>
+                          <p key={index} className="flex items-start gap-3 pl-2 text-gray-700 leading-7">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C6A15B] shrink-0"></span>
+                            <span>{clean.replace("•", "").trim()}</span>
+                          </p>
                         );
                       }
 
-                      return <p key={index}>{clean}</p>;
+                      // Plain paragraph
+                      return (
+                        <p key={index} className="text-gray-700 leading-7 sm:leading-8 text-[15px] sm:text-[16px]">
+                          {clean}
+                        </p>
+                      );
                     })}
 
-                  </ul>
-
+                  </div>
                 </div>
 
                 {/* SERVICES */}
@@ -172,39 +195,34 @@ export default function DepartmentDetail() {
                     </ul>
                   </>
                 )}
+
                 {department.procedures?.length > 0 && (
+                  <>
+                    <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-4 text-red-600">
+                      Procedures
+                    </h2>
 
-<>
-<h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-4 text-red-600">
-Procedures
-</h2>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-gray-700 text-sm sm:text-base">
+                      {department.procedures.map((item, i) => (
+                        <li key={i} className="list-disc ml-5">{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
-<ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-gray-700 text-sm sm:text-base">
-{department.procedures.map((item,i)=>(
-<li key={i} className="list-disc ml-5">{item}</li>
-))}
-</ul>
+                {department.specialClinics?.length > 0 && (
+                  <>
+                    <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-4 text-red-600">
+                      Special Clinics
+                    </h2>
 
-</>
-
-)}
-
-{department.specialClinics?.length > 0 && (
-
-<>
-<h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-4 text-red-600">
-Special Clinics
-</h2>
-
-<ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-gray-700 text-sm sm:text-base">
-{department.specialClinics.map((item,i)=>(
-<li key={i} className="list-disc ml-5">{item}</li>
-))}
-</ul>
-
-</>
-
-)}
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-gray-700 text-sm sm:text-base">
+                      {department.specialClinics.map((item, i) => (
+                        <li key={i} className="list-disc ml-5">{item}</li>
+                      ))}
+                    </ul>
+                  </>
+                )}
 
                 {/* DOCTORS */}
                 {department.doctors?.length > 0 && (
@@ -235,77 +253,91 @@ Special Clinics
                   </>
                 )}
 
+                {/* VISITING CONSULTANTS */}
+                {department.visitingConsultants?.length > 0 && (
+                  <>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mt-14 mb-8">
+                      Visiting Consultants
+                    </h2>
 
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {department.visitingConsultants.map((doc, i) => (
+                        <div
+                          key={i}
+                          className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+                        >
+                          <div className="w-full h-[260px] bg-gray-50 flex items-center justify-center p-4">
+                            <img
+                              src={doc.image}
+                              alt={doc.name}
+                              className="w-full h-full object-contain"
+                            />
+                          </div>
 
-{/* VISITING CONSULTANTS */}
-{department.visitingConsultants?.length > 0 && (
-  <>
-    <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mt-14 mb-8">
-      Visiting Consultants
-    </h2>
+                          <div className="p-6 text-center">
+                            <h3 className="text-lg font-semibold text-gray-800">
+                              {doc.name}
+                            </h3>
+                            <p className="text-red-600 text-sm font-medium mt-1">
+                              {doc.designation}
+                            </p>
 
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {department.visitingConsultants.map((doc, i) => (
-        <div
-          key={i}
-          className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
-        >
-          <div className="w-full h-[260px] bg-gray-50 flex items-center justify-center p-4">
-            <img
-              src={doc.image}
-              alt={doc.name}
-              className="w-full h-full object-contain"
-            />
-          </div>
+                            {doc.description && (
+                              <p className="text-gray-600 text-sm mt-3">
+                                {doc.description}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
 
-          <div className="p-6 text-center">
-            <h3 className="text-lg font-semibold text-gray-800">
-              {doc.name}
-            </h3>
-            <p className="text-red-600 text-sm font-medium mt-1">
-              {doc.designation}
-            </p>
+                {/* GALLERY — royal frame treatment */}
+                {department.gallery?.length > 0 && (
+                  <section className="mt-16">
 
-            {doc.description && (
-              <p className="text-gray-600 text-sm mt-3">
-                {doc.description}
-              </p>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-  </>
-)}
-                {/* GALLERY */}
-{/* GALLERY */}
-{/* GALLERY */}
-{department.gallery?.length > 0 && (
-  <section className="mt-16">
-    
-    <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mb-10 text-left">
-      Department Gallery
-    </h2>
+                    <div className="flex items-center gap-4 mb-10">
+                      <span className="flex-1 h-px bg-[#E7DCC0]"></span>
+                      <h2 className="font-serif text-2xl sm:text-3xl text-[#6B0F2A] tracking-wide whitespace-nowrap">
+                        Department Gallery
+                      </h2>
+                      <span className="flex-1 h-px bg-[#E7DCC0]"></span>
+                    </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-      
-      {department.gallery.map((img, i) => (
-        <div
-          key={i}
-          className="bg-white p-4 rounded-3xl shadow-md hover:shadow-xl transition duration-300"
-        >
-          <img
-            src={img}
-            alt={`gallery-${i}`}
-            onClick={() => setSelectedImage(img)} // ✅ CLICK TO OPEN
-            className="w-full h-[300px] md:h-[380px] object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-          />
-        </div>
-      ))}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-    </div>
-  </section>
-)}
+                      {department.gallery.map((img, i) => (
+                        <div
+                          key={i}
+                          className="group relative bg-white p-3 rounded-2xl border border-[#E7DCC0] shadow-md hover:shadow-2xl transition duration-300"
+                        >
+                          {/* thin gold inner frame */}
+                          <div className="relative rounded-xl overflow-hidden ring-1 ring-[#C6A15B]/40">
+                            <img
+                              src={img}
+                              alt={`gallery-${i}`}
+                              onClick={() => setSelectedImage(img)}
+                              className="w-full h-[300px] md:h-[380px] object-cover cursor-pointer transition duration-500 group-hover:scale-105"
+                            />
+
+                            {/* hover overlay */}
+                            <div
+                              onClick={() => setSelectedImage(img)}
+                              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-5 cursor-pointer"
+                            >
+                              <span className="text-white text-xs sm:text-sm tracking-[0.2em] uppercase border border-white/70 px-4 py-1.5 rounded-full">
+                                View
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+
+                    </div>
+                  </section>
+                )}
 
               </div>
             </div>
@@ -314,30 +346,33 @@ Special Clinics
         </div>
 
       </div>
-{/* FULL SCREEN IMAGE VIEW */}
-{selectedImage && (
-  <div
-    className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
-    onClick={() => setSelectedImage(null)}
-  >
-    
-    {/* CLOSE BUTTON */}
-    <button
-      className="absolute top-6 right-6 text-white text-3xl font-bold"
-      onClick={() => setSelectedImage(null)}
-    >
-      ✕
-    </button>
 
-    {/* IMAGE */}
-    <img
-      src={selectedImage}
-      alt="Full View"
-      className="max-w-[90%] max-h-[85%] rounded-xl shadow-2xl"
-    />
+      {/* FULL SCREEN IMAGE VIEW */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
 
-  </div>
-)}
+          {/* CLOSE BUTTON */}
+          <button
+            className="absolute top-6 right-6 text-white text-3xl font-bold"
+            onClick={() => setSelectedImage(null)}
+          >
+            ✕
+          </button>
+
+          {/* IMAGE */}
+          <div className="relative p-2 rounded-2xl ring-1 ring-[#C6A15B]/60 bg-black/40">
+            <img
+              src={selectedImage}
+              alt="Full View"
+              className="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl"
+            />
+          </div>
+
+        </div>
+      )}
     </div>
   );
 }

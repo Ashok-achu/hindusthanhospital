@@ -8,18 +8,9 @@ export default function Courses() {
   const [activeCourse, setActiveCourse] = useState(null);
 
   const courses = [
+
     {
       id: 1,
-      title: "DCH - Diploma in Child Health",
-      image: dchImg,
-      duration: "2 Years",
-      description:
-        "Focused training in pediatrics including neonatal care, child development, and disease management.",
-      details:
-        "DCH is a specialized program designed for medical graduates to gain expertise in pediatric care, immunization, neonatal emergencies, and child nutrition.",
-    },
-    {
-      id: 2,
       title: "DTCD",
       image: dnbImg,
       duration: "3 Years",
@@ -28,6 +19,17 @@ export default function Courses() {
       details:
         "DNB offers high-quality training across multiple specialties with strong clinical exposure, research opportunities, and national-level recognition.",
     },
+    {
+      id: 2,
+      title: "DCH - Diploma in Child Health",
+      image: dchImg,
+      duration: "2 Years",
+      description:
+        "Focused training in pediatrics including neonatal care, child development, and disease management.",
+      details:
+        "DCH is a specialized program designed for medical graduates to gain expertise in pediatric care, immunization, neonatal emergencies, and child nutrition.",
+    },
+    
   ];
 
   return (

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "../assets/logo.png"; // Change to your logo
+import logo from "../assets/set1/logos.jpg"; // Change to your logo
 
 export default function PageLoader({ loading }) {
   return (
