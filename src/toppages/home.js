@@ -26,9 +26,9 @@ import why3 from "../assets/set1/Radiology_(2).jpg";
 import why4 from "../assets/set1/Icu_.jpg";
 import doctorteam from "../assets/set1/doctor_team.png"
 import healthcare from "../assets/hospital/1920_1080 Green removed.jpg";
-import news1 from "../assets/hero.jpg";
-import news2 from "../assets/team.jpg";
-import news3 from "../assets/appointment.jpg";
+import news1 from "../assets/set1/news1.jpg";
+import news2 from "../assets/set1/news2.png";
+import news3 from "../assets/set1/news3.jpg";
 import hero1 from "../assets/set1/hero1.png";
 import hero2 from "../assets/set1/hero2.png";
 import hero4 from "../assets/set1/hero4.png";
@@ -1138,9 +1138,9 @@ export default function Home() {
           </div>
           <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
             {[
-              { img: news1, date: "12 Dec, 2024", category: "Hospital", title: "New Advanced Cardiac Unit Opening Soon", desc: "We are expanding our services to serve you better with world-class equipment." },
-              { img: news2, date: "05 Nov, 2024", category: "Health Tips", title: "5 Tips for a Healthy Heart this Winter", desc: "Expert advice from our top cardiologists on maintaining heart health during cold weather." },
-              { img: news3, date: "28 Oct, 2024", category: "Community", title: "Free Health Camp for Senior Citizens", desc: "Join us for a complimentary checkup camp dedicated to our elderly community members." },
+              { img: news1, title: "Longest Robotic Telesurgery in India", desc: "We are expanding our services to serve you better with world-class equipment." },
+              { img: news2, title: "SWARNAM - SENIOR CITIZEN HEALTH CLUB", desc: "Empowering senior citizens with preventive care, wellness programs, and regular health check-ups.." },
+              { img: news3, title: "Branch @Mettupalayam", desc: "Expanding our Service to wide from Coimbatore to Mettupalayam ." },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -1152,24 +1152,16 @@ export default function Home() {
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
                   <img src={item.img} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt={item.title} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent opacity-70 transition-opacity group-hover:opacity-45" />
-                  <div className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl bg-white/90 px-3 py-1.5 text-[11px] font-bold text-ink shadow-lg backdrop-blur-md sm:px-3.5 sm:py-2 sm:text-xs">
-                    <FaCalendarAlt className="text-[#B61B1F]" />{item.date}
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="rounded-full bg-[#B61B1F] px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">{item.category}</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                 
+                  
                 </div>
                 <div className="flex flex-grow flex-col p-5 sm:p-8">
                   <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-3 sm:text-xl">{item.title}</h3>
                   <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-500 sm:mb-6">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
-                      <FaUser className="text-slate-300" /><span>Admin</span>
-                    </div>
-                    <button className="flex items-center gap-1 text-sm font-bold text-ink transition-colors group-hover:text-[#B61B1F]">
-                      Read More <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
-                    </button>
+                    
+                    
                   </div>
                 </div>
               </motion.div>
