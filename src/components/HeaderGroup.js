@@ -101,6 +101,7 @@ export default function HeaderGroup() {
                 { label: "Careers", to: "/careers" },
                 { label: "Testimonials", to: "/testimonials" },
                 { label: "Reach Us", to: "/contact" },
+                { label: "Feedback", to: "/" },
             ],
         },
     ];

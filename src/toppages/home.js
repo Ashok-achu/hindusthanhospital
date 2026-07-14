@@ -20,20 +20,19 @@ import "slick-carousel/slick/slick-theme.css";
 import doctorTeams from "../assets/Final/DSC03825.jpg";
 
 import hero3 from "../assets/set1/hero3.png";
-import cardiology from "../assets/Equipments/Equipments-2.jpg";
-import surgery from "../assets/Equipments/Equipments-6.jpg";
-import doctorTeam from "../assets/hospital/1920_1080 Green removed.jpg";
+import why1 from "../assets/set1/NICU PHOTOTHERAPY.jpg";
+import why2 from "../assets/set1/Radiology_(1).jpg";
+import why3 from "../assets/set1/Radiology_(2).jpg";
+import why4 from "../assets/set1/Icu_.jpg";
+import doctorteam from "../assets/set1/doctor_team.png"
+import healthcare from "../assets/hospital/1920_1080 Green removed.jpg";
 import news1 from "../assets/hero.jpg";
 import news2 from "../assets/team.jpg";
 import news3 from "../assets/appointment.jpg";
 import hero1 from "../assets/set1/hero1.png";
 import hero2 from "../assets/set1/hero2.png";
 import hero4 from "../assets/set1/hero4.png";
-import hero5 from "../assets/set1/hero5.png";
-import hero6 from "../assets/set1/hero6.png";
-import hero7 from "../assets/set1/hero7.png";
-import hero8 from "../assets/set1/hero8.png";
-import robo2 from "../assets/dept/robo2.JPG";
+
 
 
 /* ════════════════════════════════════════════════════════════
@@ -79,7 +78,7 @@ function useCounter(target, duration = 2000, shouldStart = false) {
 ───────────────────────────────────────── */
 function PulseDivider({ tone = "light", className = "" }) {
   const stroke = tone === "light" ? "rgba(15,23,42,0.14)" : "rgba(255,255,255,0.14)";
-  const accent = tone === "light" ? "#E11D48" : "#FB7185";
+  const accent = tone === "light" ? "#B61B1F" : "#D65A5A";
   return (
     <div className={`relative mx-auto h-8 w-full max-w-5xl overflow-hidden sm:h-10 ${className}`} aria-hidden="true">
       <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="h-full w-full">
@@ -96,17 +95,20 @@ function PulseDivider({ tone = "light", className = "" }) {
 /* ─────────────────────────────────────────
    Section Eyebrow — encodes "what kind of
    claim this section is making" (a fact,
-   a promise, a proof point), not decoration
+   a promise, a proof point), not decoration.
+   The short lead-line is always gold — a
+   quiet "gilded seal" signature that recurs
+   on every section regardless of tone.
 ───────────────────────────────────────── */
 function Eyebrow({ children, tone = "wine" }) {
   const tones = {
-    wine: "text-rose-600",
-    teal: "text-teal-600",
-    light: "text-rose-200",
+    wine: "text-[#B61B1F]",
+    teal: "text-[#0F2C6A]",
+    light: "text-[#F3AEAE]",
   };
   return (
     <div className="mb-3 flex items-center gap-3">
-      <span className={`h-px w-8 sm:w-10 bg-current ${tones[tone]}`} />
+      <span className="h-px w-8 sm:w-10 bg-[#C9962B]" />
       <span className={`font-display text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.28em] sm:tracking-[0.32em] ${tones[tone]}`}>
         {children}
       </span>
@@ -135,7 +137,7 @@ function MagneticButton({ children, variant = "primary", className = "", ...prop
     primary: "btn-wine text-white",
     ghost: "border border-white/25 bg-white/10 text-white backdrop-blur-xl hover:bg-white/20",
     dark: "bg-ink text-white hover:bg-black",
-    outline: "border-2 border-ink/10 bg-white text-ink hover:border-rose-200 hover:text-rose-600",
+    outline: "border-2 border-ink/10 bg-white text-ink hover:border-[#F3AEAE] hover:text-[#B61B1F]",
   };
 
   return (
@@ -178,7 +180,7 @@ function StatCard({ icon, value, suffix, label, delay }) {
           <span>{icon}</span>
         </div>
         <div className="font-display text-[clamp(1.6rem,6vw,2.6rem)] font-extrabold leading-none tracking-tight">
-          {count.toLocaleString()}<span className="ml-0.5 text-rose-200">{suffix}</span>
+          {count.toLocaleString()}<span className="ml-0.5 text-[#F3AEAE]">{suffix}</span>
         </div>
         <p className="mt-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white/70 sm:mt-3 sm:text-sm sm:tracking-[0.2em]">{label}</p>
       </div>
@@ -190,27 +192,27 @@ function StatCard({ icon, value, suffix, label, delay }) {
    Departments data (unchanged)
 ───────────────────────────────────────── */
 const DEPARTMENTS = [
-  { name: "Anaesthesiology", slug: "anaesthesiology", icon: <FaUserMd />, color: "#0369a1", desc: "Perioperative care and pain management" },
-  { name: "Cardiology", slug: "cardiology", icon: <FaHeartbeat />, color: "#e11d48", desc: "Advanced cardiac care and interventions" },
-  { name: "Dental & Facial Maxillary", slug: "dental-facial-maxillary", icon: <FaTooth />, color: "#f43f5e", desc: "Comprehensive dental and maxillofacial care" },
-  { name: "Diabetology & General Medicine", slug: "diabetology-general-medicine", icon: <FaStethoscope />, color: "#dc2626", desc: "Diabetes and internal medicine specialists" },
-  { name: "Emergency Care", slug: "emergency-care", icon: <FaAmbulance />, color: "#b91c1c", desc: "24/7 emergency and trauma services" },
-  { name: "ENT & Head and Neck Surgery", slug: "ent-head-neck-surgery", icon: <FaUserMd />, color: "#0d9488", desc: "Expert ENT and head-neck surgical care" },
-  { name: "Neuroscience", slug: "neuroscience", icon: <FaBrain />, color: "#4f46e5", desc: "Brain, spine and neurological care" },
-  { name: "General & Laparoscopic Surgery", slug: "general-laparoscopic-surgery", icon: <FaStethoscope />, color: "#6366f1", desc: "Minimally invasive and general surgery" },
-  { name: "Gastroenterology", slug: "gastroenterology", icon: <FaUserMd />, color: "#16a34a", desc: "Digestive and gastrointestinal care" },
-  { name: "Intensive Care Unit", slug: "icu", icon: <FaHandHoldingHeart />, color: "#0f766e", desc: "Critical care and intensive monitoring" },
-  { name: "Nephrology", slug: "nephrology", icon: <FaUserMd />, color: "#8b5cf6", desc: "Kidney disease and renal care" },
-  { name: "Obstetrics & Gynaecology", slug: "obgyn", icon: <FaBaby />, color: "#e11d48", desc: "Women's health and maternity care" },
-  { name: "Orthopaedics", slug: "orthopaedics", icon: <FaBone />, color: "#d97706", desc: "Bone, joint and trauma specialists" },
-  { name: "Neonatology & Paediatrics", slug: "neonatology-paediatrics", icon: <FaBaby />, color: "#22c55e", desc: "Comprehensive child and newborn care" },
-  { name: "Paediatric Surgery", slug: "paediatric-surgery", icon: <FaUserMd />, color: "#65a30d", desc: "Specialized surgical care for children" },
-  { name: "Plastic & Reconstructive Surgery", slug: "plastic-reconstructive-surgery", icon: <FaUserMd />, color: "#db2777", desc: "Cosmetic and reconstructive procedures" },
-  { name: "Pulmonology", slug: "pulmonology", icon: <FaLungs />, color: "#ea580c", desc: "Respiratory and lung disease treatment" },
-  { name: "Radiology", slug: "radiology", icon: <FaMicroscope />, color: "#0284c7", desc: "Advanced diagnostic imaging services" },
-  { name: "Physical Medicine & Rehabilitation", slug: "physical-medicine-rehabilitation", icon: <FaWheelchair />, color: "#15803d", desc: "Physiotherapy and rehabilitation services" },
-  { name: "Surgical Oncology", slug: "surgical-oncology", icon: <FaUserMd />, color: "#9333ea", desc: "Comprehensive cancer surgery care" },
-  { name: "Urology", slug: "urology", icon: <FaProcedures />, color: "#db2777", desc: "Urinary tract and urological treatments" },
+  { name: "Anaesthesiology", slug: "anaesthesiology", icon: <FaUserMd />, color: "#1D469E", desc: "Perioperative care and pain management" },
+  { name: "Cardiology", slug: "cardiology", icon: <FaHeartbeat />, color: "#B61B1F", desc: "Advanced cardiac care and interventions" },
+  { name: "Dental & Facial Maxillary", slug: "dental-facial-maxillary", icon: <FaTooth />, color: "#D65A5A", desc: "Comprehensive dental and maxillofacial care" },
+  { name: "Diabetology & General Medicine", slug: "diabetology-general-medicine", icon: <FaStethoscope />, color: "#8F1519", desc: "Diabetes and internal medicine specialists" },
+  { name: "Emergency Care", slug: "emergency-care", icon: <FaAmbulance />, color: "#6E1013", desc: "24/7 emergency and trauma services" },
+  { name: "ENT & Head and Neck Surgery", slug: "ent-head-neck-surgery", icon: <FaUserMd />, color: "#0F2C6A", desc: "Expert ENT and head-neck surgical care" },
+  { name: "Neuroscience", slug: "neuroscience", icon: <FaBrain />, color: "#14357F", desc: "Brain, spine and neurological care" },
+  { name: "General & Laparoscopic Surgery", slug: "general-laparoscopic-surgery", icon: <FaStethoscope />, color: "#3F68BE", desc: "Minimally invasive and general surgery" },
+  { name: "Gastroenterology", slug: "gastroenterology", icon: <FaUserMd />, color: "#C9962B", desc: "Digestive and gastrointestinal care" },
+  { name: "Intensive Care Unit", slug: "icu", icon: <FaHandHoldingHeart />, color: "#0F2C6A", desc: "Critical care and intensive monitoring" },
+  { name: "Nephrology", slug: "nephrology", icon: <FaUserMd />, color: "#1D469E", desc: "Kidney disease and renal care" },
+  { name: "Obstetrics & Gynaecology", slug: "obgyn", icon: <FaBaby />, color: "#B61B1F", desc: "Women's health and maternity care" },
+  { name: "Orthopaedics", slug: "orthopaedics", icon: <FaBone />, color: "#C9962B", desc: "Bone, joint and trauma specialists" },
+  { name: "Neonatology & Paediatrics", slug: "neonatology-paediatrics", icon: <FaBaby />, color: "#A87A1E", desc: "Comprehensive child and newborn care" },
+  { name: "Paediatric Surgery", slug: "paediatric-surgery", icon: <FaUserMd />, color: "#8F1519", desc: "Specialized surgical care for children" },
+  { name: "Plastic & Reconstructive Surgery", slug: "plastic-reconstructive-surgery", icon: <FaUserMd />, color: "#D65A5A", desc: "Cosmetic and reconstructive procedures" },
+  { name: "Pulmonology", slug: "pulmonology", icon: <FaLungs />, color: "#14357F", desc: "Respiratory and lung disease treatment" },
+  { name: "Radiology", slug: "radiology", icon: <FaMicroscope />, color: "#1D469E", desc: "Advanced diagnostic imaging services" },
+  { name: "Physical Medicine & Rehabilitation", slug: "physical-medicine-rehabilitation", icon: <FaWheelchair />, color: "#3F68BE", desc: "Physiotherapy and rehabilitation services" },
+  { name: "Surgical Oncology", slug: "surgical-oncology", icon: <FaUserMd />, color: "#6E1013", desc: "Comprehensive cancer surgery care" },
+  { name: "Urology", slug: "urology", icon: <FaProcedures />, color: "#B61B1F", desc: "Urinary tract and urological treatments" },
 ];
 
 const PAGE_SIZE = 9;
@@ -247,15 +249,15 @@ export default function Home() {
 
       {/* ── GLOBAL AMBIENT FIELD ── */}
       <div className="fixed inset-0 -z-20 pointer-events-none">
-        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-rose-200/40 blur-[160px]" />
-        <div className="absolute top-[40%] -right-60 h-[700px] w-[700px] rounded-full bg-teal-100/50 blur-[180px]" />
-        <div className="absolute bottom-0 left-[30%] h-[500px] w-[500px] rounded-full bg-amber-100/30 blur-[150px]" />
+        <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[#F3AEAE]/40 blur-[160px]" />
+        <div className="absolute top-[40%] -right-60 h-[700px] w-[700px] rounded-full bg-[#A6C1EE]/40 blur-[180px]" />
+        <div className="absolute bottom-0 left-[30%] h-[500px] w-[500px] rounded-full bg-[#EFDFB0]/30 blur-[150px]" />
       </div>
 
       {/* ════════ HERO ════════ */}
       {/* ════════ HERO ════════ */}
 {/* ════════ HERO ════════ */}
-<section className="relative w-full bg-gradient-to-b from-[#0B1220] to-[#101B33]">
+<section className="relative w-full bg-gradient-to-b from-[#0A1B33] to-[#0F2440]">
   <div className="group relative mx-auto aspect-video w-full overflow-hidden">
 
     <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider h-full">
@@ -274,7 +276,7 @@ export default function Home() {
     </Slider>
 
     {/* edge fade so the carousel blends into the page instead of a hard cut */}
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0B1220]/70 to-transparent sm:h-24" />
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/70 to-transparent sm:h-24" />
 
     {/* prev / next — grouped top-right so they never sit on banner content */}
     <div className="absolute right-3 top-3 z-20 flex gap-2 sm:right-5 sm:top-5">
@@ -304,7 +306,7 @@ export default function Home() {
           className="h-1.5 rounded-full transition-all duration-300"
           style={{
             width: i === heroSlide ? "22px" : "7px",
-            background: i === heroSlide ? "linear-gradient(90deg,#E11D48,#F59E0B)" : "rgba(255,255,255,0.5)",
+            background: i === heroSlide ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.5)",
           }}
         />
       ))}
@@ -325,13 +327,13 @@ export default function Home() {
             >
               <div className="relative overflow-hidden rounded-[1.5rem] border-4 border-white shadow-[0_40px_100px_-35px_rgba(15,23,42,0.45)] sm:rounded-[2.5rem]">
                 <img
-                  src={doctorTeam}
+                  src={healthcare}
                   alt="Medical Team"
                   className="h-auto w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
-              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-rose-100 bg-white/95 p-4 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:-bottom-7 sm:-right-4 sm:left-auto sm:w-52 sm:p-5 md:-right-8">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-rose-100 font-display text-sm font-extrabold text-rose-600 sm:h-11 sm:w-11">15+</div>
+              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-[#F3AEAE] bg-white/95 p-4 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:-bottom-7 sm:-right-4 sm:left-auto sm:w-52 sm:p-5 md:-right-8">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#FAD6D6] font-display text-sm font-extrabold text-[#B61B1F] sm:h-11 sm:w-11">15+</div>
                 <div>
                   <div className="text-xs font-bold leading-tight text-ink sm:text-sm">Years of Experience</div>
                   <p className="mt-1 hidden text-xs text-slate-500 sm:block">Trusted by thousands of families.</p>
@@ -350,7 +352,7 @@ export default function Home() {
               <h2 className="font-display text-[clamp(1.7rem,5vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
                 Transforming healthcare
                 <br />
-                <span className="bg-gradient-to-r from-rose-600 to-orange-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">
                   for a better tomorrow
                 </span>
               </h2>
@@ -373,7 +375,7 @@ export default function Home() {
                     transition={{ duration: 0.4, delay: i * 0.08 }}
                     className="flex items-center gap-3 text-sm font-medium text-slate-700 sm:text-base"
                   >
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-teal-100 text-xs text-teal-700">
+                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#EAF0FB] text-xs text-[#0F2C6A]">
                       <FaCheckCircle />
                     </span>
                     {item}
@@ -396,9 +398,9 @@ export default function Home() {
       <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full opacity-25 blur-[160px]"
-            style={{ background: "radial-gradient(circle,#9D174D,transparent)" }} />
+            style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
           <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full opacity-20 blur-[140px]"
-            style={{ background: "radial-gradient(circle,#0F766E,transparent)" }} />
+            style={{ background: "radial-gradient(circle,#0F2C6A,transparent)" }} />
           <div className="absolute inset-0 opacity-[0.035]"
             style={{
               backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
@@ -421,10 +423,10 @@ export default function Home() {
                   Medical
                   <br />
                   <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-rose-300 via-rose-200 to-amber-200 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#E88585] via-[#F3AEAE] to-[#EFDFB0] bg-clip-text text-transparent">
                       Specialities
                     </span>
-                    <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-rose-400 to-transparent" />
+                    <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#D65A5A] to-transparent" />
                   </span>
                 </h2>
               </div>
@@ -525,7 +527,7 @@ export default function Home() {
                     style={{
                       width: i === specPage ? "36px" : "8px",
                       height: "8px",
-                      background: i === specPage ? "linear-gradient(90deg,#E11D48,#F59E0B)" : "rgba(255,255,255,0.15)",
+                      background: i === specPage ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.15)",
                     }}
                   />
                 </button>
@@ -539,8 +541,8 @@ export default function Home() {
                 disabled={specPage === 0}
                 className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
                 style={{
-                  borderColor: specPage === 0 ? "rgba(255,255,255,0.1)" : "rgba(225,29,72,0.4)",
-                  background: specPage === 0 ? "rgba(255,255,255,0.03)" : "rgba(225,29,72,0.08)",
+                  borderColor: specPage === 0 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
+                  background: specPage === 0 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
                 }}
               >
                 <FaChevronLeft className="text-sm text-white transition-transform group-hover:-translate-x-0.5" />
@@ -550,8 +552,8 @@ export default function Home() {
                 disabled={specPage === totalPages - 1}
                 className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
                 style={{
-                  borderColor: specPage === totalPages - 1 ? "rgba(255,255,255,0.1)" : "rgba(225,29,72,0.4)",
-                  background: specPage === totalPages - 1 ? "rgba(255,255,255,0.03)" : "rgba(225,29,72,0.08)",
+                  borderColor: specPage === totalPages - 1 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
+                  background: specPage === totalPages - 1 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
                 }}
               >
                 <FaChevronRight className="text-sm text-white transition-transform group-hover:translate-x-0.5" />
@@ -562,43 +564,106 @@ export default function Home() {
       </section>
 
       {/* ════════ MEET OUR DOCTORS ════════ */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center sm:mb-16">
-            <Eyebrow tone="teal"><span className="mx-auto" /> </Eyebrow>
-            <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Meet Our <span className="text-rose-600">Expert Doctors</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:mt-4 sm:text-lg">
-              Dedicated specialists committed to your health and wellbeing
-            </p>
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="group relative overflow-hidden rounded-[1.5rem] shadow-[0_40px_100px_-30px_rgba(15,23,42,0.4)] sm:rounded-[2.5rem]"
-          >
-            <img
-              src={doctorTeams}
-              alt="Doctors Team"
-              className="h-[240px] w-full object-cover transition duration-700 group-hover:scale-105 sm:h-[380px] lg:h-[480px]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 text-white sm:bottom-10 sm:left-10 sm:right-10">
-              <h3 className="font-display text-xl font-bold sm:text-3xl">45+ Specialist Doctors</h3>
-              <p className="mt-1.5 text-xs text-white/85 sm:mt-2 sm:text-lg">Providing compassionate and advanced medical care</p>
-            </div>
-          </motion.div>
+<section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="grid items-center gap-14 lg:grid-cols-2">
+
+      {/* Left Side - Doctors Image */}
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="group relative overflow-hidden rounded-[2rem] shadow-[0_35px_80px_-25px_rgba(15,23,42,0.35)]"
+      >
+        <img
+          src={doctorTeams}
+          alt="Doctors Team"
+          className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        <div className="absolute bottom-8 left-8 text-white">
+          <h3 className="font-display text-3xl font-bold">
+            45+ Specialist Doctors
+          </h3>
+          <p className="mt-2 text-white/90">
+            Dedicated to delivering world-class healthcare.
+          </p>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Right Side - Content */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        <Eyebrow>Medical Experts</Eyebrow>
+
+        <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
+          Meet Our
+          <br />
+          <span className="text-[#B61B1F]">Expert Doctors</span>
+        </h2>
+
+      
+
+        
+
+        {/* Features */}
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+
+      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+  <h4 className="text-lg font-bold text-ink">
+    Collaborative Healthcare
+  </h4>
+  <p className="mt-2 text-sm text-slate-600">
+    Specialists from multiple disciplines work together to provide comprehensive treatment plans.
+  </p>
+</div>
+
+<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+  <h4 className="text-lg font-bold text-ink">
+    Personalized Treatment
+  </h4>
+  <p className="mt-2 text-sm text-slate-600">
+    Every patient receives customized care tailored to their unique health needs and goals.
+  </p>
+</div>
+
+<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+  <h4 className="text-lg font-bold text-ink">
+    Ethical Medical Practice
+  </h4>
+  <p className="mt-2 text-sm text-slate-600">
+    We uphold the highest standards of integrity, transparency, and patient confidentiality.
+  </p>
+</div>
+
+<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+  <h4 className="text-lg font-bold text-ink">
+    Continuous Innovation
+  </h4>
+  <p className="mt-2 text-sm text-slate-600">
+    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
+  </p>
+</div>
+
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
 
       {/* ════════ OUR FACILITIES ════════ */}
       <section className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
         <div className="absolute inset-0 opacity-[0.12]"
           style={{
-            backgroundImage: "linear-gradient(rgba(225,29,72,0.35) 1px,transparent 1px),linear-gradient(90deg,rgba(225,29,72,0.35) 1px,transparent 1px)",
+            backgroundImage: "linear-gradient(rgba(182,27,31,0.35) 1px,transparent 1px),linear-gradient(90deg,rgba(182,27,31,0.35) 1px,transparent 1px)",
             backgroundSize: "60px 60px",
           }} />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -612,7 +677,7 @@ export default function Home() {
             <Eyebrow tone="light">What We Offer</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-white">
               World-Class{" "}
-              <span className="bg-gradient-to-r from-rose-300 to-amber-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#E88585] to-[#EFDFB0] bg-clip-text text-transparent">
                 Facilities
               </span>
             </h2>
@@ -622,12 +687,12 @@ export default function Home() {
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {[
-              { icon: <FaAmbulance />, title: "24/7 Ambulance", desc: "Fleet of fully-equipped ambulances with trained paramedics available round the clock.", link: "/facilities/ambulance", color: "from-rose-500 to-red-600" },
-              { icon: <FaFlask />, title: "Blood Bank", desc: "NABH-accredited blood bank with all blood groups and modern storage infrastructure.", link: "/facilities/blood-bank", color: "from-red-500 to-rose-600" },
-              { icon: <FaBed />, title: "Premium Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-amber-500 to-orange-500" },
-              { icon: <FaShieldAlt />, title: "Insurance Desk", desc: "Dedicated cashless insurance processing for over 50+ insurance providers.", link: "/facilities/insurance", color: "from-blue-500 to-indigo-600" },
-              { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-teal-500 to-emerald-600" },
-              { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-purple-500 to-violet-600" },
+              { icon: <FaAmbulance />, title: "24/7 Ambulance", desc: "Fleet of fully-equipped ambulances with trained paramedics available round the clock.", link: "/facilities/ambulance", color: "from-[#B61B1F] to-[#7A1216]" },
+              { icon: <FaFlask />, title: "Blood Bank", desc: "NABH-accredited blood bank with all blood groups and modern storage infrastructure.", link: "/facilities/blood-bank", color: "from-[#D65A5A] to-[#B61B1F]" },
+              { icon: <FaBed />, title: "Premium Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-[#D9B45B] to-[#A87A1E]" },
+              { icon: <FaShieldAlt />, title: "Insurance Desk", desc: "Dedicated cashless insurance processing for over 50+ insurance providers.", link: "/facilities/insurance", color: "from-[#3F68BE] to-[#0F2C6A]" },
+              { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-[#1D469E] to-[#14357F]" },
+              { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-[#0F2C6A] to-[#B61B1F]" },
             ].map((f, i) => (
               <motion.div
                 key={i}
@@ -643,7 +708,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-display mb-2.5 text-lg font-bold text-white sm:mb-3 sm:text-xl">{f.title}</h3>
                 <p className="mb-5 text-sm leading-relaxed text-slate-400 sm:mb-6">{f.desc}</p>
-                <Link to={f.link} className="flex items-center gap-2 text-sm font-bold text-rose-300 transition-all group-hover:gap-3">
+                <Link to={f.link} className="flex items-center gap-2 text-sm font-bold text-[#F3AEAE] transition-all group-hover:gap-3">
                   Learn More <FaArrowRight className="text-xs" />
                 </Link>
               </motion.div>
@@ -655,13 +720,13 @@ export default function Home() {
       {/* ════════ HEALTH PACKAGES ════════ */}
       <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-32">
         <div className="absolute inset-0 opacity-80"
-          style={{ backgroundImage: "radial-gradient(circle at top left, rgba(225,29,72,0.10), transparent 32%), radial-gradient(circle at bottom right, rgba(15,118,110,0.10), transparent 35%)" }}
+          style={{ backgroundImage: "radial-gradient(circle at top left, rgba(182,27,31,0.10), transparent 32%), radial-gradient(circle at bottom right, rgba(15,44,106,0.10), transparent 35%)" }}
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center sm:mb-16">
             <Eyebrow>Master Health Checkup</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Health <span className="text-rose-600">Packages</span>
+              Health <span className="text-[#B61B1F]">Packages</span>
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:mt-4 sm:text-lg sm:leading-7">
               Choose a package that fits your wellness goals and enjoy a smoother, smarter preventive care experience.
@@ -671,9 +736,9 @@ export default function Home() {
           <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               { title: "Silver", tests: "40 Tests", price: "₹1,500", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"] },
-              { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-amber-400 to-amber-500", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
-              { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-teal-400 to-teal-600", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
-              { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-rose-500 to-fuchsia-500", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
+              { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
+              { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
+              { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
             ].map((pkg, i) => (
               <motion.div
                 key={i}
@@ -683,25 +748,25 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => navigate("/facilities/mhc")}
-                className="group flex cursor-pointer flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_25px_65px_-28px_rgba(15,23,42,0.25)] transition-all duration-400 hover:border-rose-200 hover:shadow-[0_35px_90px_-24px_rgba(225,29,72,0.32)] sm:rounded-[1.75rem] sm:p-7"
+                className="group flex cursor-pointer flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_25px_65px_-28px_rgba(15,23,42,0.25)] transition-all duration-400 hover:border-[#F3AEAE] hover:shadow-[0_35px_90px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem] sm:p-7"
               >
                 <div className={`h-1 w-full rounded-full bg-gradient-to-r ${pkg.color}`} />
                 <div className="mt-5 flex items-center justify-between gap-2 sm:mt-6">
                   <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r ${pkg.color} text-base text-white shadow-lg sm:h-12 sm:w-12 sm:text-lg`}>
                     {pkg.icon}
                   </div>
-                  <span className="rounded-full bg-rose-50 px-2.5 py-1 text-xs font-bold text-slate-600">{pkg.tests}</span>
+                  <span className="rounded-full bg-[#FDECEC] px-2.5 py-1 text-xs font-bold text-slate-600">{pkg.tests}</span>
                 </div>
 
                 <div className="mt-4 sm:mt-5">
-                  <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-rose-600 sm:text-2xl">{pkg.title}</h3>
-                  <span className="mt-1.5 block font-display text-xl font-extrabold text-rose-600 sm:text-2xl">{pkg.price}</span>
+                  <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-[#B61B1F] sm:text-2xl">{pkg.title}</h3>
+                  <span className="mt-1.5 block font-display text-xl font-extrabold text-[#B61B1F] sm:text-2xl">{pkg.price}</span>
                 </div>
 
                 <ul className="scrollbar-thin scrollbar-thumb-rose-200 scrollbar-track-transparent mt-5 max-h-44 flex-1 space-y-2 overflow-y-auto pr-2 sm:mt-6 sm:max-h-48">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                      <span className="mt-0.5 flex h-4 w-4 min-h-4 min-w-4 items-center justify-center rounded-full bg-teal-100 text-teal-700">
+                      <span className="mt-0.5 flex h-4 w-4 min-h-4 min-w-4 items-center justify-center rounded-full bg-[#EAF0FB] text-[#0F2C6A]">
                         <FaCheckCircle className="text-[10px]" />
                       </span>
                       <span>{feature}</span>
@@ -725,7 +790,7 @@ export default function Home() {
       </section>
 
       {/* ════════ STATS ════════ */}
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#9D174D_0%,_#E11D48_55%,_#D97706_100%)] py-14 sm:py-20">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#6E1013_0%,_#B61B1F_55%,_#0F2C6A_100%)] py-14 sm:py-20">
         <div className="absolute inset-0 opacity-20"
           style={{ backgroundImage: "radial-gradient(circle at 2px 2px,white 1px,transparent 0)", backgroundSize: "30px 30px" }} />
         <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
@@ -734,7 +799,7 @@ export default function Home() {
           <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
             <Eyebrow tone="light">Our Impact</Eyebrow>
             <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
-              Trusted Care, <span className="text-amber-200">Measured in Results</span>
+              Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
             </h2>
           </div>
 
@@ -750,36 +815,77 @@ export default function Home() {
       </section>
 
       {/* ════════ WHY CHOOSE US (2) ════════ */}
+{/* ════════ WHY CHOOSE US (2) ════════ */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-teal-50 opacity-70 blur-3xl" />
-          <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-amber-50 opacity-70 blur-3xl" />
+          <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-[#EAF0FB] opacity-70 blur-3xl" />
+          <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-[#F5E8C8] opacity-70 blur-3xl" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
-            <div className="order-2 lg:order-1">
-              <div className="flex flex-col gap-4 sm:gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="group relative h-48 w-full overflow-hidden rounded-[1.5rem] shadow-2xl sm:h-64 sm:rounded-[2rem] md:h-80"
-                >
-                  <img src={hero2} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt="Hospital" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
-                  <div className="absolute bottom-5 left-5 font-display text-base font-bold text-white sm:bottom-6 sm:left-6 sm:text-xl">State-of-the-art Facilities</div>
-                </motion.div>
-                <div className="scrollbar-hide flex snap-x gap-3 overflow-x-auto px-1 pb-4 sm:gap-4">
-                  {[{ img: hero3, label: "Expert Doctors" }, { img: cardiology, label: "Cardiology" }, { img: surgery, label: "Surgery" }].map((item, idx) => (
-                    <div key={idx} className="group relative h-28 min-w-[104px] flex-shrink-0 snap-center overflow-hidden rounded-2xl shadow-lg sm:h-32 sm:min-w-[140px]">
-                      <img src={item.img} className="h-full w-full object-cover transition duration-500 group-hover:scale-110" alt={item.label} />
-                      <div className="absolute inset-0 bg-black/15 transition-colors group-hover:bg-black/5" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+            {/* ── IMAGE BENTO ── */}
+            {/* ── IMAGE GRID ── */}
+<div className="order-2 lg:order-1">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+    className="grid grid-cols-2 gap-4"
+  >
+    {[
+      {
+        img: why1,
+        
+      },
+      {
+        img: why2,
+        
+      },
+      {
+        img: why3,
+        
+      },
+      {
+        img: why4,
+       
+      },
+    ].map((item, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.5,
+          delay: index * 0.1,
+        }}
+        whileHover={{
+          y: -6,
+          scale: 1.02,
+        }}
+        className="group relative overflow-hidden rounded-[28px] shadow-xl"
+      >
+        <div className="aspect-square overflow-hidden">
+          <img
+            src={item.img}
+            alt={item.title}
+            className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="font-display text-sm font-bold text-white sm:text-lg">
+            {item.title}
+          </h3>
+        </div>
+      </motion.div>
+    ))}
+  </motion.div>
+</div>
+            {/* ── COPY + FEATURE GRID ── */}
             <div className="order-1 lg:order-2">
               <Eyebrow>Why Choose Us</Eyebrow>
               <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
@@ -787,7 +893,7 @@ export default function Home() {
                 <br />
                 <span className="relative inline-block z-10">
                   Standards
-                  <span className="absolute bottom-1.5 left-0 -z-10 h-3 w-full -skew-x-12 bg-amber-200/50" />
+                  <span className="absolute bottom-1.5 left-0 -z-10 h-3 w-full -skew-x-12 bg-[#EFDFB0]/60" />
                 </span>
               </h2>
               <p className="mb-8 mt-5 text-[15px] leading-relaxed text-slate-600 sm:mb-10 sm:mt-6 sm:text-lg">
@@ -806,14 +912,17 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: i * 0.07 }}
-                    whileHover={{ y: -5 }}
-                    className="group rounded-[1.25rem] border border-slate-100 bg-white p-5 shadow-[0_10px_35px_-18px_rgba(15,23,42,0.15)] transition-all duration-400 hover:border-rose-100 hover:shadow-[0_25px_50px_-18px_rgba(225,29,72,0.22)] sm:rounded-[1.5rem] sm:p-6"
+                    whileHover={{ y: -6 }}
+                    className="group relative overflow-hidden rounded-[1.25rem] border border-slate-100 bg-white p-5 shadow-[0_10px_35px_-18px_rgba(15,23,42,0.15)] transition-all duration-400 hover:border-[#F3AEAE] hover:shadow-[0_25px_50px_-18px_rgba(182,27,31,0.22)] sm:rounded-[1.5rem] sm:p-6"
                   >
-                    <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-xl text-rose-500 shadow-sm transition-colors duration-300 group-hover:bg-rose-600 group-hover:text-white sm:mb-4 sm:h-14 sm:w-14 sm:text-2xl">
+                    <div className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-[#FDECEC] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="relative mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FDECEC] text-xl text-[#B61B1F] shadow-sm transition-colors duration-300 group-hover:bg-[#B61B1F] group-hover:text-white sm:mb-4 sm:h-14 sm:w-14 sm:text-2xl">
                       {feature.icon}
                     </div>
-                    <h4 className="font-display mb-1.5 text-base font-bold text-ink transition-colors group-hover:text-rose-600 sm:mb-2 sm:text-lg">{feature.title}</h4>
-                    <p className="text-sm leading-relaxed text-slate-500">{feature.desc}</p>
+                    <h4 className="font-display relative mb-1.5 text-base font-bold text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-2 sm:text-lg">
+                      {feature.title}
+                    </h4>
+                    <p className="relative text-sm leading-relaxed text-slate-500">{feature.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -825,7 +934,7 @@ export default function Home() {
       {/* ════════ AWARDS & CERTIFICATIONS ════════ */}
       <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
         <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle at 1px 1px,#E11D48 1px,transparent 0)", backgroundSize: "32px 32px" }} />
+          style={{ backgroundImage: "radial-gradient(circle at 1px 1px,#B61B1F 1px,transparent 0)", backgroundSize: "32px 32px" }} />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -836,7 +945,7 @@ export default function Home() {
           >
             <Eyebrow>Recognition</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Awards & <span className="text-rose-600">Certifications</span>
+              Awards & <span className="text-[#B61B1F]">Certifications</span>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:mt-4 sm:text-lg">
               Recognised for excellence in patient care and clinical standards
@@ -844,8 +953,8 @@ export default function Home() {
           </motion.div>
           <div className="mb-10 grid gap-4 sm:mb-14 sm:grid-cols-2 sm:gap-6">
             {[
-              { icon: <FaMedal />, title: "NABH Accredited", desc: "National Accreditation Board for Hospitals & Healthcare Providers.", color: "from-amber-400 to-yellow-500" },
-              { icon: <FaTrophy />, title: "CAHO Certified", desc: "Certified for advancing healthcare quality, patient safety, and diagnostic excellence in India and beyond.", color: "from-rose-500 to-red-500" },
+              { icon: <FaMedal />, title: "NABH Accredited", desc: "National Accreditation Board for Hospitals & Healthcare Providers.", color: "from-[#D9B45B] to-[#C9962B]" },
+              { icon: <FaTrophy />, title: "CAHO Certified", desc: "Certified for advancing healthcare quality, patient safety, and diagnostic excellence in India and beyond.", color: "from-[#B61B1F] to-[#8F1519]" },
             ].map((award, i) => (
               <motion.div
                 key={i}
@@ -872,7 +981,7 @@ export default function Home() {
                 <motion.div
                   key={i}
                   whileHover={{ scale: 1.1 }}
-                  className="cursor-default font-display text-xl font-extrabold text-slate-300 transition-colors duration-300 hover:text-rose-500 sm:text-2xl"
+                  className="cursor-default font-display text-xl font-extrabold text-slate-300 transition-colors duration-300 hover:text-[#B61B1F] sm:text-2xl"
                 >
                   {logo}
                 </motion.div>
@@ -890,7 +999,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-rose-600 via-rose-500 to-amber-500 p-6 text-white shadow-2xl sm:rounded-[2.5rem] sm:p-10 md:p-14 lg:p-16"
+            className="relative overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-[#0F2C6A] via-[#7A1216] to-[#B61B1F] p-6 text-white shadow-2xl sm:rounded-[2.5rem] sm:p-10 md:p-14 lg:p-16"
           >
             <div className="absolute right-0 top-0 h-64 w-64 -translate-y-1/2 translate-x-1/2 rounded-full bg-white opacity-10" />
             <div className="absolute bottom-0 left-0 h-40 w-40 -translate-x-1/3 translate-y-1/3 rounded-full bg-white opacity-10" />
@@ -915,11 +1024,11 @@ export default function Home() {
                 <h3 className="font-display mb-4 text-lg font-bold sm:text-xl">Quick Appointment</h3>
                 <div className="space-y-4">
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <input type="text" placeholder="Your Name" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-base" />
-                    <input type="text" placeholder="Phone Number" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-base" />
+                    <input type="text" placeholder="Your Name" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
+                    <input type="text" placeholder="Phone Number" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
                   </div>
                   <textarea placeholder="Tell us about your symptoms" rows="3"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-rose-500 sm:text-base" />
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
                   <button className="btn-wine w-full rounded-xl py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5">
                     Book Now
                   </button>
@@ -932,13 +1041,13 @@ export default function Home() {
 
       {/* ════════ TESTIMONIALS ════════ */}
       <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
-        <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-rose-100 opacity-40 blur-3xl" />
-        <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-amber-100 opacity-40 blur-3xl" />
+        <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-[#FAD6D6] opacity-40 blur-3xl" />
+        <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-[#F5E8C8] opacity-40 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-10 text-center sm:mb-20">
             <Eyebrow>Real Experiences</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Patient <span className="text-rose-600">Testimonials</span>
+              Patient <span className="text-[#B61B1F]">Testimonials</span>
             </h2>
             <p className="mt-3 text-sm text-slate-500 sm:mt-4 sm:text-lg">Real experiences from our valued patients</p>
           </div>
@@ -959,8 +1068,24 @@ export default function Home() {
               autoplaySpeed: 4200, speed: 900, slidesToShow: 3, slidesToScroll: 1, pauseOnHover: true,
               responsive: [
                 { breakpoint: 1024, settings: { slidesToShow: 2 } },
-                { breakpoint: 768, settings: { slidesToShow: 1, centerMode: true, centerPadding: "40px" } },
-                { breakpoint: 480, settings: { slidesToShow: 1, centerMode: true, centerPadding: "16px" } },
+                {
+  breakpoint: 768,
+  settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+  },
+},
+{
+  breakpoint: 480,
+  settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+  },
+},
               ],
             };
             return (
@@ -973,18 +1098,18 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: index * 0.04 }}
                       whileHover={{ y: -8 }}
-                      className="group relative h-full min-h-[240px] rounded-[1.5rem] border border-slate-100 bg-white/85 p-6 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-[0_30px_70px_-20px_rgba(225,29,72,0.32)] sm:min-h-[300px] sm:rounded-[1.75rem] sm:p-9"
+                      className="group relative h-full min-h-[240px] rounded-[1.5rem] border border-slate-100 bg-white/85 p-6 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-[0_30px_70px_-20px_rgba(182,27,31,0.32)] sm:min-h-[300px] sm:rounded-[1.75rem] sm:p-9"
                     >
-                      <div className="absolute -top-4 left-6 select-none font-display text-5xl text-rose-200 sm:-top-6 sm:left-8 sm:text-7xl">"</div>
-                      <div className="mt-3 flex gap-1 text-amber-400 sm:mt-4">
+                      <div className="absolute -top-4 left-6 select-none font-display text-5xl text-[#F3AEAE] sm:-top-6 sm:left-8 sm:text-7xl">"</div>
+                      <div className="mt-3 flex gap-1 text-[#C9962B] sm:mt-4">
                         {[...Array(item.rating)].map((_, i) => (
                           <FaStar key={i} className="text-sm transition-transform group-hover:scale-110" />
                         ))}
                       </div>
                       <p className="mt-4 text-sm italic leading-relaxed text-slate-700 sm:mt-5 sm:text-base">{item.text}</p>
-                      <div className="mb-5 mt-6 h-[3px] w-14 rounded-full bg-gradient-to-r from-rose-500 to-amber-400 sm:mb-6 sm:mt-8" />
+                      <div className="mb-5 mt-6 h-[3px] w-14 rounded-full bg-gradient-to-r from-[#B61B1F] to-[#C9962B] sm:mb-6 sm:mt-8" />
                       <div className="flex items-center gap-3 sm:gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-teal-500 font-bold text-white shadow-lg sm:h-12 sm:w-12">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#B61B1F] to-[#0F2C6A] font-bold text-white shadow-lg sm:h-12 sm:w-12">
                           {item.name.charAt(0)}
                         </div>
                         <h4 className="font-display text-sm font-semibold text-ink sm:text-lg">{item.name}</h4>
@@ -1000,20 +1125,20 @@ export default function Home() {
 
       {/* ════════ LATEST NEWS ════════ */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-24">
-        <div className="absolute top-20 right-0 h-64 w-64 rounded-full bg-amber-50 opacity-60 blur-3xl" />
-        <div className="absolute bottom-20 left-0 h-64 w-64 rounded-full bg-rose-50 opacity-60 blur-3xl" />
+        <div className="absolute top-20 right-0 h-64 w-64 rounded-full bg-[#F5E8C8] opacity-60 blur-3xl" />
+        <div className="absolute bottom-20 left-0 h-64 w-64 rounded-full bg-[#FDECEC] opacity-60 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">
             <div>
               <Eyebrow>Updates & Insights</Eyebrow>
               <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-tight text-ink">
                 Latest{" "}
-                <span className="bg-gradient-to-r from-rose-500 to-amber-400 bg-clip-text text-transparent">News</span>
+                <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">News</span>
               </h2>
             </div>
-            <a href="/news" className="group flex items-center gap-2 text-sm font-bold text-slate-500 transition-colors hover:text-rose-600 sm:text-base">
+            <a href="/news" className="group flex items-center gap-2 text-sm font-bold text-slate-500 transition-colors hover:text-[#B61B1F] sm:text-base">
               View All Articles
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:bg-rose-100 group-hover:text-rose-600">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:bg-[#FAD6D6] group-hover:text-[#B61B1F]">
                 <FaArrowRight className="text-sm" />
               </span>
             </a>
@@ -1030,26 +1155,26 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(225,29,72,0.32)] sm:rounded-[1.75rem]"
+                className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem]"
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
                   <img src={item.img} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt={item.title} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent opacity-70 transition-opacity group-hover:opacity-45" />
                   <div className="absolute left-4 top-4 flex items-center gap-2 rounded-2xl bg-white/90 px-3 py-1.5 text-[11px] font-bold text-ink shadow-lg backdrop-blur-md sm:px-3.5 sm:py-2 sm:text-xs">
-                    <FaCalendarAlt className="text-rose-500" />{item.date}
+                    <FaCalendarAlt className="text-[#B61B1F]" />{item.date}
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <span className="rounded-full bg-rose-600 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">{item.category}</span>
+                    <span className="rounded-full bg-[#B61B1F] px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">{item.category}</span>
                   </div>
                 </div>
                 <div className="flex flex-grow flex-col p-5 sm:p-8">
-                  <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-rose-500 sm:mb-3 sm:text-xl">{item.title}</h3>
+                  <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-3 sm:text-xl">{item.title}</h3>
                   <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-500 sm:mb-6">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
                     <div className="flex items-center gap-2 text-xs font-semibold text-slate-400">
                       <FaUser className="text-slate-300" /><span>Admin</span>
                     </div>
-                    <button className="flex items-center gap-1 text-sm font-bold text-ink transition-colors group-hover:text-rose-600">
+                    <button className="flex items-center gap-1 text-sm font-bold text-ink transition-colors group-hover:text-[#B61B1F]">
                       Read More <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
@@ -1063,34 +1188,34 @@ export default function Home() {
       {/* ════════ FOOTER TRANSITION ════════ */}
       <div className="relative h-12 w-full overflow-hidden bg-white sm:h-24" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="absolute bottom-0 h-full w-full">
-          <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,48 L1440,120 L0,120 Z" fill="#0B1220" />
+          <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,48 L1440,120 L0,120 Z" fill="#0A1B33" />
         </svg>
       </div>
 
       {/* ════════ GLOBAL STYLES ════════ */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
 
         :root {
-          --ink: #0B1220;
+          --ink: #0A1B33;
           --paper: #F8FAFC;
           --mist: #EEF2F6;
-          --wine-start: #9D174D;
-          --wine-end: #E11D48;
+          --wine-start: #8F1519;
+          --wine-end: #B61B1F;
         }
 
         .bg-ink { background-color: var(--ink); }
         .text-ink { color: var(--ink); }
         .bg-paper { background-color: var(--paper); }
         .bg-mist { background-color: var(--mist); }
-        .font-display { font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+        .font-display { font-family: 'Fraunces', 'Inter', ui-sans-serif, system-ui, sans-serif; font-feature-settings: "ss01" on; }
         .font-body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
 
         .btn-wine {
           background-image: linear-gradient(135deg, var(--wine-start), var(--wine-end));
-          box-shadow: 0 18px 40px -16px rgba(225,29,72,0.55);
+          box-shadow: 0 18px 40px -16px rgba(182,27,31,0.55);
         }
-        .btn-wine:hover { box-shadow: 0 22px 50px -14px rgba(225,29,72,0.6); }
+        .btn-wine:hover { box-shadow: 0 22px 50px -14px rgba(182,27,31,0.6); }
 
         @keyframes float     { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-25px)} }
         @keyframes floatSlow { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-40px)} }
@@ -1122,15 +1247,15 @@ export default function Home() {
         .hero-slider .slick-slide { line-height: 0; }
 
         .slick-dots li button:before { font-size: 12px; color: #cbd5e1; }
-        .slick-dots li.slick-active button:before { color: #E11D48; }
+        .slick-dots li.slick-active button:before { color: #B61B1F; }
 
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         .scrollbar-thin::-webkit-scrollbar { width: 5px; }
-        .scrollbar-thin::-webkit-scrollbar-thumb { background-color: #fecdd3; border-radius: 999px; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background-color: #FAD6D6; border-radius: 999px; }
 
         :focus-visible {
-          outline: 2px solid #E11D48;
+          outline: 2px solid #B61B1F;
           outline-offset: 3px;
           border-radius: 4px;
         }
