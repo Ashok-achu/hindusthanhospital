@@ -1151,8 +1151,11 @@ export default function Home() {
                 className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem]"
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
-                  <img src={item.img} className="h-full w-full object-cover transition duration-700 group-hover:scale-110" alt={item.title} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                 <img
+  src={item.img}
+  className="h-full w-full object-contain bg-white p-2 transition duration-500"
+  alt={item.title}
+/>
                  
                   
                 </div>
