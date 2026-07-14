@@ -230,7 +230,7 @@ export default function Home() {
 
   const heroSliderRef = useRef(null);
   const [heroSlide, setHeroSlide] = useState(0);
-  const heroImages = [hero1,hero2, hero3,hero4,];
+  const heroImages = [hero2, hero3,hero4,];
 
   const heroSliderSettings = {
     dots: false,
@@ -584,14 +584,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-        <div className="absolute bottom-8 left-8 text-white">
-          <h3 className="font-display text-3xl font-bold">
-            45+ Specialist Doctors
-          </h3>
-          <p className="mt-2 text-white/90">
-            Dedicated to delivering world-class healthcare.
-          </p>
-        </div>
+    
       </motion.div>
 
       {/* Right Side - Content */}
