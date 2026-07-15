@@ -141,56 +141,67 @@ export default function HeaderGroup() {
 ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
 
     <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
-        <div className="flex items-center justify-between gap-6">
+    <div
+    className="flex items-center gap-6 lg:gap-8"
+    style={{ marginLeft: "48px" }}
+>
+        {/* Contact */}
+        <a href="tel:+914224327777" className="group flex items-center gap-3 flex-shrink-0">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all">
+                <FaPhoneAlt className="text-xs" />
+            </span>
 
-            <div className="flex items-center gap-6 lg:gap-8">
-
-                <a href="tel:+914224327777" className="group flex items-center gap-3">
-                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-rose-50 text-rose-600 transition-colors duration-300 group-hover:bg-rose-600 group-hover:text-white">
-                        <FaPhoneAlt className="text-xs" />
-                    </span>
-                    <span className="flex flex-col leading-tight">
-                        <span className="text-sm font-semibold text-ink">
-                            +91 4224327777 <span className="text-slate-300">/</span> 4327778
-                        </span>
-                        <span className="text-xs text-slate-500">
-                            Emergency <b className="font-bold text-rose-600">+91 4224327799</b>
-                        </span>
-                    </span>
-                </a>
-
-                <span className="hidden h-9 w-px bg-slate-200 lg:block" aria-hidden="true" />
-
-                <div className="hidden items-center gap-3 lg:flex">
-                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-700">
-                        <FaMapMarkerAlt className="text-xs" />
-                    </span>
-                    <span className="max-w-[260px] text-sm leading-tight text-slate-600">
-                        522/3 Hindusthan Hospital Road, Avinashi Road, Coimbatore
+            <div className="leading-tight">
+                <div className="text-sm font-semibold">
+                    +91 4224327777 / 4327778
+                </div>
+                <div className="text-xs text-slate-500">
+                    Emergency
+                    <span className="font-bold text-rose-600">
+                        {" "}+91 4224327799
                     </span>
                 </div>
             </div>
+        </a>
 
-            <div className="flex flex-shrink-0 items-center gap-4">
-                <button
-                    onClick={() => navigate("/appointment")}
-                    className="group flex items-center gap-2 whitespace-nowrap rounded-full bg-gradient-to-r from-rose-600 to-purple-600 px-5 py-2.5 text-xs font-bold text-white shadow-[0_8px_20px_-6px_rgba(225,29,72,0.55)] transition-all duration-300 hover:shadow-[0_10px_26px_-4px_rgba(225,29,72,0.6)] hover:-translate-y-0.5 lg:px-6 lg:text-sm"
-                >
-                    <FaCalendarCheck className="text-xs transition-transform duration-300 group-hover:scale-110" />
-                    BOOK AN APPOINTMENT
-                </button>
+        {/* Divider */}
+        <div className="h-10 w-px bg-slate-200" />
 
-                <span className="hidden h-9 w-px bg-slate-200 lg:block" aria-hidden="true" />
+        {/* Address */}
+        <div className="flex items-center gap-3 flex-shrink-0">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50 text-teal-700">
+                <FaMapMarkerAlt className="text-xs" />
+            </span>
 
-                <img
-                    src={certLogo}
-                    className="w-12 flex-shrink-0 object-contain opacity-90 transition-opacity duration-300 hover:opacity-100 lg:w-16"
-                    alt="NABH Certified"
-                />
-            </div>
-
+            <p className="text-sm text-slate-600 whitespace-nowrap">
+                522/3 Hindusthan Hospital Road, Avinashi Road, Coimbatore
+            </p>
         </div>
+
+        {/* Divider */}
+        <div className="h-10 w-px bg-slate-200" />
+
+        {/* Appointment */}
+        <button
+            onClick={() => navigate("/appointment")}
+            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:-translate-y-0.5 transition-all"
+        >
+            <FaCalendarCheck />
+            BOOK APPOINTMENT
+        </button>
+
+        {/* Divider */}
+        <div className="h-10 w-px bg-slate-200" />
+
+        {/* NABH */}
+        <img
+            src={certLogo}
+            alt="NABH"
+            className="w-14 object-contain"
+        />
+
     </div>
+</div>
 </div>
 
             {/* ---------- NAVBAR ---------- */}

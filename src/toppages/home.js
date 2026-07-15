@@ -257,17 +257,17 @@ export default function Home() {
       {/* ════════ HERO ════════ */}
       {/* ════════ HERO ════════ */}
 {/* ════════ HERO ════════ */}
-<section className="relative w-full bg-gradient-to-b from-[#0A1B33] to-[#0F2440]">
-  <div className="group relative mx-auto aspect-video w-full overflow-hidden">
-
-    <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider h-full">
+{/* ════════ HERO ════════ */}
+<section className="relative w-full overflow-hidden">
+  <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] lg:aspect-[1920/700]">
+    <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
       {heroImages.map((img, i) => (
-        <div key={i} className="h-full outline-none">
-          <div className="relative h-full w-full">
+        <div key={i} className="hero-slide-wrap outline-none">
+          <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
             <img
               src={img}
+              className="h-full w-full object-cover object-left sm:object-center"
               alt={`Hindusthan Hospital ${i + 1}`}
-              className="h-full w-full object-contain object-center"
               draggable={false}
             />
           </div>
@@ -275,11 +275,11 @@ export default function Home() {
       ))}
     </Slider>
 
-    {/* edge fade so the carousel blends into the page instead of a hard cut */}
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/70 to-transparent sm:h-24" />
+    {/* edge fade */}
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
 
-    {/* prev / next — grouped top-right so they never sit on banner content */}
-    <div className="absolute right-3 top-3 z-20 flex gap-2 sm:right-5 sm:top-5">
+    {/* prev / next */}
+    <div className="absolute right-3 top-3 z-30 flex gap-2 sm:right-5 sm:top-5">
       <button
         aria-label="Previous slide"
         onClick={() => heroSliderRef.current?.slickPrev()}
@@ -296,8 +296,8 @@ export default function Home() {
       </button>
     </div>
 
-    {/* custom dots */}
-    <div className="absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
+    {/* dots */}
+    <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
       {heroImages.map((_, i) => (
         <button
           key={i}
