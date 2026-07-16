@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 
 import HeaderGroup from "../components/HeaderGroup";
 import Footer from "../components/footer";
-import Copyrights from "../components/copyrights";
 import FloatingSocial from "../components/FloatingSocial";
 import PageLoader from "../layouts/PageLoader";
 
@@ -62,7 +61,7 @@ export default function SiteLayout() {
 
       <Footer />
 
-      <Copyrights />
+
 
     </div>
   );

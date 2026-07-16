@@ -206,7 +206,7 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
 
             {/* ---------- NAVBAR ---------- */}
             <div className="sticky top-0 z-[9999] w-full flex justify-center bg-white/80 backdrop-blur-md py-2 px-3 shadow-md">
-                <div className="bg-white w-full md:w-[95%] max-w-7xl rounded-full shadow-xl px-3 sm:px-5 lg:px-6 h-16 lg:h-[72px] flex items-center gap-3 lg:gap-5">
+                <div className="bg-white w-full md:w-[95%] max-w-7xl rounded-full shadow-xl px-3 sm:px-5 lg:px-6 h-16 lg:h-[62px] flex items-center gap-3 lg:gap-5">
 
                     {/* Logo — static, never toggles, so it never collides with the top bar */}
                     <NavLink to="/" className="flex-shrink-0">

@@ -32,6 +32,9 @@ import news3 from "../assets/set1/news3.jpg";
 import hero1 from "../assets/set1/hero1.png";
 import hero2 from "../assets/set1/hero2.png";
 import hero4 from "../assets/set1/hero4.png";
+import hero2Mobile from "../assets/set1/heromobile2.png";
+import hero3Mobile from "../assets/set1/heromobile3.png";
+import hero4Mobile from "../assets/set1/heromobile4.png";
 
 
 
@@ -91,6 +94,7 @@ function PulseDivider({ tone = "light", className = "" }) {
     </div>
   );
 }
+
 
 /* ─────────────────────────────────────────
    Section Eyebrow — encodes "what kind of
@@ -158,6 +162,10 @@ function MagneticButton({ children, variant = "primary", className = "", ...prop
 /* ─────────────────────────────────────────
    Stat Card
 ───────────────────────────────────────── */
+/* ─────────────────────────────────────────
+   Stat Card — mirrors the "vital pulse" motif
+   at card scale instead of a generic glass panel
+───────────────────────────────────────── */
 function StatCard({ icon, value, suffix, label, delay }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -169,25 +177,32 @@ function StatCard({ icon, value, suffix, label, delay }) {
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -6 }}
       transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.08] p-5 text-white shadow-[0_25px_70px_-30px_rgba(0,0,0,0.7)] backdrop-blur-2xl transition-shadow duration-500 hover:shadow-[0_35px_90px_-25px_rgba(0,0,0,0.55)] sm:rounded-[1.75rem] sm:p-7"
+      className="group relative flex flex-col items-center overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-5 text-center text-white transition-colors duration-400 hover:border-[#C9962B]/40 sm:rounded-[1.5rem] sm:p-7"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-white/10 blur-2xl transition-transform duration-700 group-hover:scale-125" />
-      <div className="relative z-10">
-        <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl border border-white/25 bg-white/10 text-base shadow-sm sm:mb-5 sm:h-12 sm:w-12 sm:text-lg">
-          <span>{icon}</span>
-        </div>
-        <div className="font-display text-[clamp(1.6rem,6vw,2.6rem)] font-extrabold leading-none tracking-tight">
-          {count.toLocaleString()}<span className="ml-0.5 text-[#F3AEAE]">{suffix}</span>
-        </div>
-        <p className="mt-2.5 text-[11px] font-bold uppercase tracking-[0.16em] text-white/70 sm:mt-3 sm:text-sm sm:tracking-[0.2em]">{label}</p>
+      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-base text-[#F3AEAE] transition-colors duration-400 group-hover:border-[#C9962B]/50 group-hover:text-[#EFDFB0] sm:h-12 sm:w-12 sm:text-lg">
+        {icon}
       </div>
+
+      <div className="font-display text-[clamp(1.6rem,6vw,2.6rem)] font-extrabold leading-none tracking-tight">
+        {count.toLocaleString()}<span className="ml-0.5 text-[#EFDFB0]">{suffix}</span>
+      </div>
+
+      {/* mini pulse trace — same signature line as PulseDivider, at card scale */}
+      <svg viewBox="0 0 200 24" preserveAspectRatio="none" className="my-3 h-4 w-24" aria-hidden="true">
+        <path d="M0 12 H72 L78 12 L82 3 L88 21 L94 8 L98 12 H200"
+          fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1.5" />
+        <path d="M0 12 H72 L78 12 L82 3 L88 21 L94 8 L98 12 H200"
+          fill="none" stroke="#B61B1F" strokeWidth="1.75" strokeLinecap="round"
+          className="pulse-trace" style={{ animationDelay: `${delay}s` }} />
+      </svg>
+
+      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/60 sm:text-sm sm:tracking-[0.2em]">
+        {label}
+      </p>
     </motion.div>
   );
 }
-
 /* ─────────────────────────────────────────
    Departments data (unchanged)
 ───────────────────────────────────────── */
@@ -230,7 +245,30 @@ export default function Home() {
 
   const heroSliderRef = useRef(null);
   const [heroSlide, setHeroSlide] = useState(0);
-  const heroImages = [hero2, hero3,hero4,];
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+  const desktopImages = [
+  hero2,
+  hero3,
+  hero4,
+];
+
+const mobileImages = [
+  hero2Mobile,
+  hero3Mobile,
+  hero4Mobile,
+];
+
+const heroImages = isMobile ? mobileImages : desktopImages;
 
   const heroSliderSettings = {
     dots: false,
@@ -259,21 +297,29 @@ export default function Home() {
 {/* ════════ HERO ════════ */}
 {/* ════════ HERO ════════ */}
 <section className="relative w-full overflow-hidden">
-  <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] lg:aspect-[1920/700]">
-    <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
-      {heroImages.map((img, i) => (
-        <div key={i} className="hero-slide-wrap outline-none">
-          <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
-            <img
-              src={img}
-              className="h-full w-full object-cover object-left sm:object-center"
-              alt={`Hindusthan Hospital ${i + 1}`}
-              draggable={false}
-            />
-          </div>
+ <div
+  className="
+    relative
+    w-full
+    h-[280px]
+    sm:h-[360px]
+    md:aspect-[1920/700]
+    md:h-auto
+  "
+>
+  <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
+    {heroImages.map((img, i) => (
+      <div key={i} className="hero-slide-wrap outline-none">
+        <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
+         <img
+  src={img}
+  alt={`Hero ${i + 1}`}
+  className="w-full h-full object-cover"
+/>
         </div>
-      ))}
-    </Slider>
+      </div>
+    ))}
+  </Slider>
 
     {/* edge fade */}
     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
@@ -783,29 +829,36 @@ export default function Home() {
       </section>
 
       {/* ════════ STATS ════════ */}
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,_#6E1013_0%,_#B61B1F_55%,_#0F2C6A_100%)] py-14 sm:py-20">
-        <div className="absolute inset-0 opacity-20"
-          style={{ backgroundImage: "radial-gradient(circle at 2px 2px,white 1px,transparent 0)", backgroundSize: "30px 30px" }} />
-        <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
+      {/* ════════ STATS ════════ */}
+<section className="relative overflow-hidden bg-ink py-14 sm:py-20">
+  <div className="absolute inset-0 opacity-[0.05]"
+    style={{
+      backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
+      backgroundSize: "70px 70px",
+    }} />
+  <div className="pointer-events-none absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full opacity-15 blur-[150px]"
+    style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
-            <Eyebrow tone="light">Our Impact</Eyebrow>
-            <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
-              Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
-            </h2>
-          </div>
+  <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
+      <Eyebrow tone="light">Our Impact</Eyebrow>
+      <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
+        Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
+      </h2>
+    </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
-            {[
-              { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
-              { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
-              { icon: <FaBed />, value: 150, suffix: "+", label: "Hospital Beds", delay: 0.12 },
-              { icon: <FaHospital />, value: 15, suffix: "+", label: "Years of Service", delay: 0.18 },
-            ].map((s, i) => <StatCard key={i} {...s} />)}
-          </div>
-        </div>
-      </section>
+    <PulseDivider tone="light" className="mb-8 sm:mb-12" />
+
+    <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+      {[
+        { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
+        { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
+        { icon: <FaBed />, value: 150, suffix: "+", label: "Hospital Beds", delay: 0.12 },
+        { icon: <FaHospital />, value: 15, suffix: "+", label: "Years of Service", delay: 0.18 },
+      ].map((s, i) => <StatCard key={i} {...s} />)}
+    </div>
+  </div>
+</section>
 
       {/* ════════ WHY CHOOSE US (2) ════════ */}
 {/* ════════ WHY CHOOSE US (2) ════════ */}
