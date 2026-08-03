@@ -313,28 +313,28 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const desktopImages = [
-  hero2,
-  hero3,
-  hero4,
-];
+    hero2,
+    hero3,
+    hero4,
+  ];
 
-const mobileImages = [
-  hero2Mobile,
-  hero3Mobile,
-  hero4Mobile,
-];
+  const mobileImages = [
+    hero2Mobile,
+    hero3Mobile,
+    hero4Mobile,
+  ];
 
-const heroImages = isMobile ? mobileImages : desktopImages;
+  const heroImages = isMobile ? mobileImages : desktopImages;
 
   const heroSliderSettings = {
     dots: false,
@@ -394,11 +394,11 @@ const heroImages = isMobile ? mobileImages : desktopImages;
 
       {/* ════════ HERO ════════ */}
       {/* ════════ HERO ════════ */}
-{/* ════════ HERO ════════ */}
-{/* ════════ HERO ════════ */}
-<section className="relative w-full overflow-hidden">
- <div
-  className="
+      {/* ════════ HERO ════════ */}
+      {/* ════════ HERO ════════ */}
+      <section className="relative w-full overflow-hidden">
+        <div
+          className="
     relative
     w-full
     h-[280px]
@@ -406,67 +406,67 @@ const heroImages = isMobile ? mobileImages : desktopImages;
     md:aspect-[1920/700]
     md:h-auto
   "
->
-  <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
-    {heroImages.map((img, i) => (
-      <div key={i} className="hero-slide-wrap outline-none">
-        <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
-         <img
-  src={img}
-  alt={`Hindusthan Hospital Coimbatore — multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
-  className="w-full h-full object-cover"
-  loading={i === 0 ? "eager" : "lazy"}
-  fetchpriority={i === 0 ? "high" : "auto"}
-/>
-        </div>
-      </div>
-    ))}
-  </Slider>
+        >
+          <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
+            {heroImages.map((img, i) => (
+              <div key={i} className="hero-slide-wrap outline-none">
+                <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
+                  <img
+                    src={img}
+                    alt={`Hindusthan Hospital Coimbatore — multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
+                    className="w-full h-full object-cover"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    fetchpriority={i === 0 ? "high" : "auto"}
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
 
-  {/* SEO — real H1 for the page. Kept visually unobtrusive (small,
+          {/* SEO — real H1 for the page. Kept visually unobtrusive (small,
       bottom-left, on the existing dark gradient) so it doesn't fight
       the hero imagery, but it is genuinely present in the DOM for
       search engines and screen readers, not display:none. */}
-  
 
-    {/* edge fade */}
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
 
-    {/* prev / next */}
-    <div className="absolute right-3 top-3 z-30 flex gap-2 sm:right-5 sm:top-5">
-      <button
-        aria-label="Previous slide"
-        onClick={() => heroSliderRef.current?.slickPrev()}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
-      >
-        <FaChevronLeft className="text-xs sm:text-sm" />
-      </button>
-      <button
-        aria-label="Next slide"
-        onClick={() => heroSliderRef.current?.slickNext()}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
-      >
-        <FaChevronRight className="text-xs sm:text-sm" />
-      </button>
-    </div>
+          {/* edge fade */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
 
-    {/* dots */}
-    <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
-      {heroImages.map((_, i) => (
-        <button
-          key={i}
-          aria-label={`Go to slide ${i + 1}`}
-          onClick={() => heroSliderRef.current?.slickGoTo(i)}
-          className="h-1.5 rounded-full transition-all duration-300"
-          style={{
-            width: i === heroSlide ? "22px" : "7px",
-            background: i === heroSlide ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.5)",
-          }}
-        />
-      ))}
-    </div>
-  </div>
-</section>
+          {/* prev / next */}
+          <div className="absolute right-3 top-3 z-30 flex gap-2 sm:right-5 sm:top-5">
+            <button
+              aria-label="Previous slide"
+              onClick={() => heroSliderRef.current?.slickPrev()}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
+            >
+              <FaChevronLeft className="text-xs sm:text-sm" />
+            </button>
+            <button
+              aria-label="Next slide"
+              onClick={() => heroSliderRef.current?.slickNext()}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
+            >
+              <FaChevronRight className="text-xs sm:text-sm" />
+            </button>
+          </div>
+
+          {/* dots */}
+          <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => heroSliderRef.current?.slickGoTo(i)}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  width: i === heroSlide ? "22px" : "7px",
+                  background: i === heroSlide ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.5)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ════════ TRANSFORMING HEALTHCARE ════════ */}
       <section className="relative py-16 sm:py-24 lg:py-32">
@@ -721,94 +721,94 @@ const heroImages = isMobile ? mobileImages : desktopImages;
       </section>
 
       {/* ════════ MEET OUR DOCTORS ════════ */}
-<section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="grid items-center gap-14 lg:grid-cols-2">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
 
-      {/* Left Side - Doctors Image */}
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="group relative overflow-hidden rounded-[2rem] shadow-[0_35px_80px_-25px_rgba(15,23,42,0.35)]"
-      >
-        <img
-          src={doctorTeams}
-          alt="Team of specialist doctors and consultants at Hindusthan Hospital, Coimbatore"
-          loading="lazy"
-          className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
-        />
+            {/* Left Side - Doctors Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="group relative overflow-hidden rounded-[2rem] shadow-[0_35px_80px_-25px_rgba(15,23,42,0.35)]"
+            >
+              <img
+                src={doctorTeams}
+                alt="Team of specialist doctors and consultants at Hindusthan Hospital, Coimbatore"
+                loading="lazy"
+                className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
+              />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-    
-      </motion.div>
 
-      {/* Right Side - Content */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <Eyebrow>Medical Experts</Eyebrow>
+            </motion.div>
 
-        <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
-          Meet Our
-          <br />
-          <span className="text-[#B61B1F]">Expert Doctors</span>
-        </h2>
+            {/* Right Side - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <Eyebrow>Medical Experts</Eyebrow>
 
-      
+              <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
+                Meet Our
+                <br />
+                <span className="text-[#B61B1F]">Expert Doctors</span>
+              </h2>
 
-        
 
-        {/* Features */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Collaborative Healthcare
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Specialists from multiple disciplines work together to provide comprehensive treatment plans.
-  </p>
-</div>
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Personalized Treatment
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Every patient receives customized care tailored to their unique health needs and goals.
-  </p>
-</div>
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Ethical Medical Practice
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    We uphold the highest standards of integrity, transparency, and patient confidentiality.
-  </p>
-</div>
+              {/* Features */}
+              <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Continuous Innovation
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
-  </p>
-</div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Collaborative Healthcare
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Specialists from multiple disciplines work together to provide comprehensive treatment plans.
+                  </p>
+                </div>
 
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Personalized Treatment
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Every patient receives customized care tailored to their unique health needs and goals.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Ethical Medical Practice
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    We uphold the highest standards of integrity, transparency, and patient confidentiality.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Continuous Innovation
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
+                  </p>
+                </div>
+
+              </div>
+            </motion.div>
+
+          </div>
         </div>
-      </motion.div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* ════════ OUR FACILITIES ════════ */}
       <section className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
@@ -944,38 +944,38 @@ const heroImages = isMobile ? mobileImages : desktopImages;
 
       {/* ════════ STATS ════════ */}
       {/* ════════ STATS ════════ */}
-<section className="relative overflow-hidden bg-ink py-14 sm:py-20">
-  <div className="absolute inset-0 opacity-[0.05]"
-    style={{
-      backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
-      backgroundSize: "70px 70px",
-    }} />
-  <div className="pointer-events-none absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full opacity-15 blur-[150px]"
-    style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
+      <section className="relative overflow-hidden bg-ink py-14 sm:py-20">
+        <div className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
+            backgroundSize: "70px 70px",
+          }} />
+        <div className="pointer-events-none absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full opacity-15 blur-[150px]"
+          style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
 
-  <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
-      <Eyebrow tone="light">Our Impact</Eyebrow>
-      <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
-        Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
-      </h2>
-    </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
+            <Eyebrow tone="light">Our Impact</Eyebrow>
+            <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
+              Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
+            </h2>
+          </div>
 
-    <PulseDivider tone="light" className="mb-8 sm:mb-12" />
+          <PulseDivider tone="light" className="mb-8 sm:mb-12" />
 
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
-      {[
-        { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
-        { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
-        { icon: <FaBed />, value: 150, suffix: "+", label: "Hospital Beds", delay: 0.12 },
-        { icon: <FaHospital />, value: 15, suffix: "+", label: "Years of Service", delay: 0.18 },
-      ].map((s, i) => <StatCard key={i} {...s} />)}
-    </div>
-  </div>
-</section>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
+            {[
+              { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
+              { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
+              { icon: <FaBed />, value: 150, suffix: "+", label: "Hospital Beds", delay: 0.12 },
+              { icon: <FaHospital />, value: 15, suffix: "+", label: "Years of Service", delay: 0.18 },
+            ].map((s, i) => <StatCard key={i} {...s} />)}
+          </div>
+        </div>
+      </section>
 
       {/* ════════ WHY CHOOSE US (2) ════════ */}
-{/* ════════ WHY CHOOSE US (2) ════════ */}
+      {/* ════════ WHY CHOOSE US (2) ════════ */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-[#EAF0FB] opacity-70 blur-3xl" />
@@ -985,67 +985,67 @@ const heroImages = isMobile ? mobileImages : desktopImages;
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             {/* ── IMAGE BENTO ── */}
             {/* ── IMAGE GRID ── */}
-<div className="order-2 lg:order-1">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.7 }}
-    className="grid grid-cols-2 gap-4"
-  >
-    {[
-      {
-        img: why1,
-        alt: "NICU phototherapy unit at Hindusthan Hospital, Coimbatore",
-      },
-      {
-        img: why2,
-        alt: "Advanced radiology and diagnostic imaging suite at Hindusthan Hospital",
-      },
-      {
-        img: why3,
-        alt: "Radiology department scanning equipment at Hindusthan Hospital",
-      },
-      {
-        img: why4,
-        alt: "Intensive Care Unit (ICU) at Hindusthan Hospital, Coimbatore",
-      },
-    ].map((item, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.5,
-          delay: index * 0.1,
-        }}
-        whileHover={{
-          y: -6,
-          scale: 1.02,
-        }}
-        className="group relative overflow-hidden rounded-[28px] shadow-xl"
-      >
-        <div className="aspect-square overflow-hidden">
-          <img
-            src={item.img}
-            alt={item.alt}
-            loading="lazy"
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
-          />
-        </div>
+            <div className="order-2 lg:order-1">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="grid grid-cols-2 gap-4"
+              >
+                {[
+                  {
+                    img: why1,
+                    alt: "NICU phototherapy unit at Hindusthan Hospital, Coimbatore",
+                  },
+                  {
+                    img: why2,
+                    alt: "Advanced radiology and diagnostic imaging suite at Hindusthan Hospital",
+                  },
+                  {
+                    img: why3,
+                    alt: "Radiology department scanning equipment at Hindusthan Hospital",
+                  },
+                  {
+                    img: why4,
+                    alt: "Intensive Care Unit (ICU) at Hindusthan Hospital, Coimbatore",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1,
+                    }}
+                    whileHover={{
+                      y: -6,
+                      scale: 1.02,
+                    }}
+                    className="group relative overflow-hidden rounded-[28px] shadow-xl"
+                  >
+                    <div className="aspect-square overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={item.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                      />
+                    </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="font-display text-sm font-bold text-white sm:text-lg">
-            {item.title}
-          </h3>
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
-</div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h3 className="font-display text-sm font-bold text-white sm:text-lg">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
             {/* ── COPY + FEATURE GRID ── */}
             <div className="order-1 lg:order-2">
               <Eyebrow>Why Choose Us</Eyebrow>
@@ -1230,23 +1230,23 @@ const heroImages = isMobile ? mobileImages : desktopImages;
               responsive: [
                 { breakpoint: 1024, settings: { slidesToShow: 2 } },
                 {
-  breakpoint: 768,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    centerPadding: "0px",
-  },
-},
-{
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    centerPadding: "0px",
-  },
-},
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    centerPadding: "0px",
+                  },
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    centerPadding: "0px",
+                  },
+                },
               ],
             };
             return (
@@ -1319,21 +1319,21 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                 className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem]"
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
-                 <img
-  src={item.img}
-  className="h-full w-full object-contain bg-white p-2 transition duration-500"
-  alt={`${item.title} — Hindusthan Hospital news`}
-  loading="lazy"
-/>
-                 
-                  
+                  <img
+                    src={item.img}
+                    className="h-full w-full object-contain bg-white p-2 transition duration-500"
+                    alt={`${item.title} — Hindusthan Hospital news`}
+                    loading="lazy"
+                  />
+
+
                 </div>
                 <div className="flex flex-grow flex-col p-5 sm:p-8">
                   <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-3 sm:text-xl">{item.title}</h3>
                   <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-500 sm:mb-6">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
-                    
-                    
+
+
                   </div>
                 </div>
               </motion.div>
