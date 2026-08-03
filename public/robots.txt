@@ -1,3 +1,41 @@
-# https://www.robotstxt.org/robotstxt.html
+# ==========================================
+# Hindusthan Hospitals - robots.txt
+# https://hindusthanhospital.com
+# ==========================================
+
 User-agent: *
-Disallow:
+
+# Allow all important pages
+Allow: /
+
+# Disallow system folders
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+Disallow: /assets/
+Disallow: /src/
+Disallow: /node_modules/
+
+# Block unnecessary files
+Disallow: /*.json$
+Disallow: /*.map$
+Disallow: /*?*
+Disallow: /404
+Disallow: /500
+
+# Allow important assets
+Allow: /*.css$
+Allow: /*.js$
+Allow: /images/
+Allow: /icons/
+
+# Crawl Delay (ignored by Google but respected by some bots)
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://hindusthanhospital.com/sitemap.xml
+
+# Host
+Host: https://hindusthanhospital.com

@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import HeaderGroup from "../components/HeaderGroup";
 import Footer from "../components/footer";
@@ -8,42 +8,89 @@ import PageLoader from "../layouts/PageLoader";
 
 export default function SiteLayout() {
   const location = useLocation();
-  const firstLoad = useRef(true);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (firstLoad.current) {
-      firstLoad.current = false;
-      return;
-    }
+    let isMounted = true;
+    let fallbackTimer = null;
+    let loadHandler = null;
 
-    setLoading(true);
+    const finishLoading = (delay = 250) => {
+      if (!isMounted) return;
+      if (fallbackTimer) {
+        window.clearTimeout(fallbackTimer);
+      }
+      window.setTimeout(() => {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }, delay);
+    };
 
-    const waitForImages = async () => {
-      const images = Array.from(document.images);
+    const waitForCriticalResources = async () => {
+      const criticalImages = Array.from(document.images).filter((img) => {
+        const loadingMode = img.getAttribute("loading");
+        return loadingMode !== "lazy";
+      });
 
       await Promise.all(
-        images.map((img) => {
-          if (img.complete) return Promise.resolve();
+        criticalImages.map((img) => {
+          if (img.complete && img.naturalWidth > 0) return Promise.resolve();
 
           return new Promise((resolve) => {
-            img.onload = resolve;
-            img.onerror = resolve;
+            const done = () => resolve();
+            img.addEventListener("load", done, { once: true });
+            img.addEventListener("error", done, { once: true });
           });
         })
       );
-
-      setTimeout(() => {
-        setLoading(false);
-      }, 300); // Smooth fade-out delay
     };
 
-    // Wait until the new page is rendered
-    requestAnimationFrame(() => {
-      requestAnimationFrame(waitForImages);
-    });
+    const startLoader = async () => {
+      if (!isMounted) return;
+      setLoading(true);
 
+      fallbackTimer = window.setTimeout(() => {
+        finishLoading(0);
+      }, 3000);
+
+      const handleLoad = () => {
+        window.clearTimeout(fallbackTimer);
+        waitForCriticalResources().finally(() => {
+          finishLoading(250);
+        });
+      };
+
+      loadHandler = handleLoad;
+
+      if (document.readyState === "complete") {
+        handleLoad();
+      } else {
+        window.addEventListener("load", handleLoad, { once: true });
+        requestAnimationFrame(() => {
+          if (document.readyState === "complete") {
+            handleLoad();
+          } else {
+            waitForCriticalResources().finally(() => {
+              finishLoading(250);
+            });
+          }
+        });
+      }
+    };
+
+    startLoader();
+
+    return () => {
+      isMounted = false;
+      if (fallbackTimer) {
+        window.clearTimeout(fallbackTimer);
+      }
+      if (loadHandler) {
+        window.removeEventListener("load", loadHandler);
+      }
+    };
   }, [location.pathname]);
 
   return (

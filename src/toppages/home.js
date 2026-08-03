@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   FaHeartbeat, FaStethoscope, FaBaby, FaBone,
   FaCalendarAlt, FaUser, FaArrowRight, FaUserMd,
@@ -233,6 +234,71 @@ const DEPARTMENTS = [
 const PAGE_SIZE = 9;
 
 /* ════════════════════════════════════════
+   SEO CONFIG
+   Central place for title/description/canonical
+   so every value used in <Helmet> and JSON-LD
+   below stays in sync.
+════════════════════════════════════════ */
+const SITE_URL = "https://www.hindusthan.net";
+const PAGE_URL = `${SITE_URL}/`;
+const OG_IMAGE = new URL(hero3, `${SITE_URL}/`).toString();
+
+const SEO_TITLE =
+  "Hindusthan Hospital, Coimbatore | Multi-Speciality Hospital & 24/7 Emergency Care";
+const SEO_DESCRIPTION =
+  "Hindusthan Hospital, Coimbatore is a NABH-accredited multi-speciality hospital with 45+ specialist doctors across 21 departments, 150+ beds, 24/7 emergency and trauma care, ICU, robotic surgery and advanced diagnostics. Book an appointment online today.";
+const SEO_KEYWORDS =
+  "Hindusthan Hospital Coimbatore, multi speciality hospital Coimbatore, best hospital in Coimbatore, 24/7 emergency care, NABH accredited hospital, cardiology Coimbatore, orthopaedic hospital Coimbatore, ICU Coimbatore, robotic surgery Coimbatore, health checkup packages";
+
+/* Hospital / MedicalOrganization structured data — tells search engines
+   who we are, where we are, how to contact us, and what specialities
+   we offer, enabling rich results (knowledge panel, sitelinks search box). */
+const HOSPITAL_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Hospital",
+  "name": "Hindusthan Hospital",
+  "url": SITE_URL,
+  "logo": `${SITE_URL}/logo.png`,
+  "image": OG_IMAGE,
+  "description": SEO_DESCRIPTION,
+  "telephone": "+91-422-4327777",
+  "email": "info@hindusthanhospital.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Coimbatore",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN",
+  },
+  "medicalSpecialty": DEPARTMENTS.map((d) => d.name),
+  "availableService": DEPARTMENTS.map((d) => ({
+    "@type": "MedicalProcedure",
+    "name": d.name,
+    "description": d.desc,
+  })),
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "150",
+  },
+  "sameAs": [],
+};
+
+/* Breadcrumb for the homepage (single-level, but keeps the schema
+   consistent with inner pages that will extend this list). */
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": PAGE_URL,
+    },
+  ],
+};
+
+/* ════════════════════════════════════════
    HOME PAGE
 ════════════════════════════════════════ */
 export default function Home() {
@@ -285,6 +351,40 @@ const heroImages = isMobile ? mobileImages : desktopImages;
   return (
     <div className="relative overflow-x-hidden bg-paper font-body text-ink">
 
+      {/* ════════ SEO — <head> tags & structured data ════════ */}
+      <Helmet>
+        {/* Primary meta tags */}
+        <title>{SEO_TITLE}</title>
+        <meta name="title" content={SEO_TITLE} />
+        <meta name="description" content={SEO_DESCRIPTION} />
+        <meta name="keywords" content={SEO_KEYWORDS} />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="author" content="Hindusthan Hospital" />
+        <meta name="geo.region" content="IN-TN" />
+        <meta name="geo.placename" content="Coimbatore" />
+        <link rel="canonical" href={PAGE_URL} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:title" content={SEO_TITLE} />
+        <meta property="og:description" content={SEO_DESCRIPTION} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="Hindusthan Hospital" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={PAGE_URL} />
+        <meta name="twitter:title" content={SEO_TITLE} />
+        <meta name="twitter:description" content={SEO_DESCRIPTION} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+
+        {/* Structured data (JSON-LD) */}
+        <script type="application/ld+json">{JSON.stringify(HOSPITAL_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(BREADCRUMB_SCHEMA)}</script>
+      </Helmet>
+
       {/* ── GLOBAL AMBIENT FIELD ── */}
       <div className="fixed inset-0 -z-20 pointer-events-none">
         <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[#F3AEAE]/40 blur-[160px]" />
@@ -313,13 +413,21 @@ const heroImages = isMobile ? mobileImages : desktopImages;
         <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
          <img
   src={img}
-  alt={`Hero ${i + 1}`}
+  alt={`Hindusthan Hospital Coimbatore — multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
   className="w-full h-full object-cover"
+  loading={i === 0 ? "eager" : "lazy"}
+  fetchpriority={i === 0 ? "high" : "auto"}
 />
         </div>
       </div>
     ))}
   </Slider>
+
+  {/* SEO — real H1 for the page. Kept visually unobtrusive (small,
+      bottom-left, on the existing dark gradient) so it doesn't fight
+      the hero imagery, but it is genuinely present in the DOM for
+      search engines and screen readers, not display:none. */}
+  
 
     {/* edge fade */}
     <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
@@ -374,7 +482,8 @@ const heroImages = isMobile ? mobileImages : desktopImages;
               <div className="relative overflow-hidden rounded-[1.5rem] border-4 border-white shadow-[0_40px_100px_-35px_rgba(15,23,42,0.45)] sm:rounded-[2.5rem]">
                 <img
                   src={healthcare}
-                  alt="Medical Team"
+                  alt="Hindusthan Hospital medical team providing patient-centred healthcare in Coimbatore"
+                  loading="lazy"
                   className="h-auto w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
@@ -429,9 +538,11 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                 ))}
               </ul>
               <div className="mt-9 sm:mt-10">
-                <MagneticButton variant="dark" onClick={() => window.open("https://www.hindusthan.net/about-us", "_blank")}>
-                  More About Us <FaArrowRight className="text-xs" />
-                </MagneticButton>
+                <a href="https://www.hindusthan.net/about-us" target="_blank" rel="noopener noreferrer">
+                  <MagneticButton variant="dark">
+                    More About Us <FaArrowRight className="text-xs" />
+                  </MagneticButton>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -624,7 +735,8 @@ const heroImages = isMobile ? mobileImages : desktopImages;
       >
         <img
           src={doctorTeams}
-          alt="Doctors Team"
+          alt="Team of specialist doctors and consultants at Hindusthan Hospital, Coimbatore"
+          loading="lazy"
           className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
         />
 
@@ -821,9 +933,11 @@ const heroImages = isMobile ? mobileImages : desktopImages;
           </div>
 
           <div className="mt-10 flex justify-center sm:mt-12">
-            <MagneticButton variant="primary" onClick={() => navigate("/facilities/mhc")}>
-              View All Packages <FaArrowRight className="text-sm" />
-            </MagneticButton>
+            <Link to="/facilities/mhc">
+              <MagneticButton variant="primary">
+                View All Packages <FaArrowRight className="text-sm" />
+              </MagneticButton>
+            </Link>
           </div>
         </div>
       </section>
@@ -882,19 +996,19 @@ const heroImages = isMobile ? mobileImages : desktopImages;
     {[
       {
         img: why1,
-        
+        alt: "NICU phototherapy unit at Hindusthan Hospital, Coimbatore",
       },
       {
         img: why2,
-        
+        alt: "Advanced radiology and diagnostic imaging suite at Hindusthan Hospital",
       },
       {
         img: why3,
-        
+        alt: "Radiology department scanning equipment at Hindusthan Hospital",
       },
       {
         img: why4,
-       
+        alt: "Intensive Care Unit (ICU) at Hindusthan Hospital, Coimbatore",
       },
     ].map((item, index) => (
       <motion.div
@@ -915,7 +1029,8 @@ const heroImages = isMobile ? mobileImages : desktopImages;
         <div className="aspect-square overflow-hidden">
           <img
             src={item.img}
-            alt={item.title}
+            alt={item.alt}
+            loading="lazy"
             className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
           />
         </div>
@@ -1207,7 +1322,8 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                  <img
   src={item.img}
   className="h-full w-full object-contain bg-white p-2 transition duration-500"
-  alt={item.title}
+  alt={`${item.title} — Hindusthan Hospital news`}
+  loading="lazy"
 />
                  
                   

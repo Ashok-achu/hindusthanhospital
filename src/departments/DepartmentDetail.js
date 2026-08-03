@@ -436,43 +436,136 @@ export default function DepartmentDetail() {
                         </>
                       )}
 
-                      {section.key === "gallery" && (
-                        <section>
-                          <div className="flex items-center gap-4 mb-8 sm:mb-10">
-                            <span className="flex-1 h-px bg-[#E7DCC0]" />
-                            <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#6B0F2A] tracking-wide whitespace-nowrap">
-                              Department Gallery
-                            </h2>
-                            <span className="flex-1 h-px bg-[#E7DCC0]" />
-                          </div>
+{/* =========================
+    DEPARTMENT GALLERY
+========================= */}
 
-                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
-                            {gallery.map((img, i) => (
-                              <button
-                                key={i}
-                                type="button"
-                                onClick={() => setLightboxIndex(i)}
-                                className="group relative bg-white p-1.5 sm:p-2 rounded-xl sm:rounded-2xl border border-[#E7DCC0] shadow-sm hover:shadow-xl transition duration-300 dept-fade-in text-left"
-                                style={{ animationDelay: `${Math.min(i, 10) * 40}ms` }}
-                              >
-                                <div className="relative rounded-lg sm:rounded-xl overflow-hidden ring-1 ring-[#C6A15B]/40">
-                                  <img
-                                    src={img}
-                                    alt={`${department.name} gallery ${i + 1}`}
-                                    loading="lazy"
-                                    className="w-full h-[130px] sm:h-[220px] md:h-[240px] object-cover transition duration-500 group-hover:scale-105"
-                                  />
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-3 sm:pb-5">
-                                    <span className="text-white text-[10px] sm:text-xs tracking-[0.2em] uppercase border border-white/70 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full">
-                                      View
-                                    </span>
-                                  </div>
-                                </div>
-                              </button>
-                            ))}
-                          </div>
-                        </section>
-                      )}
+{section.key === "gallery" && (
+  <section>
+
+    {/* HEADING */}
+    <div className="flex items-center gap-4 mb-8 sm:mb-10">
+      <span className="flex-1 h-px bg-[#E7DCC0]" />
+
+      <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#6B0F2A] tracking-wide whitespace-nowrap">
+        Department Gallery
+      </h2>
+
+      <span className="flex-1 h-px bg-[#E7DCC0]" />
+    </div>
+
+
+    {/* GALLERY GRID */}
+    <div
+      className="
+        grid
+        grid-cols-1
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+        gap-4
+        sm:gap-5
+      "
+    >
+      {gallery.map((img, i) => (
+        <button
+          key={`${department.slug}-gallery-${i}`}
+          type="button"
+          onClick={() => setLightboxIndex(i)}
+          className="
+            group
+            relative
+            bg-white
+            p-2
+            rounded-xl
+            border
+            border-[#E7DCC0]
+            shadow-sm
+            hover:shadow-xl
+            transition-all
+            duration-300
+            dept-fade-in
+            text-left
+          "
+          style={{
+            animationDelay: `${Math.min(i, 12) * 40}ms`,
+          }}
+        >
+          <div
+            className="
+              relative
+              w-full
+              aspect-[4/3]
+              rounded-lg
+              overflow-hidden
+              ring-1
+              ring-[#C6A15B]/40
+              bg-gray-100
+            "
+          >
+            <img
+              src={img}
+              alt={`${department.name} - ${i + 1}`}
+              loading="lazy"
+              className="
+                w-full
+                h-full
+                object-cover
+                object-center
+                transition-transform
+                duration-500
+                group-hover:scale-105
+              "
+            />
+
+            {/* HOVER OVERLAY */}
+            <div
+              className="
+                absolute
+                inset-0
+                bg-black/40
+                opacity-0
+                group-hover:opacity-100
+                transition-opacity
+                duration-300
+                flex
+                items-center
+                justify-center
+              "
+            >
+              <span
+                className="
+                  text-white
+                  text-xs
+                  tracking-[0.2em]
+                  uppercase
+                  border
+                  border-white/70
+                  px-4
+                  py-1.5
+                  rounded-full
+                "
+              >
+                View
+              </span>
+            </div>
+
+          </div>
+        </button>
+      ))}
+    </div>
+
+
+    {/* IF NO IMAGES */}
+    {gallery.length === 0 && (
+      <div className="text-center py-12 text-gray-500">
+        No department images available.
+      </div>
+    )}
+
+  </section>
+)}
+    
                     </div>
                   );
                 })}
