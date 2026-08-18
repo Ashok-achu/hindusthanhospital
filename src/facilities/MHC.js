@@ -4,9 +4,9 @@ import hero from "../assets/hero.jpg";
 
 const packages = [
   {
-    name: "Silver",
+    name: "Foot Lab Package 1",
     price: "₹1,500",
-    tests: "40 Tests",
+    tests: "Foot health assessment",
     color: "border-rose-500",
     items: [
       "Blood Grouping & Rh Typing",
@@ -22,9 +22,9 @@ const packages = [
     ]
   },
   {
-    name: "Gold",
+    name: "Foot Lab Package 2",
     price: "₹2,750",
-    tests: "56 Tests",
+    tests: "Advanced foot assessment",
     color: "border-rose-500",
     items: [
       "FBS",
@@ -42,9 +42,9 @@ const packages = [
     ]
   },
   {
-    name: "Platinum",
+    name: "Foot Lab Package 3",
     price: "₹4,500",
-    tests: "45 Tests",
+    tests: "Comprehensive foot assessment",
     color: "border-rose-500",
     items: [
       "FBS",
@@ -128,7 +128,7 @@ Our Packages
 
 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
 
-{packages.map((pkg)=>(
+{packages.slice(0, 3).map((pkg)=>(
 
 <motion.div
 
@@ -218,7 +218,7 @@ Book Appointment
 
 <a
 
-href={`https://wa.me/917339095561?text=I want to book ${pkg.name} Master Health Checkup`}
+href={`https://wa.me/917339095561?text=I want to enquire about ${pkg.name}`}
 
 target="_blank"
 

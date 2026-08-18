@@ -11,9 +11,9 @@ export default function Courses() {
 
     {
       id: 1,
-      title: "DTCD",
+      title: "Diploma in Tuberculosis and Chest Disease",
       image: dnbImg,
-      duration: "3 Years",
+      duration: "2 Years",
       description:
         "Advanced postgraduate medical training equivalent to MD/MS with hands-on clinical exposure.",
       details:

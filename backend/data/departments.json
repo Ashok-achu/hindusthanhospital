@@ -1,0 +1,81 @@
+[
+  {
+    "_id": "7810c3fa-0d57-4bca-bf0c-9eb68f5ddb42",
+    "name": "Anaesthesiology",
+    "slug": "anaesthesiology",
+    "description": "\r\n Best Anaesthesiology  in Coimbatore\r\n\r\nThe Department of Anaesthesiology at Hindusthan Hospitals, Coimbatore provides comprehensive anaesthesia and perioperative care for patients undergoing minor, major and complex surgical procedures. Our experienced anaesthesiologists are committed to delivering safe, evidence-based anaesthesia while ensuring maximum patient comfort, faster recovery and the highest standards of surgical safety.\r\n\r\nOur department supports multiple surgical specialties including General Surgery, Orthopaedics, Cardiology, Neurosurgery, ENT, Obstetrics & Gynaecology, Oncology, Urology and Paediatric Surgery. Every patient receives an individualized anaesthesia plan based on their medical condition, age and surgical requirements.\r\n\r\nComprehensive Anaesthesia Services\r\n\r\nGeneral Anaesthesia\r\n\r\nGeneral anaesthesia is administered for major and complex surgeries where complete unconsciousness is required. Our specialists use advanced monitoring systems to continuously assess heart rate, oxygen saturation, blood pressure and respiratory function throughout the procedure.\r\n\r\nRegional Anaesthesia\r\n\r\nRegional anaesthesia techniques including spinal anaesthesia, epidural anaesthesia and peripheral nerve blocks provide excellent pain relief while allowing faster recovery, reduced complications and early mobilization after surgery.\r\n\r\nMonitored Anaesthesia Care (MAC)\r\n\r\nFor minimally invasive procedures, our Monitored Anaesthesia Care (MAC) provides sedation and pain control while allowing patients to remain comfortable, responsive and medically stable.\r\n\r\nPre-operative Evaluation\r\n\r\nEvery patient undergoes a comprehensive pre-operative assessment including medical history review, physical examination, laboratory investigations and anaesthesia risk evaluation to ensure maximum safety before surgery.\r\n\r\nAcute & Post-operative Pain Management\r\n\r\nOur pain management specialists provide personalized treatment plans using advanced medications, nerve blocks and multimodal pain relief techniques that reduce discomfort and accelerate recovery after surgery.\r\n\r\nObstetric Anaesthesia\r\n\r\nWe provide safe epidural and spinal anaesthesia for normal delivery and Caesarean section while ensuring the comfort and wellbeing of both mother and baby.\r\n\r\nPaediatric Anaesthesia\r\n\r\nChildren require specialized anaesthesia care. Our paediatric anaesthesiologists provide age-specific anaesthesia using child-friendly protocols with continuous monitoring and compassionate care.\r\n\r\nCardiac Anaesthesia\r\n\r\nOur cardiac anaesthesia team provides specialized care for CABG, valve replacement surgery, angioplasty support, pacemaker implantation, ICD procedures and other complex cardiovascular interventions.\r\n\r\nNeuro Anaesthesia\r\n\r\nNeuroanaesthesia focuses on maintaining cerebral blood flow, brain protection and neurological stability during brain and spine surgeries using advanced anaesthesia techniques.\r\n\r\nOnco Anaesthesia\r\n\r\nCancer surgeries require meticulous perioperative planning. Our specialists provide personalized anaesthesia for oncology procedures while managing associated medical conditions and postoperative recovery.\r\n\r\nCritical Care & Intensive Care\r\n\r\nOur anaesthesiologists are an integral part of the Intensive Care Unit (ICU), managing critically ill patients requiring mechanical ventilation, haemodynamic monitoring, emergency airway management and life-support systems.\r\n\r\nDay Care Anaesthesia\r\n\r\nWe offer advanced day care anaesthesia for minimally invasive procedures such as Endoscopy, Colonoscopy, Bronchoscopy and Thoracoscopy, enabling faster recovery and same-day discharge whenever appropriate.\r\n\r\nWhy Choose Hindusthan Hospitals?\r\n\r\n• Experienced Anaesthesiologists\r\n\r\n• Advanced Operation Theatres\r\n\r\n• State-of-the-Art Monitoring Equipment\r\n\r\n• Comprehensive Critical Care Support\r\n\r\n• Modern Pain Management Techniques\r\n\r\n• Dedicated ICU Services\r\n\r\n• Safe Day Care Procedures\r\n\r\n• Personalized Patient Care\r\n\r\n• International Safety Standards\r\n\r\n• Multidisciplinary Surgical Team\r\n\r\nPatient-Centred Care\r\n\r\nPatient safety is our highest priority. From pre-operative counselling to post-operative recovery, our anaesthesia team ensures clear communication, compassionate care and continuous monitoring throughout every stage of treatment.\r\n\r\nEducation & Research\r\n\r\nThe Department of Anaesthesiology actively participates in medical education, clinical research and continuous professional development to introduce advanced anaesthesia techniques, improve patient outcomes and maintain the highest standards of healthcare delivery.\r\n\r\nWhether you require general anaesthesia, regional anaesthesia, obstetric anaesthesia, paediatric anaesthesia, cardiac anaesthesia or critical care support, Hindusthan Hospitals is committed to providing safe, modern and evidence-based anaesthesia care in Coimbatore.\r\n",
+    "services": [
+      "General Anaesthesia for Major & Complex Surgeries",
+      "Regional Anaesthesia (Spinal, Epidural & Nerve Blocks)",
+      "Monitored Anaesthesia Care (MAC)",
+      "Comprehensive Pre-operative Assessment",
+      "Acute & Post-operative Pain Management",
+      "Obstetric Anaesthesia for Labour & Caesarean Delivery",
+      "Paediatric Anaesthesia",
+      "Cardiac & Cardiovascular Anaesthesia",
+      "Neuro Anaesthesia",
+      "Onco Anaesthesia",
+      "Critical Care & ICU Support",
+      "Day Care Anaesthesia",
+      "Endoscopy & Bronchoscopy Anaesthesia",
+      "Thoracoscopy & Colonoscopy Anaesthesia"
+    ],
+    "advantages": [],
+    "technology": [],
+    "doctors": [
+      {
+        "name": "S.SARANYA VISHUMATHY",
+        "designation": "Senior Anaesthesiologist",
+        "image": "/static/media/DR. S.SARANYA VISHUMATHY.9c02073e3d3bd7083bbf.jpg",
+        "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+      },
+      {
+        "name": "DR. N. MADHAN",
+        "designation": "Intensivists",
+        "image": "/static/media/DR. N. MADHAN.27b200f76bf9241ef870.jpg",
+        "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+      }
+    ],
+    "visitingConsultants": [],
+    "gallery": [],
+    "createdAt": "2026-08-17T15:14:17.921Z",
+    "updatedAt": "2026-08-17T15:14:44.202Z"
+  },
+  {
+    "_id": "d61aca4d-9909-49b1-b516-d89a40530969",
+    "name": "Cardiology",
+    "slug": "cardiology",
+    "description": "\r\nBest Cardiology Hospital in Coimbatore\r\n\r\nThe Department of Cardiology at Hindusthan Hospitals provides comprehensive heart care for the diagnosis, treatment and management of cardiovascular diseases. With experienced cardiologists, advanced cardiac diagnostic facilities, 24x7 emergency support and a fully functional Cath Lab, we provide timely and patient-focused cardiac care in Coimbatore.\r\n\r\nComprehensive Heart Care\r\n\r\nOur Cardiology Department focuses on preventive cardiology, non-invasive cardiology, interventional cardiology, heart failure management and cardiac rehabilitation. Patients receive personalized evaluation and treatment based on their cardiac condition and individual healthcare requirements.\r\n\r\nAdvanced Cardiac Diagnostics\r\n\r\nEarly and accurate diagnosis plays an important role in managing heart disease. Our cardiac diagnostic services include 12 Lead ECG, 2D Echocardiogram, TMT (Stress Test), Holter Monitoring and Ambulatory Blood Pressure Monitoring (ABPM).\r\n\r\nThese investigations help our cardiologists evaluate heart rhythm abnormalities, cardiac function, blood pressure variations and other cardiovascular conditions.\r\n\r\nCath Lab & Interventional Cardiology\r\n\r\nHindusthan Hospitals is equipped with a fully functional Cath Lab for advanced cardiac evaluation and interventional procedures.\r\n\r\nOur Cath Lab services include:\r\n\r\n• Coronary Angiogram\r\n• Coronary Angioplasty\r\n• Pacemaker Implantation\r\n\r\nCoronary Angiography\r\n\r\nCoronary angiography helps cardiologists identify narrowing or blockages in the coronary arteries and determine the appropriate treatment plan.\r\n\r\nCoronary Angioplasty\r\n\r\nCoronary angioplasty is a minimally invasive cardiac procedure used to restore blood flow through narrowed or blocked coronary arteries.\r\n\r\nPacemaker Implantation\r\n\r\nPacemaker implantation is available for patients with certain abnormal or slow heart rhythms requiring electrical support to maintain an appropriate heartbeat.\r\n\r\nHeart Failure Management\r\n\r\nOur cardiology team provides evaluation, treatment and long-term monitoring for patients with heart failure. Treatment plans may include medications, lifestyle modifications, cardiac monitoring and rehabilitation based on the patient's condition.\r\n\r\nPreventive Cardiology\r\n\r\nPrevention and early detection are important components of cardiovascular care. Our cardiologists focus on identifying and managing risk factors associated with heart disease and encourage appropriate lifestyle modifications and regular cardiac evaluation.\r\n\r\nCardiac Rehabilitation\r\n\r\nCardiac rehabilitation supports patients recovering from cardiac conditions and procedures through supervised recovery, lifestyle modification and long-term cardiovascular risk management.\r\n\r\nWhy Choose Hindusthan Hospitals for Cardiology in Coimbatore?\r\n\r\n• Experienced Cardiologists\r\n• Advanced Cardiac Diagnostic Facilities\r\n• Fully Functional Cath Lab\r\n• Coronary Angiography & Angioplasty\r\n• Pacemaker Implantation\r\n• 24x7 Emergency Support\r\n• Heart Failure Management\r\n• Preventive Cardiology\r\n• Cardiac Rehabilitation\r\n• Multidisciplinary Hospital Support\r\n\r\nThe Department of Cardiology at Hindusthan Hospitals is committed to providing comprehensive cardiac care from early diagnosis and prevention to advanced interventional treatment and long-term heart health management.\r\n",
+    "services": [
+      "12 Lead ECG",
+      "2D Echocardiogram",
+      "TMT (Stress Test)",
+      "Holter Monitoring",
+      "Ambulatory Blood Pressure Monitoring (ABPM)"
+    ],
+    "advantages": [],
+    "technology": [],
+    "doctors": [
+      {
+        "name": "Dr. P.R. Vaidyanathan",
+        "designation": "Senior Cardiologist",
+        "image": "/static/media/DR. P.R.VAIDYNATHAN.5982b3abbd704dc3551e.jpg",
+        "description": "Dr. P.R. Vaidyanathan has extensive experience in non-invasive cardiology, cardiac rehabilitation and preventive cardiac care."
+      },
+      {
+        "name": "Dr. M. Sathish Kumar",
+        "designation": "Consultant Cardiologist",
+        "image": "/static/media/DR.  M.SATHISH KUMAR .75adfc063ab834eb637a.jpg",
+        "description": "Dr. M. Sathish Kumar is a senior cardiologist specializing in interventional cardiology, heart failure treatment and advanced cardiac diagnostics."
+      }
+    ],
+    "visitingConsultants": [],
+    "gallery": [
+      "/static/media/Cardiology edited.714295521c1ea54029a4.jpg",
+      "/static/media/Cardiology edited2.d2053aec89a21bc57478.jpg",
+      "/static/media/ECG & DEFIBRILATOR.159b98ccd6a059a23c5a.jpg",
+      "/uploads/departments/1786980073003-852213a2-d568-4d19-9ee4-19f89acdc311.jpg"
+    ],
+    "createdAt": "2026-08-17T15:21:13.117Z"
+  }
+]

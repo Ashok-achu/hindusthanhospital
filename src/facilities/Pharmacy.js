@@ -67,6 +67,9 @@ export default function Pharmacy() {
           <h2 className="text-3xl font-bold text-teal-700 mb-4">
             Reliable Medicines. Anytime Care.
           </h2>
+          <p className="mb-4 text-lg font-semibold leading-7 text-gray-700">
+            A valid prescription is mandatory for dispensing medicines.
+          </p>
           <p className="text-gray-700 leading-7 text-lg">
             Hindusthan Hospital’s in-house pharmacy operates round-the-clock to
             ensure uninterrupted access to essential medicines, emergency drugs,

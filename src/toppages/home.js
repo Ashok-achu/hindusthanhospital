@@ -80,23 +80,6 @@ function useCounter(target, duration = 2000, shouldStart = false) {
    A slow, looping ECG trace used between
    sections instead of a generic rule/blob.
 ───────────────────────────────────────── */
-function PulseDivider({ tone = "light", className = "" }) {
-  const stroke = tone === "light" ? "rgba(15,23,42,0.14)" : "rgba(255,255,255,0.14)";
-  const accent = tone === "light" ? "#B61B1F" : "#D65A5A";
-  return (
-    <div className={`relative mx-auto h-8 w-full max-w-5xl overflow-hidden sm:h-10 ${className}`} aria-hidden="true">
-      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" className="h-full w-full">
-        <path d="M0 30 H420 L455 30 L470 8 L490 52 L510 20 L525 30 H1200"
-          fill="none" stroke={stroke} strokeWidth="1.5" />
-        <path d="M0 30 H420 L455 30 L470 8 L490 52 L510 20 L525 30 H1200"
-          fill="none" stroke={accent} strokeWidth="2" strokeLinecap="round"
-          className="pulse-trace" />
-      </svg>
-    </div>
-  );
-}
-
-
 /* ─────────────────────────────────────────
    Section Eyebrow — encodes "what kind of
    claim this section is making" (a fact,
@@ -487,13 +470,6 @@ export default function Home() {
                   className="h-auto w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
-              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-[#F3AEAE] bg-white/95 p-4 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:-bottom-7 sm:-right-4 sm:left-auto sm:w-52 sm:p-5 md:-right-8">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#FAD6D6] font-display text-sm font-extrabold text-[#B61B1F] sm:h-11 sm:w-11">15+</div>
-                <div>
-                  <div className="text-xs font-bold leading-tight text-ink sm:text-sm">Years of Experience</div>
-                  <p className="mt-1 hidden text-xs text-slate-500 sm:block">Trusted by thousands of families.</p>
-                </div>
-              </div>
             </motion.div>
 
             <motion.div
@@ -503,7 +479,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Eyebrow>Why Choose Us</Eyebrow>
+              <Eyebrow>Our Commitment</Eyebrow>
               <h2 className="font-display text-[clamp(1.7rem,5vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
                 Transforming healthcare
                 <br />
@@ -549,8 +525,6 @@ export default function Home() {
         </div>
       </section>
 
-      <PulseDivider tone="light" />
-
       {/* ════════ MEDICAL SPECIALITIES ════════ */}
       <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
@@ -575,7 +549,7 @@ export default function Home() {
           >
             <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <Eyebrow tone="light">Clinical Excellence</Eyebrow>
+                <Eyebrow tone="light">Centre of Excellence</Eyebrow>
                 <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
                   Medical
                   <br />
@@ -721,7 +695,7 @@ export default function Home() {
       </section>
 
       {/* ════════ MEET OUR DOCTORS ════════ */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
+      <section className="relative hidden overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-2">
 
@@ -825,9 +799,9 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-10 text-center sm:mb-16"
           >
-            <Eyebrow tone="light">What We Offer</Eyebrow>
+            <Eyebrow tone="light">24 Hour Services</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-white">
-              World-Class{" "}
+              24-Hour{" "}
               <span className="bg-gradient-to-r from-[#E88585] to-[#EFDFB0] bg-clip-text text-transparent">
                 Facilities
               </span>
@@ -844,7 +818,7 @@ export default function Home() {
               { icon: <FaShieldAlt />, title: "Insurance Desk", desc: "Dedicated cashless insurance processing for over 50+ insurance providers.", link: "/facilities/insurance", color: "from-[#3F68BE] to-[#0F2C6A]" },
               { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-[#1D469E] to-[#14357F]" },
               { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-[#0F2C6A] to-[#B61B1F]" },
-            ].map((f, i) => (
+            ].filter((f) => f.title !== "Blood Bank").map((f, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -875,9 +849,9 @@ export default function Home() {
         />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center sm:mb-16">
-            <Eyebrow>Master Health Checkup</Eyebrow>
+            <Eyebrow>Foot Lab</Eyebrow>
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Health <span className="text-[#B61B1F]">Packages</span>
+              Foot Lab <span className="text-[#B61B1F]">Packages</span>
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:mt-4 sm:text-lg sm:leading-7">
               Choose a package that fits your wellness goals and enjoy a smoother, smarter preventive care experience.
@@ -886,10 +860,9 @@ export default function Home() {
 
           <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { title: "Silver", tests: "40 Tests", price: "₹1,500", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"] },
-              { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
-              { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
-              { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
+              { title: "Foot Lab Package 1", tests: "Foot health assessment", price: "Contact us", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Foot health assessment", "Specialist consultation", "Personalised care guidance"] },
+              { title: "Foot Lab Package 2", tests: "Advanced foot assessment", price: "Contact us", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["Advanced foot assessment", "Specialist consultation", "Personalised care guidance"] },
+              { title: "Foot Lab Package 3", tests: "Comprehensive foot assessment", price: "Contact us", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["Comprehensive foot assessment", "Specialist consultation", "Personalised care guidance"] },
             ].map((pkg, i) => (
               <motion.div
                 key={i}
@@ -944,7 +917,7 @@ export default function Home() {
 
       {/* ════════ STATS ════════ */}
       {/* ════════ STATS ════════ */}
-      <section className="relative overflow-hidden bg-ink py-14 sm:py-20">
+      {false && <section className="relative overflow-hidden bg-ink py-14 sm:py-20">
         <div className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
@@ -961,8 +934,6 @@ export default function Home() {
             </h2>
           </div>
 
-          <PulseDivider tone="light" className="mb-8 sm:mb-12" />
-
           <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
             {[
               { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
@@ -972,11 +943,11 @@ export default function Home() {
             ].map((s, i) => <StatCard key={i} {...s} />)}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ════════ WHY CHOOSE US (2) ════════ */}
       {/* ════════ WHY CHOOSE US (2) ════════ */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
+      <section className="relative hidden overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-[#EAF0FB] opacity-70 blur-3xl" />
           <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-[#F5E8C8] opacity-70 blur-3xl" />
@@ -1093,7 +1064,7 @@ export default function Home() {
       </section>
 
       {/* ════════ AWARDS & CERTIFICATIONS ════════ */}
-      <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
+      <section className="relative hidden overflow-hidden bg-mist py-16 sm:py-24">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: "radial-gradient(circle at 1px 1px,#B61B1F 1px,transparent 0)", backgroundSize: "32px 32px" }} />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1176,8 +1147,8 @@ export default function Home() {
                   <a href="tel:04224327777" className="flex items-center gap-2.5 rounded-xl bg-white/15 px-4 py-2.5 backdrop-blur">
                     <FaPhoneAlt className="text-sm" /><span className="text-sm font-semibold sm:text-base">0422 - 4327777</span>
                   </a>
-                  <a href="mailto:info@hindusthanhospital.com" className="flex items-center gap-2.5 rounded-xl bg-white/15 px-4 py-2.5 backdrop-blur">
-                    <FaEnvelope className="text-sm" /><span className="text-sm font-semibold sm:text-base">info@hindusthanhospital.com</span>
+                  <a href="mailto:hindusthanreception@gmail.com" className="flex items-center gap-2.5 rounded-xl bg-white/15 px-4 py-2.5 backdrop-blur">
+                    <FaEnvelope className="text-sm" /><span className="text-sm font-semibold sm:text-base">hindusthanreception@gmail.com</span>
                   </a>
                 </div>
               </div>
@@ -1201,7 +1172,7 @@ export default function Home() {
       </section>
 
       {/* ════════ TESTIMONIALS ════════ */}
-      <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
+      <section className="relative hidden overflow-hidden bg-mist py-16 sm:py-24">
         <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-[#FAD6D6] opacity-40 blur-3xl" />
         <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-[#F5E8C8] opacity-40 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
@@ -1285,7 +1256,7 @@ export default function Home() {
       </section>
 
       {/* ════════ LATEST NEWS ════════ */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+      <section className="relative hidden overflow-hidden bg-white py-16 sm:py-24">
         <div className="absolute top-20 right-0 h-64 w-64 rounded-full bg-[#F5E8C8] opacity-60 blur-3xl" />
         <div className="absolute bottom-20 left-0 h-64 w-64 rounded-full bg-[#FDECEC] opacity-60 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1297,12 +1268,12 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">News</span>
               </h2>
             </div>
-            <a href="/news" className="group flex items-center gap-2 text-sm font-bold text-slate-500 transition-colors hover:text-[#B61B1F] sm:text-base">
+            <Link to="/news" className="group flex items-center gap-2 text-sm font-bold text-slate-500 transition-colors hover:text-[#B61B1F] sm:text-base">
               View All Articles
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:bg-[#FAD6D6] group-hover:text-[#B61B1F]">
                 <FaArrowRight className="text-sm" />
               </span>
-            </a>
+            </Link>
           </div>
           <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
             {[

@@ -93,7 +93,7 @@ features: [
 },
 ];
 
-const roomImages = [room4,room3,room2,room1,room0];
+const roomImages = [room4,room3,room2];
 
 return (
 

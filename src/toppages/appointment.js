@@ -111,6 +111,10 @@ className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 space-y-6"
 Quick Appointment Booking
 </h2>
 
+<p className="mt-3 text-gray-600">
+For appointment support, email <a className="font-semibold text-rose-600" href="mailto:hindusthanreception@gmail.com">hindusthanreception@gmail.com</a>.
+</p>
+
 {/* NAME + PHONE */}
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 

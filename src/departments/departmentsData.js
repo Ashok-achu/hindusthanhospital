@@ -133,6 +133,10 @@ import eq11 from "../assets/Equipments/Equipments-11.jpg";
 import eq12 from "../assets/Equipments/Equipments-12.jpg";
 import eq13 from "../assets/Equipments/Equipments-13.jpg";
 import hospital from "../assets/hospital/1920_1080 Green removed.jpg";
+import anaesthesiaBanner from "../assets/bannerimage/anaesthesia.png";
+import cardiologyBanner from "../assets/bannerimage/cardiology.png";
+import dentalFacialBanner from "../assets/bannerimage/dental_facial.png";
+import diabetologyBanner from "../assets/bannerimage/diabetoloy_GM.png";
 
 
 /* Doctor Images */
@@ -199,7 +203,7 @@ const departmentsData = [
     "Hindusthan Hospitals Coimbatore"
   ],
   },
-image: hospital,
+image: anaesthesiaBanner,
 description: `
  Best Anaesthesiology  in Coimbatore
 
@@ -369,7 +373,7 @@ gallery: [
     ]
   },
 
-  image: hospital,
+  image: cardiologyBanner,
 
   description: `
 Best Cardiology Hospital in Coimbatore
@@ -527,7 +531,7 @@ The Department of Cardiology at Hindusthan Hospitals is committed to providing c
     ]
   },
 
-  image: hospital,
+  image: dentalFacialBanner,
 
   description: `
 Best Dental Hospital in Coimbatore
@@ -674,7 +678,7 @@ The Department of Dental & Facio Maxillary at Hindusthan Hospitals is committed 
     ]
   },
 
-  image: hospital,
+  image: diabetologyBanner,
 
   description: `
 Best Diabetologist & General Medicine Care in Coimbatore

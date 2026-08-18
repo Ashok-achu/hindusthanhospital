@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import hero from "../assets/set1/Hospital front page_.jpg";
+import hero from "../assets/bannerimage/mission_vision_1920x500.png";
 
 export default function Mission() {
   const fadeUp = {
@@ -14,7 +14,7 @@ export default function Mission() {
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="relative rounded-3xl overflow-hidden shadow-xl">
-          <img src={hero} className="w-full h-64 md:h-80 object-cover brightness-75" />
+          <img src={hero} alt="Mission and Vision" className="w-full h-auto object-contain brightness-75" />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center">
             <div className="ml-6 md:ml-12 text-white">

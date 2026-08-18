@@ -1,21 +1,20 @@
 import { FaPhone, FaWhatsapp, FaInstagram, FaYoutube, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const exploreLinks = [
     { label: "Home", to: "/" },
     { label: "About Trust", to: "https://hindusthan.net/about-us", external: true },
     { label: "Mission & Vision", to: "/mission" },
-    { label: "Our Profile", to: "/profile" },
     { label: "Milestones", to: "/milestones" },
     { label: "Doctors", to: "/doctors" },
   ];
 
   const careLinks = [
     { label: "All Specialities", to: "/specialities" },
-    { label: "Health Packages", to: "/facilities/mhc" },
+    { label: "Foot Lab Packages", to: "/facilities/mhc" },
     { label: "Ambulance", to: "/facilities/ambulance" },
     { label: "Birth Center", to: "/facilities/birthing-centre" },
-    { label: "Blood Bank", to: "/facilities/blood-bank" },
     { label: "Rooms", to: "/facilities/rooms" },
     { label: "Pharmacy", to: "/facilities/pharmacy" },
     { label: "Insurance", to: "/facilities/insurance" },
@@ -52,13 +51,12 @@ const LinkList = ({ title, links }) => (
               <FaArrowRight className="text-[10px] opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
             </a>
           ) : (
-            
-             <a href={item.to}
+             <Link to={item.to}
               className="group flex items-center gap-1.5 text-sm text-white/65 transition-colors hover:text-[#F3AEAE]"
             >
               {item.label}
               <FaArrowRight className="text-[10px] opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100" />
-            </a>
+            </Link>
           )}
         </li>
       ))}
@@ -166,7 +164,6 @@ const LinkList = ({ title, links }) => (
         {/* Bottom bar */}
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/40 sm:flex-row">
           <p>© {new Date().getFullYear()} Hindusthan Hospital. All rights reserved.</p>
-          <p>NABH Accredited · CAHO Certified</p>
         </div>
       </div>
     </footer>

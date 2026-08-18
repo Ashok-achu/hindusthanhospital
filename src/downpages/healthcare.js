@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -50,6 +50,7 @@ import nandhagopal from "../assets/Final/Dr.nandhagopal.jpeg";
 
 export default function Healthcare() {
     const navigate = useNavigate();
+    const api = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
     const [filters, setFilters] = useState({
         name: "",
@@ -58,11 +59,25 @@ export default function Healthcare() {
     });
 
     const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const [managedDoctors, setManagedDoctors] = useState([]);
+
+    useEffect(() => {
+        fetch(`${api}/api/doctors`)
+            .then((response) => response.ok ? response.json() : [])
+            .then((items) => {
+                const doctorsFromApi = Array.isArray(items) ? items : [];
+                setManagedDoctors(doctorsFromApi.map((doctor) => ({
+                    ...doctor,
+                    image: doctor.image?.startsWith("/uploads") ? `${api}${doctor.image}` : doctor.image,
+                })));
+            })
+            .catch(() => setManagedDoctors([]));
+    }, [api]);
 
 
     // ONLY DOCTORS ARRAY REPLACED
 
-    const doctors = [
+    const fallbackDoctors = [
 
         // PULMONOLOGY
 
@@ -181,6 +196,10 @@ export default function Healthcare() {
         { id: 40, name: "Dr. N. Selvaraj", speciality: "Oncology", gender: "Male", image: selvaraj },
 
     ];
+
+    const doctors = (managedDoctors.length > 0 ? managedDoctors : fallbackDoctors)
+        .slice()
+        .sort((a, b) => a.speciality.localeCompare(b.speciality) || a.name.localeCompare(b.name));
 
     // ⭐ AUTO SPECIALITY DROPDOWN
     const specialities = [

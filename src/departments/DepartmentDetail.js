@@ -1,44 +1,117 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useCallback } from "react";
 import departmentsData from "../departments/departmentsData";
+import sampleGalleryImage from "../assets/set2/Hospital profile edited.jpg";
 
 /* ------------------------------------------------------------------
-   EDIT THESE TWO TO MATCH YOUR SITE
+   EDIT THESE TO MATCH YOUR SITE
 ------------------------------------------------------------------- */
 const APPOINTMENT_LINK = "/appointment"; // your booking / enquiry route
-const HOSPITAL_PHONE = "+91-00000-00000"; // shown on the floating call button
+const HOSPITAL_PHONE = "+91-00000-00000"; // shown on the floating call button + sidebar
+const HOSPITAL_PHONE_DISPLAY = "0422 424 2424"; // shown as text
+const HOSPITAL_EMAIL = "hindusthanreception@gmail.com";
+const HOSPITAL_LOCATION = "Hindusthan Hospital, Coimbatore, Tamil Nadu";
+const DEPARTMENT_API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
 /* ------------------------------------------------------------------
-   Which sections exist for a department, and in what order they
-   should appear as tabs. A tab only shows up if the department
-   actually has data for it — no more empty "Services Offered"
-   headings on departments that don't have any.
+   Tiny inline icon set — single-path outline icons so the page
+   doesn't need an external icon library. Reused across the quick
+   nav strip, the patient-journey steps and the floating hero stats.
 ------------------------------------------------------------------- */
-const SECTION_DEFS = [
-  { key: "overview", label: "Overview" },
-  { key: "services", label: "Services", field: "services", heading: "Services Offered" },
-  { key: "cathLab", label: "Cath Lab", field: "cathLab", heading: "24/7 Cath Lab Services" },
-  { key: "subSpecialities", label: "Sub Specialities", field: "subSpecialities", heading: "Sub Specialities" },
-  { key: "procedures", label: "Procedures", field: "procedures", heading: "Procedures" },
-  { key: "specialClinics", label: "Special Clinics", field: "specialClinics", heading: "Special Clinics" },
-  { key: "advantages", label: "Advantages", field: "advantages", heading: "Why Choose This" },
-  { key: "doctors", label: "Our Doctors", field: "doctors" },
-  { key: "visitingConsultants", label: "Visiting Consultants", field: "visitingConsultants" },
-  { key: "gallery", label: "Gallery", field: "gallery" },
+const ICON_PATHS = {
+  clipboard:
+    "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
+  heart:
+    "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  moon: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
+  shield:
+    "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+  siren: "M12 8.25v4.5m0 3.75h.008v.008H12v-.008zM21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  clock: "M12 6v6h4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  users:
+    "M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 100-8 4 4 0 000 8zm6 2a4 4 0 00-3-3.87",
+  image: "M4 5a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm2 12l4-4 3 3 4-5 3 4",
+  chevronLeft: "M15 19l-7-7 7-7",
+  chevronRight: "M9 5l7 7-7 7",
+  check: "M5 13l4 4L19 7",
+};
+
+const QUICK_NAV_ICON_ORDER = ["clipboard", "heart", "moon", "shield", "siren"];
+const TRUST_PILLARS = [
+  { icon: "shield", label: "Patient Safety First" },
+  { icon: "image", label: "Advanced Technology" },
+  { icon: "users", label: "Expert Specialists" },
+  { icon: "clock", label: "24/7 Care & Monitoring" },
+  { icon: "heart", label: "Compassionate Care" },
 ];
 
-function getAvailableSections(department) {
-  return SECTION_DEFS.filter((s) => {
-    if (s.key === "overview") return !!(department.description || "").trim();
-    const value = department[s.field];
-    return Array.isArray(value) && value.length > 0;
-  });
+function Icon({ name, className = "w-5 h-5" }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={ICON_PATHS[name]} />
+    </svg>
+  );
 }
 
 /* ------------------------------------------------------------------
-   Description parser — same rules as before (ALL CAPS heading,
-   "1. " numbered sub-heading, "•" bullet, plain paragraph) just
-   pulled out so it can be reused / tested on its own.
+   Sidebar helpers — pull "Why choose us" bullets and a short list of
+   key services straight out of the data we already have, so every
+   department page gets a filled-in sidebar without new data entry.
+------------------------------------------------------------------- */
+function getWhyChooseUs(department) {
+  if (Array.isArray(department.advantages) && department.advantages.length) {
+    return department.advantages.slice(0, 6);
+  }
+
+  const text = department.description || "";
+  const lines = text.split("\n").map((l) => l.trim());
+  const startIdx = lines.findIndex((l) => /why choose/i.test(l));
+  if (startIdx !== -1) {
+    const bullets = [];
+    for (let i = startIdx + 1; i < lines.length; i++) {
+      const line = lines[i];
+      if (!line) continue;
+      if (line.startsWith("•")) {
+        bullets.push(line.replace("•", "").trim());
+      } else if (bullets.length) {
+        break; // hit the next paragraph/heading — stop collecting
+      }
+      if (bullets.length >= 6) break;
+    }
+    if (bullets.length) return bullets;
+  }
+
+  return [
+    "Highly Experienced Specialists",
+    "Advanced Medical Technology",
+    "Evidence-Based Treatment Protocols",
+    "Patient Safety, Our Priority",
+    "Compassionate & Personalized Care",
+  ];
+}
+
+function getKeyServices(department) {
+  const source =
+    (Array.isArray(department.services) && department.services.length && department.services) ||
+    (Array.isArray(department.procedures) && department.procedures.length && department.procedures) ||
+    (Array.isArray(department.subSpecialities) && department.subSpecialities.length && department.subSpecialities) ||
+    [];
+  return source;
+}
+
+/* Generic, index-based blurbs for the patient-journey steps. The
+   data model doesn't carry a per-step description, so these read
+   sensibly against almost any department's quick-nav items. */
+const JOURNEY_BLURBS = [
+  "Careful assessment and planning to make sure your care is safe and personalized.",
+  "Continuous, expert-led monitoring and support throughout your care.",
+  "Attentive observation and guidance as you recover comfortably.",
+  "Ongoing management and follow-up for lasting comfort and recovery.",
+];
+
+/* ------------------------------------------------------------------
+   Description parser — ALL CAPS heading, "1. " numbered sub-heading,
+   "•" bullet, plain paragraph.
 ------------------------------------------------------------------- */
 function DescriptionBlock({ text }) {
   const lines = (text || "").split("\n");
@@ -59,9 +132,7 @@ function DescriptionBlock({ text }) {
             return (
               <div key={index} className="flex items-center gap-3 mt-8 mb-3 first:mt-0">
                 <span className="w-8 h-[2px] bg-[#C6A15B]" />
-                <h3 className="font-serif text-lg sm:text-xl tracking-wide text-[#6B0F2A]">
-                  {clean}
-                </h3>
+                <h3 className="font-serif text-lg sm:text-xl tracking-wide text-[#6B0F2A]">{clean}</h3>
                 <span className="flex-1 h-px bg-[#E7DCC0]" />
               </div>
             );
@@ -99,7 +170,8 @@ function DescriptionBlock({ text }) {
   );
 }
 
-/* Simple two-column bullet list used for services / procedures / etc. */
+/* Simple two-column bullet list — used for the "view all services"
+   expansion under the Centre of Excellence grid. */
 function SimpleList({ items }) {
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-gray-700 text-sm sm:text-base">
@@ -117,51 +189,124 @@ function SimpleList({ items }) {
   );
 }
 
-/* Doctor / consultant card with a "read more" toggle so long bios
-   don't force every card in the row to stretch to match. */
-function PersonCard({ person, index }) {
-  const [expanded, setExpanded] = useState(false);
-  const bio = person.description || "";
-  const isLong = bio.length > 110;
-
+/* Compact doctor / consultant card for the "Meet Our Specialists"
+   grid — photo, name, designation, a one-line bio and a book link. */
+function DoctorGridCard({ person, index, tag }) {
   return (
     <div
-      className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dept-fade-in"
+      className="group bg-white rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden dept-fade-in"
       style={{ animationDelay: `${Math.min(index, 8) * 60}ms` }}
     >
-      <div className="w-full h-[220px] sm:h-[260px] bg-gray-50 flex items-center justify-center p-4 overflow-hidden">
+      <div className="w-full aspect-square bg-gray-50 overflow-hidden">
         <img
           src={person.image}
           alt={person.name}
           loading="lazy"
-          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-
-      <div className="p-5 sm:p-6 text-center">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800">{person.name}</h3>
-        <p className="text-red-600 text-sm font-medium mt-1">{person.designation}</p>
-
-        {bio && (
-          <>
-            <p
-              className={`text-gray-600 text-sm mt-3 transition-all ${
-                expanded || !isLong ? "" : "line-clamp-2"
-              }`}
-            >
-              {bio}
-            </p>
-            {isLong && (
-              <button
-                type="button"
-                onClick={() => setExpanded((v) => !v)}
-                className="text-xs font-semibold text-red-600 mt-2 hover:underline"
-              >
-                {expanded ? "Show less" : "Read more"}
-              </button>
-            )}
-          </>
+      <div className="p-4 sm:p-5">
+        <h3 className="text-sm sm:text-base font-semibold text-gray-800 truncate">{person.name}</h3>
+        <p className="text-red-600 text-xs sm:text-sm font-medium mt-0.5">{person.designation}</p>
+        {tag && (
+          <span className="inline-block mt-1 text-[10px] font-semibold tracking-wide uppercase text-[#0E3B39] bg-[#0E3B39]/10 px-2 py-0.5 rounded-full">
+            {tag}
+          </span>
         )}
+        {person.description && (
+          <p className="text-gray-500 text-xs mt-2 line-clamp-2">{person.description}</p>
+        )}
+        <Link
+          to={APPOINTMENT_LINK}
+          className="mt-3 inline-block text-xs font-semibold text-white bg-[#0E3B39] px-4 py-1.5 rounded-full hover:bg-[#0a2b2a] transition"
+        >
+          Book Appointment
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+/* "Centre of Excellence" card — icon + title + short blurb over a
+   photo, so the row reads the same as a real photographed service
+   without requiring a dedicated image per data entry. */
+function ServiceCard({ title, blurb, image, index, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className="text-left bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden dept-fade-in"
+      style={{ animationDelay: `${Math.min(index, 10) * 50}ms` }}
+    >
+      <div className="p-5 pb-4">
+        <div className="w-10 h-10 rounded-full bg-[#0E3B39]/10 flex items-center justify-center mb-3">
+          <span className="w-2.5 h-2.5 rounded-full bg-[#0E3B39]" />
+        </div>
+        <p className="text-sm sm:text-[15px] font-semibold text-gray-800 leading-snug">{title}</p>
+        {blurb && <p className="text-xs text-gray-500 mt-1.5 line-clamp-2">{blurb}</p>}
+      </div>
+      {image && (
+        <div className="h-28 sm:h-32 w-full overflow-hidden">
+          <img src={image} alt={title} loading="lazy" className="w-full h-full object-cover" />
+        </div>
+      )}
+    </button>
+  );
+}
+
+/* Right-hand contextual sidebar — "Why Choose Us", the Book
+   Appointment CTA, Key Services and (optionally) Technology We Use.
+   Renders identically on every department page. */
+function InfoSidebar({ department }) {
+  const whyChooseUs = getWhyChooseUs(department);
+  const keyServices = getKeyServices(department).slice(0, 7);
+  const technology = Array.isArray(department.technology) ? department.technology : [];
+
+  return (
+    <div className="space-y-5">
+      <div className="bg-white rounded-lg shadow-sm p-5 sm:p-6">
+        <h3 className="text-xs font-bold tracking-[0.15em] text-gray-500 mb-4">WHY CHOOSE US</h3>
+        <ul className="space-y-3">
+          {whyChooseUs.map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+              <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#C6A15B] shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {keyServices.length > 0 && (
+        <div className="bg-white rounded-lg shadow-sm p-5 sm:p-6">
+          <h3 className="text-xs font-bold tracking-[0.15em] text-gray-500 mb-4">KEY SERVICES</h3>
+          <ul className="space-y-3">
+            {keyServices.map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {technology.length > 0 && (
+        <div className="bg-white rounded-lg shadow-sm p-5 sm:p-6">
+          <h3 className="text-xs font-bold tracking-[0.15em] text-gray-500 mb-4">TECHNOLOGY WE USE</h3>
+          <ul className="space-y-3">
+            {technology.map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                <Icon name="check" className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 flex items-center gap-4">
+        <span className="text-2xl font-bold text-[#0E3B39]">24/7</span>
+        <span className="text-sm text-gray-600">Emergency care &amp; support available</span>
       </div>
     </div>
   );
@@ -170,45 +315,60 @@ function PersonCard({ person, index }) {
 export default function DepartmentDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [managedDepartments, setManagedDepartments] = useState([]);
 
-  const department = useMemo(
-    () => departmentsData.find((d) => d.slug === slug),
-    [slug]
-  );
-
-  const availableSections = useMemo(
-    () => (department ? getAvailableSections(department) : []),
-    [department]
-  );
-
-  const [activeTab, setActiveTab] = useState(availableSections[0]?.key);
-  const [deptSearch, setDeptSearch] = useState("");
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  // Reset tab + scroll position whenever the department changes.
   useEffect(() => {
-    setActiveTab(availableSections[0]?.key);
+    fetch(`${DEPARTMENT_API}/api/departments`)
+      .then((response) => response.ok ? response.json() : [])
+      .then((items) => setManagedDepartments(items.map((item) => ({
+        ...item,
+        image: (item.image?.startsWith("/") && !item.image.startsWith("/static/")) ? `${DEPARTMENT_API}${item.image}` : item.image,
+        gallery: (item.gallery || []).map((image) => (image.startsWith("/") && !image.startsWith("/static/")) ? `${DEPARTMENT_API}${image}` : image),
+      }))))
+      .catch(() => setManagedDepartments([]));
+  }, []);
+
+  const allDepartments = useMemo(() => {
+    return departmentsData.map((defaultDept) => {
+      const managed = managedDepartments.find((m) => m.slug === defaultDept.slug);
+      if (managed) {
+        return {
+          ...defaultDept,
+          ...managed,
+          image: managed.image || defaultDept.image,
+          gallery: (managed.gallery && managed.gallery.length > 0) ? managed.gallery : defaultDept.gallery,
+        };
+      }
+      return defaultDept;
+    }).concat(
+      managedDepartments.filter((m) => !departmentsData.some((d) => d.slug === m.slug))
+    );
+  }, [managedDepartments]);
+  const department = useMemo(() => allDepartments.find((d) => d.slug === slug), [allDepartments, slug]);
+
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [showAllDoctors, setShowAllDoctors] = useState(false);
+
+  useEffect(() => {
     setLightboxIndex(null);
+    setShowAllDoctors(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
-  const filteredDepartments = useMemo(() => {
-    const q = deptSearch.trim().toLowerCase();
-    if (!q) return departmentsData;
-    return departmentsData.filter((d) => d.name.toLowerCase().includes(q));
-  }, [deptSearch]);
-
   const gallery = department?.gallery || [];
+  // Keep a gallery area visible for departments that do not yet have photos.
+  // This sample is replaced automatically once gallery images are added in admin.
+  const displayedGallery = gallery.length > 0 ? gallery : [sampleGalleryImage];
+  const hasSingleGalleryImage = displayedGallery.length === 1;
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const showPrev = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + gallery.length) % gallery.length)),
-    [gallery.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + displayedGallery.length) % displayedGallery.length)),
+    [displayedGallery.length]
   );
   const showNext = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % gallery.length)),
-    [gallery.length]
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % displayedGallery.length)),
+    [displayedGallery.length]
   );
 
   useEffect(() => {
@@ -233,26 +393,32 @@ export default function DepartmentDetail() {
           to="/departments"
           className="mt-2 inline-block bg-red-600 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-red-700 transition"
         >
-          Browse all departments
+          Browse Centre of Excellence
         </Link>
       </div>
     );
   }
 
-  const stats = [
-    department.services?.length ? { label: "Services", value: department.services.length } : null,
-    (department.doctors?.length || department.visitingConsultants?.length)
-      ? {
-          label: "Doctors",
-          value: (department.doctors?.length || 0) + (department.visitingConsultants?.length || 0),
-        }
-      : null,
-    department.gallery?.length ? { label: "Photos", value: department.gallery.length } : null,
-  ].filter(Boolean);
+  const quickNav = getKeyServices(department).slice(0, 5);
+  const allServiceItems = getKeyServices(department);
+  const doctorCount = (department.doctors?.length || 0) + (department.visitingConsultants?.length || 0);
+  const heroHighlights = [
+    { icon: "clock", value: "24/7", label: `${department.name} care` },
+    { icon: "clipboard", value: allServiceItems.length ? `${allServiceItems.length}+` : "Care", label: "Specialist services" },
+    { icon: "users", value: doctorCount ? `${doctorCount}+` : "Expert", label: "Specialist team" },
+    { icon: "shield", value: "Safe", label: "Patient-first care" },
+  ];
+
+  const allDoctors = [
+    ...(department.doctors || []).map((d) => ({ ...d })),
+    ...(department.visitingConsultants || []).map((d) => ({ ...d, tag: "Visiting Consultant" })),
+  ];
+  const visibleDoctors = showAllDoctors ? allDoctors : allDoctors.slice(0, 4);
+
+  const journeySteps = quickNav.slice(0, 4);
 
   return (
-    <div className="bg-gray-100 pb-24 lg:pb-10">
-      {/* Local animation keyframes — scoped, no build config changes needed */}
+    <div className="bg-[#f7fafb] pb-24 lg:pb-10">
       <style>{`
         @keyframes deptFadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
         .dept-fade-in { animation: deptFadeIn .4s ease both; }
@@ -266,11 +432,25 @@ export default function DepartmentDetail() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 pt-6 sm:pt-10">
+        <section className="mb-5 rounded-2xl border border-slate-100 bg-white px-5 py-4 shadow-sm sm:px-8">
+          <p className="mb-4 text-center text-xs font-extrabold tracking-wide text-[#0E5260] sm:text-sm">
+            MODERN CARE <span className="text-slate-300">•</span> TRUSTED EXPERTISE <span className="text-slate-300">•</span> PATIENT-CENTRIC
+          </p>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-5">
+            {TRUST_PILLARS.map((pillar) => (
+              <div key={pillar.label} className="flex items-center justify-center gap-2 text-center text-[11px] font-semibold text-slate-700 sm:text-xs">
+                <Icon name={pillar.icon} className="h-5 w-5 shrink-0 text-[#0E5260]" />
+                <span>{pillar.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* BREADCRUMB */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4 overflow-x-auto no-scrollbar whitespace-nowrap">
           <Link to="/" className="hover:text-red-600 transition">Home</Link>
           <span>/</span>
-          <Link to="/departments" className="hover:text-red-600 transition">Departments</Link>
+          <Link to="/departments" className="hover:text-red-600 transition">Centre of Excellence</Link>
           <span>/</span>
           <span className="text-gray-800 font-medium">{department.name}</span>
         </nav>
@@ -282,304 +462,238 @@ export default function DepartmentDetail() {
             onChange={(e) => navigate(`/departments/${e.target.value}`)}
             className="w-full border border-gray-300 bg-white rounded-md px-4 py-2.5 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500"
           >
-            {departmentsData.map((dept) => (
-              <option key={dept.slug} value={dept.slug}>
-                {dept.name}
-              </option>
+            {allDepartments.map((dept) => (
+              <option key={dept.slug} value={dept.slug}>{dept.name}</option>
             ))}
           </select>
         </div>
 
-        {/* MAIN GRID */}
+        {/* MAIN GRID: content | sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* SIDEBAR — sticky, searchable */}
-          <div className="hidden lg:block lg:col-span-3">
-            <div className="sticky top-6 bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="p-3 border-b">
-                <div className="relative">
-                  <input
-                    type="text"
-                    value={deptSearch}
-                    onChange={(e) => setDeptSearch(e.target.value)}
-                    placeholder="Search departments..."
-                    className="w-full text-sm rounded-md border border-gray-200 bg-gray-50 pl-9 pr-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white transition"
-                  />
-                  <svg
-                    className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400"
-                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                      d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="max-h-[60vh] overflow-y-auto">
-                {filteredDepartments.length === 0 && (
-                  <p className="px-5 py-4 text-sm text-gray-400">No departments match.</p>
-                )}
-                {filteredDepartments.map((dept) => (
-                  <Link
-                    key={dept.slug}
-                    to={`/departments/${dept.slug}`}
-                    className={`block px-5 py-3 border-b text-sm font-medium transition
-                    ${dept.slug === slug
-                        ? "bg-red-600 text-white"
-                        : "text-gray-700 hover:bg-red-50 hover:text-red-700"
-                      }`}
-                  >
-                    {dept.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* CONTENT */}
-          <div className="lg:col-span-9">
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              {/* IMAGE BANNER */}
-              <div className="relative w-full h-[240px] sm:h-[340px] lg:h-[400px]">
+          {/* MAIN CONTENT */}
+          <div className="lg:col-span-9 space-y-12 sm:space-y-16">
+            {/* ================= HERO ================= */}
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              <div className="relative w-full h-[350px] sm:h-[440px] lg:h-[500px]">
                 <img
                   src={department.image}
                   alt={department.name}
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-
-                <div className="absolute bottom-5 left-5 sm:left-8 right-5 sm:right-8">
-                  <h1 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold dept-fade-in">
-                    {department.name}
-                  </h1>
-
-                  {stats.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-3">
-                      {stats.map((s) => (
-                        <span
-                          key={s.label}
-                          className="bg-white/15 backdrop-blur-sm text-white text-xs sm:text-sm font-medium px-3 py-1 rounded-full border border-white/30"
-                        >
-                          {s.value} {s.label}
-                        </span>
-                      ))}
+                <div className="absolute inset-0 flex items-end pb-8 sm:pb-12 lg:pb-16">
+                  <div className="px-6 sm:px-10">
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        to={APPOINTMENT_LINK}
+                        className="bg-[#22a66c] hover:bg-[#168553] transition text-white text-sm font-semibold px-6 py-2.5 rounded-md"
+                      >
+                        Book Appointment
+                      </Link>
+                      <a
+                        href={`tel:${HOSPITAL_PHONE}`}
+                        className="border border-white/70 hover:bg-white/10 transition text-white text-sm font-semibold px-6 py-2.5 rounded-md"
+                      >
+                        Talk to Expert
+                      </a>
                     </div>
-                  )}
+                  </div>
                 </div>
+
               </div>
 
-              {/* TAB BAR — sticky under the banner, horizontally scrollable on mobile */}
-              <div className="sticky top-0 z-20 bg-white border-b overflow-x-auto no-scrollbar">
-                <div className="flex gap-1 px-3 sm:px-6">
-                  {availableSections.map((section) => (
-                    <button
-                      key={section.key}
-                      onClick={() => setActiveTab(section.key)}
-                      className={`relative whitespace-nowrap px-4 py-3.5 text-sm sm:text-[15px] font-medium transition-colors
-                        ${activeTab === section.key
-                          ? "text-red-600"
-                          : "text-gray-500 hover:text-red-500"
-                        }`}
-                    >
-                      {section.label}
-                      {activeTab === section.key && (
-                        <span className="absolute left-3 right-3 -bottom-px h-[2.5px] bg-red-600 rounded-full" />
-                      )}
-                    </button>
-                  ))}
+              {/* QUICK NAV STRIP */}
+              {quickNav.length > 0 && (
+                <div className="relative z-10 mx-3 -mt-4 rounded-xl border border-slate-100 bg-white shadow-md overflow-x-auto no-scrollbar sm:mx-8">
+                  <div className="flex divide-x">
+                    {quickNav.map((item, i) => (
+                      <div key={i} className="flex-1 min-w-[130px] px-4 py-5 text-center flex flex-col items-center gap-2">
+                        <div className="w-9 h-9 rounded-full bg-[#0E3B39]/10 flex items-center justify-center text-[#0E3B39]">
+                          <Icon name={QUICK_NAV_ICON_ORDER[i % QUICK_NAV_ICON_ORDER.length]} className="w-4.5 h-4.5" />
+                        </div>
+                        <p className="text-xs sm:text-[13px] font-medium text-gray-600 leading-tight">{item}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              {/* TAB PANELS */}
-              <div className="p-6 sm:p-8 lg:p-12">
-                {availableSections.map((section) => {
-                  if (section.key !== activeTab) return null;
-
-                  return (
-                    <div key={section.key} className="dept-fade-in">
-                      {section.key === "overview" && (
-                        <DescriptionBlock text={department.description} />
-                      )}
-
-                      {section.field &&
-                        !["doctors", "visitingConsultants", "gallery"].includes(section.key) && (
-                          <>
-                            <h2 className="text-xl sm:text-2xl font-semibold mb-5 text-red-600">
-                              {section.heading}
-                            </h2>
-                            <SimpleList items={department[section.field]} />
-                          </>
-                        )}
-
-                      {section.key === "doctors" && (
-                        <>
-                          <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mb-8">
-                            Our Doctors
-                          </h2>
-                          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                            {department.doctors.map((doc, i) => (
-                              <PersonCard key={i} person={doc} index={i} />
-                            ))}
-                          </div>
-                        </>
-                      )}
-
-                      {section.key === "visitingConsultants" && (
-                        <>
-                          <h2 className="text-2xl sm:text-3xl font-bold text-red-600 mb-8">
-                            Visiting Consultants
-                          </h2>
-                          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                            {department.visitingConsultants.map((doc, i) => (
-                              <PersonCard key={i} person={doc} index={i} />
-                            ))}
-                          </div>
-                        </>
-                      )}
-
-{/* =========================
-    DEPARTMENT GALLERY
-========================= */}
-
-{section.key === "gallery" && (
-  <section>
-
-    {/* HEADING */}
-    <div className="flex items-center gap-4 mb-8 sm:mb-10">
-      <span className="flex-1 h-px bg-[#E7DCC0]" />
-
-      <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl text-[#6B0F2A] tracking-wide whitespace-nowrap">
-        Department Gallery
-      </h2>
-
-      <span className="flex-1 h-px bg-[#E7DCC0]" />
-    </div>
-
-
-    {/* GALLERY GRID */}
-    <div
-      className="
-        grid
-        grid-cols-1
-        sm:grid-cols-2
-        md:grid-cols-3
-        lg:grid-cols-4
-        gap-4
-        sm:gap-5
-      "
-    >
-      {gallery.map((img, i) => (
-        <button
-          key={`${department.slug}-gallery-${i}`}
-          type="button"
-          onClick={() => setLightboxIndex(i)}
-          className="
-            group
-            relative
-            bg-white
-            p-2
-            rounded-xl
-            border
-            border-[#E7DCC0]
-            shadow-sm
-            hover:shadow-xl
-            transition-all
-            duration-300
-            dept-fade-in
-            text-left
-          "
-          style={{
-            animationDelay: `${Math.min(i, 12) * 40}ms`,
-          }}
-        >
-          <div
-            className="
-              relative
-              w-full
-              aspect-[4/3]
-              rounded-lg
-              overflow-hidden
-              ring-1
-              ring-[#C6A15B]/40
-              bg-gray-100
-            "
-          >
-            <img
-              src={img}
-              alt={`${department.name} - ${i + 1}`}
-              loading="lazy"
-              className="
-                w-full
-                h-full
-                object-cover
-                object-center
-                transition-transform
-                duration-500
-                group-hover:scale-105
-              "
-            />
-
-            {/* HOVER OVERLAY */}
-            <div
-              className="
-                absolute
-                inset-0
-                bg-black/40
-                opacity-0
-                group-hover:opacity-100
-                transition-opacity
-                duration-300
-                flex
-                items-center
-                justify-center
-              "
-            >
-              <span
-                className="
-                  text-white
-                  text-xs
-                  tracking-[0.2em]
-                  uppercase
-                  border
-                  border-white/70
-                  px-4
-                  py-1.5
-                  rounded-full
-                "
-              >
-                View
-              </span>
+              )}
             </div>
 
+            {/* ================= CENTRE OF EXCELLENCE GRID ================= */}
+            {allServiceItems.length > 0 && (
+              <section>
+                <div className="text-center mb-8">
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-[#0E5260] font-semibold mb-1">
+                    Centre of Excellence
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+                    Comprehensive {department.name} Care
+                  </h2>
+                </div>
+                <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
+                  <SimpleList items={allServiceItems} />
+                </div>
+              </section>
+            )}
+
+            {/* ================= DOCTORS ================= */}
+            {allDoctors.length > 0 && (
+              <section>
+                <div className="flex items-end justify-between mb-8">
+                  <div>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-red-600 font-semibold mb-1">
+                      Our Expert {department.name} Team
+                    </p>
+                    <h2 className="font-serif text-2xl sm:text-3xl text-[#6B0F2A]">Meet Our Specialists</h2>
+                  </div>
+                  {allDoctors.length > 4 && (
+                    <button
+                      type="button"
+                      onClick={() => setShowAllDoctors((v) => !v)}
+                      className="text-sm font-semibold text-[#0E3B39] hover:underline whitespace-nowrap"
+                    >
+                      {showAllDoctors ? "Show Less" : "View All Doctors →"}
+                    </button>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                  {visibleDoctors.map((doc, i) => (
+                    <DoctorGridCard key={i} person={doc} index={i} tag={doc.tag} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ================= PATIENT JOURNEY ================= */}
+            {journeySteps.length > 0 && (
+              <section>
+                <div>
+                    <p className="text-[11px] tracking-[0.2em] uppercase text-red-600 font-semibold mb-1">
+                      Patient Journey
+                    </p>
+                    <h2 className="font-serif text-xl sm:text-2xl text-[#6B0F2A] mb-6">Your Safety, Our Priority</h2>
+
+                    <ol className="space-y-5">
+                      {journeySteps.map((step, i) => (
+                        <li key={i} className="flex items-start gap-4 dept-fade-in" style={{ animationDelay: `${i * 60}ms` }}>
+                          <div className="w-10 h-10 rounded-full bg-[#0E3B39]/10 flex items-center justify-center shrink-0 text-[#0E3B39]">
+                            <Icon name={QUICK_NAV_ICON_ORDER[i % QUICK_NAV_ICON_ORDER.length]} className="w-4.5 h-4.5" />
+                          </div>
+                          <div>
+                            <p className="text-xs font-bold text-gray-400 mb-0.5">{String(i + 1).padStart(2, "0")}</p>
+                            <h4 className="text-sm sm:text-base font-semibold text-gray-800">{step}</h4>
+                            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                              {JOURNEY_BLURBS[i % JOURNEY_BLURBS.length]}
+                            </p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                </div>
+              </section>
+            )}
           </div>
-        </button>
-      ))}
-    </div>
 
-
-    {/* IF NO IMAGES */}
-    {gallery.length === 0 && (
-      <div className="text-center py-12 text-gray-500">
-        No department images available.
-      </div>
-    )}
-
-  </section>
-)}
-    
-                    </div>
-                  );
-                })}
-              </div>
+          {/* SIDEBAR */}
+          <div className="lg:col-span-3">
+            <div className="lg:sticky lg:top-6">
+              <InfoSidebar department={department} />
             </div>
           </div>
         </div>
+
+        {/* ================= DEPARTMENT GALLERY ================= */}
+        {gallery.length > 0 && (
+          <section className="mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-white to-[#f7f4ef] p-5 shadow-[0_18px_50px_rgba(14,59,57,0.10)] sm:p-8">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-red-600">Department Gallery</p>
+                <h2 className="mt-2 font-serif text-2xl text-[#5c1029] sm:text-3xl">A Closer Look at Our Care</h2>
+                <p className="mt-2 text-sm text-slate-500">Thoughtfully designed spaces for comfortable, expert-led care.</p>
+              </div>
+              <span className="rounded-full border border-[#0E3B39]/10 bg-white px-3.5 py-2 text-xs font-bold text-[#0E3B39] shadow-sm">
+                {gallery.length} facility {gallery.length === 1 ? "photo" : "photos"}
+              </span>
+            </div>
+
+            <div className={`grid grid-cols-1 gap-3 sm:grid-cols-4 ${hasSingleGalleryImage ? "" : "sm:min-h-[340px]"}`}>
+              {displayedGallery.slice(0, 4).map((image, index) => (
+                <button
+                  key={`${image}-${index}`}
+                  type="button"
+                  onClick={() => setLightboxIndex(index)}
+                  className={`group relative overflow-hidden rounded-2xl bg-slate-100 text-left ring-1 ring-black/5 shadow-[0_10px_28px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(15,23,42,0.18)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+                    hasSingleGalleryImage
+                      ? "w-full aspect-[16/9] md:aspect-[21/9] sm:col-span-4"
+                      : index === 0
+                        ? "sm:col-span-2 sm:row-span-2 aspect-[16/9] sm:aspect-auto"
+                        : "aspect-[16/9]"
+                  }`}
+                  aria-label={`Open gallery image ${index + 1}`}
+                >
+                  <img
+                    src={image}
+                    alt={`${department.name} gallery ${index + 1}`}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3.5 py-2 text-xs font-bold text-[#0E3B39] shadow-lg">
+                    View gallery ↗
+                  </span>
+                </button>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* CONTACT / APPOINTMENT STRIP */}
+        <div className="mt-10 bg-[#0E3B39] rounded-lg p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
+          <div>
+            <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Have Questions?</p>
+            <a href={`tel:${HOSPITAL_PHONE}`} className="text-white font-semibold hover:underline">
+              {HOSPITAL_PHONE_DISPLAY}
+            </a>
+          </div>
+          <div>
+            <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Location</p>
+            <p className="text-white font-semibold text-sm">{HOSPITAL_LOCATION}</p>
+          </div>
+          <div>
+            <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Emergency</p>
+            <a href={`tel:${HOSPITAL_PHONE}`} className="text-white font-semibold hover:underline">
+              24/7 Emergency Care · {HOSPITAL_PHONE_DISPLAY}
+            </a>
+          </div>
+          <Link
+            to={APPOINTMENT_LINK}
+            className="justify-self-start sm:justify-self-end bg-red-600 hover:bg-red-700 transition text-white font-semibold text-sm px-6 py-3 rounded-full text-center"
+          >
+            Book Appointment Now
+          </Link>
+        </div>
       </div>
 
-      {/* FLOATING CALL / ENQUIRE BUTTON */}
-      
+      {/* FLOATING MOBILE CALL / BOOK BUTTON */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-white border-t shadow-[0_-2px_10px_rgba(0,0,0,0.06)] flex">
+        <a
+          href={`tel:${HOSPITAL_PHONE}`}
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-gray-700"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          Call Us
+        </a>
+        <Link
+          to={APPOINTMENT_LINK}
+          className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-red-600"
+        >
+          Book Appointment
+        </Link>
+      </div>
 
       {/* LIGHTBOX */}
-      {lightboxIndex !== null && gallery.length > 0 && (
+      {lightboxIndex !== null && displayedGallery.length > 0 && (
         <div
           className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 dept-pop"
           onClick={closeLightbox}
@@ -592,7 +706,7 @@ export default function DepartmentDetail() {
             ✕
           </button>
 
-          {gallery.length > 1 && (
+          {displayedGallery.length > 1 && (
             <>
               <button
                 onClick={(e) => { e.stopPropagation(); showPrev(); }}
@@ -616,13 +730,13 @@ export default function DepartmentDetail() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={gallery[lightboxIndex]}
+              src={displayedGallery[lightboxIndex]}
               alt={`${department.name} full view`}
               className="max-w-[90vw] max-h-[80vh] rounded-xl shadow-2xl object-contain"
             />
-            {gallery.length > 1 && (
+            {displayedGallery.length > 1 && (
               <div className="text-center text-white/70 text-xs mt-2 tracking-wide">
-                {lightboxIndex + 1} / {gallery.length}
+                {lightboxIndex + 1} / {displayedGallery.length}
               </div>
             )}
           </div>

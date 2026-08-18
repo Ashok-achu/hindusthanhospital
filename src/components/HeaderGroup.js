@@ -206,7 +206,7 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
 
             {/* ---------- NAVBAR ---------- */}
             <div className="sticky top-0 z-[9999] w-full flex justify-center bg-white/80 backdrop-blur-md py-2 px-3 shadow-md">
-                <div className="bg-white w-full md:w-[95%] max-w-7xl rounded-full shadow-xl px-3 sm:px-5 lg:px-6 h-16 lg:h-[62px] flex items-center gap-3 lg:gap-5">
+                <div className="relative bg-white w-full md:w-[95%] max-w-7xl rounded-full shadow-lg border border-slate-100/50 px-3 sm:px-5 lg:px-6 h-16 lg:h-[62px] flex items-center gap-3 lg:gap-5">
 
                     {/* Logo — static, never toggles, so it never collides with the top bar */}
                     <NavLink to="/" className="flex-shrink-0">
@@ -220,14 +220,20 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
                     {/* Desktop nav */}
                     <nav className="hidden lg:flex flex-1 items-center justify-center gap-6 xl:gap-7">
                         {nav.map((item, i) => (
-                            <div key={i} className="relative"
+                            <div key={i} className={item.mega ? "" : "relative"}
                                 onMouseEnter={() => openDropdown(i)}
                                 onMouseLeave={closeDropdown}>
 
-                                <div className="flex items-center gap-1 py-2 font-semibold text-sm cursor-pointer text-slate-700 hover:text-rose-600 transition-colors">
-                                    {item.to ? <NavLink to={item.to}>{item.label}</NavLink> : <span>{item.label}</span>}
+                                <div className="flex items-center gap-1 py-2 font-semibold text-sm cursor-pointer transition-colors">
+                                    {item.to ? (
+                                        <NavLink to={item.to} className={({ isActive }) => isActive ? "text-rose-600" : "text-slate-700 hover:text-rose-600 transition-colors"}>
+                                            {item.label}
+                                        </NavLink>
+                                    ) : (
+                                        <span className={activeDropdown === i ? "text-rose-600" : "text-slate-700 hover:text-rose-600 transition-colors"}>{item.label}</span>
+                                    )}
                                     {item.children && (
-                                        <FaChevronDown className={`text-xs transition-transform duration-200 ${activeDropdown === i ? "rotate-180" : ""}`} />
+                                        <FaChevronDown className={`text-xs text-slate-400 transition-transform duration-200 ${activeDropdown === i ? "rotate-180" : ""}`} />
                                     )}
                                 </div>
 
@@ -238,22 +244,45 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: .2 }}
-                                            className={`absolute top-full mt-3 bg-white rounded-xl shadow-2xl p-2 z-50 ${item.mega ? "w-[860px] grid grid-cols-4 gap-x-1" : "w-64"}`}>
+                                            className={`absolute top-full mt-3 bg-white rounded-3xl shadow-2xl z-50 border border-slate-100/80 ${
+                                                item.mega 
+                                                    ? "left-0 w-full p-8" 
+                                                    : "left-0 w-64 p-2"
+                                            }`}>
 
-                                            {item.children.map((sub, j) => {
-                                                if (typeof sub === "string") {
-                                                    return <NavLink key={j} to={toSlug(sub)}
-                                                        className="block px-4 py-2 text-sm hover:text-rose-600 rounded-lg hover:bg-rose-50">{sub}</NavLink>;
-                                                }
-                                                if (sub.external) {
-                                                    return <a key={j} href={sub.to} target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="block px-4 py-2 text-sm hover:text-rose-600 rounded-lg hover:bg-rose-50">{sub.label}</a>;
-                                                }
-                                                return <NavLink key={j} to={sub.to}
-                                                    className="block px-4 py-2 text-sm hover:text-rose-600 rounded-lg hover:bg-rose-50">{sub.label}</NavLink>;
-                                            })}
-
+                                            {item.mega ? (
+                                                <div className="grid grid-cols-4 gap-8">
+                                                    {[0, 1, 2, 3].map((colIdx) => {
+                                                        const itemsPerCol = Math.ceil(item.children.length / 4);
+                                                        const colItems = item.children.slice(colIdx * itemsPerCol, (colIdx + 1) * itemsPerCol);
+                                                        return (
+                                                            <div key={colIdx} className="space-y-1">
+                                                                {colItems.map((sub, j) => {
+                                                                    const linkClass = "block px-4 py-2.5 text-[13.5px] font-semibold text-slate-700 hover:text-rose-600 hover:bg-rose-50/70 rounded-xl transition-all duration-200";
+                                                                    if (typeof sub === "string") {
+                                                                        return <NavLink key={j} to={toSlug(sub)} className={linkClass}>{sub}</NavLink>;
+                                                                    }
+                                                                    if (sub.external) {
+                                                                        return <a key={j} href={sub.to} target="_blank" rel="noopener noreferrer" className={linkClass}>{sub.label}</a>;
+                                                                    }
+                                                                    return <NavLink key={j} to={sub.to} className={linkClass}>{sub.label}</NavLink>;
+                                                                })}
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            ) : (
+                                                item.children.map((sub, j) => {
+                                                    const linkClass = "block px-3.5 py-2 text-sm text-slate-700 hover:text-rose-600 rounded-lg hover:bg-rose-50/70 transition-all";
+                                                    if (typeof sub === "string") {
+                                                        return <NavLink key={j} to={toSlug(sub)} className={linkClass}>{sub}</NavLink>;
+                                                    }
+                                                    if (sub.external) {
+                                                        return <a key={j} href={sub.to} target="_blank" rel="noopener noreferrer" className={linkClass}>{sub.label}</a>;
+                                                    }
+                                                    return <NavLink key={j} to={sub.to} className={linkClass}>{sub.label}</NavLink>;
+                                                })
+                                            )}
                                         </motion.div>
                                     )}
                                 </AnimatePresence>

@@ -1,0 +1,5 @@
+
+> backend@1.0.0 start
+> node server-json.js
+
+Department API running on 5000
