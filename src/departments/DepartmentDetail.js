@@ -399,7 +399,7 @@ export default function DepartmentDetail() {
     );
   }
 
-  const quickNav = getKeyServices(department).slice(0, 5);
+  const quickNav = (department.highlights?.length ? department.highlights : getKeyServices(department)).slice(0, 5);
   const allServiceItems = getKeyServices(department);
   const doctorCount = (department.doctors?.length || 0) + (department.visitingConsultants?.length || 0);
   const heroHighlights = [
@@ -517,6 +517,21 @@ export default function DepartmentDetail() {
                 </div>
               )}
             </div>
+
+            {/* ================= DEPARTMENT OVERVIEW ================= */}
+            {department.overview && (
+              <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E5260]">
+                  Department Overview
+                </p>
+                <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+                  {department.name}
+                </h2>
+                <p className="mt-4 text-[15px] leading-7 text-slate-600 sm:text-base sm:leading-8">
+                  {department.overview}
+                </p>
+              </section>
+            )}
 
             {/* ================= CENTRE OF EXCELLENCE GRID ================= */}
             {allServiceItems.length > 0 && (

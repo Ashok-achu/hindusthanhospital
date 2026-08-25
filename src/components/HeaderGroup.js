@@ -62,7 +62,6 @@ export default function HeaderGroup() {
             children: [
                 { label: "About Trust", to: "https://hindusthan.net/about-us", external: true },
                 { label: "Mission & Vision", to: "/mission" },
-                { label: "Our Profile", to: "/profile" },
                 { label: "Milestones", to: "/milestones" },
             ],
         },
@@ -85,6 +84,7 @@ export default function HeaderGroup() {
             label: "Media",
             children: [
                 { label: "News", to: "/news" },
+                { label: "Updates & Insights", to: "/news" },
                 { label: "Brochuer", to: "/brochure/hindusthan-hospital-brochure.pdf", external: true },
             ],
         },

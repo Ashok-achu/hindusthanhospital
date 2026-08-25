@@ -293,6 +293,14 @@ The Department of Anaesthesiology actively participates in medical education, cl
 
 Whether you require general anaesthesia, regional anaesthesia, obstetric anaesthesia, paediatric anaesthesia, cardiac anaesthesia or critical care support, Hindusthan Hospitals is committed to providing safe, modern and evidence-based anaesthesia care in Coimbatore.
 `,
+  overview: "The Department of Anaesthesia provides comprehensive anaesthesia and perioperative care, including general anaesthesia, regional anaesthesia, monitored anaesthesia care, preoperative evaluation and acute pain management. Specialized services are available for obstetric, paediatric, cardiovascular, oncology and neurosurgical procedures. The department also supports critical care and day-care procedures such as thoracoscopy, bronchoscopy, endoscopy and colonoscopy, with a focus on patient safety, comfort, rapid recovery and compassionate care.",
+  highlights: [
+    "General Anaesthesia for Major & Complex Surgeries",
+    "Regional Anaesthesia (Spinal, Epidural & Nerve Blocks)",
+    "Monitored Anaesthesia Care (MAC)",
+    "Comprehensive Pre-operative Assessment",
+    "Acute & Post-operative Pain Management"
+  ],
   services: [
 "General Anaesthesia for Major & Complex Surgeries",
 "Regional Anaesthesia (Spinal, Epidural & Nerve Blocks)",
@@ -440,12 +448,23 @@ Why Choose Hindusthan Hospitals for Cardiology in Coimbatore?
 The Department of Cardiology at Hindusthan Hospitals is committed to providing comprehensive cardiac care from early diagnosis and prevention to advanced interventional treatment and long-term heart health management.
 `,
 
+  overview: "The Department of Cardiology provides diagnosis and treatment for disorders of the heart and blood vessels. Services include 12-lead ECG, 2D echocardiogram, TMT, Stress ECHO, TEE, Holter monitoring, ABPM, coronary angiogram and angioplasty, EPS with RFA, ICD and primary and temporary pacemaker implantation. The department also offers Adult Cardiology, Interventional Cardiology, Non-Invasive Cardiology, Heart Failure Treatment and Cardiac Rehabilitation.",
+  highlights: [
+    "12-Lead ECG & 2D Echocardiogram",
+    "TMT, Stress ECHO & TEE",
+    "Holter Monitoring & ABPM",
+    "Coronary Angiogram & Angioplasty",
+    "EPS, RFA, ICD & Pacemakers"
+  ],
   services: [
     "12 Lead ECG",
     "2D Echocardiogram",
     "TMT (Stress Test)",
     "Holter Monitoring",
-    "Ambulatory Blood Pressure Monitoring (ABPM)"
+    "Ambulatory Blood Pressure Monitoring (ABPM)",
+    "Stress ECHO & Transoesophageal Echocardiogram (TEE)",
+    "Electrophysiology Study (EPS) & Radiofrequency Ablation (RFA)",
+    "ICD Implantation & Temporary Pacemaker Implantation"
   ],
 
   // 🔹 CATH LAB SERVICES
@@ -495,6 +514,7 @@ The Department of Cardiology at Hindusthan Hospitals is committed to providing c
 {
   slug: "dentistry",
   name: "Dental & Facio Maxillary",
+  overview: "The Department of Dental and Facio Maxillary Care provides comprehensive oral healthcare for patients of all ages. Services include preventive dentistry, restorative treatment, root canal therapy, periodontal care, tooth replacement, oral surgery and treatment for conditions affecting the teeth, gums, jaws and facial structures. The department focuses on accurate diagnosis, comfortable treatment and personalised plans that support lasting oral health and confident smiles.",
 
   seo: {
     title: "Best Dental Hospital in Coimbatore | Hindusthan Hospitals",
@@ -773,6 +793,14 @@ Why Choose Hindusthan Hospitals for Diabetes & General Medicine in Coimbatore?
 The Department of Diabetology & General Medicine at Hindusthan Hospitals is committed to providing comprehensive, patient-focused medical care with an emphasis on prevention, early diagnosis and effective long-term management of diabetes and other medical conditions.
 `,
 
+  overview: "The department focuses on disease prevention, early diagnosis and comprehensive management of acute and chronic medical conditions. Services include adult vaccinations, lifestyle preventive measures, education on exercise and nutrition, risk assessment for metabolic and chronic diseases and preventive health check-ups. Special emphasis is given to the management of Type I, Type II and gestational diabetes, prevention of diabetic complications, diabetic emergencies, diabetic foot prevention and comprehensive geriatric care.",
+  highlights: [
+    "Preventive Health Check-ups",
+    "Type 1 & Type 2 Diabetes Care",
+    "Gestational Diabetes Management",
+    "Diabetic Foot Prevention",
+    "Comprehensive Geriatric Care"
+  ],
   services: [
     "Blood Sugar Monitoring",
     "Type 1 & Type 2 Diabetes Care",
@@ -815,6 +843,7 @@ The Department of Diabetology & General Medicine at Hindusthan Hospitals is comm
 {
   slug: "emergency-care",
   name: "Emergency Care",
+  overview: "The Emergency Care Department provides immediate medical care for life-threatening and urgent health conditions and operates 24/7. The department is supported by well-equipped resuscitation and triage areas, advanced monitoring and life-support systems, immediate access to laboratory, radiology, ICU, operation theatre and blood bank facilities, along with dedicated ambulance and pre-hospital care support.",
 
   seo: {
     title: "24x7 Emergency Hospital in Coimbatore | Hindusthan Hospitals",
@@ -1045,6 +1074,14 @@ Why Choose Hindusthan Hospitals for ENT Care in Coimbatore?
 The Department of ENT & Head and Neck Surgery at Hindusthan Hospitals provides comprehensive ENT care ranging from routine evaluation to specialized endoscopic and surgical treatment.
 `,
 
+  overview: "The Department of ENT and Head and Neck Surgery provides comprehensive diagnosis and treatment for ENT disorders, including head and neck cancers. Services include ENT OPD and endoscopy, sinus surgery, mastoid and middle-ear surgery, microscopic ear surgery, common ENT procedures, salivary gland treatment, voice improvement surgery, snoring and sleep surgery, allergy diagnosis, treatment for nasal conditions, vertigo, headaches and cancers of the mouth and throat. Sub-specialties include Paediatric ENT, Neuro ENT, Head and Neck Surgery, Laryngology, Endocrine Surgery and Skull Base Surgery.",
+  highlights: [
+    "ENT OPD & Endoscopy",
+    "Sinus & Mastoid Surgery",
+    "Microscopic Ear Surgery",
+    "Voice, Snoring & Sleep Surgery",
+    "Head & Neck Cancer Care"
+  ],
   services: [
     "ENT OPD & Endoscopy",
     "Sinus Surgery",
@@ -1052,7 +1089,11 @@ The Department of ENT & Head and Neck Surgery at Hindusthan Hospitals provides c
     "Voice Disorder Treatment",
     "Snoring & Sleep Surgery",
     "Voice Improvement",
-    "Phonosurgery"
+    "Phonosurgery",
+    "Mastoid & Middle-ear Surgery",
+    "Salivary Gland Treatment",
+    "Allergy, Vertigo & Nasal Condition Care",
+    "Head & Neck Cancer Surgery"
   ],
 
   subSpecialities: [
@@ -1239,6 +1280,14 @@ Why Choose Hindusthan Hospitals for Neuroscience Care in Coimbatore?
 The Department of Neuroscience at Hindusthan Hospitals provides coordinated neurological care from emergency treatment and complex neurosurgery to neurological management and long-term rehabilitation.
 `,
 
+  overview: "The Department of Neuroscience provides comprehensive care through Neurosurgery, Neurology, Psychiatry, Neuro Critical Care, Neurophysiotherapy and Neurorehabilitation services. Neurosurgical services include intensive head injury care, trauma surgery, spine surgery, paediatric brain surgery, skull base surgery, endoscopic brain surgery, micro-neurosurgery, neurovascular and neuro-endovascular surgery. Neurology services include intensive stroke care, headache management, diabetic neuropathy, muscle diseases, sleep disorders, spine-related conditions, post-stroke rehabilitation, vertigo and neuro infections. The department also provides psychiatric care, Neuro ICU services, inpatient and outpatient services, neuro rehabilitation and neuro-related investigations.",
+  highlights: [
+    "Neurosurgery & Neurology",
+    "Intensive Stroke & Neuro ICU Care",
+    "Brain, Spine & Skull Base Surgery",
+    "Psychiatry & Neurophysiotherapy",
+    "Neurorehabilitation Services"
+  ],
   services: [
     "Head Injury & Neuro Trauma Care",
     "Brain Surgery",
@@ -1428,6 +1477,14 @@ Why Choose Hindusthan Hospitals for General & Laparoscopic Surgery in Coimbatore
 The Department of General & Laparoscopic Surgery at Hindusthan Hospitals is committed to providing comprehensive surgical care using appropriate conventional, minimally invasive and advanced surgical techniques.
 `,
 
+  overview: "The Department of General Surgery and Laparoscopic Surgery offers a wide range of advanced surgical procedures supported by modern operation theatres and technology. Laparoscopic or keyhole procedures such as hernioplasty, cholecystectomy, appendicectomy and diagnostic laparoscopy are routinely performed to support minimal pain and faster recovery. Robotic surgery is also offered for appropriate patients. The department manages conditions including piles, fissures, fistula, pilonidal sinus, hydrocele, diabetic foot, ulcers, varicose veins, breast lumps, thyroid swelling and acute abdominal conditions.",
+  highlights: [
+    "Laparoscopic Hernia Repair",
+    "Laparoscopic Cholecystectomy",
+    "Appendicectomy & Diagnostic Laparoscopy",
+    "Piles, Fissure & Fistula Surgery",
+    "Robotic Surgery"
+  ],
   services: [
     "Laparoscopic Hernia Repair",
     "Laparoscopic Cholecystectomy",
@@ -1479,6 +1536,7 @@ The Department of General & Laparoscopic Surgery at Hindusthan Hospitals is comm
 {
   slug: "gastroenterology",
   name: "Gastroenterology",
+  overview: "The Department of Medical Gastroenterology provides comprehensive care for disorders of the digestive system, liver, pancreas and biliary tract. Services include advanced diagnostic and therapeutic endoscopy, upper GI endoscopy, colonoscopy and other specialized procedures. The department focuses on accurate diagnosis, medical management, preventive care, long-term follow-up, patient education and lifestyle guidance.",
 
   seo: {
     title: "Best Gastroenterology Hospital in Coimbatore | Hindusthan Hospitals",
@@ -1585,6 +1643,7 @@ The Department of Gastroenterology at Hindusthan Hospitals is committed to deliv
 {
   slug: "icu",
   name: "Intensive Care Unit",
+  overview: "The Intensive Care Unit provides round-the-clock monitoring and advanced treatment for critically ill patients. Our multidisciplinary team delivers coordinated care for medical, surgical, cardiac, neurological and post-operative emergencies using continuous monitoring, ventilatory support, organ-support therapies and timely specialist intervention. Every care plan prioritises patient safety, clear communication and compassionate support for patients and families.",
 
   seo: {
     title: "Best ICU & Critical Care Hospital in Coimbatore | Hindusthan Hospitals",
@@ -1716,6 +1775,7 @@ The Intensive Care Unit at Hindusthan Hospitals is committed to delivering high-
 {
   slug: "nephrology",
   name: "Nephrology",
+  overview: "The Department of Nephrology provides specialised care for kidney-related conditions, including acute and chronic kidney disease, kidney stones, urinary abnormalities, electrolyte disorders and hypertension associated with kidney disease. Services include kidney health assessment, dialysis support, preventive guidance and long-term follow-up. The team works closely with other specialties to provide personalised, evidence-based care and help patients maintain the best possible kidney health.",
 
   seo: {
     title: "Best Nephrology & Dialysis Hospital in Coimbatore | Hindusthan",
@@ -1881,6 +1941,7 @@ The Department of Nephrology at Hindusthan Hospitals is committed to providing c
 {
   slug: "obgyn",
   name: "Obstetrics & Gynaecology",
+  overview: "The Department of Obstetrics and Gynaecology provides comprehensive care for women at every stage of life, from adolescent health and routine gynaecology to pregnancy, childbirth and menopause. Services include antenatal care, high-risk pregnancy management, labour and delivery support, minimally invasive gynaecological procedures, fertility guidance and preventive screening. Our team combines clinical expertise with compassionate, individualised care for mothers and families.",
 
   seo: {
     title: "Best Gynaecology & Maternity Hospital in Coimbatore | Hindusthan",
@@ -2176,6 +2237,14 @@ Why Choose Hindusthan Hospitals for Orthopaedics in Coimbatore?
 The Department of Orthopaedics & Joint Replacement at Hindusthan Hospitals provides comprehensive musculoskeletal care from fracture management and arthroscopy to complex trauma, spine surgery and advanced joint replacement procedures.
 `,
 
+  overview: "The Department of Orthopaedics and Joint Replacement Surgery provides comprehensive musculoskeletal care, ranging from orthopaedic medicine to complex surgery. Services include total and revision joint replacements, trauma and fracture management, ligament injury treatment, arthroscopic knee and shoulder surgery, paediatric orthopaedic surgery, spine surgery, deformity correction and bone tumour management.",
+  highlights: [
+    "Total & Revision Joint Replacement",
+    "Trauma & Fracture Management",
+    "Knee & Shoulder Arthroscopy",
+    "Paediatric Orthopaedic Surgery",
+    "Spine & Deformity Correction"
+  ],
   services: [
     "Orthopaedic Trauma Care",
     "Fracture Management",
@@ -2246,6 +2315,14 @@ We treat a wide range of paediatric conditions such as respiratory infections, g
 
 With a patient-centered approach and evidence-based practices, our department ensures holistic care and better health outcomes for every child.
 `,
+  overview: "The Department of Paediatrics and Neonatology provides comprehensive care for newborns, infants, children and adolescents. The department offers neonatal intensive care, management of premature and critically ill newborns, advanced neonatal procedures, paediatric outpatient and emergency care, immunization, growth monitoring, nutrition counselling and developmental assessment. The department also manages respiratory infections, gastrointestinal disorders, febrile illnesses, nutritional deficiencies, urinary conditions, seizures, developmental delays and other paediatric conditions. Paediatric surgical services include daycare, congenital, minimally invasive and emergency surgeries.",
+  highlights: [
+    "Level III Neonatal Intensive Care",
+    "Premature & Critical Newborn Care",
+    "Paediatric Emergency Care",
+    "Immunization & Growth Monitoring",
+    "Paediatric Surgical Services"
+  ],
   services: [
     "NICU Level III Care",
     "Neonatal Intensive Care",
@@ -2298,6 +2375,7 @@ With a patient-centered approach and evidence-based practices, our department en
 {
   slug: "paediatric-surgery",
   name: "Paediatric Surgery",
+  overview: "The Department of Paediatric Surgery and Paediatric Urology provides consultation and surgical care for a wide range of congenital, urological and surgical conditions in children. OP services include urinary tract infections, hypospadias, constipation, abdominal pain, hydronephrosis, anorectal problems, cleft lip and palate, and disorders of sexual differentiation. Surgical services include newborn and preterm baby surgeries, hernia and hydrocele surgery, undescended testis, appendicitis, laparoscopic procedures, thyroid surgery, head, neck and thoracic surgeries, urethroplasty, pyeloplasty, anorectal procedures, gallbladder surgery and other paediatric surgical procedures.",
   seo: {
     title: "Paediatric Surgery in Coimbatore | Hindusthan Hospitals",
     description: "Paediatric surgical care at Hindusthan Hospitals, Coimbatore led by Dr. Dharmendra R, covering congenital anomalies, hernia, hypospadias and minimally invasive paediatric surgery.",
@@ -2365,6 +2443,7 @@ Drainage of  various abscesses in childhood.
 {
   slug: "neurology",
   name: "Neurology",
+  overview: "The Department of Neurology provides diagnosis, treatment and long-term management for conditions affecting the brain, spinal cord, nerves and muscles. Services include stroke care, headache and migraine management, epilepsy care, movement disorder evaluation, neuropathy treatment, memory assessment and rehabilitation support. Patients receive coordinated, personalised care focused on early diagnosis, symptom relief, recovery and improved quality of life.",
   seo: {
     title: "Neurology Department in Coimbatore | Hindusthan Hospitals",
     description: "Neurology care at Hindusthan Hospitals, Coimbatore for stroke, epilepsy, migraine, Parkinson's disease and other brain, spinal cord and nerve disorders.",
@@ -2411,6 +2490,7 @@ The department is committed to providing personalized care with a multidisciplin
 {
   slug: "plastic-surgery",
   name: "Plastic & Reconstructive Surgery",
+  overview: "The Department of Plastic Surgery provides specialized reconstructive, restorative and aesthetic surgical care. The department offers both reconstructive and cosmetic procedures using advanced surgical techniques and modern infrastructure, with individualized treatment planning focused on achieving optimal functional and aesthetic outcomes.",
 
   seo: {
     title: "Plastic & Reconstructive Surgery in Coimbatore | Hindusthan",
@@ -2615,10 +2695,24 @@ Why Choose Hindusthan Hospitals for Pulmonology?
     "Allergy & Smoking Cessation"
   ],
 
+  overview: "The Institute of Lung Care and Research provides specialized respiratory and pulmonary care. Its services include asthma and COPD clinics, interstitial lung disease clinics, smoking cessation, allergy testing and desensitization, tuberculosis clinics, advanced pulmonary function testing, pulmonary rehabilitation, adult vaccination and clinical and academic research. The department also focuses strongly on patient education and public awareness programmes.",
+  highlights: [
+    "Asthma & COPD Clinics",
+    "ILD & Tuberculosis Clinics",
+    "Advanced Pulmonary Function Testing",
+    "Allergy & Smoking Cessation",
+    "Pulmonary Rehabilitation"
+  ],
   services: [
-    "Pulmonary Function Testing",
+    "Asthma & COPD Clinics",
+    "Interstitial Lung Disease (ILD) Clinic",
+    "Tuberculosis Clinic",
+    "Smoking Cessation Services",
+    "Allergy Testing & Desensitization",
+    "Advanced Pulmonary Function Testing",
     "Pulmonary Rehabilitation",
-    "Clinical Research"
+    "Adult Vaccination",
+    "Clinical & Academic Research"
   ],
 
   doctors: [
@@ -2660,6 +2754,7 @@ Why Choose Hindusthan Hospitals for Pulmonology?
 {
   slug: "radiology",
   name: "Radiology",
+  overview: "The Department of Radiology provides comprehensive imaging services to support accurate diagnosis and clinical decision-making. Services include X-ray, ultrasound, CT, MRI and other specialized investigations. The department focuses on precision, patient safety, timely reporting and reliable imaging services for early detection, diagnosis and monitoring of diseases.",
 
   seo: {
     title: "CT, MRI & Radiology Centre in Coimbatore | Hindusthan Hospitals",
@@ -2765,6 +2860,7 @@ Why Choose Hindusthan Hospitals for Radiology?
 {
   slug: "rehab",
   name: "Physical Medicine & Rehabilitation",
+  overview: "Hindusthan Hospital's Department of Physiotherapy is dedicated to helping patients regain mobility and function following injury or surgery, supporting faster recovery, improved quality of life and prevention of future injuries. The department provides rehabilitation services for patients of different ages and conditions using advanced rehabilitation tools and therapy facilities. Services include interferential therapy, pelvic and cervical traction, ultrasound therapy, transcutaneous nerve stimulation, electrical stimulation and infrared ray therapy. Inpatient services include neurological rehabilitation, orthopaedic and post-operative rehabilitation, ICU care, obstetrics and gynaecology rehabilitation, pulmonary rehabilitation and general medicine support. Exercise therapy includes stretching, strengthening, mobilization, spinal mobility training, mat and Swiss ball training, hand rehabilitation, coordination training, balance training and paediatric services.",
 
   seo: {
     title: "Best Physiotherapy & Rehabilitation Centre in Coimbatore | Hindusthan",
@@ -2880,6 +2976,7 @@ Why Choose Hindusthan Hospitals for Physiotherapy?
 {
   slug: "surgical-oncology",
   name: "Surgical Oncology",
+  overview: "The Department of Surgical Oncology provides specialized surgical management for various cancers with an emphasis on evidence-based and patient-centred care. Services include cancer diagnosis, staging, curative and palliative surgeries and post-operative care, supported by advanced surgical techniques, safety standards and compassionate patient care.",
 
   seo: {
     title: "Cancer & Surgical Oncology Hospital in Coimbatore | Hindusthan",
@@ -2975,6 +3072,7 @@ Why Choose Hindusthan Hospitals for Surgical Oncology?
 {
   slug: "urology",
   name: "Urology",
+  overview: "The Urology department provides comprehensive diagnosis, investigation and treatment for a wide range of urological conditions. Available facilities include urological investigations and day-care surgical services with technologies such as laser treatment, ESWL for urinary stones and specialized andrology equipment. Services include ultrasound diagnosis, treatment for prostatic enlargement, bladder cancer, infertility, congenital urinary tract conditions in children, laparoscopic pyeloplasty, kidney stones, urinary tract infections, penile cancer, erectile dysfunction, neurogenic bladder, blood in urine, kidney cancer, testicular pain and swelling, urinary problems in women and ejaculatory dysfunction.",
 
   seo: {
     title: "Best Urology & Kidney Stone Hospital in Coimbatore | Hindusthan",
@@ -3132,6 +3230,7 @@ Why Choose Hindusthan Hospitals for Urology?
 {
   slug: "robotic-surgery",
   name: "Robotic Surgery",
+  overview: "The Robotic Surgery programme offers precision-led minimally invasive surgery for appropriate patients across multiple specialties. Robotic technology helps surgeons perform complex procedures through smaller incisions with enhanced visualisation and refined instrument control. Care is planned individually, with a focus on safety, reduced pain, shorter hospital stays, faster recovery and clear support before and after surgery.",
 
   seo: {
     title: "Advanced Robotic Surgery in Coimbatore | Hindusthan Hospitals",
@@ -3261,6 +3360,7 @@ Why Choose Hindusthan Hospitals for Robotic Surgery?
 {
   slug: "surgical-gastroenterology",
   name: "Surgical Gastroenterology",
+  overview: "The Department of Surgical Gastroenterology specializes in the surgical management of complex gastrointestinal, hepatobiliary and pancreatic diseases. The department provides advanced open and minimally invasive procedures for conditions affecting the esophagus, stomach, intestines, liver, gallbladder, pancreas and colorectal system. Care is supported by modern operation theatres and intensive care facilities, covering diagnosis, surgery, recovery and rehabilitation.",
 
   seo: {
     title: "Surgical Gastroenterology in Coimbatore | Hindusthan Hospitals",
@@ -3332,6 +3432,119 @@ The Department of Surgical Gastroenterology is committed to providing appropriat
     }
   ],
 
+  gallery: []
+},
+
+/* =======================
+   PSYCHIATRY
+======================= */
+{
+  slug: "psychiatry",
+  name: "Psychiatry",
+  overview: "The Department of Psychiatry promotes mental health and emotional well-being through compassionate, confidential and evidence-based care. It provides comprehensive assessment, diagnosis and treatment for psychiatric and behavioural disorders, including depression, anxiety disorders, bipolar disorder, schizophrenia, stress-related disorders, substance use disorders and child and adolescent mental health concerns.",
+  image: hospital,
+  highlights: [
+    "Depression & Anxiety Care",
+    "Child & Adolescent Mental Health",
+    "Stress-related Disorder Care",
+    "Substance Use Disorder Support",
+    "Confidential Psychiatric Assessment"
+  ],
+  services: [
+    "Psychiatric Assessment & Diagnosis",
+    "Depression & Anxiety Disorder Treatment",
+    "Bipolar Disorder & Schizophrenia Care",
+    "Stress-related Disorder Care",
+    "Substance Use Disorder Support",
+    "Child & Adolescent Mental Health"
+  ],
+  doctors: [],
+  gallery: []
+},
+
+/* =======================
+   MEDICAL ONCOLOGY
+======================= */
+{
+  slug: "medical-oncology",
+  name: "Medical Oncology",
+  overview: "The Department of Medical Oncology provides comprehensive, evidence-based cancer care with personalized treatment and compassionate support. Services include chemotherapy, targeted therapy, immunotherapy, hormonal therapy, management of solid tumours and hematological malignancies, day-care chemotherapy, cancer screening, early detection and supportive and palliative care.",
+  image: hospital,
+  highlights: [
+    "Personalized Cancer Treatment",
+    "Chemotherapy & Day-care Chemotherapy",
+    "Targeted Therapy & Immunotherapy",
+    "Cancer Screening & Early Detection",
+    "Supportive & Palliative Care"
+  ],
+  services: [
+    "Chemotherapy",
+    "Targeted Therapy",
+    "Immunotherapy",
+    "Hormonal Therapy",
+    "Solid Tumour Management",
+    "Hematological Malignancy Care",
+    "Cancer Screening & Early Detection",
+    "Supportive & Palliative Care"
+  ],
+  doctors: [],
+  gallery: []
+},
+
+/* =======================
+   VASCULAR SURGERY
+======================= */
+{
+  slug: "vascular-surgery",
+  name: "Vascular Surgery",
+  overview: "The Department of Vascular Surgery specializes in the diagnosis and treatment of diseases affecting blood vessels, excluding the heart and brain. Services include treatment for peripheral arterial disease, varicose veins and venous insufficiency, diabetic foot and limb salvage, aneurysms, vascular trauma, deep vein thrombosis and dialysis access. The department provides comprehensive care from diagnosis through surgical intervention and follow-up.",
+  image: hospital,
+  highlights: [
+    "Peripheral Arterial Disease Care",
+    "Varicose Vein Treatment",
+    "Diabetic Foot & Limb Salvage",
+    "DVT & Vascular Trauma Care",
+    "Dialysis Access Procedures"
+  ],
+  services: [
+    "Peripheral Arterial Disease Treatment",
+    "Varicose Vein & Venous Insufficiency Care",
+    "Diabetic Foot & Limb Salvage",
+    "Aneurysm Management",
+    "Vascular Trauma Care",
+    "Deep Vein Thrombosis Treatment",
+    "Dialysis Access Procedures"
+  ],
+  doctors: [],
+  gallery: []
+},
+
+/* =======================
+   CARDIOTHORACIC SURGERY
+======================= */
+{
+  slug: "cardiothoracic-surgery",
+  name: "Cardiothoracic Surgery",
+  overview: "The Department of Cardiothoracic Surgery provides advanced surgical care for diseases affecting the heart, lungs, chest and major blood vessels. Services include coronary artery bypass grafting, heart valve repair and replacement, congenital heart disease surgery, minimally invasive and thoracoscopic chest surgery, lung and pleural surgery, mediastinal and chest wall surgery, emergency cardiothoracic interventions and post-operative critical care.",
+  image: hospital,
+  highlights: [
+    "Coronary Artery Bypass Grafting",
+    "Heart Valve Repair & Replacement",
+    "Congenital Heart Surgery",
+    "Thoracoscopic Chest Surgery",
+    "Post-operative Critical Care"
+  ],
+  services: [
+    "Coronary Artery Bypass Grafting",
+    "Heart Valve Repair & Replacement",
+    "Congenital Heart Disease Surgery",
+    "Minimally Invasive & Thoracoscopic Chest Surgery",
+    "Lung & Pleural Surgery",
+    "Mediastinal & Chest Wall Surgery",
+    "Emergency Cardiothoracic Interventions",
+    "Post-operative Critical Care"
+  ],
+  doctors: [],
   gallery: []
 }
 
