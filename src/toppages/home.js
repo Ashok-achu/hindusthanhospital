@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+﻿import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -40,26 +40,26 @@ import hero4Mobile from "../assets/set1/heromobile4.png";
 
 
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë
    DESIGN TOKENS (see global <style> block at the bottom for the
    CSS variables + @font-face imports these classes rely on)
 
-   Ink      #0B1220  ΓÇö primary text / dark section backgrounds
-   Paper    #F8FAFC  ΓÇö page background
-   Wine     #9D174D ΓåÆ #E11D48 ΓÇö primary accent / CTAs
-   Teal     #0F766E  ΓÇö trust / secondary accent
-   Amber    #D97706  ΓÇö tertiary accent, used sparingly (tier gold)
-   Mist     #EEF2F6  ΓÇö alternating section background
+   Ink      #0B1220  ╬ô├ç├╢ primary text / dark section backgrounds
+   Paper    #F8FAFC  ╬ô├ç├╢ page background
+   Wine     #9D174D ╬ô├Ñ├å #E11D48 ╬ô├ç├╢ primary accent / CTAs
+   Teal     #0F766E  ╬ô├ç├╢ trust / secondary accent
+   Amber    #D97706  ╬ô├ç├╢ tertiary accent, used sparingly (tier gold)
+   Mist     #EEF2F6  ╬ô├ç├╢ alternating section background
 
    Signature motif: a slow-drawing "vital pulse" (ECG) line used as
-   a section divider and hero flourish ΓÇö it's the one recurring,
+   a section divider and hero flourish ╬ô├ç├╢ it's the one recurring,
    ownable element that ties every section back to "we watch over
    you," rather than a generic gradient blob.
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */
 
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
    Animated Counter Hook
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
 function useCounter(target, duration = 2000, shouldStart = false) {
   const [count, setCount] = useState(0);
   useEffect(() => {
@@ -76,19 +76,19 @@ function useCounter(target, duration = 2000, shouldStart = false) {
   return count;
 }
 
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-   Signature element ΓÇö Vital Pulse Divider
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
+   Signature element ╬ô├ç├╢ Vital Pulse Divider
    A slow, looping ECG trace used between
    sections instead of a generic rule/blob.
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-   Section Eyebrow ΓÇö encodes "what kind of
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
+   Section Eyebrow ╬ô├ç├╢ encodes "what kind of
    claim this section is making" (a fact,
    a promise, a proof point), not decoration.
-   The short lead-line is always gold ΓÇö a
+   The short lead-line is always gold ╬ô├ç├╢ a
    quiet "gilded seal" signature that recurs
    on every section regardless of tone.
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
 function Eyebrow({ children, tone = "wine" }) {
   const tones = {
     wine: "text-[#B61B1F]",
@@ -105,9 +105,9 @@ function Eyebrow({ children, tone = "wine" }) {
   );
 }
 
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
    Magnetic premium button
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
 function MagneticButton({ children, variant = "primary", className = "", ...props }) {
   const ref = useRef(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -144,13 +144,13 @@ function MagneticButton({ children, variant = "primary", className = "", ...prop
   );
 }
 
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
    Stat Card
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
-   Stat Card ΓÇö mirrors the "vital pulse" motif
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
+   Stat Card ╬ô├ç├╢ mirrors the "vital pulse" motif
    at card scale instead of a generic glass panel
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
 function StatCard({ icon, value, suffix, label, delay }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -184,9 +184,9 @@ function StatCard({ icon, value, suffix, label, delay }) {
     </motion.div>
   );
 }
-/* ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+/* ╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç
    Departments data (unchanged)
-ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ */
+╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç╬ô├╢├ç */
 const DEPARTMENTS = [
   { name: "Anaesthesiology", slug: "anaesthesiology", icon: <FaUserMd />, color: "#1D469E", desc: "Perioperative care and pain management" },
   { name: "Cardiology", slug: "cardiology", icon: <FaHeartbeat />, color: "#B61B1F", desc: "Advanced cardiac care and interventions" },
@@ -213,12 +213,12 @@ const DEPARTMENTS = [
 
 const PAGE_SIZE = 9;
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë
    SEO CONFIG
    Central place for title/description/canonical
    so every value used in <Helmet> and JSON-LD
    below stays in sync.
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */
 const SITE_URL = "https://www.hindusthan.net";
 const PAGE_URL = `${SITE_URL}/`;
 const OG_IMAGE = new URL(hero3, `${SITE_URL}/`).toString();
@@ -230,7 +230,7 @@ const SEO_DESCRIPTION =
 const SEO_KEYWORDS =
   "Hindusthan Hospital Coimbatore, multi speciality hospital Coimbatore, best hospital in Coimbatore, 24/7 emergency care, NABH accredited hospital, cardiology Coimbatore, orthopaedic hospital Coimbatore, ICU Coimbatore, robotic surgery Coimbatore, health checkup packages";
 
-/* Hospital / MedicalOrganization structured data ΓÇö tells search engines
+/* Hospital / MedicalOrganization structured data ╬ô├ç├╢ tells search engines
    who we are, where we are, how to contact us, and what specialities
    we offer, enabling rich results (knowledge panel, sitelinks search box). */
 const HOSPITAL_SCHEMA = {
@@ -278,9 +278,9 @@ const BREADCRUMB_SCHEMA = {
   ],
 };
 
-/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ
+/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë
    HOME PAGE
-ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */
+╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */
 export default function Home() {
   const navigate = useNavigate();
 
@@ -331,7 +331,7 @@ export default function Home() {
   return (
     <div className="relative overflow-x-hidden bg-paper font-body text-ink">
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ SEO ΓÇö <head> tags & structured data ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë SEO ╬ô├ç├╢ <head> tags & structured data ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <Helmet>
         {/* Primary meta tags */}
         <title>{SEO_TITLE}</title>
@@ -365,17 +365,17 @@ export default function Home() {
         <script type="application/ld+json">{JSON.stringify(BREADCRUMB_SCHEMA)}</script>
       </Helmet>
 
-      {/* ΓöÇΓöÇ GLOBAL AMBIENT FIELD ΓöÇΓöÇ */}
+      {/* ╬ô├╢├ç╬ô├╢├ç GLOBAL AMBIENT FIELD ╬ô├╢├ç╬ô├╢├ç */}
       <div className="fixed inset-0 -z-20 pointer-events-none">
         <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[#F3AEAE]/40 blur-[160px]" />
         <div className="absolute top-[40%] -right-60 h-[700px] w-[700px] rounded-full bg-[#A6C1EE]/40 blur-[180px]" />
         <div className="absolute bottom-0 left-[30%] h-[500px] w-[500px] rounded-full bg-[#EFDFB0]/30 blur-[150px]" />
       </div>
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HERO ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë HERO ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë HERO ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë HERO ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë HERO ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <section className="relative w-full overflow-hidden">
         <div
           className="
@@ -393,7 +393,7 @@ export default function Home() {
                 <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
                   <img
                     src={img}
-                    alt={`Hindusthan Hospital Coimbatore ΓÇö multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
+                    alt={`Hindusthan Hospital Coimbatore ╬ô├ç├╢ multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
                     className="w-full h-full object-cover"
                     loading={i === 0 ? "eager" : "lazy"}
                     fetchpriority={i === 0 ? "high" : "auto"}
@@ -403,7 +403,7 @@ export default function Home() {
             ))}
           </Slider>
 
-          {/* SEO ΓÇö real H1 for the page. Kept visually unobtrusive (small,
+          {/* SEO ╬ô├ç├╢ real H1 for the page. Kept visually unobtrusive (small,
       bottom-left, on the existing dark gradient) so it doesn't fight
       the hero imagery, but it is genuinely present in the DOM for
       search engines and screen readers, not display:none. */}
@@ -448,7 +448,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ TRANSFORMING HEALTHCARE ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë TRANSFORMING HEALTHCARE ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <section className="relative py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
@@ -522,7 +522,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ MEDICAL SPECIALITIES ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë MEDICAL SPECIALITIES ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full opacity-25 blur-[160px]"
@@ -691,8 +691,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ════════ PATIENT TESTIMONIALS ════════ */}
+      <section className="relative overflow-hidden bg-paper py-16 sm:py-24">
+        <div className="absolute top-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-[#FAD6D6] opacity-30 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-[#F5E8C8] opacity-30 blur-3xl" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-10 text-center sm:mb-16"
+          >
+            <Eyebrow>Real Experiences</Eyebrow>
+            <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
+              Patient <span className="text-[#B61B1F]">Testimonials</span>
+            </h2>
+            <p className="mt-3 text-sm text-slate-500 sm:mt-4 sm:text-lg">Real experiences from our valued patients</p>
+          </motion.div>
+          {(() => {
+            const testimonials = [
+              { id: 1, name: "Nandhini Anandhan", rating: 5, text: "The doctors and nurses were extremely caring. The entire treatment process was smooth and professional." },
+              { id: 2, name: "Saravanan Saro", rating: 4, text: "The hospital environment is very clean and the doctors explain everything clearly. Highly satisfied." },
+              { id: 3, name: "Punitha", rating: 5, text: "We have trusted this hospital for years. Their expertise and compassion are truly commendable." },
+              { id: 4, name: "Arun Kumar", rating: 4, text: "Emergency care response was quick and efficient. Staff handled everything calmly." },
+              { id: 5, name: "Divya Lakshmi", rating: 5, text: "Excellent maternity care experience. Doctors ensured complete comfort." },
+              { id: 6, name: "Ravi Prakash", rating: 3, text: "Advanced medical equipment and very experienced specialists." },
+              { id: 7, name: "Keerthana", rating: 5, text: "Doctors made us feel confident and safe during the treatment." },
+              { id: 8, name: "Manoj Kumar", rating: 5, text: "ICU care and post-treatment support were exceptional." },
+              { id: 9, name: "Lakshmi Priya", rating: 4, text: "Very satisfied with pediatric services and friendly doctors." },
+            ];
+            const settings = {
+              dots: true, arrows: false, infinite: true, autoplay: true,
+              autoplaySpeed: 4200, speed: 900, slidesToShow: 3, slidesToScroll: 1, pauseOnHover: true,
+              responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: "0px" } },
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: "0px" } },
+              ],
+            };
+            return (
+              <Slider {...settings}>
+                {testimonials.map((item, index) => (
+                  <div key={item.id} className="px-2 py-4 sm:px-4 sm:py-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.04 }}
+                      whileHover={{ y: -8 }}
+                      className="group relative h-full min-h-[240px] rounded-[1.5rem] border border-slate-100 bg-white/85 p-6 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-[0_30px_70px_-20px_rgba(182,27,31,0.32)] sm:min-h-[300px] sm:rounded-[1.75rem] sm:p-9"
+                    >
+                      <div className="absolute -top-4 left-6 select-none font-display text-5xl text-[#F3AEAE] sm:-top-6 sm:left-8 sm:text-7xl">&quot;</div>
+                      <div className="mt-3 flex gap-1 text-[#C9962B] sm:mt-4">
+                        {[...Array(item.rating)].map((_, i) => <FaStar key={i} className="text-sm transition-transform group-hover:scale-110" />)}
+                      </div>
+                      <p className="mt-4 text-sm italic leading-relaxed text-slate-700 sm:mt-5 sm:text-base">{item.text}</p>
+                      <div className="mb-5 mt-6 h-[3px] w-14 rounded-full bg-gradient-to-r from-[#B61B1F] to-[#C9962B] sm:mb-6 sm:mt-8" />
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#B61B1F] to-[#0F2C6A] font-bold text-white shadow-lg sm:h-12 sm:w-12">
+                          {item.name.charAt(0)}
+                        </div>
+                        <h4 className="font-display text-sm font-semibold text-ink sm:text-lg">{item.name}</h4>
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
+              </Slider>
+            );
+          })()}
+        </div>
+      </section>
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ OUR FACILITIES ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ════════ OUR FACILITIES ════════ */}
       <section className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
         <div className="absolute inset-0 opacity-[0.12]"
           style={{
@@ -715,7 +786,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400 sm:mt-4 sm:text-lg">
-              Everything you need for complete care — under one roof
+              Everything you need for complete care ΓÇö under one roof
             </p>
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -752,7 +823,7 @@ export default function Home() {
 
 
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ HEALTH PACKAGES ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë HEALTH PACKAGES ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-32">
         <div className="absolute inset-0 opacity-80"
           style={{ backgroundImage: "radial-gradient(circle at top left, rgba(182,27,31,0.10), transparent 32%), radial-gradient(circle at bottom right, rgba(15,44,106,0.10), transparent 35%)" }}
@@ -826,63 +897,7 @@ export default function Home() {
       </section>
 
 
-      {/* ████████ HOW WE CARE — PATIENT JOURNEY ████████ */}
-      <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-[#FAD6D6] opacity-40 blur-3xl" />
-          <div className="absolute -right-24 bottom-16 h-80 w-80 rounded-full bg-[#EAF0FB] opacity-40 blur-3xl" />
-        </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mb-12 text-center sm:mb-16">
-            <Eyebrow>Your Care Journey</Eyebrow>
-            <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] font-extrabold text-ink">
-              How We <span className="text-[#B61B1F]">Care for You</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:mt-4 sm:text-base">
-              From the moment you arrive to your full recovery, every step is guided by compassionate experts.
-            </p>
-          </motion.div>
-          <div className="relative">
-            <div className="absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-px -translate-x-1/2 bg-gradient-to-b from-[#B61B1F]/30 via-[#0F2C6A]/30 to-transparent lg:block" />
-            <div className="grid gap-8 lg:gap-12">
-              {[
-                { step: "01", icon: <FaCalendarAlt />, title: "Book an Appointment", desc: "Schedule your visit online, by phone, or walk in — our front desk team ensures a smooth, quick registration process.", side: "left", color: "from-[#B61B1F] to-[#8F1519]" },
-                { step: "02", icon: <FaStethoscope />, title: "Consultation & Diagnosis", desc: "Meet our experienced specialists who listen carefully, conduct thorough examinations, and order precise diagnostic tests.", side: "right", color: "from-[#0F2C6A] to-[#1D469E]" },
-                { step: "03", icon: <FaProcedures />, title: "Personalised Treatment", desc: "Receive a tailored treatment plan — whether surgical, medical, or rehabilitative — using the latest clinical protocols.", side: "left", color: "from-[#C9962B] to-[#A87A1E]" },
-                { step: "04", icon: <FaHandHoldingHeart />, title: "Recovery & Follow-Up", desc: "Our care does not end at discharge. We track your recovery, provide physiotherapy support, and schedule follow-up consultations.", side: "right", color: "from-[#B61B1F] to-[#0F2C6A]" },
-              ].map((item, i) => (
-                <motion.div key={i} initial={{ opacity: 0, x: item.side === "left" ? -40 : 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }} className={`flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10 ${item.side === "right" ? "lg:flex-row-reverse" : ""}`}>
-                  <div className="flex flex-none items-center gap-4 lg:w-[42%] lg:justify-end">
-                    <div className={`flex h-16 w-16 flex-none items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-2xl text-white shadow-xl sm:h-20 sm:w-20 sm:text-3xl ${item.side === "right" ? "lg:order-last" : ""}`}>
-                      {item.icon}
-                    </div>
-                    <span className="font-display text-6xl font-extrabold text-slate-100 sm:text-7xl lg:hidden">{item.step}</span>
-                  </div>
-                  <div className="relative hidden lg:flex lg:w-[16%] lg:flex-none lg:items-center lg:justify-center">
-                    <div className={`z-10 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${item.color} font-display text-lg font-extrabold text-white shadow-2xl ring-4 ring-white`}>
-                      {item.step}
-                    </div>
-                  </div>
-                  <div className={`lg:w-[42%] ${item.side === "right" ? "lg:text-right" : ""}`}>
-                    <h3 className="font-display mb-2 text-lg font-extrabold text-ink sm:text-xl">{item.title}</h3>
-                    <p className="text-sm leading-relaxed text-slate-500 sm:text-base">{item.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-
-
-
-
-
-
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ APPOINTMENT CTA ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë APPOINTMENT CTA ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <section className="py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -912,16 +927,81 @@ export default function Home() {
                 </div>
               </div>
               <div className="rounded-[1.5rem] bg-white p-5 text-ink shadow-xl sm:rounded-[1.75rem] sm:p-7">
-                <h3 className="font-display mb-4 text-lg font-bold sm:text-xl">Quick Appointment</h3>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <input type="text" placeholder="Your Name" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                    <input type="text" placeholder="Phone Number" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                  </div>
-                  <textarea placeholder="Tell us about your symptoms" rows="3"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                  <button className="btn-wine w-full rounded-xl py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5">
-                    Book Now
+                {/* Form heading */}
+                <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-[#B61B1F]">BOOK APPOINTMENT</p>
+                <p className="mb-5 text-sm text-slate-500">We are here for you.</p>
+
+                <div className="space-y-3">
+                  {/* Name */}
+                  <input
+                    id="appt-name"
+                    type="text"
+                    placeholder="Name*"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30"
+                  />
+
+                  {/* Mobile */}
+                  <input
+                    id="appt-mobile"
+                    type="tel"
+                    placeholder="Mobile Number*"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30"
+                  />
+
+                  {/* Email */}
+                  <input
+                    id="appt-email"
+                    type="email"
+                    placeholder="Email*"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30"
+                  />
+
+                  {/* Date */}
+                  <input
+                    id="appt-date"
+                    type="date"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-400 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30"
+                  />
+
+                  {/* Department */}
+                  <select
+                    id="appt-dept"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30"
+                  >
+                    <option value="">Select Department</option>
+                    <option>Anaesthesiology</option>
+                    <option>Cardiology</option>
+                    <option>Dermatology</option>
+                    <option>ENT</option>
+                    <option>General Medicine</option>
+                    <option>General Surgery</option>
+                    <option>Gynaecology & Obstetrics</option>
+                    <option>Nephrology</option>
+                    <option>Neurology</option>
+                    <option>Neurosurgery</option>
+                    <option>Oncology</option>
+                    <option>Ophthalmology</option>
+                    <option>Orthopaedics</option>
+                    <option>Paediatrics</option>
+                    <option>Pulmonology</option>
+                    <option>Radiology</option>
+                    <option>Urology</option>
+                  </select>
+
+                  {/* Message */}
+                  <textarea
+                    id="appt-message"
+                    placeholder="Message or Special Request"
+                    rows="4"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700 placeholder-slate-400 transition focus:border-[#B61B1F] focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/30 resize-none"
+                  />
+
+                  {/* Submit */}
+                  <button
+                    id="appt-submit"
+                    className="btn-wine w-full rounded-xl py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
+                  >
+                    Book Appointment
                   </button>
                 </div>
               </div>
@@ -932,16 +1012,130 @@ export default function Home() {
 
 
 
+      {/* ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê HOW WE CARE ΓÇö PATIENT JOURNEY ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê */}
+      <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-28">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-[#FAD6D6] opacity-40 blur-3xl" />
+          <div className="absolute -right-24 bottom-16 h-80 w-80 rounded-full bg-[#EAF0FB] opacity-40 blur-3xl" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mb-12 text-center sm:mb-16">
+            <Eyebrow>Your Care Journey</Eyebrow>
+            <h2 className="font-display text-[clamp(1.7rem,6vw,3rem)] font-extrabold text-ink">
+              How We <span className="text-[#B61B1F]">Care for You</span>
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:mt-4 sm:text-base">
+              From the moment you arrive to your full recovery, every step is guided by compassionate experts.
+            </p>
+          </motion.div>
+          <div className="relative">
+            <div className="absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-px -translate-x-1/2 bg-gradient-to-b from-[#B61B1F]/30 via-[#0F2C6A]/30 to-transparent lg:block" />
+            <div className="grid gap-8 lg:gap-12">
+              {[
+                { step: "01", icon: <FaCalendarAlt />, title: "Book an Appointment", desc: "Schedule your visit online, by phone, or walk in ΓÇö our front desk team ensures a smooth, quick registration process.", side: "left", color: "from-[#B61B1F] to-[#8F1519]" },
+                { step: "02", icon: <FaStethoscope />, title: "Consultation & Diagnosis", desc: "Meet our experienced specialists who listen carefully, conduct thorough examinations, and order precise diagnostic tests.", side: "right", color: "from-[#0F2C6A] to-[#1D469E]" },
+                { step: "03", icon: <FaProcedures />, title: "Personalised Treatment", desc: "Receive a tailored treatment plan ΓÇö whether surgical, medical, or rehabilitative ΓÇö using the latest clinical protocols.", side: "left", color: "from-[#C9962B] to-[#A87A1E]" },
+                { step: "04", icon: <FaHandHoldingHeart />, title: "Recovery & Follow-Up", desc: "Our care does not end at discharge. We track your recovery, provide physiotherapy support, and schedule follow-up consultations.", side: "right", color: "from-[#B61B1F] to-[#0F2C6A]" },
+              ].map((item, i) => (
+                <motion.div key={i} initial={{ opacity: 0, x: item.side === "left" ? -40 : 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }} className={`flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10 ${item.side === "right" ? "lg:flex-row-reverse" : ""}`}>
+                  <div className="flex flex-none items-center gap-4 lg:w-[42%] lg:justify-end">
+                    <div className={`flex h-16 w-16 flex-none items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-2xl text-white shadow-xl sm:h-20 sm:w-20 sm:text-3xl ${item.side === "right" ? "lg:order-last" : ""}`}>
+                      {item.icon}
+                    </div>
+                    <span className="font-display text-6xl font-extrabold text-slate-100 sm:text-7xl lg:hidden">{item.step}</span>
+                  </div>
+                  <div className="relative hidden lg:flex lg:w-[16%] lg:flex-none lg:items-center lg:justify-center">
+                    <div className={`z-10 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br ${item.color} font-display text-lg font-extrabold text-white shadow-2xl ring-4 ring-white`}>
+                      {item.step}
+                    </div>
+                  </div>
+                  <div className={`lg:w-[42%] ${item.side === "right" ? "lg:text-right" : ""}`}>
+                    <h3 className="font-display mb-2 text-lg font-extrabold text-ink sm:text-xl">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-500 sm:text-base">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ FOOTER TRANSITION ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ════════ QUICK ACTION CTA (HINDUSTHAN STYLE) ════════ */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 mb-12 mt-4 relative z-10">
+        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#0A1B33] via-[#1a2f55] to-[#0A1B33] p-10 sm:p-14 text-white shadow-2xl border border-white/10">
+
+          {/* Subtle background patterns */}
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 h-[500px] w-[500px] rounded-full bg-[#B61B1F] opacity-20 blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 h-[300px] w-[300px] rounded-full bg-[#C9962B] opacity-15 blur-[80px] pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+
+            {/* Left side: Heading */}
+            <div className="flex-1 text-center lg:text-left max-w-2xl">
+              <span className="inline-flex items-center gap-3 mb-4 justify-center lg:justify-start w-full">
+                <span className="h-px w-8 bg-[#C9962B]" />
+                <span className="text-[11px] font-extrabold uppercase tracking-[0.3em] text-[#C9962B]">Hindusthan Care</span>
+              </span>
+              <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-extrabold leading-[1.1] text-white">
+                World-class healthcare, <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F3AEAE] to-[#FFFFFF]">just a call away.</span>
+              </h2>
+              <p className="mt-5 text-slate-400 text-sm sm:text-base max-w-lg mx-auto lg:mx-0">
+                Whether it's a critical emergency or a general inquiry, our expert medical team is available 24/7 to provide seamless assistance.
+              </p>
+            </div>
+
+            {/* Right side: Action Cards */}
+            <div className="flex flex-col sm:flex-row gap-5 w-full lg:w-auto">
+
+              {/* Emergency Card */}
+              <div className="group relative flex-1 sm:flex-none overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-[#B61B1F]/50">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#B61B1F] to-[#8F1519]" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#B61B1F]/20 text-[#FF4D4D]">
+                  <FaAmbulance className="text-2xl" />
+                </div>
+                <h3 className="mb-1 font-display text-lg font-bold text-white">Emergency Services</h3>
+                <p className="mb-6 text-xs text-slate-400">24/7 Rapid Response</p>
+                <a href="tel:04224327777" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#B61B1F] to-[#8F1519] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all group-hover:shadow-[#B61B1F]/30">
+                  <FaPhoneAlt className="text-xs" /> 0422-4327777
+                </a>
+              </div>
+
+              {/* Inquiry Card */}
+              <div className="group relative flex-1 sm:flex-none overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 backdrop-blur-md transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-[#C9962B]/50">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C9962B] to-[#A87A1E]" />
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#C9962B]/20 text-[#E8C273]">
+                  <FaEnvelope className="text-2xl" />
+                </div>
+                <h3 className="mb-1 font-display text-lg font-bold text-white">General Inquiries</h3>
+                <p className="mb-6 text-xs text-slate-400">Appointments & Info</p>
+                <a href="mailto:hindusthanreception@gmail.com" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-bold text-[#0A1B33] shadow-lg transition-all hover:bg-slate-100">
+                  <FaArrowRight className="text-xs text-[#C9962B]" /> Email Us
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë FOOTER TRANSITION ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <div className="relative h-12 w-full overflow-hidden bg-white sm:h-24" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="absolute bottom-0 h-full w-full">
           <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,112 1440,48 L1440,120 L0,120 Z" fill="#0A1B33" />
         </svg>
       </div>
 
-      {/* ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ GLOBAL STYLES ΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉΓòÉ */}
+      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë GLOBAL STYLES ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -982,7 +1176,7 @@ export default function Home() {
 
 
 
-        /* Hero slider ΓÇö fixes react-slick's own wrapper divs so height/line-height
+        /* Hero slider ╬ô├ç├╢ fixes react-slick's own wrapper divs so height/line-height
            behave under fade mode instead of collapsing or leaving a gap */
         .hero-slider,
         .hero-slider .slick-list,

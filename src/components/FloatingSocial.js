@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import logo from "../assets/set1/logos.jpg";
 import {
   MessageCircle,
   X,
@@ -520,11 +521,10 @@ export default function FloatingSocial() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="flex h-[56px] w-[56px] items-center justify-center rounded-full text-white shadow-xl transition hover:scale-110"
-          style={{ background: "#123832" }}
+          className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-white shadow-2xl border-[3px] border-[#B61B1F] transition hover:scale-110 overflow-hidden p-[2px]"
           aria-label="Open chat"
         >
-          <MessageCircle size={26} />
+          <img src={logo} alt="Chat with us" className="h-full w-full rounded-full object-contain bg-white" />
         </button>
       )}
     </div>
