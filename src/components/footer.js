@@ -78,8 +78,8 @@ const LinkList = ({ title, links }) => (
 
             <p className="mb-2 text-sm text-white/70">
               <span className="font-semibold text-white">Email:</span>{" "}
-              <a href="mailto:info@hindusthanhospital.com" className="hover:text-[#F3AEAE]">
-                info@hindusthanhospital.com
+              <a href="mailto:hindusthanreception@gmail.com" className="hover:text-[#F3AEAE]">
+                hindusthanreception@gmail.com
               </a>
             </p>
             <p className="mb-2 text-sm text-white/70">

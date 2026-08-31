@@ -135,7 +135,7 @@ export default function Contact() {
           <div className="mt-8 space-y-4">
             <p><FaMapMarkerAlt className="inline mr-2 text-blue-700" /> Hindusthan Hospital, Coimbatore</p>
             <p><FaPhoneAlt className="inline mr-2 text-blue-700" /> +91 422 4327777</p>
-            <p><FaEnvelope className="inline mr-2 text-blue-700" /> info@hindusthanhospital.com</p>
+            <p><FaEnvelope className="inline mr-2 text-blue-700" /> hindusthanreception@gmail.com</p>
           </div>
         </motion.div>
 

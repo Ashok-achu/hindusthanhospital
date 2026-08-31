@@ -1,7 +1,22 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useCallback } from "react";
-import departmentsData from "../departments/departmentsData";
+import departments from "../data/departments.json";
 import sampleGalleryImage from "../assets/set2/Hospital profile edited.jpg";
+
+const resolveImage = (path) => {
+  if (!path) return "";
+  if (path.startsWith("http") || path.startsWith("data:") || path.startsWith("/static/")) {
+    return path;
+  }
+  if (path.startsWith("assets/")) {
+    try {
+      return require(`../assets/${path.substring(7)}`);
+    } catch (e) {
+      console.error("Failed to load image", path, e);
+    }
+  }
+  return path;
+};
 
 /* ------------------------------------------------------------------
    EDIT THESE TO MATCH YOUR SITE
@@ -11,13 +26,7 @@ const HOSPITAL_PHONE = "+91-00000-00000"; // shown on the floating call button +
 const HOSPITAL_PHONE_DISPLAY = "0422 424 2424"; // shown as text
 const HOSPITAL_EMAIL = "hindusthanreception@gmail.com";
 const HOSPITAL_LOCATION = "Hindusthan Hospital, Coimbatore, Tamil Nadu";
-const DEPARTMENT_API = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
-/* ------------------------------------------------------------------
-   Tiny inline icon set — single-path outline icons so the page
-   doesn't need an external icon library. Reused across the quick
-   nav strip, the patient-journey steps and the floating hero stats.
-------------------------------------------------------------------- */
 const ICON_PATHS = {
   clipboard:
     "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
@@ -37,13 +46,6 @@ const ICON_PATHS = {
 };
 
 const QUICK_NAV_ICON_ORDER = ["clipboard", "heart", "moon", "shield", "siren"];
-const TRUST_PILLARS = [
-  { icon: "shield", label: "Patient Safety First" },
-  { icon: "image", label: "Advanced Technology" },
-  { icon: "users", label: "Expert Specialists" },
-  { icon: "clock", label: "24/7 Care & Monitoring" },
-  { icon: "heart", label: "Compassionate Care" },
-];
 
 function Icon({ name, className = "w-5 h-5" }) {
   return (
@@ -315,36 +317,19 @@ function InfoSidebar({ department }) {
 export default function DepartmentDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [managedDepartments, setManagedDepartments] = useState([]);
 
-  useEffect(() => {
-    fetch(`${DEPARTMENT_API}/api/departments`)
-      .then((response) => response.ok ? response.json() : [])
-      .then((items) => setManagedDepartments(items.map((item) => ({
-        ...item,
-        image: (item.image?.startsWith("/") && !item.image.startsWith("/static/")) ? `${DEPARTMENT_API}${item.image}` : item.image,
-        gallery: (item.gallery || []).map((image) => (image.startsWith("/") && !image.startsWith("/static/")) ? `${DEPARTMENT_API}${image}` : image),
-      }))))
-      .catch(() => setManagedDepartments([]));
-  }, []);
-
-  const allDepartments = useMemo(() => {
-    return departmentsData.map((defaultDept) => {
-      const managed = managedDepartments.find((m) => m.slug === defaultDept.slug);
-      if (managed) {
-        return {
-          ...defaultDept,
-          ...managed,
-          image: managed.image || defaultDept.image,
-          gallery: (managed.gallery && managed.gallery.length > 0) ? managed.gallery : defaultDept.gallery,
-        };
-      }
-      return defaultDept;
-    }).concat(
-      managedDepartments.filter((m) => !departmentsData.some((d) => d.slug === m.slug))
-    );
-  }, [managedDepartments]);
-  const department = useMemo(() => allDepartments.find((d) => d.slug === slug), [allDepartments, slug]);
+  const allDepartments = departments;
+  const department = useMemo(() => {
+    const found = departments.find((d) => d.slug === slug);
+    if (!found) return null;
+    return {
+      ...found,
+      image: resolveImage(found.image),
+      gallery: (found.gallery || []).map(resolveImage),
+      doctors: (found.doctors || []).map((d) => ({ ...d, image: resolveImage(d.image) })),
+      visitingConsultants: (found.visitingConsultants || []).map((d) => ({ ...d, image: resolveImage(d.image) })),
+    };
+  }, [slug]);
 
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [showAllDoctors, setShowAllDoctors] = useState(false);
@@ -432,20 +417,6 @@ export default function DepartmentDetail() {
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 pt-6 sm:pt-10">
-        <section className="mb-5 rounded-2xl border border-slate-100 bg-white px-5 py-4 shadow-sm sm:px-8">
-          <p className="mb-4 text-center text-xs font-extrabold tracking-wide text-[#0E5260] sm:text-sm">
-            MODERN CARE <span className="text-slate-300">•</span> TRUSTED EXPERTISE <span className="text-slate-300">•</span> PATIENT-CENTRIC
-          </p>
-          <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-5">
-            {TRUST_PILLARS.map((pillar) => (
-              <div key={pillar.label} className="flex items-center justify-center gap-2 text-center text-[11px] font-semibold text-slate-700 sm:text-xs">
-                <Icon name={pillar.icon} className="h-5 w-5 shrink-0 text-[#0E5260]" />
-                <span>{pillar.label}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* BREADCRUMB */}
         <nav className="flex items-center gap-2 text-xs sm:text-sm text-gray-500 mb-4 overflow-x-auto no-scrollbar whitespace-nowrap">
           <Link to="/" className="hover:text-red-600 transition">Home</Link>
@@ -489,33 +460,13 @@ export default function DepartmentDetail() {
                       >
                         Book Appointment
                       </Link>
-                      <a
-                        href={`tel:${HOSPITAL_PHONE}`}
-                        className="border border-white/70 hover:bg-white/10 transition text-white text-sm font-semibold px-6 py-2.5 rounded-md"
-                      >
-                        Talk to Expert
-                      </a>
                     </div>
                   </div>
                 </div>
 
               </div>
 
-              {/* QUICK NAV STRIP */}
-              {quickNav.length > 0 && (
-                <div className="relative z-10 mx-3 -mt-4 rounded-xl border border-slate-100 bg-white shadow-md overflow-x-auto no-scrollbar sm:mx-8">
-                  <div className="flex divide-x">
-                    {quickNav.map((item, i) => (
-                      <div key={i} className="flex-1 min-w-[130px] px-4 py-5 text-center flex flex-col items-center gap-2">
-                        <div className="w-9 h-9 rounded-full bg-[#0E3B39]/10 flex items-center justify-center text-[#0E3B39]">
-                          <Icon name={QUICK_NAV_ICON_ORDER[i % QUICK_NAV_ICON_ORDER.length]} className="w-4.5 h-4.5" />
-                        </div>
-                        <p className="text-xs sm:text-[13px] font-medium text-gray-600 leading-tight">{item}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+
             </div>
 
             {/* ================= DEPARTMENT OVERVIEW ================= */}
@@ -582,27 +533,27 @@ export default function DepartmentDetail() {
             {journeySteps.length > 0 && (
               <section>
                 <div>
-                    <p className="text-[11px] tracking-[0.2em] uppercase text-red-600 font-semibold mb-1">
-                      Patient Journey
-                    </p>
-                    <h2 className="font-serif text-xl sm:text-2xl text-[#6B0F2A] mb-6">Your Safety, Our Priority</h2>
+                  <p className="text-[11px] tracking-[0.2em] uppercase text-red-600 font-semibold mb-1">
+                    Patient Journey
+                  </p>
+                  <h2 className="font-serif text-xl sm:text-2xl text-[#6B0F2A] mb-6">Your Safety, Our Priority</h2>
 
-                    <ol className="space-y-5">
-                      {journeySteps.map((step, i) => (
-                        <li key={i} className="flex items-start gap-4 dept-fade-in" style={{ animationDelay: `${i * 60}ms` }}>
-                          <div className="w-10 h-10 rounded-full bg-[#0E3B39]/10 flex items-center justify-center shrink-0 text-[#0E3B39]">
-                            <Icon name={QUICK_NAV_ICON_ORDER[i % QUICK_NAV_ICON_ORDER.length]} className="w-4.5 h-4.5" />
-                          </div>
-                          <div>
-                            <p className="text-xs font-bold text-gray-400 mb-0.5">{String(i + 1).padStart(2, "0")}</p>
-                            <h4 className="text-sm sm:text-base font-semibold text-gray-800">{step}</h4>
-                            <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
-                              {JOURNEY_BLURBS[i % JOURNEY_BLURBS.length]}
-                            </p>
-                          </div>
-                        </li>
-                      ))}
-                    </ol>
+                  <ol className="space-y-5">
+                    {journeySteps.map((step, i) => (
+                      <li key={i} className="flex items-start gap-4 dept-fade-in" style={{ animationDelay: `${i * 60}ms` }}>
+                        <div className="w-10 h-10 rounded-full bg-[#0E3B39]/10 flex items-center justify-center shrink-0 text-[#0E3B39]">
+                          <Icon name={QUICK_NAV_ICON_ORDER[i % QUICK_NAV_ICON_ORDER.length]} className="w-4.5 h-4.5" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-gray-400 mb-0.5">{String(i + 1).padStart(2, "0")}</p>
+                          <h4 className="text-sm sm:text-base font-semibold text-gray-800">{step}</h4>
+                          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+                            {JOURNEY_BLURBS[i % JOURNEY_BLURBS.length]}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
                 </div>
               </section>
             )}
@@ -636,13 +587,12 @@ export default function DepartmentDetail() {
                   key={`${image}-${index}`}
                   type="button"
                   onClick={() => setLightboxIndex(index)}
-                  className={`group relative overflow-hidden rounded-2xl bg-slate-100 text-left ring-1 ring-black/5 shadow-[0_10px_28px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(15,23,42,0.18)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
-                    hasSingleGalleryImage
+                  className={`group relative overflow-hidden rounded-2xl bg-slate-100 text-left ring-1 ring-black/5 shadow-[0_10px_28px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(15,23,42,0.18)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${hasSingleGalleryImage
                       ? "w-full aspect-[16/9] md:aspect-[21/9] sm:col-span-4"
                       : index === 0
                         ? "sm:col-span-2 sm:row-span-2 aspect-[16/9] sm:aspect-auto"
                         : "aspect-[16/9]"
-                  }`}
+                    }`}
                   aria-label={`Open gallery image ${index + 1}`}
                 >
                   <img

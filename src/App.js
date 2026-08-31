@@ -51,8 +51,6 @@ const Courses = lazy(() => import("./academics/Courses"));
 
 // 🔹 Dynamic Department Detail Page
 const DepartmentDetail = lazy(() => import("./departments/DepartmentDetail"));
-const DepartmentAdmin = lazy(() => import("./DepartmentAdminV2"));
-const DoctorAdmin = lazy(() => import("./DoctorAdmin"));
 
 
 
@@ -64,69 +62,60 @@ export default function App() {
 
 
       <Suspense fallback={<div className="grid min-h-[40vh] place-items-center text-sm font-semibold text-[#0E5260]">Loading...</div>}>
-      <Routes>
-        <Route element={<SiteLayout />}>
+        <Routes>
+          <Route element={<SiteLayout />}>
+            {/* MAIN ROUTES */}
+            <Route path="/" element={<Home />} />
+            <Route path="/mettupalayam" element={<Mettupalayam />} />
+            <Route path="/doctors" element={<Doctor />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/academics" element={<Academics />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/appointment" element={<Appointment />} />
 
-          {/* MAIN ROUTES */}
-          <Route path="/" element={<Home />} />
-          <Route path="/mettupalayam" element={<Mettupalayam />} />
-          <Route path="/doctors" element={<Doctor />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/academics" element={<Academics />} />
-          <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
+            {/* ABOUT SUB ROUTES */}
+            <Route path="/abouttrust" element={<Abouttrust />} />
+            <Route path="/mission" element={<Mission />} />
+            <Route path="/milestones" element={<Milestones />} />
 
-          {/* ABOUT SUB ROUTES */}
-          <Route path="/abouttrust" element={<Abouttrust />} />
-          <Route path="/mission" element={<Mission />} />
-          <Route path="/milestones" element={<Milestones />} />
+            {/* BOTTOM NAV */}
+            <Route path="/specialities" element={<Specialities />} />
+            <Route path="/facilities" element={<FacilitiesPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/news" element={<News />} />
 
-          {/* BOTTOM NAV */}
-          <Route path="/specialities" element={<Specialities />} />
-          <Route path="/facilities" element={<FacilitiesPage />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/news" element={<News />} />
+            {/* FACILITY SUB ROUTES */}
+            <Route path="/facilities/ambulance" element={<Ambulance />} />
+            <Route path="/facilities/birthing-centre" element={<Birthing />} />
+            <Route path="/facilities/blood-bank" element={<BloodBank />} />
+            <Route path="/facilities/insurance" element={<Insurance />} />
+            <Route path="/facilities/lab-services" element={<LabServices />} />
+            <Route path="/facilities/radiology-services" element={<RadiologyServices />} />
+            <Route path="/facilities/mhc" element={<MHC />} />
+            <Route path="/facilities/rooms" element={<Rooms />} />
+            <Route path="/facilities/canteen" element={<Canteen />} />
+            <Route path="/facilities/pharmacy" element={<Pharmacy />} />
 
-          {/* FACILITY SUB ROUTES */}
-          <Route path="/facilities/ambulance" element={<Ambulance />} />
-          <Route path="/facilities/birthing-centre" element={<Birthing />} />
-          <Route path="/facilities/blood-bank" element={<BloodBank />} />
-          <Route path="/facilities/insurance" element={<Insurance />} />
-          <Route path="/facilities/lab-services" element={<LabServices />} />
-          <Route path="/facilities/radiology-services" element={<RadiologyServices />} />
+            {/* ✅ ACADEMICS */}
+            <Route path="/academics/Courses" element={<Courses />} />
 
-          {/* ✅ NEW FACILITIES ROUTES */}
-          <Route path="/facilities/mhc" element={<MHC />} />
-          <Route path="/facilities/rooms" element={<Rooms />} />
-          <Route path="/facilities/canteen" element={<Canteen />} />
-          <Route path="/facilities/pharmacy" element={<Pharmacy />} />
-          {/* ✅ ACADEMICS */}
-          <Route path="/academics/Courses" element={<Courses />} />
+            {/* DYNAMIC DEPARTMENT */}
+            <Route path="/departments/:slug" element={<DepartmentDetail />} />
 
-          {/* DYNAMIC DEPARTMENT */}
-          <Route path="/departments/:slug" element={<DepartmentDetail />} />
-          <Route path="/admin/departments" element={<DepartmentAdmin />} />
-          <Route path="/admin/doctors" element={<DoctorAdmin />} />
-          <Route path="/appointment" element={<Appointment />} />
-
-
-         
-
-
-          {/* 404 */}
-          <Route
-            path="*"
-            element={
-              <h2 className="text-center py-20 text-2xl font-bold text-red-600">
-                404 — Page Not Found
-              </h2>
-            }
-          />
-
-        </Route>
-      </Routes>
+            {/* 404 */}
+            <Route
+              path="*"
+              element={
+                <h2 className="text-center py-20 text-2xl font-bold text-red-600">
+                  404 — Page Not Found
+                </h2>
+              }
+            />
+          </Route>
+        </Routes>
       </Suspense>
     </BrowserRouter>
   );

@@ -1,0 +1,275 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. M.R. Jaymohan Unnithan",
+    "speciality": "Pulmonology",
+    "gender": "Male",
+    "image": "assets/Final/DR. M.R. JAYMOHAN UNNITHAN.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Prof. Dr. K. Srikanth",
+    "speciality": "Pulmonology",
+    "gender": "Male",
+    "image": "assets/Final/DR. K.SRIKANTH.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Dr. V. Nandagopal",
+    "speciality": "Pulmonology",
+    "gender": "Male",
+    "image": "assets/Final/Dr.nandhagopal.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Dr. S. Nagarajan",
+    "speciality": "Pulmonology",
+    "gender": "Male",
+    "image": "assets/Final/DR. S. NAGARAJAN.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Dr. P.R. Vaidyanathan",
+    "speciality": "Cardiology",
+    "gender": "Male",
+    "image": "assets/Final/DR. P.R.VAIDYNATHAN.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Dr. M. Sathish Kumar",
+    "speciality": "Cardiology",
+    "gender": "Male",
+    "image": "assets/Final/DR.  M.SATHISH KUMAR .jpg"
+  },
+  {
+    "id": 7,
+    "name": "Dr. S. Balakumar",
+    "speciality": "General & Laparoscopic Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR. S. BALAKUMAR.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Dr. V.P. Shanmuga Sundaram",
+    "speciality": "General & Laparoscopic Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Dr. K. Vinodh",
+    "speciality": "Orthopaedics",
+    "gender": "Male",
+    "image": "assets/Final/DR. K.VINODH.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Dr. N. Balasubramanian",
+    "speciality": "Orthopaedics",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Dr. Jeff Walter Rajadurai",
+    "speciality": "Orthopaedics",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Dr. M. Senthil Kumar",
+    "speciality": "Diabetology & General Medicine",
+    "gender": "Male",
+    "image": "assets/Final/DR. M. SENTHILKUMAR.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Dr. S. Sangeetha",
+    "speciality": "Radiology",
+    "gender": "Female",
+    "image": "assets/Final/DR.S. SANGEETHA.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Dr. G. Murugesan",
+    "speciality": "Neuro & Endovascular Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR.G. MURUGESAN.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Dr. A. Anand Shanmugaraj",
+    "speciality": "Neuro & Endovascular Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR. ANAND SHANMUGARAJ.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Dr. S. Eswaran Moorthy",
+    "speciality": "Neuro & Endovascular Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR. ESWARAN MOORTHY.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Dr. Selva Kumar",
+    "speciality": "Neurology",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Dr. N. Madhan",
+    "speciality": "Intensivists",
+    "gender": "Male",
+    "image": "assets/Final/DR. N. MADHAN.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Dr. V. Venkataraman",
+    "speciality": "ENT",
+    "gender": "Male",
+    "image": "assets/Final/DR. V. VENKATRAMAN.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Prof. Dr. Ganesan K.S",
+    "speciality": "Cardiovascular & Thoracic Surgery",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Dr. Ponni Sunder",
+    "speciality": "Obstetrics & Gynaecology",
+    "gender": "Female",
+    "image": "assets/Final/DR.PONNI SUNDER.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Dr. S. Abinaya",
+    "speciality": "Obstetrics & Gynaecology",
+    "gender": "Female",
+    "image": "assets/Final/DR.S.ABINAYA.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Dr. K. Kokila",
+    "speciality": "Obstetrics & Gynaecology",
+    "gender": "Female",
+    "image": "assets/Final/DR.K.KOKILA.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Dr. P. Senthil Kumar",
+    "speciality": "Paediatrics",
+    "gender": "Male",
+    "image": "assets/Final/DR. P. SENTHILKUMAR.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Dr. V. Shanmugapriya",
+    "speciality": "Paediatrics",
+    "gender": "Female",
+    "image": "assets/Final/DR. V. SHANUMGAPRIYA.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Dr. Sathyan V.K",
+    "speciality": "Paediatrics",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Dr. R.P. Dharmendra",
+    "speciality": "Paediatrics",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Dr. M. Ramalingam",
+    "speciality": "Urology & Kidney Transplant Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR. M. RAMALINGAM.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Dr. K. Senthil",
+    "speciality": "Urology & Kidney Transplant Surgery",
+    "gender": "Male",
+    "image": "assets/Final/DR.K. SENTHILjpg.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Dr. N. Sivasankaran",
+    "speciality": "Urology & Kidney Transplant Surgery",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Dr. R. Gandhimohan",
+    "speciality": "Nephrology & Kidney Transplantation",
+    "gender": "Male",
+    "image": "assets/Final/DR. R. GANDHIMOHAN.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Dr. Vinod Balaji K",
+    "speciality": "Psychiatry",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Dr. R. Jayakumar",
+    "speciality": "Arthroscopy",
+    "gender": "Male",
+    "image": "assets/Final/DR.R. JAYAKUMAR.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Dr. S. Rajakumar",
+    "speciality": "Psychiatry",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Dr. Pradeep Raja S",
+    "speciality": "Dental & Facio Maxillary",
+    "gender": "Male",
+    "image": "assets/Final/DR. PRADEEP RAJA.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Dr. Manasa V Prabhu",
+    "speciality": "Dental & Facio Maxillary",
+    "gender": "Female",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Dr. V. Radhakrishnan",
+    "speciality": "Dermatology",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Prof. Dr. R. Senthil Kumar",
+    "speciality": "Dermatology",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Dr. N. Selvaraj",
+    "speciality": "Oncology",
+    "gender": "Male",
+    "image": "assets/Final/DR.N.SELVARAJ.jpg"
+  }
+]

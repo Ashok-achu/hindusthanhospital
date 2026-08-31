@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import departmentsData from "../departments/departmentsData";
+import departmentsData from "../data/departments.json";
 
 export default function DepartmentSidebar() {
   const [open, setOpen] = useState(false);

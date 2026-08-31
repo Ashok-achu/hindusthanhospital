@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import {
@@ -8,49 +7,25 @@ import {
     FaTransgender,
     FaTimes,
 } from "react-icons/fa";
+import doctorsData from "../data/doctors.json";
 
-import appointmentImg from "../assets/appointment.jpg";
-
-import dummyDoctor from "../assets/Final/Dummydoctor.jpg";
-
-import jaymohan from "../assets/Final/DR. M.R. JAYMOHAN UNNITHAN.jpg";
-import sathish from "../assets/Final/DR.  M.SATHISH KUMAR .jpg";
-import vaidyanathan from "../assets/Final/DR. P.R.VAIDYNATHAN.jpg";
-import balakumar from "../assets/Final/DR. S. BALAKUMAR.jpg";
-import vinodh from "../assets/Final/DR. K.VINODH.jpg";
-import nagarajan from "../assets/Final/DR. S. NAGARAJAN.jpg";
-import senthilkumar from "../assets/Final/DR. M. SENTHILKUMAR.jpg";
-import murugesan from "../assets/Final/DR.G. MURUGESAN.jpg";
-import madhan from "../assets/Final/DR. N. MADHAN.jpg";
-import venkataraman from "../assets/Final/DR. V. VENKATRAMAN.jpg";
-import eswaran from "../assets/Final/DR. ESWARAN MOORTHY.jpg";
-import srikanth from "../assets/Final/DR. K.SRIKANTH.jpg";
-import ksenthil from "../assets/Final/DR.K. SENTHILjpg.jpg";
-import ponni from "../assets/Final/DR.PONNI SUNDER.jpg";
-import kokila from "../assets/Final/DR.K.KOKILA.jpg";
-import gandhimohan from "../assets/Final/DR. R. GANDHIMOHAN.jpg";
-import jayakumar from "../assets/Final/DR.R. JAYAKUMAR.jpg";
-import saranya from "../assets/Final/DR. S.SARANYA VISHUMATHY.jpg";
-import shanumgapriya from "../assets/Final/DR. V. SHANUMGAPRIYA.jpg";
-import shanmuga from "../assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg";
-import ramalingam from "../assets/Final/DR. M. RAMALINGAM.jpg";
-import abinaya from "../assets/Final/DR.S.ABINAYA.jpg";
-
-import anand from "../assets/Final/DR. ANAND SHANMUGARAJ.jpg";
-
-import sangeetha from "../assets/Final/DR.S. SANGEETHA.jpg";
-
-import pradeep from "../assets/Final/DR. PRADEEP RAJA.jpg";
-
-import selvaraj from "../assets/Final/DR.N.SELVARAJ.jpg";
-
-import psenthilkumar from "../assets/Final/DR. P. SENTHILKUMAR.jpg";
-import nandhagopal from "../assets/Final/Dr.nandhagopal.jpeg";
-
+const resolveImage = (path) => {
+  if (!path) return "";
+  if (path.startsWith("http") || path.startsWith("data:") || path.startsWith("/static/")) {
+    return path;
+  }
+  if (path.startsWith("assets/")) {
+    try {
+      return require(`../assets/${path.substring(7)}`);
+    } catch (e) {
+      console.error("Failed to load image", path, e);
+    }
+  }
+  return path;
+};
 
 export default function Healthcare() {
     const navigate = useNavigate();
-    const api = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
     const [filters, setFilters] = useState({
         name: "",
@@ -59,152 +34,19 @@ export default function Healthcare() {
     });
 
     const [selectedDoctor, setSelectedDoctor] = useState(null);
-    const [managedDoctors, setManagedDoctors] = useState([]);
 
-    useEffect(() => {
-        fetch(`${api}/api/doctors`)
-            .then((response) => response.ok ? response.json() : [])
-            .then((items) => {
-                const doctorsFromApi = Array.isArray(items) ? items : [];
-                setManagedDoctors(doctorsFromApi.map((doctor) => ({
-                    ...doctor,
-                    image: doctor.image?.startsWith("/uploads") ? `${api}${doctor.image}` : doctor.image,
-                })));
-            })
-            .catch(() => setManagedDoctors([]));
-    }, [api]);
-
-
-    // ONLY DOCTORS ARRAY REPLACED
-
-    const fallbackDoctors = [
-
-        // PULMONOLOGY
-
-        { id: 1, name: "Dr. M.R. Jaymohan Unnithan", speciality: "Pulmonology", gender: "Male", image: jaymohan },
-
-        { id: 2, name: "Prof. Dr. K. Srikanth", speciality: "Pulmonology", gender: "Male", image: srikanth },
-
-        { id: 3, name: "Dr. V. Nandagopal", speciality: "Pulmonology", gender: "Male", image: nandhagopal },
-
-        { id: 4, name: "Dr. S. Nagarajan", speciality: "Pulmonology", gender: "Male", image: nagarajan },
-
-        // CARDIOLOGY
-
-        { id: 6, name: "Dr. P.R. Vaidyanathan", speciality: "Cardiology", gender: "Male", image: vaidyanathan },
-        { id: 5, name: "Dr. M. Sathish Kumar", speciality: "Cardiology", gender: "Male", image: sathish },
-
-        
-
-        // GENERAL SURGERY
-
-        { id: 7, name: "Dr. S. Balakumar", speciality: "General & Laparoscopic Surgery", gender: "Male", image: balakumar },
-
-        { id: 8, name: "Dr. V.P. Shanmuga Sundaram", speciality: "General & Laparoscopic Surgery", gender: "Male", image: shanmuga },
-
-        // ORTHO
-
-        { id: 9, name: "Dr. K. Vinodh", speciality: "Orthopaedics", gender: "Male", image: vinodh },
-
-        { id: 10, name: "Dr. N. Balasubramanian", speciality: "Orthopaedics", gender: "Male", image: dummyDoctor },
-
-        { id: 11, name: "Dr. Jeff Walter Rajadurai", speciality: "Orthopaedics", gender: "Male", image: dummyDoctor },
-
-        // DIABETOLOGY
-
-        { id: 12, name: "Dr. M. Senthil Kumar", speciality: "Diabetology & General Medicine", gender: "Male", image: senthilkumar },
-
-        // RADIOLOGY
-
-        { id: 13, name: "Dr. S. Sangeetha", speciality: "Radiology", gender: "Female", image: sangeetha },
-
-        // NEURO
-
-        { id: 14, name: "Dr. G. Murugesan", speciality: "Neuro & Endovascular Surgery", gender: "Male", image: murugesan },
-
-        { id: 15, name: "Dr. A. Anand Shanmugaraj", speciality: "Neuro & Endovascular Surgery", gender: "Male", image: anand },
-
-        { id: 16, name: "Dr. S. Eswaran Moorthy", speciality: "Neuro & Endovascular Surgery", gender: "Male", image: eswaran },
-
-         { id: 18, name: "Dr. Selva Kumar", speciality: "Neurology", gender: "Male", image: dummyDoctor },
-
-        { id: 17, name: "Dr. N. Madhan", speciality: "Intensivists", gender: "Male", image: madhan },
-
-       
-
-        // ENT
-
-        { id: 19, name: "Dr. V. Venkataraman", speciality: "ENT", gender: "Male", image: venkataraman },
-
-        // CARDIO THORACIC
-
-        { id: 20, name: "Prof. Dr. Ganesan K.S", speciality: "Cardiovascular & Thoracic Surgery", gender: "Male", image: dummyDoctor },
-
-        // OBG
-        { id: 22, name: "Dr. Ponni Sunder", speciality: "Obstetrics & Gynaecology", gender: "Female", image: ponni },
-
-        { id: 21, name: "Dr. S. Abinaya", speciality: "Obstetrics & Gynaecology", gender: "Female", image: abinaya },
-
-
-        { id: 23, name: "Dr. K. Kokila", speciality: "Obstetrics & Gynaecology", gender: "Female", image: kokila },
-
-        // PAEDIATRICS
-
-        { id: 24, name: "Dr. P. Senthil Kumar", speciality: "Paediatrics", gender: "Male", image: psenthilkumar },
-
-        { id: 25, name: "Dr. V. Shanmugapriya", speciality: "Paediatrics", gender: "Female", image: shanumgapriya },
-
-        { id: 26, name: "Dr. Sathyan V.K", speciality: "Paediatrics", gender: "Male", image: dummyDoctor },
-
-        { id: 27, name: "Dr. R.P. Dharmendra", speciality: "Paediatrics", gender: "Male", image: dummyDoctor },
-
-        // UROLOGY
-
-        { id: 28, name: "Dr. M. Ramalingam", speciality: "Urology & Kidney Transplant Surgery", gender: "Male", image: ramalingam },
-
-        { id: 29, name: "Dr. K. Senthil", speciality: "Urology & Kidney Transplant Surgery", gender: "Male", image: ksenthil },
-
-        { id: 30, name: "Dr. N. Sivasankaran", speciality: "Urology & Kidney Transplant Surgery", gender: "Male", image: dummyDoctor },
-
-        // NEPHROLOGY
-
-        { id: 31, name: "Dr. R. Gandhimohan", speciality: "Nephrology & Kidney Transplantation", gender: "Male", image: gandhimohan },
-
-        // PSYCHIATRY
-
-        { id: 32, name: "Dr. Vinod Balaji K", speciality: "Psychiatry", gender: "Male", image: dummyDoctor },
-
-        { id: 33, name: "Dr. R. Jayakumar", speciality: "Arthroscopy", gender: "Male", image: jayakumar },
-
-        { id: 34, name: "Dr. S. Rajakumar", speciality: "Psychiatry", gender: "Male", image: dummyDoctor },
-
-        // DENTAL
-
-        { id: 35, name: "Dr. Pradeep Raja S", speciality: "Dental & Facio Maxillary", gender: "Male", image: pradeep },
-
-        { id: 36, name: "Dr. Manasa V Prabhu", speciality: "Dental & Facio Maxillary", gender: "Female", image: dummyDoctor },
-
-        // DERMATOLOGY
-
-
-        { id: 38, name: "Dr. V. Radhakrishnan", speciality: "Dermatology", gender: "Male", image: dummyDoctor },
-
-        { id: 39, name: "Prof. Dr. R. Senthil Kumar", speciality: "Dermatology", gender: "Male", image: dummyDoctor },
-
-        // ONCOLOGY
-
-        { id: 40, name: "Dr. N. Selvaraj", speciality: "Oncology", gender: "Male", image: selvaraj },
-
-    ];
-
-    const doctors = (managedDoctors.length > 0 ? managedDoctors : fallbackDoctors)
-        .slice()
-        .sort((a, b) => a.speciality.localeCompare(b.speciality) || a.name.localeCompare(b.name));
+    const doctors = useMemo(() => {
+        return doctorsData.map((doc) => ({
+            ...doc,
+            image: resolveImage(doc.image)
+        })).sort((a, b) => a.speciality.localeCompare(b.speciality) || a.name.localeCompare(b.name));
+    }, []);
 
     // ⭐ AUTO SPECIALITY DROPDOWN
     const specialities = [
         ...new Set(doctors.map(doc => doc.speciality))
     ];
+
 
 
     // ⭐ FILTER SEARCH
