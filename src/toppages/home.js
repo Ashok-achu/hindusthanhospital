@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { motion, AnimatePresence, useInView } from "framer-motion";
@@ -522,17 +522,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë MEDICAL SPECIALITIES ╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë╬ô├▓├ë */}
-      <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
+      {/* ════════ MEDICAL SPECIALITIES ════════ */}
+      <section id="specialities" className="relative overflow-hidden bg-slate-50 py-16 sm:py-24 lg:py-28">
+        {/* Soft background accents */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full opacity-25 blur-[160px]"
-            style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
-          <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full opacity-20 blur-[140px]"
-            style={{ background: "radial-gradient(circle,#0F2C6A,transparent)" }} />
-          <div className="absolute inset-0 opacity-[0.035]"
+          <div className="absolute left-0 top-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#B61B1F]/5 blur-[120px]" />
+          <div className="absolute right-0 bottom-0 h-[500px] w-[500px] translate-x-1/2 translate-y-1/2 rounded-full bg-[#0F2C6A]/5 blur-[120px]" />
+          <div className="absolute inset-0 opacity-[0.4]"
             style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
-              backgroundSize: "80px 80px",
+              backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
             }} />
         </div>
 
@@ -542,151 +541,47 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-10 sm:mb-16 lg:mb-20"
+            className="mb-10 sm:mb-14"
           >
             <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <Eyebrow tone="light">Centre of Excellence</Eyebrow>
-                <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
-                  Medical
-                  <br />
+                <Eyebrow tone="dark">Centre of Excellence</Eyebrow>
+                <h2 className="font-display text-[clamp(1.9rem,7vw,3.5rem)] font-extrabold leading-[1] tracking-tight text-[#0A1B33]">
+                  Medical{" "}
                   <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[#E88585] via-[#F3AEAE] to-[#EFDFB0] bg-clip-text text-transparent">
-                      Specialities
-                    </span>
-                    <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#D65A5A] to-transparent" />
+                    <span className="text-[#B61B1F]">Specialities</span>
+                    <span className="absolute -bottom-1.5 left-0 h-1 w-full rounded-full bg-gradient-to-r from-[#B61B1F] to-[#C9962B]" />
                   </span>
                 </h2>
               </div>
-              <p className="max-w-md text-sm leading-relaxed text-slate-400 sm:text-base lg:text-right lg:text-lg">
-                21 departments staffed by senior consultants, equipped with cutting-edge technology
-                for precise diagnosis and world-class treatment.
+              <p className="max-w-md text-sm leading-relaxed text-slate-600 sm:text-base lg:text-right lg:text-lg">
+                21 specialized departments staffed by senior consultants, equipped with cutting-edge medical technology.
               </p>
             </div>
           </motion.div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={specPage}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -24 }}
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-              className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
-            >
-              {currentDepts.map((dept, i) => (
-                <motion.div
-                  key={dept.slug}
-                  initial={{ opacity: 0, y: 26 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
-                  onMouseEnter={() => setHovered(dept.slug)}
-                  onMouseLeave={() => setHovered(null)}
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-4 md:grid-cols-5 lg:grid-cols-7 mt-8">
+            {DEPARTMENTS.map((dept, i) => (
+              <motion.div
+                key={dept.slug}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: i * 0.02 }}
+              >
+                <Link
+                  to={`/departments/${dept.slug}`}
+                  className="group flex h-full flex-col items-center justify-start rounded-xl border border-slate-200/80 bg-white p-3.5 sm:p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#B61B1F]/40 hover:shadow-xl hover:shadow-[#B61B1F]/10"
                 >
-                  <Link
-                    to={`/departments/${dept.slug}`}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border transition-all duration-500 sm:rounded-[1.5rem]"
-                    style={{
-                      background: hovered === dept.slug ? `linear-gradient(135deg,${dept.color}16,${dept.color}05)` : "rgba(255,255,255,0.03)",
-                      borderColor: hovered === dept.slug ? `${dept.color}55` : "rgba(255,255,255,0.08)",
-                      boxShadow: hovered === dept.slug ? `0 25px 60px -25px ${dept.color}45` : "none",
-                    }}
-                  >
-                    <span
-                      className="absolute left-0 top-0 h-full w-[3px] transition-all duration-500"
-                      style={{ background: dept.color, opacity: hovered === dept.slug ? 1 : 0.35 }}
-                    />
-                    <div className="flex flex-1 flex-col gap-3 p-5 sm:gap-4 sm:p-7">
-                      <div className="flex items-start justify-between">
-                        <div
-                          className="flex items-center justify-center rounded-xl text-lg transition-all duration-500 group-hover:scale-110 sm:text-xl"
-                          style={{
-                            background: `${dept.color}18`,
-                            color: dept.color,
-                            width: "2.75rem",
-                            height: "2.75rem",
-                            boxShadow: hovered === dept.slug ? `0 0 24px ${dept.color}40` : "none",
-                          }}
-                        >
-                          {dept.icon}
-                        </div>
-                        <div
-                          className="flex h-8 w-8 -translate-x-2 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                          style={{ background: `${dept.color}20`, color: dept.color }}
-                        >
-                          <FaArrowRight className="text-xs" />
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3
-                          className="font-display mb-1.5 text-base font-bold text-white transition-colors duration-300 sm:text-lg"
-                          style={{ color: hovered === dept.slug ? dept.color : undefined }}
-                        >
-                          {dept.name}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
-                          {dept.desc}
-                        </p>
-                      </div>
-
-                      <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-4">
-                        <span
-                          className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest"
-                          style={{ background: `${dept.color}18`, color: dept.color }}
-                        >
-                          View Department
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* pagination */}
-          <div className="mt-10 flex flex-col items-center justify-between gap-5 sm:mt-14 sm:flex-row sm:gap-6">
-            <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button key={i} onClick={() => setSpecPage(i)} aria-label={`Page ${i + 1}`}>
-                  <div
-                    className="rounded-full transition-all duration-300"
-                    style={{
-                      width: i === specPage ? "36px" : "8px",
-                      height: "8px",
-                      background: i === specPage ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.15)",
-                    }}
-                  />
-                </button>
-              ))}
-              <span className="ml-3 text-sm text-slate-500">{specPage + 1} / {totalPages}</span>
-            </div>
-
-            <div className="flex gap-3">
-              <button
-                onClick={() => setSpecPage((p) => Math.max(0, p - 1))}
-                disabled={specPage === 0}
-                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
-                style={{
-                  borderColor: specPage === 0 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
-                  background: specPage === 0 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
-                }}
-              >
-                <FaChevronLeft className="text-sm text-white transition-transform group-hover:-translate-x-0.5" />
-              </button>
-              <button
-                onClick={() => setSpecPage((p) => Math.min(totalPages - 1, p + 1))}
-                disabled={specPage === totalPages - 1}
-                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
-                style={{
-                  borderColor: specPage === totalPages - 1 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
-                  background: specPage === totalPages - 1 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
-                }}
-              >
-                <FaChevronRight className="text-sm text-white transition-transform group-hover:translate-x-0.5" />
-              </button>
-            </div>
+                  <div className="mb-3 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F1F5F9] text-2xl text-[#0F2C6A] transition-all duration-300 group-hover:scale-110 group-hover:bg-[#B61B1F] group-hover:text-white group-hover:shadow-md">
+                    {dept.icon}
+                  </div>
+                  <h3 className="font-display text-[11px] sm:text-xs font-bold leading-tight text-slate-700 transition-colors duration-300 group-hover:text-[#B61B1F]">
+                    {dept.name}
+                  </h3>
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
