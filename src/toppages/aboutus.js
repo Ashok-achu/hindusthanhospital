@@ -5,7 +5,7 @@ import hero from "../assets/hero.jpg";
 
 export default function AboutUs() {
   return (
-    <div className="pt-[9rem] font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/30 min-h-screen pb-20">
+    <div className="pt-28 sm:pt-[9rem] font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/30 min-h-screen pb-20">
       
       {/* ===================== HERO SECTION ===================== */}
       <section className="max-w-7xl mx-auto px-6">

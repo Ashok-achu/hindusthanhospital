@@ -37,6 +37,53 @@ import hero4 from "../assets/set1/hero4.png";
 import hero2Mobile from "../assets/set1/heromobile2.png";
 import hero3Mobile from "../assets/set1/heromobile3.png";
 import hero4Mobile from "../assets/set1/heromobile4.png";
+import ambImg from "../assets/set1/Ambulance_.jpg";
+import deliveryImg from "../assets/set1/LABOUR & DELIVERY ROOM.jpg";
+import cardioImg from "../assets/set1/Cardiology_.jpg";
+import endoImg from "../assets/set1/ENDOSCOPY.jpg";
+import nephroImg from "../assets/set1/Nephrology_.jpg";
+
+const carouselImages = [
+  { src: hospitalFrontPage, title: "Hindusthan Hospital Campus", tag: "Campus" },
+  { src: why4, title: "Intensive Care Unit (ICU)", tag: "Critical Care" },
+  { src: why1, title: "Neonatal ICU & Phototherapy", tag: "NICU" },
+  { src: why2, title: "Radiology & Imaging Suite", tag: "Diagnostics" },
+  { src: deliveryImg, title: "Labour & Delivery Suite", tag: "Maternity" },
+  { src: cardioImg, title: "Advanced Cardiology Unit", tag: "Cardiology" },
+  { src: ambImg, title: "24/7 Ambulance & Emergency", tag: "Emergency Care" },
+  { src: endoImg, title: "Endoscopy & Surgery OT", tag: "Surgery" },
+  { src: nephroImg, title: "Dialysis & Renal Unit", tag: "Nephrology" },
+  { src: doctorteam, title: "Expert Medical Team", tag: "Specialists" },
+];
+
+const infrastructureCarouselSettings = {
+  dots: false,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0,
+  speed: 5000,
+  cssEase: "linear",
+  pauseOnHover: true,
+  pauseOnFocus: true,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
+};
+
 
 
 
@@ -379,13 +426,16 @@ export default function Home() {
       <section className="relative w-full overflow-hidden">
         <div
           className="
-    relative
-    w-full
-    h-[280px]
-    sm:h-[360px]
-    md:aspect-[1920/700]
-    md:h-auto
-  "
+            relative
+            w-full
+            aspect-[16/9]
+            xs:aspect-[16/9]
+            sm:aspect-[16/8]
+            md:aspect-[1920/700]
+            md:h-auto
+            min-h-[220px]
+            sm:min-h-[320px]
+          "
         >
           <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
             {heroImages.map((img, i) => (
@@ -582,6 +632,47 @@ export default function Home() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════ INFRASTRUCTURE & FACILITY IMAGE CAROUSEL ════════ */}
+      <section className="relative overflow-hidden bg-white py-12 sm:py-16 border-y border-slate-200/60">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3"
+          >
+            <div>
+              <Eyebrow tone="wine">Hospital Glance</Eyebrow>
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#0A1B33]">
+                State-of-the-Art <span className="text-[#B61B1F]">Facilities & Infrastructure</span>
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-md">
+              Explore our modern operation theatres, intensive care suites, advanced diagnostic labs, and patient-first care facilities.
+            </p>
+          </motion.div>
+
+          <div className="relative px-2">
+            <Slider {...infrastructureCarouselSettings}>
+              {carouselImages.map((item, idx) => (
+                <div key={idx} className="px-2.5 py-2">
+                  <div className="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5">
+                    <div className="h-64 sm:h-72 lg:h-80 w-full overflow-hidden">
+                      <img
+                        src={item.src}
+                        alt="Hindusthan Hospital Facility"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </section>

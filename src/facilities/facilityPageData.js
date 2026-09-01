@@ -17,7 +17,33 @@ const standardHighlights = [
 ];
 
 const facilityPageData = {
-  ambulance: { title: "Ambulance", eyebrow: "Premium care on wheels", tagline: "Care in Every Mile", description: "Fleet of fully-equipped incubator and D Level ambulance with trained paramedics available round the clock.", heroImage: ambulanceHero, featureImage: ambulanceInterior, highlights: [{ icon: "ambulance", title: "24×7 Availability", text: "Round-the-clock emergency service." }, { icon: "clock", title: "Quick Response", text: "Rapid response time, always." }, { icon: "heart", title: "Advanced Life Support", text: "Modern medical equipment onboard." }, { icon: "nurse", title: "Trained Paramedics", text: "Experienced and certified medical staff." }], services: ["Cardiac monitor", "Defibrillator", "Oxygen supply", "Ventilator", "Suction apparatus", "Emergency medicines", "Spine board & immobilizers", "GPS-enabled faster reach"], safetyNote: "We follow strict safety protocols and infection-control measures for secure, hygienic patient transport.", ctaTitle: "For Emergencies, Call 0422 432 7777" },
+  ambulance: {
+    title: "Ambulance",
+    eyebrow: "Premium care on wheels",
+    tagline: "Care in Every Mile",
+    description: "Fleet of fully-equipped incubator and D Level ambulance with trained paramedics available round the clock.",
+    featuredNote: "Fleet of fully-equipped incubator and D Level ambulance with trained paramedics available round the clock.",
+    heroImage: ambulanceHero,
+    featureImage: ambulanceInterior,
+    highlights: [
+      { icon: "ambulance", title: "Incubator & D-Level Fleet", text: "Fully-equipped incubator and D-Level ambulances." },
+      { icon: "clock", title: "24×7 Availability", text: "Trained paramedics available round the clock." },
+      { icon: "heart", title: "Advanced Life Support", text: "Complete critical care equipment onboard." },
+      { icon: "nurse", title: "Trained Paramedics", text: "Experienced and certified emergency response team." }
+    ],
+    services: [
+      "Incubator-equipped ambulance for neonates",
+      "D-Level Advanced Life Support (ALS) ambulance",
+      "24x7 trained paramedics onboard",
+      "Cardiac monitor & Defibrillator",
+      "Portable Transport Ventilator",
+      "Oxygen supply & Suction apparatus",
+      "Emergency medicines & resuscitation kit",
+      "GPS-enabled real-time tracking"
+    ],
+    safetyNote: "We follow strict emergency response protocols and infection-control measures for safe, rapid patient transport.",
+    ctaTitle: "For Emergencies, Call 0422 432 7777"
+  },
   birthing: { title: "Birthing Centre", eyebrow: "Mother and baby care", tagline: "A Gentle Beginning", description: "A calm, caring environment with modern labour suites, experienced obstetric teams and attentive support for mothers and newborns.", heroImage: birthingImage, highlights: standardHighlights, services: ["Modern labour suites", "Antenatal & postnatal support", "Expert obstetric team", "Newborn care support", "High-risk pregnancy coordination", "Comfort-focused recovery"], safetyNote: standardSafety },
   bloodBank: { title: "Blood Bank", eyebrow: "Safe blood support", tagline: "Ready When It Matters", description: "Safe collection, screening, processing and storage of blood components to support emergency and planned patient care.", heroImage: laboratoryImage, highlights: standardHighlights, services: ["Screened blood units", "Component separation", "Temperature-controlled storage", "Emergency issue support", "Blood group & cross-match", "Quality-assured processes"], safetyNote: "Each unit is handled through careful screening, storage and traceability procedures." },
   insurance: { title: "Insurance & Cashless", eyebrow: "Hassle-free care", tagline: "Support Beyond Treatment", description: "Our dedicated insurance desk assists eligible patients with cashless approvals, documentation and coordination with insurers and TPAs.", heroImage: hospitalImage, highlights: standardHighlights, services: ["Cashless hospitalisation", "TPA coordination", "Pre-authorisation support", "Documentation guidance", "Corporate insurance support", "Claim-status assistance"], safetyNote: "Our desk helps make the insurance process clear, coordinated and patient-friendly." },
@@ -26,7 +52,24 @@ const facilityPageData = {
   rooms: { title: "Patient Rooms", eyebrow: "Comfort in recovery", tagline: "Rest. Heal. Recover.", description: "Comfortable accommodation options designed around clinical needs, privacy and a supportive environment for patients and families.", heroImage: roomImage, highlights: standardHighlights, services: ["Suite rooms", "Deluxe rooms", "Private rooms", "General wards", "24×7 nursing support", "Attendant facilities"], safetyNote: "Clean, well-maintained rooms and attentive support help create a comfortable recovery experience." },
   canteen: { title: "Hospital Canteen", eyebrow: "Nourishing every day", tagline: "Wholesome Care, Served Fresh", description: "Hygienic, nutritious meals for patients, attendants and staff, including diet-conscious choices to support recovery and wellbeing.", heroImage: canteenImage, highlights: standardHighlights, services: ["Hygienic meal preparation", "Patient diet support", "Balanced meal options", "Meals for attendants", "Fresh refreshments", "Timely service"], safetyNote: "Food preparation follows cleanliness and quality practices for safe, patient-friendly dining." },
   it: { title: "Digital Services", eyebrow: "Connected healthcare", tagline: "Technology That Supports Care", description: "Secure digital systems help connect clinical teams, safeguard patient information and support smooth, coordinated hospital care.", heroImage: hospitalImage, highlights: standardHighlights, services: ["Digital patient records", "Secure information systems", "Clinical coordination", "Technology-enabled workflow", "Data privacy focus", "Reliable hospital connectivity"], safetyNote: "Our systems are designed to support privacy, continuity and dependable care coordination." },
-  pharmacy: { title: "24×7 Hospital Pharmacy", eyebrow: "Reliable medicines", tagline: "Essential Care, Always Available", description: "Round-the-clock access to prescribed medicines, emergency drugs and essential medical supplies through our in-house pharmacy.", heroImage: pharmacyImage, highlights: standardHighlights, services: ["Prescription medicines", "Emergency & ICU drugs", "Qualified pharmacist support", "Temperature-controlled storage", "Inpatient medicine supply", "Quick emergency dispensing"], safetyNote: "A valid prescription is required, and medicines are stored and dispensed under controlled quality practices." },
+  pharmacy: {
+    title: "24×7 Hospital Pharmacy",
+    eyebrow: "Reliable medicines",
+    tagline: "Essential Care, Always Available",
+    description: "Round-the-clock access to prescribed medicines, emergency drugs and essential medical supplies through our in-house pharmacy. Prescription is mandatory for medicine.",
+    featuredNote: "Prescription is mandatory for medicine.",
+    heroImage: pharmacyImage,
+    highlights: standardHighlights,
+    services: [
+      "Prescription medicines",
+      "Emergency & ICU drugs",
+      "Qualified pharmacist support",
+      "Temperature-controlled storage",
+      "Inpatient medicine supply",
+      "Quick emergency dispensing"
+    ],
+    safetyNote: "Prescription is mandatory for medicine. Medicines are stored and dispensed under strict controlled quality practices."
+  },
   packages: { title: "Health Packages", eyebrow: "Preventive wellbeing", tagline: "Know More. Live Better.", description: "Health-check packages are designed to support preventive screening, early detection and informed conversations with your doctor.", heroImage: hospitalImage, highlights: standardHighlights, services: ["Preventive screening", "Blood investigations", "Cardiac tests", "Imaging where indicated", "Doctor consultation", "Clear package guidance"], safetyNote: "Our team can help you understand the right package and prepare for your health check." },
 };
 

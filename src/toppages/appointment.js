@@ -71,7 +71,7 @@ setSuccess(false);
 
 return(
 
-<div className="pt-[9rem] pb-24 bg-gray-50 font-[Poppins]">
+<div className="pt-28 sm:pt-[9rem] pb-24 bg-gray-50 font-[Poppins]">
 
 {/* HERO */}
 <section className="max-w-7xl mx-auto px-6">

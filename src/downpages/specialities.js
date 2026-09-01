@@ -228,7 +228,7 @@ export default function Specialities() {
   const doctors = DOCTORS[active] || [];
 
   return (
-    <div className="font-[Poppins] pt-[9rem] pb-20 bg-gray-50 min-h-screen">
+    <div className="font-[Poppins] pt-28 sm:pt-[9rem] pb-20 bg-gray-50 min-h-screen">
 
       {/* PAGE TITLE */}
       <div className="max-w-7xl mx-auto px-6 mb-6">

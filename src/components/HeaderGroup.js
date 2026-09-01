@@ -49,6 +49,8 @@ export default function HeaderGroup() {
         "Physical Medicine & Rehabilitation": "rehab",
         "Surgical Oncology": "surgical-oncology",
         "Urology": "urology",
+        "Liver Transplant": "liver-transplant",
+        "Kidney Transplant": "kidney-transplant",
     };
 
     const toSlug = (label) => "/departments/" + slugMap[label];
@@ -66,7 +68,7 @@ export default function HeaderGroup() {
             ],
         },
         { label: "Doctors", to: "/doctors" },
-        { label: "Departments", mega: true, children: Object.keys(slugMap) },
+        { label: "Center of Excellence", mega: true, children: Object.keys(slugMap) },
         {
             label: "Facilities",
             children: [
@@ -137,72 +139,72 @@ export default function HeaderGroup() {
         <>
             {/* ---------- TOP INFO BAR (desktop/tablet only) ---------- */}
             {/* ---------- TOP INFO BAR (desktop/tablet only) ---------- */}
-<div className={`hidden md:block w-full bg-white border-b border-slate-100 transition-all duration-500 overflow-hidden
+            <div className={`hidden md:block w-full bg-white border-b border-slate-100 transition-all duration-500 overflow-hidden
 ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
 
-    <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
-    <div
-    className="flex items-center gap-6 lg:gap-8"
-    style={{ marginLeft: "48px" }}
->
-        {/* Contact */}
-        <a href="tel:+914224327777" className="group flex items-center gap-3 flex-shrink-0">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all">
-                <FaPhoneAlt className="text-xs" />
-            </span>
+                <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
+                    <div
+                        className="flex items-center gap-6 lg:gap-8"
+                        style={{ marginLeft: "48px" }}
+                    >
+                        {/* Contact */}
+                        <a href="tel:+914224327777" className="group flex items-center gap-3 flex-shrink-0">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all">
+                                <FaPhoneAlt className="text-xs" />
+                            </span>
 
-            <div className="leading-tight">
-                <div className="text-sm font-semibold">
-                    +91 4224327777 / 4327778
-                </div>
-                <div className="text-xs text-slate-500">
-                    Emergency
-                    <span className="font-bold text-rose-600">
-                        {" "}+91 4224327799
-                    </span>
+                            <div className="leading-tight">
+                                <div className="text-sm font-semibold">
+                                    +91 4224327777 / 4327778
+                                </div>
+                                <div className="text-xs text-slate-500">
+                                    Emergency
+                                    <span className="font-bold text-rose-600">
+                                        {" "}+91 4224327799
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        {/* Divider */}
+                        <div className="h-10 w-px bg-slate-200" />
+
+                        {/* Address */}
+                        <div className="flex items-center gap-3 flex-shrink-0">
+                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50 text-teal-700">
+                                <FaMapMarkerAlt className="text-xs" />
+                            </span>
+
+                            <p className="text-sm text-slate-600 whitespace-nowrap">
+                                522/3 Hindusthan Hospital Road, Avinashi Road, Coimbatore
+                            </p>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="h-10 w-px bg-slate-200" />
+
+                        {/* Appointment */}
+                        <button
+                            onClick={() => navigate("/appointment")}
+                            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:-translate-y-0.5 transition-all"
+                        >
+                            <FaCalendarCheck />
+                            BOOK APPOINTMENT
+                        </button>
+
+                        {/* Divider */}
+                        <div className="h-10 w-px bg-slate-200" />
+
+                        {/* NABH */}
+                        <img
+                            src={certLogo}
+                            alt="NABH"
+                            className="w-14 object-contain"
+                        />
+
+                    </div>
                 </div>
             </div>
-        </a>
-
-        {/* Divider */}
-        <div className="h-10 w-px bg-slate-200" />
-
-        {/* Address */}
-        <div className="flex items-center gap-3 flex-shrink-0">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50 text-teal-700">
-                <FaMapMarkerAlt className="text-xs" />
-            </span>
-
-            <p className="text-sm text-slate-600 whitespace-nowrap">
-                522/3 Hindusthan Hospital Road, Avinashi Road, Coimbatore
-            </p>
-        </div>
-
-        {/* Divider */}
-        <div className="h-10 w-px bg-slate-200" />
-
-        {/* Appointment */}
-        <button
-            onClick={() => navigate("/appointment")}
-            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:-translate-y-0.5 transition-all"
-        >
-            <FaCalendarCheck />
-            BOOK APPOINTMENT
-        </button>
-
-        {/* Divider */}
-        <div className="h-10 w-px bg-slate-200" />
-
-        {/* NABH */}
-        <img
-            src={certLogo}
-            alt="NABH"
-            className="w-14 object-contain"
-        />
-
-    </div>
-</div>
-</div>
 
             {/* ---------- NAVBAR ---------- */}
             <div className="sticky top-0 z-[9999] w-full flex justify-center bg-white/80 backdrop-blur-md py-2 px-3 shadow-md">
@@ -244,11 +246,10 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: 10 }}
                                             transition={{ duration: .2 }}
-                                            className={`absolute top-full mt-3 bg-white rounded-3xl shadow-2xl z-50 border border-slate-100/80 ${
-                                                item.mega 
-                                                    ? "left-0 w-full p-8" 
+                                            className={`absolute top-full mt-3 bg-white rounded-3xl shadow-2xl z-50 border border-slate-100/80 ${item.mega
+                                                    ? "left-0 w-full p-8"
                                                     : "left-0 w-64 p-2"
-                                            }`}>
+                                                }`}>
 
                                             {item.mega ? (
                                                 <div className="grid grid-cols-4 gap-8">
@@ -380,7 +381,7 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
                                                 animate={{ height: "auto", opacity: 1 }}
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.2 }}
-                                                className={`bg-slate-50 overflow-hidden ${item.mega ? "grid grid-cols-2 gap-x-2" : ""}`}
+                                                className={`bg-slate-50 overflow-hidden ${item.mega ? "grid grid-cols-1 sm:grid-cols-2 gap-x-2" : ""}`}
                                             >
                                                 {item.children.map((sub, j) => {
                                                     if (typeof sub === "string") {
