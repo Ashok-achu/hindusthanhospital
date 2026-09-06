@@ -9,7 +9,7 @@ import HeaderGroup from "./components/HeaderGroup";
 import SiteLayout from "./layouts/sitelayout";
 
 // 🔹 Top Navigation Pages
-const Home = lazy(() => import("./toppages/home"));
+import Home from "./toppages/home";
 const Mettupalayam = lazy(() => import("./toppages/Mettupalayam"));
 const Doctor = lazy(() => import("./downpages/healthcare"));
 const AboutUs = lazy(() => import("./toppages/aboutus"));
@@ -61,7 +61,7 @@ export default function App() {
       <ScrollToTop />
 
 
-      <Suspense fallback={<div className="grid min-h-[40vh] place-items-center text-sm font-semibold text-[#0E5260]">Loading...</div>}>
+      <Suspense fallback={null}>
         <Routes>
           <Route element={<SiteLayout />}>
             {/* MAIN ROUTES */}

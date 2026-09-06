@@ -767,170 +767,77 @@ export default function Home() {
       
 
       {/* ════════ MEDICAL SPECIALITIES ════════ */}
-      <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
+      <section id="specialities" className="relative overflow-hidden bg-slate-50/70 py-10 sm:py-14">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full opacity-25 blur-[160px]"
-            style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
-          <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full opacity-20 blur-[140px]"
-            style={{ background: "radial-gradient(circle,#0F2C6A,transparent)" }} />
-          <div className="absolute inset-0 opacity-[0.035]"
-            style={{
-              backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
-              backgroundSize: "80px 80px",
-            }} />
+          <div className="absolute top-10 right-10 h-[400px] w-[400px] rounded-full bg-[#B61B1F]/5 blur-[120px]" />
+          <div className="absolute bottom-10 left-10 h-[400px] w-[400px] rounded-full bg-[#0F2C6A]/5 blur-[120px]" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-10 sm:mb-16 lg:mb-20"
+            transition={{ duration: 0.5 }}
+            className="mb-8 text-center"
           >
-            <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                
-                <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
-                  Medical
-                  <br />
-                  <span className="relative inline-block">
-                    <span className="bg-gradient-to-r from-[#E88585] via-[#F3AEAE] to-[#EFDFB0] bg-clip-text text-transparent">
-                      Specialities
-                    </span>
-                    <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#D65A5A] to-transparent" />
-                  </span>
-                </h2>
-              </div>
-              <p className="max-w-md text-sm leading-relaxed text-slate-400 sm:text-base lg:text-right lg:text-lg">
-                21 departments staffed by senior consultants, equipped with cutting-edge technology
-                for precise diagnosis and world-class treatment.
-              </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#B61B1F]/15 bg-[#B61B1F]/5 px-3 py-0.5 text-[11px] font-semibold text-[#B61B1F] mb-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#B61B1F]" />
+              Centres of Excellence
             </div>
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+              Medical{" "}
+              <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">
+                Specialities & Departments
+              </span>
+            </h2>
           </motion.div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={specPage}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -24 }}
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-              className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3"
-            >
-              {currentDepts.map((dept, i) => (
-                <motion.div
-                  key={dept.slug}
-                  initial={{ opacity: 0, y: 26 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
-                  onMouseEnter={() => setHovered(dept.slug)}
-                  onMouseLeave={() => setHovered(null)}
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {DEPARTMENTS.map((dept, i) => (
+              <motion.div
+                key={dept.slug}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, delay: i * 0.015 }}
+                onMouseEnter={() => setHovered(dept.slug)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                <Link
+                  to={`/departments/${dept.slug}`}
+                  className="group relative flex h-full items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#B61B1F]/30 hover:shadow-md sm:p-3.5"
                 >
-                  <Link
-                    to={`/departments/${dept.slug}`}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-[1.25rem] border transition-all duration-500 sm:rounded-[1.5rem]"
+                  <span
+                    className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl transition-all duration-300"
+                    style={{ background: dept.color, opacity: hovered === dept.slug ? 1 : 0.5 }}
+                  />
+
+                  <div
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg transition-transform duration-300 group-hover:scale-110 sm:h-11 sm:w-11"
                     style={{
-                      background: hovered === dept.slug ? `linear-gradient(135deg,${dept.color}16,${dept.color}05)` : "rgba(255,255,255,0.03)",
-                      borderColor: hovered === dept.slug ? `${dept.color}55` : "rgba(255,255,255,0.08)",
-                      boxShadow: hovered === dept.slug ? `0 25px 60px -25px ${dept.color}45` : "none",
+                      background: `${dept.color}14`,
+                      color: dept.color,
                     }}
                   >
-                    <span
-                      className="absolute left-0 top-0 h-full w-[3px] transition-all duration-500"
-                      style={{ background: dept.color, opacity: hovered === dept.slug ? 1 : 0.35 }}
-                    />
-                    <div className="flex flex-1 flex-col gap-3 p-5 sm:gap-4 sm:p-7">
-                      <div className="flex items-start justify-between">
-                        <div
-                          className="flex items-center justify-center rounded-xl text-lg transition-all duration-500 group-hover:scale-110 sm:text-xl"
-                          style={{
-                            background: `${dept.color}18`,
-                            color: dept.color,
-                            width: "2.75rem",
-                            height: "2.75rem",
-                            boxShadow: hovered === dept.slug ? `0 0 24px ${dept.color}40` : "none",
-                          }}
-                        >
-                          {dept.icon}
-                        </div>
-                        <div
-                          className="flex h-8 w-8 -translate-x-2 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-                          style={{ background: `${dept.color}20`, color: dept.color }}
-                        >
-                          <FaArrowRight className="text-xs" />
-                        </div>
-                      </div>
+                    {dept.icon}
+                  </div>
 
-                      <div>
-                        <h3
-                          className="font-display mb-1.5 text-base font-bold text-white transition-colors duration-300 sm:text-lg"
-                          style={{ color: hovered === dept.slug ? dept.color : undefined }}
-                        >
-                          {dept.name}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
-                          {dept.desc}
-                        </p>
-                      </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="truncate font-display text-xs font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#B61B1F] sm:text-sm">
+                      {dept.name}
+                    </h3>
+                    <p className="truncate text-[11px] text-slate-500">
+                      {dept.desc}
+                    </p>
+                  </div>
 
-                      <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-4">
-                        <span
-                          className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest"
-                          style={{ background: `${dept.color}18`, color: dept.color }}
-                        >
-                          View Department
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          {/* pagination */}
-          <div className="mt-10 flex flex-col items-center justify-between gap-5 sm:mt-14 sm:flex-row sm:gap-6">
-            <div className="flex items-center gap-2">
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button key={i} onClick={() => setSpecPage(i)} aria-label={`Page ${i + 1}`}>
-                  <div
-                    className="rounded-full transition-all duration-300"
-                    style={{
-                      width: i === specPage ? "36px" : "8px",
-                      height: "8px",
-                      background: i === specPage ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.15)",
-                    }}
+                  <FaArrowRight
+                    className="shrink-0 text-[10px] text-slate-300 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-[#B61B1F]"
                   />
-                </button>
-              ))}
-              <span className="ml-3 text-sm text-slate-500">{specPage + 1} / {totalPages}</span>
-            </div>
-
-            <div className="flex gap-3">
-              <button
-                onClick={() => setSpecPage((p) => Math.max(0, p - 1))}
-                disabled={specPage === 0}
-                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
-                style={{
-                  borderColor: specPage === 0 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
-                  background: specPage === 0 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
-                }}
-              >
-                <FaChevronLeft className="text-sm text-white transition-transform group-hover:-translate-x-0.5" />
-              </button>
-              <button
-                onClick={() => setSpecPage((p) => Math.min(totalPages - 1, p + 1))}
-                disabled={specPage === totalPages - 1}
-                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
-                style={{
-                  borderColor: specPage === totalPages - 1 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
-                  background: specPage === totalPages - 1 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
-                }}
-              >
-                <FaChevronRight className="text-sm text-white transition-transform group-hover:translate-x-0.5" />
-              </button>
-            </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -1572,55 +1479,114 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════ LATEST NEWS ════════ */}
-      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
-        <div className="absolute top-20 right-0 h-64 w-64 rounded-full bg-[#F5E8C8] opacity-60 blur-3xl" />
-        <div className="absolute bottom-20 left-0 h-64 w-64 rounded-full bg-[#FDECEC] opacity-60 blur-3xl" />
+      {/* ════════ LATEST NEWS & INSIGHTS ════════ */}
+      <section className="relative overflow-hidden bg-slate-50/70 py-16 sm:py-24">
+        <div className="absolute top-20 right-0 h-80 w-80 rounded-full bg-[#B61B1F]/5 blur-3xl" />
+        <div className="absolute bottom-10 left-0 h-80 w-80 rounded-full bg-[#0F2C6A]/5 blur-3xl" />
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">
+          <div className="mb-10 flex flex-col gap-4 sm:mb-14 md:flex-row md:items-end md:justify-between">
             <div>
-              <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-tight text-ink">
-                Latest{" "}
-                <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">News</span>
+              
+              <h2 className="font-display text-[clamp(1.75rem,5vw,2.75rem)] font-extrabold leading-tight text-ink">
+                Latest Hospital{" "}
+                <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">
+                  News & Medical Insights
+                </span>
               </h2>
+              <p className="mt-2 text-sm text-slate-500 sm:text-base">
+                Discover medical innovations, health tips, and official announcements from Hindusthan Hospitals
+              </p>
             </div>
-            <a href="/news" className="group flex items-center gap-2 text-sm font-bold text-slate-500 transition-colors hover:text-[#B61B1F] sm:text-base">
-              View All Articles
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition-all group-hover:bg-[#FAD6D6] group-hover:text-[#B61B1F]">
-                <FaArrowRight className="text-sm" />
-              </span>
-            </a>
+
+            <Link
+              to="/news"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-[#0F2C6A] px-6 py-3 text-xs font-bold text-white shadow-md transition-all hover:bg-[#B61B1F] hover:shadow-lg sm:text-sm"
+            >
+              Explore All Updates
+              <FaArrowRight className="text-xs transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
+
+          <div className="grid gap-8 md:grid-cols-3">
             {[
-              { img: news1, title: "Longest Robotic Telesurgery in India", desc: "We are expanding our services to serve you better with world-class equipment." },
-              { img: news2, title: "SWARNAM - SENIOR CITIZEN HEALTH CLUB", desc: "Empowering senior citizens with preventive care, wellness programs, and regular health check-ups.." },
-              { img: news3, title: "Branch @Mettupalayam", desc: "Expanding our Service to wide from Coimbatore to Mettupalayam ." },
+              {
+                id: 1,
+                category: "Medical Breakthrough",
+                date: "Nov 05, 2025",
+                readTime: "3 min read",
+                img: news1,
+                title: "Longest Robotic Telesurgery Breakthrough in India",
+                desc: "Hindusthan Hospitals successfully introduces next-generation robotic surgical systems for ultra-precise, minimally invasive procedures.",
+                link: "/news"
+              },
+              {
+                id: 2,
+                category: "Community Health",
+                date: "Oct 27, 2025",
+                readTime: "2 min read",
+                img: news2,
+                title: "SWARNAM - Senior Citizen Wellness & Health Club Launched",
+                desc: "Empowering senior citizens in Coimbatore with comprehensive preventive screenings, specialized geriatric care, and wellness sessions.",
+                link: "/news"
+              },
+              {
+                id: 3,
+                category: "Expansion & Growth",
+                date: "Oct 18, 2025",
+                readTime: "4 min read",
+                img: news3,
+                title: "Inauguration of New Centre of Excellence @ Mettupalayam",
+                desc: "Bringing world-class 24x7 emergency medical services, advanced diagnostics, and multi-speciality consultations to Mettupalayam.",
+                link: "/mettupalayam"
+              },
             ].map((item, i) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 26 }}
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem]"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-[#B61B1F]/20 hover:shadow-xl"
               >
-                <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
+                <div className="relative h-52 w-full overflow-hidden bg-slate-900">
                   <img
                     src={item.img}
-                    className="h-full w-full object-contain bg-white p-2 transition duration-500"
-                    alt={`${item.title} — Hindusthan Hospital news`}
+                    alt={item.title}
+                    className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-
-
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <span className="absolute top-4 left-4 rounded-full bg-white/90 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-[#0F2C6A] shadow-sm">
+                    {item.category}
+                  </span>
                 </div>
-                <div className="flex flex-grow flex-col p-5 sm:p-8">
-                  <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-3 sm:text-xl">{item.title}</h3>
-                  <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-500 sm:mb-6">{item.desc}</p>
-                  <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
 
+                <div className="flex flex-1 flex-col justify-between p-6">
+                  <div>
+                    <div className="flex items-center gap-3 text-xs text-slate-400 mb-3">
+                      <span>{item.date}</span>
+                      <span>•</span>
+                      <span>{item.readTime}</span>
+                    </div>
 
+                    <h3 className="font-display text-lg font-bold leading-snug text-slate-900 transition-colors group-hover:text-[#B61B1F] sm:text-xl">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-3 text-xs leading-relaxed text-slate-600 line-clamp-3 sm:text-sm">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+                    <Link
+                      to={item.link}
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#B61B1F] transition-all group-hover:gap-3"
+                    >
+                      Read Full Article
+                      <FaArrowRight className="text-[11px]" />
+                    </Link>
                   </div>
                 </div>
               </motion.div>

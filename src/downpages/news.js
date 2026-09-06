@@ -4,50 +4,44 @@ import news2 from "../assets/pediatrics.jpg";
 import news3 from "../assets/surgery.jpg";
 
 export default function News() {
-  const [activeArticle, setActiveArticle] = useState(null);
-  const [newsList, setNewsList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const staticArticles = [
+    {
+      id: 1,
+      title: "Hindusthan Hospital Launches Advanced Cardiac & Robotic Surgery Wing",
+      image: news1,
+      date: "05 Nov 2025",
+      content:
+        "Hindusthan Hospital has inaugurated a state-of-the-art cardiac facility and robotic surgical center featuring advanced diagnostic labs, ICU, and 24x7 emergency care. Equipped with cutting-edge surgical robotics, the new wing enables world-class minimally invasive interventions with faster patient recovery times."
+    },
+    {
+      id: 2,
+      title: "New Pediatrics & Neonatal Intensive Care Unit Unveiled",
+      image: news2,
+      date: "27 Oct 2025",
+      content:
+        "The new PICU and Level-3 NICU includes world-class incubators, radiant warmers, advanced neonatal ventilators, and a multi-disciplinary specialist team available round-the-clock for critical newborn care."
+    },
+    {
+      id: 3,
+      title: "SWARNAM - Senior Citizen Wellness & Health Club Launched",
+      image: news3,
+      date: "18 Oct 2025",
+      content:
+        "Hindusthan Hospital introduces SWARNAM, a dedicated health initiative designed for senior citizens. Members enjoy priority consultations, specialized geriatric health checkups, home healthcare assistance, and wellness workshops."
+    },
+  ];
 
-  // 🔥 Load data from backend (Dynamic)
+  const [activeArticle, setActiveArticle] = useState(null);
+  const [newsList, setNewsList] = useState(staticArticles);
+
   useEffect(() => {
     fetch("https://your-backend-url/api/news")
       .then((res) => res.json())
       .then((data) => {
-        setNewsList(data);
-        setLoading(false);
+        if (Array.isArray(data) && data.length) setNewsList(data);
       })
       .catch((err) => {
-        console.error("Error loading news:", err);
-
-        // fallback: load your existing static list if server fails
-        setNewsList([
-          {
-            id: 1,
-            title: "Hindusthan Hospital Launches Advanced Cardiac Wing",
-            image: news1,
-            date: "05 Nov 2025",
-            content:
-              "Hindusthan Hospital has inaugurated a state-of-the-art cardiac facility featuring advanced diagnostic labs, ICU, and 24x7 emergency care...",
-          },
-          {
-            id: 2,
-            title: "New Pediatrics Intensive Care Unit Unveiled",
-            image: news2,
-            date: "27 Oct 2025",
-            content:
-              "The new PICU includes world-class ventilators, neonatal monitoring, and a multi-disciplinary specialist team available round-the-clock...",
-          },
-          {
-            id: 3,
-            title: "Robotic Surgery Department Now Operational",
-            image: news3,
-            date: "18 Oct 2025",
-            content:
-              "Hindusthan Hospital introduces next-gen robotic surgical equipment enabling minimally invasive procedures...",
-          },
-        ]);
-
-        setLoading(false);
+        // static fallback active by default
       });
   }, []);
 
@@ -64,22 +58,14 @@ export default function News() {
         </h2>
       </div>
 
-      {/* Loading Screen */}
-      {loading && (
-        <div className="text-center py-20 text-lg font-semibold text-gray-500">
-          Loading news...
-        </div>
-      )}
-
       {/* News Cards */}
       <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 mt-10 pb-20">
-        {!loading &&
-          newsList.map((n) => (
-            <div
-              key={n._id || n.id}
-              className="bg-white rounded-2xl shadow hover:shadow-xl transition p-4 cursor-pointer"
-              onClick={() => setActiveArticle(n)}
-            >
+        {newsList.map((n) => (
+          <div
+            key={n._id || n.id}
+            className="bg-white rounded-2xl shadow hover:shadow-xl transition p-4 cursor-pointer"
+            onClick={() => setActiveArticle(n)}
+          >
               <img
                 src={n.image}
                 alt="news"
