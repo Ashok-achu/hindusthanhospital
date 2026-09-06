@@ -64,13 +64,17 @@ function CollapsibleSection({ title, icon: Icon, children, defaultOpen = true })
 
 export default function Insurance() {
   return (
-    <main className="bg-[#f7f8f6] pb-16 pt-24 font-[Poppins] text-[#102b31] sm:pt-28">
+    <main className="bg-[#f7f8f6] pb-16 pt-0 font-[Poppins] text-[#102b31]">
 
       {/* ── HERO ── */}
-      <section className="relative isolate min-h-[340px] overflow-hidden bg-[#061d29] sm:min-h-[520px]">
-        <img src={heroImg} alt="Insurance & Cashless at Hindusthan Hospital" className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,18,29,.98)_0%,rgba(3,18,29,.87)_36%,rgba(3,18,29,.38)_68%,rgba(3,18,29,.08)_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-10">
+      <section className="relative isolate min-h-[420px] overflow-hidden bg-[#061d29] sm:min-h-[520px]">
+        <img
+          src={heroImg}
+          alt="Insurance & Cashless at Hindusthan Hospital"
+          className="absolute inset-0 h-full w-full object-cover object-[75%_center] sm:object-center opacity-90 sm:opacity-100"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#03121d]/90 via-[#03121d]/75 to-[#03121d]/90 sm:bg-[linear-gradient(90deg,rgba(3,18,29,.98)_0%,rgba(3,18,29,.87)_36%,rgba(3,18,29,.38)_68%,rgba(3,18,29,.08)_100%)]" />
+        <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-20 sm:px-8 sm:py-6 lg:px-10">
           <nav className="flex items-center gap-2 text-xs font-medium text-white/70" aria-label="Breadcrumb">
             <Link to="/" className="transition hover:text-white">Home</Link>
             <span className="text-white/35">›</span>
@@ -83,7 +87,7 @@ export default function Insurance() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
-            className="max-w-xl pt-10 sm:pt-28"
+            className="max-w-xl pt-6 sm:pt-24 lg:pt-28"
           >
             <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[#e9b45b]">
               Hassle-free care <span className="h-px w-12 bg-[#e9b45b]/60" />
@@ -92,19 +96,19 @@ export default function Insurance() {
               Insurance &<br />Cashless Facility
             </h1>
             <p className="mt-2 font-serif text-lg text-[#e9b45b] sm:text-2xl">Support Beyond Treatment</p>
-            <p className="mt-4 max-w-md text-sm leading-7 text-white/90 sm:text-base">
+            <p className="mt-4 max-w-md text-sm leading-6 text-white/90 sm:text-base sm:leading-7">
               Our dedicated insurance desk assists eligible patients with cashless approvals, documentation and seamless coordination with insurers and TPAs — so you can focus entirely on recovery.
             </p>
             <a
               href="tel:04224327777"
-              className="mt-7 inline-flex items-center gap-4 rounded-2xl border border-[#d5b875]/70 bg-[#062430]/80 px-5 py-3.5 text-white shadow-xl backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[#0b3542]"
+              className="mt-6 inline-flex w-full items-center justify-center gap-4 rounded-2xl border border-[#d5b875]/70 bg-[#062430]/80 px-5 py-3.5 text-white shadow-xl backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-[#0b3542] sm:w-auto"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0b615f] text-xl text-[#61e0cf]">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0b615f] text-xl text-[#61e0cf]">
                 <FaPhoneAlt />
               </span>
               <span>
                 <span className="block text-[10px] font-bold uppercase tracking-[.14em] text-white/70">24×7 Helpline</span>
-                <strong className="text-xl tracking-wide">0422 432 7777</strong>
+                <strong className="text-lg tracking-wide sm:text-xl">0422 432 7777</strong>
               </span>
             </a>
           </motion.div>

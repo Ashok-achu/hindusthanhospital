@@ -47,26 +47,26 @@ export default function Facilities() {
     <div className="min-h-screen font-[Poppins] bg-gray-50 pt-28 pb-20">
 
       {/* HEADER */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-blue-900"
+          className="text-3xl sm:text-4xl font-bold text-blue-900"
         >
           FACILITIES
         </motion.h2>
-        <p className="text-gray-600 mt-2 max-w-2xl">
+        <p className="text-gray-600 mt-2 text-sm sm:text-base max-w-2xl">
           Experience world-class medical facilities empowered by advanced technology.
         </p>
       </div>
 
       {/* CARDS */}
-      <div className="max-w-7xl mx-auto mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+      <div className="max-w-7xl mx-auto mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10 px-4 sm:px-6">
         {facilities.map((f) => (
           <motion.div
             key={f.id}
-            whileHover={{ scale: 1.06 }}
+            whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.3 }}
             className="rounded-3xl bg-white shadow-md hover:shadow-2xl 
                        transition-all duration-300 cursor-pointer overflow-hidden"
@@ -75,7 +75,7 @@ export default function Facilities() {
             <img
               src={f.img}
               alt={f.title}
-              className="w-full h-56 object-cover"
+              className="w-full h-48 sm:h-56 object-cover object-center"
             />
 
             {/* Content */}

@@ -1,5 +1,5 @@
 import ambulanceHero from "../assets/bannerimage/ambulanvebanner.png";
-import ambulanceInterior from "../assets/hospital/Ambulance2.png";
+import ambulanceInterior from "../assets/set1/Ambulance_.jpg";
 import birthingImage from "../assets/bannerimage/birthcenter.png";
 import laboratoryImage from "../assets/bannerimage/bloodbank.png";
 import radiologyImage from "../assets/set1/Radiology_.jpg";
