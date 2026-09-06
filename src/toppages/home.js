@@ -210,12 +210,12 @@ function StatCard({ icon, value, suffix, label, delay }) {
 const DEPARTMENTS = [
   { name: "Anaesthesiology", slug: "anaesthesiology", icon: <FaUserMd />, color: "#1D469E", desc: "Perioperative care and pain management" },
   { name: "Cardiology", slug: "cardiology", icon: <FaHeartbeat />, color: "#B61B1F", desc: "Advanced cardiac care and interventions" },
-  { name: "Dental & Facial Maxillary", slug: "dental-facial-maxillary", icon: <FaTooth />, color: "#D65A5A", desc: "Comprehensive dental and maxillofacial care" },
+  { name: "Dental & Facial Maxillary", slug: "dentistry", icon: <FaTooth />, color: "#D65A5A", desc: "Comprehensive dental and maxillofacial care" },
   { name: "Diabetology & General Medicine", slug: "diabetology-general-medicine", icon: <FaStethoscope />, color: "#8F1519", desc: "Diabetes and internal medicine specialists" },
   { name: "Emergency Care", slug: "emergency-care", icon: <FaAmbulance />, color: "#6E1013", desc: "24/7 emergency and trauma services" },
-  { name: "ENT & Head and Neck Surgery", slug: "ent-head-neck-surgery", icon: <FaUserMd />, color: "#0F2C6A", desc: "Expert ENT and head-neck surgical care" },
-  { name: "Neuroscience", slug: "neuroscience", icon: <FaBrain />, color: "#14357F", desc: "Brain, spine and neurological care" },
-  { name: "General & Laparoscopic Surgery", slug: "general-laparoscopic-surgery", icon: <FaStethoscope />, color: "#3F68BE", desc: "Minimally invasive and general surgery" },
+  { name: "ENT & Head and Neck Surgery", slug: "ent", icon: <FaUserMd />, color: "#0F2C6A", desc: "Expert ENT and head-neck surgical care" },
+  { name: "Neuroscience", slug: "neuro", icon: <FaBrain />, color: "#14357F", desc: "Brain, spine and neurological care" },
+  { name: "General & Laparoscopic Surgery", slug: "general-surgery", icon: <FaStethoscope />, color: "#3F68BE", desc: "Minimally invasive and general surgery" },
   { name: "Gastroenterology", slug: "gastroenterology", icon: <FaUserMd />, color: "#C9962B", desc: "Digestive and gastrointestinal care" },
   { name: "Intensive Care Unit", slug: "icu", icon: <FaHandHoldingHeart />, color: "#0F2C6A", desc: "Critical care and intensive monitoring" },
   { name: "Nephrology", slug: "nephrology", icon: <FaUserMd />, color: "#1D469E", desc: "Kidney disease and renal care" },
@@ -223,10 +223,10 @@ const DEPARTMENTS = [
   { name: "Orthopaedics", slug: "orthopaedics", icon: <FaBone />, color: "#C9962B", desc: "Bone, joint and trauma specialists" },
   { name: "Neonatology & Paediatrics", slug: "neonatology-paediatrics", icon: <FaBaby />, color: "#A87A1E", desc: "Comprehensive child and newborn care" },
   { name: "Paediatric Surgery", slug: "paediatric-surgery", icon: <FaUserMd />, color: "#8F1519", desc: "Specialized surgical care for children" },
-  { name: "Plastic & Reconstructive Surgery", slug: "plastic-reconstructive-surgery", icon: <FaUserMd />, color: "#D65A5A", desc: "Cosmetic and reconstructive procedures" },
+  { name: "Plastic & Reconstructive Surgery", slug: "plastic-surgery", icon: <FaUserMd />, color: "#D65A5A", desc: "Cosmetic and reconstructive procedures" },
   { name: "Pulmonology", slug: "pulmonology", icon: <FaLungs />, color: "#14357F", desc: "Respiratory and lung disease treatment" },
   { name: "Radiology", slug: "radiology", icon: <FaMicroscope />, color: "#1D469E", desc: "Advanced diagnostic imaging services" },
-  { name: "Physical Medicine & Rehabilitation", slug: "physical-medicine-rehabilitation", icon: <FaWheelchair />, color: "#3F68BE", desc: "Physiotherapy and rehabilitation services" },
+  { name: "Physical Medicine & Rehabilitation", slug: "rehab", icon: <FaWheelchair />, color: "#3F68BE", desc: "Physiotherapy and rehabilitation services" },
   { name: "Surgical Oncology", slug: "surgical-oncology", icon: <FaUserMd />, color: "#6E1013", desc: "Comprehensive cancer surgery care" },
   { name: "Urology", slug: "urology", icon: <FaProcedures />, color: "#B61B1F", desc: "Urinary tract and urological treatments" },
 ];
@@ -246,7 +246,7 @@ const OG_IMAGE = new URL(hero3, `${SITE_URL}/`).toString();
 const SEO_TITLE =
   "Hindusthan Hospital, Coimbatore | Multi-Speciality Hospital & 24/7 Emergency Care";
 const SEO_DESCRIPTION =
-  "Hindusthan Hospital, Coimbatore is a NABH-accredited multi-speciality hospital with 45+ specialist doctors across 21 departments, 150+ beds, 24/7 emergency and trauma care, ICU, robotic surgery and advanced diagnostics. Book an appointment online today.";
+  "Hindusthan Hospital, Coimbatore is a NABH-accredited multi-speciality hospital with 45+ specialist doctors across 21 departments, 200 + beds, 24/7 emergency and trauma care, ICU, robotic surgery and advanced diagnostics. Book an appointment online today.";
 const SEO_KEYWORDS =
   "Hindusthan Hospital Coimbatore, multi speciality hospital Coimbatore, best hospital in Coimbatore, 24/7 emergency care, NABH accredited hospital, cardiology Coimbatore, orthopaedic hospital Coimbatore, ICU Coimbatore, robotic surgery Coimbatore, health checkup packages";
 
@@ -298,11 +298,232 @@ const BREADCRUMB_SCHEMA = {
   ],
 };
 
+/* ─────────────────────────────────────────
+   Foot Lab Packages data (mirrors MHC.js)
+───────────────────────────────────────── */
+const FOOT_LAB_PACKAGES = [
+  {
+    title: "Foot Lab Package 1", tests: "10 Tests", price: "₹1,500",
+    icon: <FaHeartbeat />, color: "from-rose-500 to-rose-700",
+    features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"],
+  },
+  {
+    title: "Foot Lab Package 2", tests: "12 Tests", price: "₹2,750",
+    icon: <FaStar />, color: "from-rose-600 to-orange-500",
+    features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"],
+  },
+  {
+    title: "Foot Lab Package 3", tests: "13 Tests", price: "₹4,500",
+    icon: <FaMedal />, color: "from-rose-700 to-pink-600",
+    features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting", "Physician Consultation"],
+  },
+];
+
+const MHC_PACKAGES = [
+  { title: "Silver", tests: "40 Tests", price: "₹1,500", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"] },
+  { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
+  { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
+  { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
+];
+
+function HomeHealthPackagesSection({ navigate }) {
+  const [activeTab, setActiveTab] = useState("mhc");
+  const packages = activeTab === "mhc" ? MHC_PACKAGES : FOOT_LAB_PACKAGES;
+
+  return (
+    <section className="relative overflow-hidden bg-mist py-12 sm:py-24 lg:py-32">
+      <div className="absolute inset-0 opacity-80"
+        style={{ backgroundImage: "radial-gradient(circle at top left, rgba(182,27,31,0.10), transparent 32%), radial-gradient(circle at bottom right, rgba(15,44,106,0.10), transparent 35%)" }}
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
+        <div className="mb-8 text-center sm:mb-12">
+          <h2 className="font-display text-2xl font-extrabold text-ink sm:text-[clamp(1.6rem,6vw,3rem)]">
+            Health <span className="text-[#B61B1F]">Packages</span>
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-xs leading-5 text-slate-600 sm:mt-4 sm:text-lg sm:leading-7">
+            Choose a package that fits your wellness goals and enjoy a smoother, smarter preventive care experience.
+          </p>
+
+          {/* Tab switcher: full-width pill on mobile, inline on desktop */}
+          <div className="mt-5 flex w-full rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:mt-8 sm:inline-flex sm:w-auto sm:p-1.5">
+            <button
+              onClick={() => setActiveTab("mhc")}
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
+                activeTab === "mhc"
+                  ? "bg-gradient-to-r from-[#B61B1F] to-[#7A1216] text-white shadow-lg"
+                  : "text-slate-500 hover:text-[#B61B1F]"
+              }`}
+            >
+              MHC Packages
+            </button>
+            <button
+              onClick={() => setActiveTab("footlab")}
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
+                activeTab === "footlab"
+                  ? "bg-gradient-to-r from-rose-600 to-orange-500 text-white shadow-lg"
+                  : "text-slate-500 hover:text-rose-600"
+              }`}
+            >
+              Foot Lab Packages
+            </button>
+          </div>
+        </div>
+
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          {/* Mobile: horizontal snap-scroll carousel */}
+          <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:hidden">
+            {packages.map((pkg, i) => (
+              <div
+                key={i}
+                onClick={() => navigate("/facilities/mhc")}
+                className="snap-center shrink-0 w-[80vw] max-w-[300px] flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md cursor-pointer active:scale-[0.98] transition-transform"
+              >
+                <div className={`h-1.5 w-full bg-gradient-to-r ${pkg.color}`} />
+                <div className="p-4 flex items-center gap-3 border-b border-slate-100">
+                  <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r ${pkg.color} text-sm text-white shadow`}>
+                    {pkg.icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-display text-base font-bold text-ink truncate">{pkg.title}</h3>
+                    <span className="text-[#B61B1F] font-extrabold text-sm">{pkg.price}</span>
+                  </div>
+                  <span className="shrink-0 rounded-full bg-[#FDECEC] px-2 py-0.5 text-[10px] font-bold text-slate-600">{pkg.tests}</span>
+                </div>
+                <ul className="px-4 py-3 space-y-1.5 flex-1">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-[11px] text-slate-700">
+                      <span className="mt-0.5 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#EAF0FB] text-[#0F2C6A]">
+                        <FaCheckCircle className="text-[8px]" />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="p-3 border-t border-slate-100">
+                  <button className="btn-wine w-full rounded-xl py-2.5 text-xs font-bold text-white shadow active:opacity-80">
+                    Book Appointment
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Swipe hint — mobile only */}
+          <p className="mt-2 text-center text-[11px] text-slate-400 md:hidden">
+            ← Swipe to explore packages →
+          </p>
+
+          {/* Desktop grid */}
+          <div className={`hidden md:grid gap-5 sm:gap-6 ${packages.length === 3 ? "md:grid-cols-2 lg:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-4"}`}>
+            {packages.map((pkg, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 26 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                onClick={() => navigate("/facilities/mhc")}
+                className="group flex cursor-pointer flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_25px_65px_-28px_rgba(15,23,42,0.25)] transition-all duration-400 hover:border-[#F3AEAE] hover:shadow-[0_35px_90px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem] sm:p-7"
+              >
+                <div className={`h-1 w-full rounded-full bg-gradient-to-r ${pkg.color}`} />
+                <div className="mt-5 flex items-center justify-between gap-2 sm:mt-6">
+                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r ${pkg.color} text-base text-white shadow-lg sm:h-12 sm:w-12 sm:text-lg`}>
+                    {pkg.icon}
+                  </div>
+                  <span className="rounded-full bg-[#FDECEC] px-2.5 py-1 text-xs font-bold text-slate-600">{pkg.tests}</span>
+                </div>
+                <div className="mt-4 sm:mt-5">
+                  <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-[#B61B1F] sm:text-2xl">{pkg.title}</h3>
+                  <span className="mt-1.5 block font-display text-xl font-extrabold text-[#B61B1F] sm:text-2xl">{pkg.price}</span>
+                </div>
+                <ul className="scrollbar-thin scrollbar-thumb-rose-200 scrollbar-track-transparent mt-5 max-h-44 flex-1 space-y-2 overflow-y-auto pr-2 sm:mt-6 sm:max-h-48">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-xs text-slate-700">
+                      <span className="mt-0.5 flex h-4 w-4 min-h-4 min-w-4 items-center justify-center rounded-full bg-[#EAF0FB] text-[#0F2C6A]">
+                        <FaCheckCircle className="text-[10px]" />
+                      </span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="btn-wine mt-6 w-full rounded-xl py-3 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:mt-8">
+                  Book Appointment
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="mt-8 flex justify-center sm:mt-12">
+          <Link to="/facilities/mhc" className="w-full sm:w-auto">
+            <MagneticButton variant="primary" className="w-full justify-center sm:w-auto">
+              View All Packages <FaArrowRight className="text-sm" />
+            </MagneticButton>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 /* ════════════════════════════════════════
    HOME PAGE
 ════════════════════════════════════════ */
 export default function Home() {
   const navigate = useNavigate();
+
+  const [bookingForm, setBookingForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    age: "",
+    gender: "",
+    department: "",
+    doctor: "",
+    date: "",
+    timeSlot: "",
+    message: ""
+  });
+  const [bookingSuccess, setBookingSuccess] = useState(false);
+
+  const handleBookingChange = (e) => {
+    setBookingForm({ ...bookingForm, [e.target.name]: e.target.value });
+  };
+
+  const handleBookingSubmit = (e) => {
+    e.preventDefault();
+    if (!bookingForm.name || !bookingForm.phone) {
+      alert("Please fill in required fields (Name and Phone Number)");
+      return;
+    }
+
+    const message = `*Appointment Request (Home Page)*
+👤 *Name*: ${bookingForm.name}
+📱 *Phone*: ${bookingForm.phone}
+📧 *Email*: ${bookingForm.email || "N/A"}
+🎂 *Age*: ${bookingForm.age || "N/A"} | 🚻 *Gender*: ${bookingForm.gender || "N/A"}
+🏥 *Department*: ${bookingForm.department || "General"}
+👨‍⚕️ *Doctor*: ${bookingForm.doctor || "Any Available"}
+📅 *Preferred Date*: ${bookingForm.date || "N/A"}
+⏰ *Time Slot*: ${bookingForm.timeSlot || "N/A"}
+💬 *Symptoms/Notes*: ${bookingForm.message || "None"}`;
+
+    window.open(`https://wa.me/916380015975?text=${encodeURIComponent(message)}`, "_blank");
+    setBookingSuccess(true);
+    setBookingForm({
+      name: "", phone: "", email: "", age: "", gender: "", department: "", doctor: "", date: "", timeSlot: "", message: ""
+    });
+    setTimeout(() => setBookingSuccess(false), 5000);
+  };
 
   const [specPage, setSpecPage] = useState(0);
   const [hovered, setHovered] = useState(null);
@@ -313,28 +534,28 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const desktopImages = [
-  hero2,
-  hero3,
-  hero4,
-];
+    hero2,
+    hero3,
+    hero4,
+  ];
 
-const mobileImages = [
-  hero2Mobile,
-  hero3Mobile,
-  hero4Mobile,
-];
+  const mobileImages = [
+    hero2Mobile,
+    hero3Mobile,
+    hero4Mobile,
+  ];
 
-const heroImages = isMobile ? mobileImages : desktopImages;
+  const heroImages = isMobile ? mobileImages : desktopImages;
 
   const heroSliderSettings = {
     dots: false,
@@ -394,11 +615,11 @@ const heroImages = isMobile ? mobileImages : desktopImages;
 
       {/* ════════ HERO ════════ */}
       {/* ════════ HERO ════════ */}
-{/* ════════ HERO ════════ */}
-{/* ════════ HERO ════════ */}
-<section className="relative w-full overflow-hidden">
- <div
-  className="
+      {/* ════════ HERO ════════ */}
+      {/* ════════ HERO ════════ */}
+      <section className="relative w-full overflow-hidden">
+        <div
+          className="
     relative
     w-full
     h-[280px]
@@ -406,67 +627,67 @@ const heroImages = isMobile ? mobileImages : desktopImages;
     md:aspect-[1920/700]
     md:h-auto
   "
->
-  <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
-    {heroImages.map((img, i) => (
-      <div key={i} className="hero-slide-wrap outline-none">
-        <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
-         <img
-  src={img}
-  alt={`Hindusthan Hospital Coimbatore — multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
-  className="w-full h-full object-cover"
-  loading={i === 0 ? "eager" : "lazy"}
-  fetchpriority={i === 0 ? "high" : "auto"}
-/>
-        </div>
-      </div>
-    ))}
-  </Slider>
+        >
+          <Slider ref={heroSliderRef} {...heroSliderSettings} className="hero-slider absolute inset-0 h-full w-full">
+            {heroImages.map((img, i) => (
+              <div key={i} className="hero-slide-wrap outline-none">
+                <div className="relative h-full w-full overflow-hidden bg-gradient-to-br from-[#EAF2FB] to-[#F8FAFC]">
+                  <img
+                    src={img}
+                    alt={`Hindusthan Hospital Coimbatore — multi-speciality care and 24/7 emergency services, slide ${i + 1} of ${heroImages.length}`}
+                    className="w-full h-full object-cover"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    fetchpriority={i === 0 ? "high" : "auto"}
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
 
-  {/* SEO — real H1 for the page. Kept visually unobtrusive (small,
+          {/* SEO — real H1 for the page. Kept visually unobtrusive (small,
       bottom-left, on the existing dark gradient) so it doesn't fight
       the hero imagery, but it is genuinely present in the DOM for
       search engines and screen readers, not display:none. */}
-  
 
-    {/* edge fade */}
-    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
 
-    {/* prev / next */}
-    <div className="absolute right-3 top-3 z-30 flex gap-2 sm:right-5 sm:top-5">
-      <button
-        aria-label="Previous slide"
-        onClick={() => heroSliderRef.current?.slickPrev()}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
-      >
-        <FaChevronLeft className="text-xs sm:text-sm" />
-      </button>
-      <button
-        aria-label="Next slide"
-        onClick={() => heroSliderRef.current?.slickNext()}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
-      >
-        <FaChevronRight className="text-xs sm:text-sm" />
-      </button>
-    </div>
+          {/* edge fade */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1B33]/40 to-transparent sm:h-24" />
 
-    {/* dots */}
-    <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
-      {heroImages.map((_, i) => (
-        <button
-          key={i}
-          aria-label={`Go to slide ${i + 1}`}
-          onClick={() => heroSliderRef.current?.slickGoTo(i)}
-          className="h-1.5 rounded-full transition-all duration-300"
-          style={{
-            width: i === heroSlide ? "22px" : "7px",
-            background: i === heroSlide ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.5)",
-          }}
-        />
-      ))}
-    </div>
-  </div>
-</section>
+          {/* prev / next */}
+          <div className="absolute right-3 top-3 z-30 flex gap-2 sm:right-5 sm:top-5">
+            <button
+              aria-label="Previous slide"
+              onClick={() => heroSliderRef.current?.slickPrev()}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
+            >
+              <FaChevronLeft className="text-xs sm:text-sm" />
+            </button>
+            <button
+              aria-label="Next slide"
+              onClick={() => heroSliderRef.current?.slickNext()}
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/25 bg-black/30 text-white backdrop-blur-md transition-all duration-300 hover:bg-black/50 sm:h-10 sm:w-10"
+            >
+              <FaChevronRight className="text-xs sm:text-sm" />
+            </button>
+          </div>
+
+          {/* dots */}
+          <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-1.5 sm:bottom-5 sm:gap-2">
+            {heroImages.map((_, i) => (
+              <button
+                key={i}
+                aria-label={`Go to slide ${i + 1}`}
+                onClick={() => heroSliderRef.current?.slickGoTo(i)}
+                className="h-1.5 rounded-full transition-all duration-300"
+                style={{
+                  width: i === heroSlide ? "22px" : "7px",
+                  background: i === heroSlide ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.5)",
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ════════ TRANSFORMING HEALTHCARE ════════ */}
       <section className="relative py-16 sm:py-24 lg:py-32">
@@ -487,13 +708,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                   className="h-auto w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
-              <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-[#F3AEAE] bg-white/95 p-4 shadow-[0_30px_60px_-20px_rgba(15,23,42,0.35)] backdrop-blur-xl sm:-bottom-7 sm:-right-4 sm:left-auto sm:w-52 sm:p-5 md:-right-8">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#FAD6D6] font-display text-sm font-extrabold text-[#B61B1F] sm:h-11 sm:w-11">15+</div>
-                <div>
-                  <div className="text-xs font-bold leading-tight text-ink sm:text-sm">Years of Experience</div>
-                  <p className="mt-1 hidden text-xs text-slate-500 sm:block">Trusted by thousands of families.</p>
-                </div>
-              </div>
+              
             </motion.div>
 
             <motion.div
@@ -503,7 +718,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Eyebrow>Why Choose Us</Eyebrow>
+
               <h2 className="font-display text-[clamp(1.7rem,5vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
                 Transforming healthcare
                 <br />
@@ -549,7 +764,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
         </div>
       </section>
 
-      <PulseDivider tone="light" />
+      
 
       {/* ════════ MEDICAL SPECIALITIES ════════ */}
       <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
@@ -575,7 +790,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
           >
             <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <Eyebrow tone="light">Clinical Excellence</Eyebrow>
+                
                 <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
                   Medical
                   <br />
@@ -721,94 +936,94 @@ const heroImages = isMobile ? mobileImages : desktopImages;
       </section>
 
       {/* ════════ MEET OUR DOCTORS ════════ */}
-<section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="grid items-center gap-14 lg:grid-cols-2">
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
 
-      {/* Left Side - Doctors Image */}
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="group relative overflow-hidden rounded-[2rem] shadow-[0_35px_80px_-25px_rgba(15,23,42,0.35)]"
-      >
-        <img
-          src={doctorTeams}
-          alt="Team of specialist doctors and consultants at Hindusthan Hospital, Coimbatore"
-          loading="lazy"
-          className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
-        />
+            {/* Left Side - Doctors Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="group relative overflow-hidden rounded-[2rem] shadow-[0_35px_80px_-25px_rgba(15,23,42,0.35)]"
+            >
+              <img
+                src={doctorTeams}
+                alt="Team of specialist doctors and consultants at Hindusthan Hospital, Coimbatore"
+                loading="lazy"
+                className="w-full h-auto object-contain transition duration-700 group-hover:scale-105"
+              />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-    
-      </motion.div>
 
-      {/* Right Side - Content */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <Eyebrow>Medical Experts</Eyebrow>
+            </motion.div>
 
-        <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
-          Meet Our
-          <br />
-          <span className="text-[#B61B1F]">Expert Doctors</span>
-        </h2>
+            {/* Right Side - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              
 
-      
+              <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
+                Meet Our
+                <br />
+                <span className="text-[#B61B1F]">Expert Doctors</span>
+              </h2>
 
-        
 
-        {/* Features */}
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
-      <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Collaborative Healthcare
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Specialists from multiple disciplines work together to provide comprehensive treatment plans.
-  </p>
-</div>
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Personalized Treatment
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Every patient receives customized care tailored to their unique health needs and goals.
-  </p>
-</div>
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Ethical Medical Practice
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    We uphold the highest standards of integrity, transparency, and patient confidentiality.
-  </p>
-</div>
+              {/* Features */}
+              <div className="mt-10 grid gap-5 sm:grid-cols-2">
 
-<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-  <h4 className="text-lg font-bold text-ink">
-    Continuous Innovation
-  </h4>
-  <p className="mt-2 text-sm text-slate-600">
-    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
-  </p>
-</div>
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Collaborative Healthcare
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Specialists from multiple disciplines work together to provide comprehensive treatment plans.
+                  </p>
+                </div>
 
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Personalized Treatment
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Every patient receives customized care tailored to their unique health needs and goals.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Ethical Medical Practice
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    We uphold the highest standards of integrity, transparency, and patient confidentiality.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h4 className="text-lg font-bold text-ink">
+                    Continuous Innovation
+                  </h4>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
+                  </p>
+                </div>
+
+              </div>
+            </motion.div>
+
+          </div>
         </div>
-      </motion.div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* ════════ OUR FACILITIES ════════ */}
       <section className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
@@ -838,10 +1053,9 @@ const heroImages = isMobile ? mobileImages : desktopImages;
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {[
-              { icon: <FaAmbulance />, title: "24/7 Ambulance", desc: "Fleet of fully-equipped ambulances with trained paramedics available round the clock.", link: "/facilities/ambulance", color: "from-[#B61B1F] to-[#7A1216]" },
+              { icon: <FaAmbulance />, title: "24/7 Ambulance", desc: "Fleet of fully-equipped incubator and D Level ambulance with trained paramedics available round the clock", link: "/facilities/ambulance", color: "from-[#B61B1F] to-[#7A1216]" },
               { icon: <FaFlask />, title: "Blood Bank", desc: "NABH-accredited blood bank with all blood groups and modern storage infrastructure.", link: "/facilities/blood-bank", color: "from-[#D65A5A] to-[#B61B1F]" },
               { icon: <FaBed />, title: "Premium Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-[#D9B45B] to-[#A87A1E]" },
-              { icon: <FaShieldAlt />, title: "Insurance Desk", desc: "Dedicated cashless insurance processing for over 50+ insurance providers.", link: "/facilities/insurance", color: "from-[#3F68BE] to-[#0F2C6A]" },
               { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-[#1D469E] to-[#14357F]" },
               { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-[#0F2C6A] to-[#B61B1F]" },
             ].map((f, i) => (
@@ -869,113 +1083,41 @@ const heroImages = isMobile ? mobileImages : desktopImages;
       </section>
 
       {/* ════════ HEALTH PACKAGES ════════ */}
-      <section className="relative overflow-hidden bg-mist py-16 sm:py-24 lg:py-32">
-        <div className="absolute inset-0 opacity-80"
-          style={{ backgroundImage: "radial-gradient(circle at top left, rgba(182,27,31,0.10), transparent 32%), radial-gradient(circle at bottom right, rgba(15,44,106,0.10), transparent 35%)" }}
-        />
+      <HomeHealthPackagesSection navigate={navigate} />
+
+      {/* ════════ STATS ════════ */}
+      {/* ════════ STATS ════════ */}
+      <section className="relative overflow-hidden bg-ink py-14 sm:py-20">
+        <div className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
+            backgroundSize: "70px 70px",
+          }} />
+        <div className="pointer-events-none absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full opacity-15 blur-[150px]"
+          style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
+
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 text-center sm:mb-16">
-            <Eyebrow>Master Health Checkup</Eyebrow>
-            <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
-              Health <span className="text-[#B61B1F]">Packages</span>
+          <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
+            
+            <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
+              Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:mt-4 sm:text-lg sm:leading-7">
-              Choose a package that fits your wellness goals and enjoy a smoother, smarter preventive care experience.
-            </p>
           </div>
 
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              { title: "Silver", tests: "40 Tests", price: "₹1,500", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"] },
-              { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
-              { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
-              { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
-            ].map((pkg, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                transition={{ duration: 0.45, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                onClick={() => navigate("/facilities/mhc")}
-                className="group flex cursor-pointer flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_25px_65px_-28px_rgba(15,23,42,0.25)] transition-all duration-400 hover:border-[#F3AEAE] hover:shadow-[0_35px_90px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem] sm:p-7"
-              >
-                <div className={`h-1 w-full rounded-full bg-gradient-to-r ${pkg.color}`} />
-                <div className="mt-5 flex items-center justify-between gap-2 sm:mt-6">
-                  <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-r ${pkg.color} text-base text-white shadow-lg sm:h-12 sm:w-12 sm:text-lg`}>
-                    {pkg.icon}
-                  </div>
-                  <span className="rounded-full bg-[#FDECEC] px-2.5 py-1 text-xs font-bold text-slate-600">{pkg.tests}</span>
-                </div>
+          
 
-                <div className="mt-4 sm:mt-5">
-                  <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-[#B61B1F] sm:text-2xl">{pkg.title}</h3>
-                  <span className="mt-1.5 block font-display text-xl font-extrabold text-[#B61B1F] sm:text-2xl">{pkg.price}</span>
-                </div>
-
-                <ul className="scrollbar-thin scrollbar-thumb-rose-200 scrollbar-track-transparent mt-5 max-h-44 flex-1 space-y-2 overflow-y-auto pr-2 sm:mt-6 sm:max-h-48">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-xs text-slate-700">
-                      <span className="mt-0.5 flex h-4 w-4 min-h-4 min-w-4 items-center justify-center rounded-full bg-[#EAF0FB] text-[#0F2C6A]">
-                        <FaCheckCircle className="text-[10px]" />
-                      </span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button className="btn-wine mt-6 w-full rounded-xl py-3 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:mt-8">
-                  Book Appointment
-                </button>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-10 flex justify-center sm:mt-12">
-            <Link to="/facilities/mhc">
-              <MagneticButton variant="primary">
-                View All Packages <FaArrowRight className="text-sm" />
-              </MagneticButton>
-            </Link>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+  {[
+    { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
+    { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
+    { icon: <FaBed />, value: 200, suffix: "+", label: "Hospital Beds", delay: 0.12 },
+  ].map((s, i) => <StatCard key={i} {...s} />)}
+</div>
         </div>
       </section>
 
-      {/* ════════ STATS ════════ */}
-      {/* ════════ STATS ════════ */}
-<section className="relative overflow-hidden bg-ink py-14 sm:py-20">
-  <div className="absolute inset-0 opacity-[0.05]"
-    style={{
-      backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
-      backgroundSize: "70px 70px",
-    }} />
-  <div className="pointer-events-none absolute left-1/3 top-0 h-[500px] w-[500px] rounded-full opacity-15 blur-[150px]"
-    style={{ background: "radial-gradient(circle,#7A1216,transparent)" }} />
-
-  <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
-      <Eyebrow tone="light">Our Impact</Eyebrow>
-      <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
-        Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
-      </h2>
-    </div>
-
-    <PulseDivider tone="light" className="mb-8 sm:mb-12" />
-
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:grid-cols-4">
-      {[
-        { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
-        { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
-        { icon: <FaBed />, value: 150, suffix: "+", label: "Hospital Beds", delay: 0.12 },
-        { icon: <FaHospital />, value: 15, suffix: "+", label: "Years of Service", delay: 0.18 },
-      ].map((s, i) => <StatCard key={i} {...s} />)}
-    </div>
-  </div>
-</section>
-
       {/* ════════ WHY CHOOSE US (2) ════════ */}
-{/* ════════ WHY CHOOSE US (2) ════════ */}
+      {/* ════════ WHY CHOOSE US (2) ════════ */}
       <section className="relative overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-[#EAF0FB] opacity-70 blur-3xl" />
@@ -985,70 +1127,70 @@ const heroImages = isMobile ? mobileImages : desktopImages;
           <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
             {/* ── IMAGE BENTO ── */}
             {/* ── IMAGE GRID ── */}
-<div className="order-2 lg:order-1">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.7 }}
-    className="grid grid-cols-2 gap-4"
-  >
-    {[
-      {
-        img: why1,
-        alt: "NICU phototherapy unit at Hindusthan Hospital, Coimbatore",
-      },
-      {
-        img: why2,
-        alt: "Advanced radiology and diagnostic imaging suite at Hindusthan Hospital",
-      },
-      {
-        img: why3,
-        alt: "Radiology department scanning equipment at Hindusthan Hospital",
-      },
-      {
-        img: why4,
-        alt: "Intensive Care Unit (ICU) at Hindusthan Hospital, Coimbatore",
-      },
-    ].map((item, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.5,
-          delay: index * 0.1,
-        }}
-        whileHover={{
-          y: -6,
-          scale: 1.02,
-        }}
-        className="group relative overflow-hidden rounded-[28px] shadow-xl"
-      >
-        <div className="aspect-square overflow-hidden">
-          <img
-            src={item.img}
-            alt={item.alt}
-            loading="lazy"
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
-          />
-        </div>
+            <div className="order-2 lg:order-1">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="grid grid-cols-2 gap-4"
+              >
+                {[
+                  {
+                    img: why1,
+                    alt: "NICU phototherapy unit at Hindusthan Hospital, Coimbatore",
+                  },
+                  {
+                    img: why2,
+                    alt: "Advanced radiology and diagnostic imaging suite at Hindusthan Hospital",
+                  },
+                  {
+                    img: why3,
+                    alt: "Radiology department scanning equipment at Hindusthan Hospital",
+                  },
+                  {
+                    img: why4,
+                    alt: "Intensive Care Unit (ICU) at Hindusthan Hospital, Coimbatore",
+                  },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1,
+                    }}
+                    whileHover={{
+                      y: -6,
+                      scale: 1.02,
+                    }}
+                    className="group relative overflow-hidden rounded-[28px] shadow-xl"
+                  >
+                    <div className="aspect-square overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={item.alt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                      />
+                    </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="font-display text-sm font-bold text-white sm:text-lg">
-            {item.title}
-          </h3>
-        </div>
-      </motion.div>
-    ))}
-  </motion.div>
-</div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <h3 className="font-display text-sm font-bold text-white sm:text-lg">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
             {/* ── COPY + FEATURE GRID ── */}
             <div className="order-1 lg:order-2">
-              <Eyebrow>Why Choose Us</Eyebrow>
+              
               <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
                 Redefining Healthcare
                 <br />
@@ -1104,7 +1246,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
             transition={{ duration: 0.7 }}
             className="mb-10 text-center sm:mb-16"
           >
-            <Eyebrow>Recognition</Eyebrow>
+            
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
               Awards & <span className="text-[#B61B1F]">Certifications</span>
             </h2>
@@ -1135,20 +1277,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
               </motion.div>
             ))}
           </div>
-          <div className="rounded-[1.5rem] border border-slate-100 bg-white p-6 shadow-lg sm:rounded-[1.75rem] sm:p-8">
-            <p className="mb-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400 sm:mb-8 sm:text-sm">Recognised & Partnered With</p>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              {["NABH", "CAHO"].map((logo, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.1 }}
-                  className="cursor-default font-display text-xl font-extrabold text-slate-300 transition-colors duration-300 hover:text-[#B61B1F] sm:text-2xl"
-                >
-                  {logo}
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -1177,23 +1306,182 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                     <FaPhoneAlt className="text-sm" /><span className="text-sm font-semibold sm:text-base">0422 - 4327777</span>
                   </a>
                   <a href="mailto:info@hindusthanhospital.com" className="flex items-center gap-2.5 rounded-xl bg-white/15 px-4 py-2.5 backdrop-blur">
-                    <FaEnvelope className="text-sm" /><span className="text-sm font-semibold sm:text-base">info@hindusthanhospital.com</span>
+                    <FaEnvelope className="text-sm" /><span className="text-sm font-semibold sm:text-base">hindusthanreception@gmail.com</span>
                   </a>
                 </div>
               </div>
-              <div className="rounded-[1.5rem] bg-white p-5 text-ink shadow-xl sm:rounded-[1.75rem] sm:p-7">
-                <h3 className="font-display mb-4 text-lg font-bold sm:text-xl">Quick Appointment</h3>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <input type="text" placeholder="Your Name" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                    <input type="text" placeholder="Phone Number" className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                  </div>
-                  <textarea placeholder="Tell us about your symptoms" rows="3"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm transition focus:outline-none focus:ring-2 focus:ring-[#B61B1F] sm:text-base" />
-                  <button className="btn-wine w-full rounded-xl py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5">
-                    Book Now
-                  </button>
+              <div className="rounded-[1.5rem] bg-white p-5 text-ink shadow-2xl sm:rounded-[1.75rem] sm:p-7">
+                <div className="mb-4 border-b border-slate-100 pb-3">
+                  <h3 className="font-display text-lg font-bold text-slate-900 sm:text-xl flex items-center gap-2">
+                    <span className="h-3 w-3 rounded-full bg-[#B61B1F] inline-block"></span>
+                    Book an Appointment
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-0.5">Fill in patient details to schedule your consultation</p>
                 </div>
+
+                {bookingSuccess && (
+                  <div className="mb-4 rounded-xl bg-emerald-50 border border-emerald-200 p-3 text-xs font-semibold text-emerald-700 text-center animate-fadeIn">
+                    ✅ Appointment request submitted! Our team will contact you shortly.
+                  </div>
+                )}
+
+                <form onSubmit={handleBookingSubmit} className="space-y-3">
+                  {/* Name & Phone */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Patient Name *</label>
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        value={bookingForm.name}
+                        onChange={handleBookingChange}
+                        placeholder="Full Name"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Mobile Number *</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        value={bookingForm.phone}
+                        onChange={handleBookingChange}
+                        placeholder="10-digit Phone"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email & Age/Gender */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Email Address</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={bookingForm.email}
+                        onChange={handleBookingChange}
+                        placeholder="Email ID"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Age</label>
+                        <input
+                          type="number"
+                          name="age"
+                          value={bookingForm.age}
+                          onChange={handleBookingChange}
+                          placeholder="Age"
+                          min="1"
+                          max="120"
+                          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Gender</label>
+                        <select
+                          name="gender"
+                          value={bookingForm.gender}
+                          onChange={handleBookingChange}
+                          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-2 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                        >
+                          <option value="">Select</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Department & Doctor */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Department</label>
+                      <select
+                        name="department"
+                        value={bookingForm.department}
+                        onChange={handleBookingChange}
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      >
+                        <option value="">Select Department</option>
+                        {[
+                          "Anaesthesiology", "Cardiology", "Dermatology", "Dentistry", "Diabetology",
+                          "Emergency Care", "ENT", "General Medicine", "General Surgery", "Gastroenterology",
+                          "Internal Medicine", "ICU", "Neonatology", "Neuro & Vascular Surgery", "Nephrology",
+                          "Obstetrics & Gynaecology", "Orthopaedics", "Rehabilitation", "Paediatrics",
+                          "Paediatric Surgery", "Psychiatry", "Plastic Surgery", "Pulmonology", "Radiology",
+                          "Surgical Oncology", "Urology"
+                        ].map((dept) => (
+                          <option key={dept} value={dept}>{dept}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Preferred Doctor</label>
+                      <input
+                        type="text"
+                        name="doctor"
+                        value={bookingForm.doctor}
+                        onChange={handleBookingChange}
+                        placeholder="Doctor Name (Optional)"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Date & Time Slot */}
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Preferred Date</label>
+                      <input
+                        type="date"
+                        name="date"
+                        value={bookingForm.date}
+                        onChange={handleBookingChange}
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Time Slot</label>
+                      <select
+                        name="timeSlot"
+                        value={bookingForm.timeSlot}
+                        onChange={handleBookingChange}
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                      >
+                        <option value="">Select Time Slot</option>
+                        <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
+                        <option value="Afternoon (12:00 PM - 04:00 PM)">Afternoon (12:00 PM - 04:00 PM)</option>
+                        <option value="Evening (04:00 PM - 08:00 PM)">Evening (04:00 PM - 08:00 PM)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* Symptoms / Notes */}
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Symptoms / Reason for Visit</label>
+                    <textarea
+                      name="message"
+                      value={bookingForm.message}
+                      onChange={handleBookingChange}
+                      placeholder="Briefly describe symptoms or healthcare requirements..."
+                      rows="2"
+                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn-wine w-full rounded-xl py-3.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5"
+                  >
+                    Confirm & Book Appointment
+                  </button>
+                </form>
               </div>
             </div>
           </motion.div>
@@ -1206,7 +1494,7 @@ const heroImages = isMobile ? mobileImages : desktopImages;
         <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-[#F5E8C8] opacity-40 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-10 text-center sm:mb-20">
-            <Eyebrow>Real Experiences</Eyebrow>
+            
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
               Patient <span className="text-[#B61B1F]">Testimonials</span>
             </h2>
@@ -1230,23 +1518,23 @@ const heroImages = isMobile ? mobileImages : desktopImages;
               responsive: [
                 { breakpoint: 1024, settings: { slidesToShow: 2 } },
                 {
-  breakpoint: 768,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    centerPadding: "0px",
-  },
-},
-{
-  breakpoint: 480,
-  settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    centerMode: false,
-    centerPadding: "0px",
-  },
-},
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    centerPadding: "0px",
+                  },
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: false,
+                    centerPadding: "0px",
+                  },
+                },
               ],
             };
             return (
@@ -1291,7 +1579,6 @@ const heroImages = isMobile ? mobileImages : desktopImages;
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col gap-4 sm:mb-12 md:flex-row md:items-end md:justify-between">
             <div>
-              <Eyebrow>Updates & Insights</Eyebrow>
               <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-tight text-ink">
                 Latest{" "}
                 <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">News</span>
@@ -1319,21 +1606,21 @@ const heroImages = isMobile ? mobileImages : desktopImages;
                 className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-100 bg-white transition-all duration-400 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-24px_rgba(182,27,31,0.32)] sm:rounded-[1.75rem]"
               >
                 <div className="relative h-48 overflow-hidden sm:h-56 lg:h-60">
-                 <img
-  src={item.img}
-  className="h-full w-full object-contain bg-white p-2 transition duration-500"
-  alt={`${item.title} — Hindusthan Hospital news`}
-  loading="lazy"
-/>
-                 
-                  
+                  <img
+                    src={item.img}
+                    className="h-full w-full object-contain bg-white p-2 transition duration-500"
+                    alt={`${item.title} — Hindusthan Hospital news`}
+                    loading="lazy"
+                  />
+
+
                 </div>
                 <div className="flex flex-grow flex-col p-5 sm:p-8">
                   <h3 className="font-display mb-2.5 text-base font-extrabold leading-snug text-ink transition-colors group-hover:text-[#B61B1F] sm:mb-3 sm:text-xl">{item.title}</h3>
                   <p className="mb-5 flex-grow text-sm leading-relaxed text-slate-500 sm:mb-6">{item.desc}</p>
                   <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 sm:pt-6">
-                    
-                    
+
+
                   </div>
                 </div>
               </motion.div>

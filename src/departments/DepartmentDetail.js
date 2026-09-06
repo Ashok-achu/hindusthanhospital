@@ -23,7 +23,7 @@ const resolveImage = (path) => {
 ------------------------------------------------------------------- */
 const APPOINTMENT_LINK = "/appointment"; // your booking / enquiry route
 const HOSPITAL_PHONE = "+91-00000-00000"; // shown on the floating call button + sidebar
-const HOSPITAL_PHONE_DISPLAY = "0422 424 2424"; // shown as text
+const HOSPITAL_PHONE_DISPLAY = "0422 432 7799  "; // shown as text
 const HOSPITAL_EMAIL = "hindusthanreception@gmail.com";
 const HOSPITAL_LOCATION = "Hindusthan Hospital, Coimbatore, Tamil Nadu";
 
@@ -314,13 +314,30 @@ function InfoSidebar({ department }) {
   );
 }
 
+const SLUG_ALIASES = {
+  "neurovascular-surgery": "neuro",
+  "neuroscience": "neuro",
+  "dentistry": "dentistry",
+  "dental-facial-maxillary": "dentistry",
+  "diabetology": "diabetology-general-medicine",
+  "ent": "ent",
+  "ent-head-neck-surgery": "ent",
+  "general-surgery": "general-surgery",
+  "general-laparoscopic-surgery": "general-surgery",
+  "neonatology": "neonatology-paediatrics",
+  "rehab": "rehab",
+  "physical-medicine-rehabilitation": "rehab",
+  "plastic-reconstructive-surgery": "plastic-surgery"
+};
+
 export default function DepartmentDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
 
   const allDepartments = departments;
   const department = useMemo(() => {
-    const found = departments.find((d) => d.slug === slug);
+    const targetSlug = SLUG_ALIASES[slug] || slug;
+    const found = departments.find((d) => d.slug === targetSlug);
     if (!found) return null;
     return {
       ...found,
@@ -444,29 +461,23 @@ export default function DepartmentDetail() {
           {/* MAIN CONTENT */}
           <div className="lg:col-span-9 space-y-12 sm:space-y-16">
             {/* ================= HERO ================= */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              <div className="relative w-full h-[350px] sm:h-[440px] lg:h-[500px]">
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] min-h-[220px] max-h-[500px] bg-slate-900 flex items-center justify-center">
                 <img
                   src={department.image}
                   alt={department.name}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain sm:object-cover object-center"
                 />
-                <div className="absolute inset-0 flex items-end pb-8 sm:pb-12 lg:pb-16">
-                  <div className="px-6 sm:px-10">
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        to={APPOINTMENT_LINK}
-                        className="bg-[#22a66c] hover:bg-[#168553] transition text-white text-sm font-semibold px-6 py-2.5 rounded-md"
-                      >
-                        Book Appointment
-                      </Link>
-                    </div>
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 flex flex-wrap gap-3 z-10">
+                  <Link
+                    to={APPOINTMENT_LINK}
+                    className="bg-[#22a66c] hover:bg-[#168553] shadow-md transition text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-md"
+                  >
+                    Book Appointment
+                  </Link>
                 </div>
-
               </div>
-
-
             </div>
 
             {/* ================= DEPARTMENT OVERVIEW ================= */}
@@ -613,11 +624,11 @@ export default function DepartmentDetail() {
         {/* CONTACT / APPOINTMENT STRIP */}
         <div className="mt-10 bg-[#0E3B39] rounded-lg p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
           <div>
-            <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Have Questions?</p>
-            <a href={`tel:${HOSPITAL_PHONE}`} className="text-white font-semibold hover:underline">
-              {HOSPITAL_PHONE_DISPLAY}
-            </a>
-          </div>
+  <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Have Questions?</p>
+  <a href="tel:+91-0422-432-7777" className="text-white font-semibold hover:underline">
+    0422 432 7777
+  </a>
+</div>
           <div>
             <p className="text-white/60 text-xs tracking-[0.15em] uppercase mb-1">Location</p>
             <p className="text-white font-semibold text-sm">{HOSPITAL_LOCATION}</p>
