@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/bannerimage/packages.png";
 import {
   FaHeartbeat, FaStar, FaMedal, FaTrophy, FaCheckCircle, FaTimes
 } from "react-icons/fa";
@@ -164,6 +164,71 @@ const MHC_PACKAGES = [
   }
 ];
 
+/* ─── Cancer Screening Packages ─── */
+const CANCER_SCREENING_PACKAGES = [
+  {
+    name: "Premium Package Men",
+    price: "₹2,000",
+    originalPrice: "₹4,000",
+    tests: "4 Tests",
+    color: "from-purple-600 to-indigo-700",
+    icon: <FaHeartbeat />,
+    items: [
+      "PSA (Prostate-Specific Antigen)",
+      "CHEST X-RAY",
+      "ULTRASOUND SCAN (Abdomen)",
+      "CA125 (MUC 16)",
+      "Screening for Prostate, Lung, Colon, Skin, Mouth, Testicular & Thyroid Cancer",
+      "Consultation by General Surgeon"
+    ]
+  },
+  {
+    name: "Premium Package Women",
+    price: "₹3,500",
+    originalPrice: "₹5,500",
+    tests: "5 Tests",
+    color: "from-pink-600 to-rose-700",
+    icon: <FaStar />,
+    items: [
+      "CA(125)",
+      "PAP SMEAR",
+      "X-RAY (CHEST)",
+      "BREAST SCAN (Ultrasound)",
+      "ULTRASOUND SCAN (Abdomen)",
+      "Screening for Cervix, Mouth, Breast, Lung, Colon, Skin & Thyroid Cancer",
+      "Consultation by General Surgeon / Gynecologist"
+    ]
+  },
+  {
+    name: "Optional Package (Men 50+ Yrs)",
+    price: "₹650",
+    originalPrice: "₹1,500",
+    tests: "2 Tests",
+    color: "from-amber-600 to-orange-700",
+    icon: <FaMedal />,
+    items: [
+      "UROFLOW",
+      "RESIDUAL URINE",
+      "Recommended for Men Above 50 Years",
+      "Consultation by Urologist"
+    ]
+  },
+  {
+    name: "Special Lung Cancer Package",
+    price: "₹3,000",
+    originalPrice: "₹5,000",
+    tests: "2 Tests",
+    color: "from-teal-600 to-cyan-700",
+    icon: <FaTrophy />,
+    items: [
+      "LDCT (Low-Dose CT)",
+      "CO Monitor",
+      "For Men & Women",
+      "Consultation by Pulmonologist"
+    ]
+  }
+];
+
 /* ─── Shared Package Card (used in both mobile and desktop) ─── */
 function PackageCard({ pkg, onBook, compact = false }) {
   return (
@@ -180,7 +245,14 @@ function PackageCard({ pkg, onBook, compact = false }) {
         <span className="inline-block mt-1 rounded-full bg-rose-50 px-3 py-0.5 text-xs font-semibold text-rose-600">
           {pkg.tests}
         </span>
-        <p className={`font-extrabold text-rose-600 mt-2 ${compact ? "text-2xl" : "text-3xl"}`}>{pkg.price}</p>
+        {pkg.originalPrice ? (
+          <div className="mt-2 flex items-center justify-center gap-2">
+            <span className="text-slate-400 line-through text-sm font-medium">{pkg.originalPrice}</span>
+            <span className={`font-extrabold text-rose-600 ${compact ? "text-xl" : "text-2xl sm:text-3xl"}`}>{pkg.price}</span>
+          </div>
+        ) : (
+          <p className={`font-extrabold text-rose-600 mt-2 ${compact ? "text-2xl" : "text-3xl"}`}>{pkg.price}</p>
+        )}
       </div>
 
       {/* Item list */}
@@ -220,12 +292,17 @@ function PackageCard({ pkg, onBook, compact = false }) {
 
 export default function MHC() {
   const [selectedPkg, setSelectedPkg] = useState(null);
-  const [activeTab, setActiveTab] = useState("footlab");
+  const [activeTab, setActiveTab] = useState("mhc");
 
-  const packages = activeTab === "footlab" ? FOOT_LAB_PACKAGES : MHC_PACKAGES;
+  const packages =
+    activeTab === "footlab"
+      ? FOOT_LAB_PACKAGES
+      : activeTab === "cancerscreening"
+      ? CANCER_SCREENING_PACKAGES
+      : MHC_PACKAGES;
 
   return (
-    <div className="pt-[7rem] sm:pt-[9rem] pb-16 sm:pb-24 bg-gray-50 font-[Poppins]">
+    <div className="pt-4 sm:pt-6 pb-16 sm:pb-24 bg-gray-50 font-[Poppins]">
 
       {/* ── HERO ── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -251,10 +328,20 @@ export default function MHC() {
       {/* ── TAB SWITCHER ── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-8 sm:mt-12">
         {/* Full-width on mobile, centered inline on tablet+ */}
-        <div className="flex w-full rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:inline-flex sm:w-auto sm:mx-auto sm:block sm:text-center">
+        <div className="flex w-full flex-wrap sm:flex-nowrap rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:inline-flex sm:w-auto sm:mx-auto sm:block sm:text-center">
+          <button
+            onClick={() => setActiveTab("mhc")}
+            className={`flex-1 rounded-xl px-3 py-2.5 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-3 sm:text-sm ${
+              activeTab === "mhc"
+                ? "bg-gradient-to-r from-[#B61B1F] to-[#7A1216] text-white shadow-lg"
+                : "text-slate-500 hover:text-[#B61B1F]"
+            }`}
+          >
+            MHC Packages
+          </button>
           <button
             onClick={() => setActiveTab("footlab")}
-            className={`flex-1 rounded-xl px-3 py-2.5 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-7 sm:py-3 sm:text-sm ${
+            className={`flex-1 rounded-xl px-3 py-2.5 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-3 sm:text-sm ${
               activeTab === "footlab"
                 ? "bg-gradient-to-r from-rose-600 to-orange-500 text-white shadow-lg"
                 : "text-slate-500 hover:text-rose-600"
@@ -263,14 +350,14 @@ export default function MHC() {
             Foot Lab Packages
           </button>
           <button
-            onClick={() => setActiveTab("mhc")}
-            className={`flex-1 rounded-xl px-3 py-2.5 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-7 sm:py-3 sm:text-sm ${
-              activeTab === "mhc"
-                ? "bg-gradient-to-r from-[#B61B1F] to-[#7A1216] text-white shadow-lg"
-                : "text-slate-500 hover:text-[#B61B1F]"
+            onClick={() => setActiveTab("cancerscreening")}
+            className={`flex-1 rounded-xl px-3 py-2.5 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-3 sm:text-sm ${
+              activeTab === "cancerscreening"
+                ? "bg-gradient-to-r from-purple-600 to-indigo-700 text-white shadow-lg"
+                : "text-slate-500 hover:text-purple-600"
             }`}
           >
-            MHC Packages
+            Cancer Screening
           </button>
         </div>
 
@@ -278,6 +365,8 @@ export default function MHC() {
         <p className="text-center mt-3 text-slate-500 text-xs sm:text-sm">
           {activeTab === "footlab"
             ? "Specialized foot health assessment packages with comprehensive diagnostics"
+            : activeTab === "cancerscreening"
+            ? "Specialized cancer screening packages for early detection (Men & Women)"
             : "Complete master health check packages — Silver, Gold, Platinum & Diamond"}
         </p>
       </section>

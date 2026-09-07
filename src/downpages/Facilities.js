@@ -44,7 +44,7 @@ export default function Facilities() {
   ];
 
   return (
-    <div className="min-h-screen font-[Poppins] bg-gray-50 pt-28 pb-20">
+    <div className="min-h-screen font-[Poppins] bg-gray-50 pt-4 sm:pt-6 pb-20">
 
       {/* HEADER */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { motion } from "framer-motion";
 
-import appointmentHero from "../assets/appointment.jpg";
+import appointmentHero from "../assets/bannerimage/appointment.png";
 
 export default function Appointment(){
 
@@ -71,7 +71,7 @@ setSuccess(false);
 
 return(
 
-<div className="pt-28 sm:pt-[9rem] pb-24 bg-gray-50 font-[Poppins]">
+<div className="pt-4 sm:pt-6 pb-24 bg-gray-50 font-[Poppins]">
 
 {/* HERO */}
 <section className="max-w-7xl mx-auto px-6">

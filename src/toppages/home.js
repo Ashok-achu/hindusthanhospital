@@ -326,9 +326,78 @@ const MHC_PACKAGES = [
   { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
 ];
 
+const CANCER_SCREENING_PACKAGES = [
+  {
+    title: "Premium Package Men",
+    tests: "4 Tests",
+    price: "₹2,000",
+    originalPrice: "₹4,000",
+    icon: <FaHeartbeat />,
+    color: "from-purple-600 to-indigo-700",
+    features: [
+      "PSA (Prostate-Specific Antigen)",
+      "CHEST X-RAY",
+      "ULTRASOUND SCAN (Abdomen)",
+      "CA125 (MUC 16)",
+      "Screening for Prostate, Lung, Colon, Skin, Mouth, Testicular & Thyroid Cancer",
+      "Consultation by General Surgeon"
+    ],
+  },
+  {
+    title: "Premium Package Women",
+    tests: "5 Tests",
+    price: "₹3,500",
+    originalPrice: "₹5,500",
+    icon: <FaStar />,
+    color: "from-pink-600 to-rose-700",
+    features: [
+      "CA(125)",
+      "PAP SMEAR",
+      "X-RAY (CHEST)",
+      "BREAST SCAN (Ultrasound)",
+      "ULTRASOUND SCAN (Abdomen)",
+      "Screening for Cervix, Mouth, Breast, Lung, Colon, Skin & Thyroid Cancer",
+      "Consultation by General Surgeon / Gynecologist"
+    ],
+  },
+  {
+    title: "Optional Package (Men 50+ Yrs)",
+    tests: "2 Tests",
+    price: "₹650",
+    originalPrice: "₹1,500",
+    icon: <FaMedal />,
+    color: "from-amber-600 to-orange-700",
+    features: [
+      "UROFLOW",
+      "RESIDUAL URINE",
+      "Recommended for Men Above 50 Years",
+      "Consultation by Urologist"
+    ],
+  },
+  {
+    title: "Special Lung Cancer Package",
+    tests: "2 Tests",
+    price: "₹3,000",
+    originalPrice: "₹5,000",
+    icon: <FaTrophy />,
+    color: "from-teal-600 to-cyan-700",
+    features: [
+      "LDCT (Low-Dose CT)",
+      "CO Monitor",
+      "For Men & Women",
+      "Consultation by Pulmonologist"
+    ],
+  },
+];
+
 function HomeHealthPackagesSection({ navigate }) {
   const [activeTab, setActiveTab] = useState("mhc");
-  const packages = activeTab === "mhc" ? MHC_PACKAGES : FOOT_LAB_PACKAGES;
+  const packages =
+    activeTab === "mhc"
+      ? MHC_PACKAGES
+      : activeTab === "cancerscreening"
+      ? CANCER_SCREENING_PACKAGES
+      : FOOT_LAB_PACKAGES;
 
   return (
     <section className="relative overflow-hidden bg-mist py-12 sm:py-24 lg:py-32">
@@ -347,7 +416,7 @@ function HomeHealthPackagesSection({ navigate }) {
           </p>
 
           {/* Tab switcher: full-width pill on mobile, inline on desktop */}
-          <div className="mt-5 flex w-full rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:mt-8 sm:inline-flex sm:w-auto sm:p-1.5">
+          <div className="mt-5 flex w-full flex-wrap sm:flex-nowrap rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:mt-8 sm:inline-flex sm:w-auto sm:p-1.5">
             <button
               onClick={() => setActiveTab("mhc")}
               className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
@@ -367,6 +436,16 @@ function HomeHealthPackagesSection({ navigate }) {
               }`}
             >
               Foot Lab Packages
+            </button>
+            <button
+              onClick={() => setActiveTab("cancerscreening")}
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
+                activeTab === "cancerscreening"
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-700 text-white shadow-lg"
+                  : "text-slate-500 hover:text-purple-600"
+              }`}
+            >
+              Cancer Screening
             </button>
           </div>
         </div>
@@ -392,7 +471,12 @@ function HomeHealthPackagesSection({ navigate }) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className="font-display text-base font-bold text-ink truncate">{pkg.title}</h3>
-                    <span className="text-[#B61B1F] font-extrabold text-sm">{pkg.price}</span>
+                    <div className="flex items-center gap-1.5">
+                      {pkg.originalPrice && (
+                        <span className="text-slate-400 line-through text-xs font-medium">{pkg.originalPrice}</span>
+                      )}
+                      <span className="text-[#B61B1F] font-extrabold text-sm">{pkg.price}</span>
+                    </div>
                   </div>
                   <span className="shrink-0 rounded-full bg-[#FDECEC] px-2 py-0.5 text-[10px] font-bold text-slate-600">{pkg.tests}</span>
                 </div>
@@ -442,7 +526,12 @@ function HomeHealthPackagesSection({ navigate }) {
                 </div>
                 <div className="mt-4 sm:mt-5">
                   <h3 className="font-display text-xl font-bold text-ink transition-colors group-hover:text-[#B61B1F] sm:text-2xl">{pkg.title}</h3>
-                  <span className="mt-1.5 block font-display text-xl font-extrabold text-[#B61B1F] sm:text-2xl">{pkg.price}</span>
+                  <div className="mt-1.5 flex items-center gap-2">
+                    {pkg.originalPrice && (
+                      <span className="text-slate-400 line-through text-base font-semibold">{pkg.originalPrice}</span>
+                    )}
+                    <span className="font-display text-xl font-extrabold text-[#B61B1F] sm:text-2xl">{pkg.price}</span>
+                  </div>
                 </div>
                 <ul className="scrollbar-thin scrollbar-thumb-rose-200 scrollbar-track-transparent mt-5 max-h-44 flex-1 space-y-2 overflow-y-auto pr-2 sm:mt-6 sm:max-h-48">
                   {pkg.features.map((feature, idx) => (
@@ -690,22 +779,22 @@ export default function Home() {
       </section>
 
       {/* ════════ TRANSFORMING HEALTHCARE ════════ */}
-      <section className="relative py-16 sm:py-24 lg:py-32">
+      <section className="relative pt-6 pb-12 sm:pt-8 sm:pb-20 lg:pt-10 lg:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+          <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
             <motion.div
-              className="relative order-2 lg:order-1"
+              className="relative order-2 flex flex-col lg:order-1"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative overflow-hidden rounded-[1.5rem] border-4 border-white shadow-[0_40px_100px_-35px_rgba(15,23,42,0.45)] sm:rounded-[2.5rem]">
+              <div className="relative h-full min-h-[300px] w-full overflow-hidden rounded-[1.5rem] border-4 border-white shadow-[0_40px_100px_-35px_rgba(15,23,42,0.45)] sm:rounded-[2.5rem]">
                 <img
                   src={healthcare}
                   alt="Hindusthan Hospital medical team providing patient-centred healthcare in Coimbatore"
                   loading="lazy"
-                  className="h-auto w-full object-cover transition duration-700 hover:scale-[1.04]"
+                  className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
               
@@ -781,10 +870,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="mb-8 text-center"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#B61B1F]/15 bg-[#B61B1F]/5 px-3 py-0.5 text-[11px] font-semibold text-[#B61B1F] mb-2">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#B61B1F]" />
-              Centres of Excellence
-            </div>
+            
             <h2 className="font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
               Medical{" "}
               <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">
@@ -947,7 +1033,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-10 text-center sm:mb-16"
           >
-            <Eyebrow tone="light">What We Offer</Eyebrow>
+            
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-white">
               World-Class{" "}
               <span className="bg-gradient-to-r from-[#E88585] to-[#EFDFB0] bg-clip-text text-transparent">

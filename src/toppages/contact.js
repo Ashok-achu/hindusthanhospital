@@ -105,7 +105,7 @@ Symptoms / Message: ${form.message || "None"}
   };
 
   return (
-    <div className="pt-28 sm:pt-[9rem] pb-20 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
+    <div className="pt-4 sm:pt-6 pb-20 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
 
       {/* HEADER */}
       <section className="max-w-7xl mx-auto px-6">

@@ -14,7 +14,7 @@ export default function Milestones() {
   
 
   return (
-    <div className="pt-[9rem] pb-20 bg-gradient-to-b from-red-50 to-white font-[Poppins]">
+    <div className="pt-4 sm:pt-6 pb-20 bg-gradient-to-b from-red-50 to-white font-[Poppins]">
 
       {/* ================== HERO BANNER ================== */}
       <section className="max-w-7xl mx-auto px-6">
@@ -92,10 +92,9 @@ export default function Milestones() {
             className="ml-6 mb-12"
           >
             <div className="w-4 h-4 bg-red-600 rounded-full absolute -left-2 mt-2"></div>
-            <h3 className="text-xl font-bold text-red-700">1992 – The Beginning</h3>
+            <h3 className="text-xl font-bold text-red-700">1980 – Launch of Hindusthan Hospital</h3>
             <p className="text-gray-700 mt-2 leading-7">
-              Establishment of Hindusthan Educational and Charitable Trust, beginning with
-              the Hindusthan College of Arts and Science.
+              Launch of Hindusthan Hospital (HH), laying the foundation of dedicated and compassionate healthcare in Coimbatore.
             </p>
           </motion.div>
 
@@ -104,14 +103,14 @@ export default function Milestones() {
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="ml-6 mb-12"
           >
             <div className="w-4 h-4 bg-red-600 rounded-full absolute -left-2 mt-2"></div>
-            <h3 className="text-xl font-bold text-red-700">2000 – Expansion</h3>
+            <h3 className="text-xl font-bold text-red-700">1992 – The Beginning of HECT</h3>
             <p className="text-gray-700 mt-2 leading-7">
-              The group rapidly expanded into engineering, management, arts & science,
-              and various specialized educational institutions.
+              Establishment of Hindusthan Educational and Charitable Trust, beginning with
+              the Hindusthan College of Arts and Science.
             </p>
           </motion.div>
 
@@ -120,14 +119,14 @@ export default function Milestones() {
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.2 }}
             className="ml-6 mb-12"
           >
             <div className="w-4 h-4 bg-red-600 rounded-full absolute -left-2 mt-2"></div>
-            <h3 className="text-xl font-bold text-red-700">2010 – Healthcare Mission</h3>
+            <h3 className="text-xl font-bold text-red-700">2000 – Institutional Expansion</h3>
             <p className="text-gray-700 mt-2 leading-7">
-              Launch of Hindusthan Hospital — extending the Trust’s mission into healthcare
-              with advanced facilities and compassionate service.
+              The group rapidly expanded into engineering, management, arts & science,
+              and various specialized educational institutions.
             </p>
           </motion.div>
 
@@ -136,14 +135,28 @@ export default function Milestones() {
             initial="hidden"
             whileInView="visible"
             variants={fadeUp}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.3 }}
+            className="ml-6 mb-12"
+          >
+            <div className="w-4 h-4 bg-red-600 rounded-full absolute -left-2 mt-2"></div>
+            <h3 className="text-xl font-bold text-red-700">2024 – Inauguration of HH Mettupalayam</h3>
+            <p className="text-gray-700 mt-2 leading-7">
+              Inauguration of Hindusthan Hospital Mettupalayam branch, expanding high-quality medical care to Mettupalayam and surrounding regions.
+            </p>
+          </motion.div>
+
+          {/* Milestone 5 */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            transition={{ delay: 0.4 }}
             className="ml-6 mb-12"
           >
             <div className="w-4 h-4 bg-red-600 rounded-full absolute -left-2 mt-2"></div>
             <h3 className="text-xl font-bold text-red-700">Today</h3>
             <p className="text-gray-700 mt-2 leading-7">
-              Hindusthan continues to lead in education and healthcare, with thousands of
-              beneficiaries every year.
+              Hindusthan continues to lead in education and healthcare, serving thousands of patients and students with excellence every year.
             </p>
           </motion.div>
 

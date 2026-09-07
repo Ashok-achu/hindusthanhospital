@@ -57,7 +57,7 @@ export default function Healthcare() {
     });
 
     return (
-        <div className="font-[Poppins] bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen pt-28 sm:pt-[9rem] pb-20">
+        <div className="font-[Poppins] bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen pt-4 sm:pt-6 pb-20">
 
             {/* Filters */}
             <div className="max-w-7xl mx-auto mt-6 px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

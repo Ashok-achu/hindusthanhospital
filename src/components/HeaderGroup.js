@@ -84,7 +84,6 @@ export default function HeaderGroup() {
         {
             label: "Media",
             children: [
-                { label: "News", to: "/news" },
                 { label: "Updates & Insights", to: "/news" },
                 { label: "Brochuer", to: "/brochure/hindusthan-hospital-brochure.pdf", external: true },
                 { label: "Cancer Screening", to: "/brochure/cancer-screening.pdf", external: true },
