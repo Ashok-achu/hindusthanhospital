@@ -9,26 +9,26 @@ export default function AboutUs() {
     <div className="pt-4 sm:pt-6 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/30 min-h-screen pb-20">
       
       {/* ===================== HERO SECTION ===================== */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden shadow-xl">
+      <section className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
           <img
             src={hero}
-            alt="Hindusthan Hospital"
-            className="w-full h-64 md:h-[28rem] object-cover brightness-75"
+            alt="About Hindusthan Hospital"
+            className="w-full h-48 sm:h-64 md:h-[28rem] object-cover object-center brightness-75"
           />
 
           {/* Overlay Content */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/10 flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10 flex items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-2xl ml-6 md:ml-12 text-white"
+              className="max-w-2xl ml-5 sm:ml-10 md:ml-12 text-white"
             >
-              <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold drop-shadow-lg leading-tight">
                 About Hindusthan Hospital
               </h1>
-              <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-200">
+              <p className="mt-2 sm:mt-4 text-xs sm:text-sm md:text-lg leading-relaxed text-gray-200 max-w-xs sm:max-w-xl">
                 Delivering excellence in healthcare with compassion, precision, and integrity.
               </p>
             </motion.div>

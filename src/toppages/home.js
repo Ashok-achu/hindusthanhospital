@@ -1589,16 +1589,15 @@ export default function Home() {
       </section>
 
       {/* ════════ TESTIMONIALS ════════ */}
-      <section className="relative overflow-hidden bg-mist py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-mist py-12 sm:py-24">
         <div className="absolute top-20 left-0 h-72 w-72 rounded-full bg-[#FAD6D6] opacity-40 blur-3xl" />
         <div className="absolute bottom-10 right-0 h-72 w-72 rounded-full bg-[#F5E8C8] opacity-40 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="mb-10 text-center sm:mb-20">
-            
-            <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
+          <div className="mb-8 text-center sm:mb-16">
+            <h2 className="font-display text-[clamp(1.5rem,6vw,3rem)] font-extrabold text-ink">
               Patient <span className="text-[#B61B1F]">Testimonials</span>
             </h2>
-            <p className="mt-3 text-sm text-slate-500 sm:mt-4 sm:text-lg">Real experiences from our valued patients</p>
+            <p className="mt-2 text-sm text-slate-500 sm:mt-4 sm:text-lg">Real experiences from our valued patients</p>
           </div>
           {(() => {
             const testimonials = [
@@ -1613,10 +1612,17 @@ export default function Home() {
               { id: 9, name: "Lakshmi Priya", rating: 4, text: "Very satisfied with pediatric services and friendly doctors." },
             ];
             const settings = {
-              dots: true, arrows: false, infinite: true, autoplay: true,
-              autoplaySpeed: 4200, speed: 900, slidesToShow: 3, slidesToScroll: 1, pauseOnHover: true,
+              dots: true,
+              arrows: false,
+              infinite: true,
+              autoplay: true,
+              autoplaySpeed: 4000,
+              speed: 700,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              pauseOnHover: true,
               responsive: [
-                { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
                 {
                   breakpoint: 768,
                   settings: {
@@ -1624,49 +1630,48 @@ export default function Home() {
                     slidesToScroll: 1,
                     centerMode: false,
                     centerPadding: "0px",
-                  },
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    centerMode: false,
-                    centerPadding: "0px",
+                    dots: true,
                   },
                 },
               ],
             };
             return (
-              <Slider {...settings}>
-                {testimonials.map((item, index) => (
-                  <div key={item.id} className="px-2 py-4 sm:px-4 sm:py-6">
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.04 }}
-                      whileHover={{ y: -8 }}
-                      className="group relative h-full min-h-[240px] rounded-[1.5rem] border border-slate-100 bg-white/85 p-6 shadow-lg backdrop-blur-xl transition-all duration-500 hover:shadow-[0_30px_70px_-20px_rgba(182,27,31,0.32)] sm:min-h-[300px] sm:rounded-[1.75rem] sm:p-9"
-                    >
-                      <div className="absolute -top-4 left-6 select-none font-display text-5xl text-[#F3AEAE] sm:-top-6 sm:left-8 sm:text-7xl">"</div>
-                      <div className="mt-3 flex gap-1 text-[#C9962B] sm:mt-4">
-                        {[...Array(item.rating)].map((_, i) => (
-                          <FaStar key={i} className="text-sm transition-transform group-hover:scale-110" />
-                        ))}
-                      </div>
-                      <p className="mt-4 text-sm italic leading-relaxed text-slate-700 sm:mt-5 sm:text-base">{item.text}</p>
-                      <div className="mb-5 mt-6 h-[3px] w-14 rounded-full bg-gradient-to-r from-[#B61B1F] to-[#C9962B] sm:mb-6 sm:mt-8" />
-                      <div className="flex items-center gap-3 sm:gap-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#B61B1F] to-[#0F2C6A] font-bold text-white shadow-lg sm:h-12 sm:w-12">
-                          {item.name.charAt(0)}
+              <div className="testimonial-slider-wrap">
+                <Slider {...settings}>
+                  {testimonials.map((item, index) => (
+                    <div key={item.id} className="px-2 sm:px-3">
+                      <div className="relative flex flex-col bg-white rounded-2xl sm:rounded-[1.75rem] border border-slate-100 shadow-md p-5 sm:p-8 mx-1 my-3 sm:my-5 min-h-[220px] sm:min-h-[290px]">
+                        {/* Big quote mark */}
+                        <div className="text-[3rem] sm:text-[5rem] leading-none text-[#F3AEAE] font-serif select-none mb-1 sm:mb-2" aria-hidden="true">"</div>
+
+                        {/* Stars */}
+                        <div className="flex gap-1 mb-3">
+                          {[...Array(item.rating)].map((_, i) => (
+                            <FaStar key={i} className="text-base sm:text-lg text-[#C9962B]" />
+                          ))}
                         </div>
-                        <h4 className="font-display text-sm font-semibold text-ink sm:text-lg">{item.name}</h4>
+
+                        {/* Review text */}
+                        <p className="text-sm sm:text-base italic leading-relaxed text-slate-700 flex-1">{item.text}</p>
+
+                        {/* Divider */}
+                        <div className="mt-4 mb-3 h-[2px] w-12 rounded-full bg-gradient-to-r from-[#B61B1F] to-[#C9962B]" />
+
+                        {/* Name + initial avatar */}
+                        <div className="flex items-center gap-3">
+                          <div className="flex-shrink-0 h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-gradient-to-br from-[#B61B1F] to-[#0F2C6A] flex items-center justify-center text-white font-bold text-base sm:text-lg shadow">
+                            {item.name.charAt(0)}
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-sm sm:text-base text-[#0A1B33]">{item.name}</h4>
+                            <p className="text-xs text-slate-400">Verified Patient</p>
+                          </div>
+                        </div>
                       </div>
-                    </motion.div>
-                  </div>
-                ))}
-              </Slider>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
             );
           })()}
         </div>
@@ -1851,6 +1856,23 @@ export default function Home() {
 
         .slick-dots li button:before { font-size: 12px; color: #cbd5e1; }
         .slick-dots li.slick-active button:before { color: #B61B1F; }
+
+        /* Testimonial slider fix — proper spacing below cards for dots */
+        .testimonial-slider-wrap .slick-dots {
+          bottom: -28px;
+        }
+        .testimonial-slider-wrap .slick-dots li button:before {
+          font-size: 10px;
+          color: #B0BEC5;
+          opacity: 1;
+        }
+        .testimonial-slider-wrap .slick-dots li.slick-active button:before {
+          color: #B61B1F;
+          opacity: 1;
+        }
+        .testimonial-slider-wrap {
+          padding-bottom: 40px;
+        }
 
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

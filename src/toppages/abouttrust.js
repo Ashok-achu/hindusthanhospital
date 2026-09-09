@@ -18,20 +18,21 @@ export default function AboutTrust() {
     <div className="pt-4 sm:pt-6 pb-20 bg-gradient-to-b from-red-50 to-white min-h-screen font-[Poppins]">
 
       {/* ================= HERO ================= */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden shadow-xl">
+      <section className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
           <img
             src={hero}
-            className="w-full h-64 md:h-80 object-cover brightness-75"
+            alt="About Hindusthan Trust"
+            className="w-full h-48 sm:h-64 md:h-80 object-cover object-center brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-red-900/85 via-red-700/50 to-transparent flex items-center">
-            <div className="ml-6 md:ml-12 text-white">
+          <div className="absolute inset-0 bg-gradient-to-r from-red-900/85 via-red-700/60 to-transparent flex items-center">
+            <div className="ml-5 sm:ml-10 md:ml-12 text-white max-w-lg">
               <motion.h1
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
                 transition={{ duration: 0.7 }}
-                className="text-3xl md:text-5xl font-extrabold"
+                className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight"
               >
                 About The Trust
               </motion.h1>

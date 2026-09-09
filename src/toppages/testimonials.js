@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
 import hero from "../assets/bannerimage/testimonial.png";
-import timg from "../assets/team.jpg";
 import trustedCareImg from "../assets/bannerimage/trustedcare.png";
 
 export default function Testimonials() {
@@ -54,25 +53,25 @@ export default function Testimonials() {
 
 {/* ================= HERO ================= */}
 
-<section className="max-w-7xl mx-auto px-6">
+<section className="max-w-7xl mx-auto px-3 sm:px-6">
 
-<div className="relative overflow-hidden rounded-3xl shadow-2xl">
+<div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
 
 <img
 src={hero}
-alt="Testimonials"
-className="w-full h-72 md:h-[24rem] object-cover brightness-75"
+alt="Patient Testimonials at Hindusthan Hospital"
+className="w-full h-48 sm:h-64 md:h-[22rem] object-cover object-center brightness-75"
 />
 
-<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+<div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent flex items-center">
 
-<div className="text-white ml-6 md:ml-14">
+<div className="text-white ml-5 sm:ml-10 md:ml-14 max-w-lg">
 
 <motion.h1
 initial={{ opacity: 0, x: -40 }}
 whileInView={{ opacity: 1, x: 0 }}
 transition={{ duration: .7 }}
-className="text-3xl md:text-5xl font-extrabold tracking-wide"
+className="text-xl sm:text-3xl md:text-5xl font-extrabold tracking-wide leading-tight"
 >
 
 Patient Testimonials
@@ -83,7 +82,7 @@ Patient Testimonials
 initial={{ opacity: 0, y: 20 }}
 whileInView={{ opacity: 1, y: 0 }}
 transition={{ duration: .8 }}
-className="text-gray-200 mt-4 md:text-lg max-w-xl"
+className="text-gray-200 mt-2 sm:mt-4 text-xs sm:text-sm md:text-lg max-w-xs sm:max-w-xl"
 >
 
 Real experiences shared by patients who trusted Hindusthan Hospital.

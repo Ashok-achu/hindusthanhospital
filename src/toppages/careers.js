@@ -33,17 +33,17 @@ export default function Careers() {
     <div className="pt-2 sm:pt-4 pb-20 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
       
       {/* ================= HERO ================= */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="relative rounded-3xl overflow-hidden shadow-xl">
-          <img src={hero} className="w-full h-64 md:h-80 object-cover brightness-75" />
+      <section className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+          <img src={hero} alt="Careers at Hindusthan Hospital" className="w-full h-48 sm:h-64 md:h-80 object-cover object-center brightness-75" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent flex items-center">
-            <div className="ml-6 md:ml-12 text-white">
-              <motion.h1 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="text-3xl md:text-5xl font-extrabold">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent flex items-center">
+            <div className="ml-5 sm:ml-10 md:ml-12 text-white max-w-lg">
+              <motion.h1 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} className="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight">
                 Careers at Hindusthan Hospital
               </motion.h1>
 
-              <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mt-3 text-gray-200 md:text-lg">
+              <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mt-2 sm:mt-3 text-gray-200 text-xs sm:text-sm md:text-lg max-w-xs sm:max-w-md">
                 Join our team of healthcare professionals making a difference.
               </motion.p>
             </div>
@@ -89,8 +89,8 @@ export default function Careers() {
 
       {/* ================= CTA ================= */}
       <section className="max-w-7xl mx-auto px-6 mt-20">
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-10 shadow-xl flex flex-col md:flex-row items-center gap-10 border">
-          <img src={cimg} className="w-full md:w-72 h-56 object-cover rounded-2xl shadow-lg" />
+        <div className="bg-white/80 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-xl flex flex-col md:flex-row items-center gap-6 sm:gap-10 border">
+          <img src={cimg} alt="Work with us at Hindusthan Hospital" className="w-full md:w-72 h-44 sm:h-56 object-cover rounded-xl sm:rounded-2xl shadow-lg" />
 
           <div className="flex-1">
             <h3 className="text-2xl md:text-3xl font-bold text-blue-900">Work With Us</h3>

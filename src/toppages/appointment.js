@@ -1,39 +1,33 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-
 import appointmentHero from "../assets/bannerimage/appointment.png";
 
-export default function Appointment(){
+export default function Appointment() {
 
-const [form,setForm]=useState({
-name:"",
-phone:"",
-department:"",
-doctor:"",
-date:"",
-message:""
-});
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    department: "",
+    doctor: "",
+    date: "",
+    message: ""
+  });
 
-const [success,setSuccess]=useState(false);   // NEW STATE
+  const [success, setSuccess] = useState(false);
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-const handleChange=(e)=>{
-setForm({
-...form,
-[e.target.name]:e.target.value
-});
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    if (!form.name || !form.phone) {
+      alert("Please fill required fields");
+      return;
+    }
 
-const handleSubmit=(e)=>{
-e.preventDefault();
-
-if(!form.name || !form.phone){
-alert("Please fill required fields");
-return;
-}
-
-const message = `Appointment Request
+    const message = `Appointment Request
 
 Name : ${form.name}
 Phone : ${form.phone}
@@ -43,178 +37,170 @@ Date : ${form.date}
 Message : ${form.message}
 `;
 
-window.open(
-`https://wa.me/916380015975?text=${encodeURIComponent(message)}`,
-"_blank"
-);
+    window.open(
+      `https://wa.me/916380015975?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
 
-// ✅ SHOW SUCCESS MESSAGE
-setSuccess(true);
+    setSuccess(true);
 
-// ✅ RESET FORM
-setForm({
-name:"",
-phone:"",
-department:"",
-doctor:"",
-date:"",
-message:""
-});
+    setForm({
+      name: "",
+      phone: "",
+      department: "",
+      doctor: "",
+      date: "",
+      message: ""
+    });
 
-// ✅ AUTO HIDE MESSAGE AFTER 4 SECONDS
-setTimeout(()=>{
-setSuccess(false);
-},4000);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 4000);
+  };
 
-};
+  return (
 
+    <div className="pt-2 sm:pt-4 pb-24 bg-gray-50 font-[Poppins]">
 
-return(
+      {/* HERO */}
+      <section className="max-w-7xl mx-auto px-3 sm:px-6">
+        <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+          <img
+            src={appointmentHero}
+            alt="Book an Appointment at Hindusthan Hospital"
+            className="w-full h-44 sm:h-64 md:h-80 object-cover object-center brightness-75"
+          />
+          <div className="absolute inset-0 bg-blue-900/70 flex items-center">
+            <h1 className="ml-5 sm:ml-8 text-white text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+              Book Appointment
+            </h1>
+          </div>
+        </div>
+      </section>
 
-<div className="pt-4 sm:pt-6 pb-24 bg-gray-50 font-[Poppins]">
+      {/* FORM */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 mt-10 sm:mt-16">
 
-{/* HERO */}
-<section className="max-w-7xl mx-auto px-6">
-<div className="relative rounded-3xl overflow-hidden shadow-xl">
-<img
-src={appointmentHero}
-className="w-full h-64 md:h-80 object-cover brightness-75"
-/>
-<div className="absolute inset-0 bg-blue-900/70 flex items-center">
-<h1 className="ml-8 text-white text-4xl md:text-5xl font-extrabold">
-Book Appointment
-</h1>
-</div>
-</div>
-</section>
+        {/* SUCCESS MESSAGE */}
+        {success && (
+          <div className="mb-6 p-4 rounded-xl bg-green-100 text-green-700 font-semibold text-center shadow">
+            ✅ Appointment request submitted successfully! Our team will contact you shortly.
+          </div>
+        )}
 
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: .6 }}
+          className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 space-y-6"
+        >
 
-{/* FORM */}
-<section className="max-w-5xl mx-auto px-4 sm:px-6 mt-14 sm:mt-20">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            Quick Appointment Booking
+          </h2>
 
-{/* SUCCESS MESSAGE */}
-{success && (
-<div className="mb-6 p-4 rounded-xl bg-green-100 text-green-700 font-semibold text-center shadow">
-✅ Appointment request submitted successfully! Our team will contact you shortly.
-</div>
-)}
+          <p className="mt-3 text-gray-600">
+            For appointment support, email <a className="font-semibold text-rose-600" href="mailto:hindusthanreception@gmail.com">hindusthanreception@gmail.com</a>.
+          </p>
 
-<motion.form
-onSubmit={handleSubmit}
-initial={{opacity:0,y:40}}
-whileInView={{opacity:1,y:0}}
-transition={{duration:.6}}
-className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 space-y-6"
->
+          {/* NAME + PHONE */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              name="name"
+              value={form.name}
+              placeholder="Patient Name *"
+              onChange={handleChange}
+              className="w-full border rounded-xl p-3 sm:p-4 outline-none focus:ring-2 focus:ring-rose-500"
+            />
+            <input
+              name="phone"
+              type="tel"
+              value={form.phone}
+              placeholder="Mobile Number *"
+              onChange={handleChange}
+              className="w-full border rounded-xl p-3 sm:p-4 outline-none focus:ring-2 focus:ring-rose-500"
+            />
+          </div>
 
-<h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-Quick Appointment Booking
-</h2>
+          {/* DEPARTMENT */}
+          <select
+            name="department"
+            value={form.department}
+            onChange={handleChange}
+            className="w-full border rounded-xl p-3 sm:p-4"
+          >
+            <option value="">Select Department</option>
+            <option>Anaesthesiology</option>
+            <option>Cardiology</option>
+            <option>Dermatology</option>
+            <option>Dentistry</option>
+            <option>Diabetology</option>
+            <option>Emergency Care</option>
+            <option>ENT</option>
+            <option>General Medicine</option>
+            <option>General Surgery</option>
+            <option>Gastroenterology</option>
+            <option>Internal Medicine</option>
+            <option>ICU</option>
+            <option>Neonatology</option>
+            <option>Neuro &amp; Vascular Surgery</option>
+            <option>Nephrology</option>
+            <option>Obstetrics &amp; Gynaecology</option>
+            <option>Orthopaedics</option>
+            <option>Rehabilitation</option>
+            <option>Paediatrics</option>
+            <option>Paediatric Surgery</option>
+            <option>Psychiatry</option>
+            <option>Plastic Surgery</option>
+            <option>Pulmonology</option>
+            <option>Radiology</option>
+            <option>Surgical Oncology</option>
+            <option>Urology</option>
+          </select>
 
-<p className="mt-3 text-gray-600">
-For appointment support, email <a className="font-semibold text-rose-600" href="mailto:hindusthanreception@gmail.com">hindusthanreception@gmail.com</a>.
-</p>
+          {/* DOCTOR */}
+          <input
+            name="doctor"
+            value={form.doctor}
+            placeholder="Preferred Doctor (Optional)"
+            onChange={handleChange}
+            className="w-full border rounded-xl p-3 sm:p-4"
+          />
 
-{/* NAME + PHONE */}
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* DATE */}
+          <input
+            type="date"
+            name="date"
+            value={form.date}
+            onChange={handleChange}
+            className="w-full border rounded-xl p-3 sm:p-4"
+          />
 
-<input
-name="name"
-value={form.name}
-placeholder="Patient Name *"
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4 outline-none focus:ring-2 focus:ring-rose-500"
-/>
+          {/* MESSAGE */}
+          <textarea
+            name="message"
+            value={form.message}
+            placeholder="Symptoms / Message"
+            rows="4"
+            onChange={handleChange}
+            className="w-full border rounded-xl p-3 sm:p-4"
+          />
 
-<input
-name="phone"
-type="tel"
-value={form.phone}
-placeholder="Mobile Number *"
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4 outline-none focus:ring-2 focus:ring-rose-500"
-/>
+          {/* BUTTON */}
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-rose-600 to-orange-500 text-white py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition"
+          >
+            Submit Appointment
+          </button>
 
-</div>
+        </motion.form>
 
-{/* DEPARTMENT */}
-<select
-name="department"
-value={form.department}
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4"
->
-<option value="">Select Department</option>
-<option>Anaesthesiology</option>
-<option>Cardiology</option>
-<option>Dermatology</option>
-<option>Dentistry</option>
-<option>Diabetology</option>
-<option>Emergency Care</option>
-<option>ENT</option>
-<option>General Medicine</option>
-<option>General Surgery</option>
-<option>Gastroenterology</option>
-<option>Internal Medicine</option>
-<option>ICU</option>
-<option>Neonatology</option>
-<option>Neuro & Vascular Surgery</option>
-<option>Nephrology</option>
-<option>Obstetrics & Gynaecology</option>
-<option>Orthopaedics</option>
-<option>Rehabilitation</option>
-<option>Paediatrics</option>
-<option>Paediatric Surgery</option>
-<option>Psychiatry</option>
-<option>Plastic Surgery</option>
-<option>Pulmonology</option>
-<option>Radiology</option>
-<option>Surgical Oncology</option>
-<option>Urology</option>
-</select>
+      </section>
 
-{/* DOCTOR */}
-<input
-name="doctor"
-value={form.doctor}
-placeholder="Preferred Doctor (Optional)"
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4"
-/>
+    </div>
 
-{/* DATE */}
-<input
-type="date"
-name="date"
-value={form.date}
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4"
-/>
-
-{/* MESSAGE */}
-<textarea
-name="message"
-value={form.message}
-placeholder="Symptoms / Message"
-rows="4"
-onChange={handleChange}
-className="w-full border rounded-xl p-3 sm:p-4"
-/>
-
-{/* BUTTON */}
-<button
-type="submit"
-className="w-full bg-gradient-to-r from-rose-600 to-orange-500 text-white py-4 rounded-xl font-bold hover:scale-[1.02] active:scale-95 transition"
->
-Submit Appointment
-</button>
-
-</motion.form>
-
-</section>
-
-</div>
-
-);
+  );
 
 }
