@@ -32,7 +32,7 @@ export default function Courses() {
   return (
     <div className="pt-3 sm:pt-4 font-[Poppins]">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-10 sm:py-14">
+      <div className="bg-gradient-to-r from-blue-50 via-white to-blue-50 py-6 sm:py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center">
             <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-xs sm:text-sm font-semibold tracking-wide uppercase">

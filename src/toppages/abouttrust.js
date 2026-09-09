@@ -15,7 +15,7 @@ export default function AboutTrust() {
   };
 
   return (
-    <div className="pt-[9rem] pb-20 bg-gradient-to-b from-red-50 to-white min-h-screen font-[Poppins]">
+    <div className="pt-4 sm:pt-6 pb-20 bg-gradient-to-b from-red-50 to-white min-h-screen font-[Poppins]">
 
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6">

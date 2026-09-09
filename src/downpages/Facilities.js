@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaHeartbeat, FaFlask, FaStethoscope, FaArrowRight } from "react-icons/fa";
 
 import checkupImg from "../assets/hospital.jpg";
+import trustedCareImg from "../assets/bannerimage/trustedcare.png";
 import dnaImg from "../assets/pediatrics.jpg";
 import cardioImg from "../assets/surgery.jpg";
 import appointmentImg from "../assets/appointment.jpg";
@@ -170,7 +171,7 @@ export default function Facilities() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 gap-10">
 
           <img
-            src={appointmentImg}
+            src={trustedCareImg}
             className="w-64 md:w-72 rounded-2xl shadow-lg"
             alt="appointment"
           />

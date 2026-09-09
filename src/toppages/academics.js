@@ -42,7 +42,7 @@ export default function Academics() {
   ];
 
   return (
-    <div className="pt-[9rem] pb-20 font-[Poppins] bg-gradient-to-b from-white to-blue-50/40 min-h-screen">
+    <div className="pt-4 sm:pt-6 pb-20 font-[Poppins] bg-gradient-to-b from-white to-blue-50/40 min-h-screen">
 
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6">

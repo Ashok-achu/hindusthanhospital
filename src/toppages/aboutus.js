@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaHeartbeat, FaUserMd, FaHospitalAlt } from "react-icons/fa";
 import hero from "../assets/hero.jpg";
+import trustedCareImg from "../assets/bannerimage/trustedcare.png";
 
 export default function AboutUs() {
   return (
@@ -152,7 +153,7 @@ Our specialist clinics are organized as convenient one-stop centres, which colle
           </div>
 
           <img
-            src={hero}
+            src={trustedCareImg}
             alt="cta"
             className="w-full md:w-72 h-56 object-cover rounded-2xl shadow-lg"
           />

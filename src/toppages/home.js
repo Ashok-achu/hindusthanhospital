@@ -856,74 +856,180 @@ export default function Home() {
       
 
       {/* ════════ MEDICAL SPECIALITIES ════════ */}
-      <section id="specialities" className="relative overflow-hidden bg-slate-50/70 py-10 sm:py-14">
+      <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
+        {/* Glow ambient backdrops */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-10 right-10 h-[400px] w-[400px] rounded-full bg-[#B61B1F]/5 blur-[120px]" />
-          <div className="absolute bottom-10 left-10 h-[400px] w-[400px] rounded-full bg-[#0F2C6A]/5 blur-[120px]" />
+          <div
+            className="absolute left-1/4 top-0 h-[600px] w-[600px] rounded-full opacity-25 blur-[160px]"
+            style={{ background: "radial-gradient(circle,#7A1216,transparent)" }}
+          />
+          <div
+            className="absolute bottom-0 right-1/4 h-[500px] w-[500px] rounded-full opacity-20 blur-[140px]"
+            style={{ background: "radial-gradient(circle,#0F2C6A,transparent)" }}
+          />
+          <div
+            className="absolute inset-0 opacity-[0.035]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)",
+              backgroundSize: "80px 80px",
+            }}
+          />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 text-center"
+            transition={{ duration: 0.8 }}
+            className="mb-10 sm:mb-16 lg:mb-20"
           >
-            
-            <h2 className="font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-              Medical{" "}
-              <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">
-                Specialities & Departments
-              </span>
-            </h2>
+            <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                
+                <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
+                  Medical
+                  <br />
+                  <span className="relative inline-block">
+                    <span className="bg-gradient-to-r from-[#E88585] via-[#F3AEAE] to-[#EFDFB0] bg-clip-text text-transparent">
+                      Specialities
+                    </span>
+                    <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#D65A5A] to-transparent" />
+                  </span>
+                </h2>
+              </div>
+              <p className="max-w-md text-sm leading-relaxed text-slate-400 sm:text-base lg:text-right lg:text-lg">
+                21 specialized departments staffed by senior consultants, equipped with cutting-edge medical technology.
+              </p>
+            </div>
           </motion.div>
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {DEPARTMENTS.map((dept, i) => (
-              <motion.div
-                key={dept.slug}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.25, delay: i * 0.015 }}
-                onMouseEnter={() => setHovered(dept.slug)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <Link
-                  to={`/departments/${dept.slug}`}
-                  className="group relative flex h-full items-center gap-3 rounded-xl border border-slate-200/90 bg-white p-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-[#B61B1F]/30 hover:shadow-md sm:p-3.5"
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={specPage}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
+            >
+              {currentDepts.map((dept, i) => (
+                <motion.div
+                  key={dept.slug}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  onMouseEnter={() => setHovered(dept.slug)}
+                  onMouseLeave={() => setHovered(null)}
                 >
-                  <span
-                    className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl transition-all duration-300"
-                    style={{ background: dept.color, opacity: hovered === dept.slug ? 1 : 0.5 }}
-                  />
-
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-lg transition-transform duration-300 group-hover:scale-110 sm:h-11 sm:w-11"
+                  <Link
+                    to={`/departments/${dept.slug}`}
+                    className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/25 sm:p-8"
                     style={{
-                      background: `${dept.color}14`,
-                      color: dept.color,
+                      boxShadow:
+                        hovered === dept.slug
+                          ? `0 24px 48px -12px ${dept.color}35, 0 0 0 1px ${dept.color}50`
+                          : "none",
                     }}
                   >
-                    {dept.icon}
-                  </div>
+                    {/* Top ambient glow on hover */}
+                    <div
+                      className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40"
+                      style={{ background: dept.color }}
+                    />
 
-                  <div className="min-w-0 flex-1">
-                    <h3 className="truncate font-display text-xs font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#B61B1F] sm:text-sm">
-                      {dept.name}
-                    </h3>
-                    <p className="truncate text-[11px] text-slate-500">
-                      {dept.desc}
-                    </p>
-                  </div>
+                    <div className="relative z-10 flex h-full flex-col">
+                      <div className="mb-6 flex items-center justify-between">
+                        <div
+                          className="flex items-center justify-center rounded-2xl text-xl transition-transform duration-500 group-hover:scale-110"
+                          style={{
+                            background: `${dept.color}18`,
+                            color: dept.color,
+                            width: "2.75rem",
+                            height: "2.75rem",
+                            boxShadow: hovered === dept.slug ? `0 0 24px ${dept.color}40` : "none",
+                          }}
+                        >
+                          {dept.icon}
+                        </div>
+                        <div
+                          className="flex h-8 w-8 -translate-x-2 items-center justify-center rounded-full opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+                          style={{ background: `${dept.color}20`, color: dept.color }}
+                        >
+                          <FaArrowRight className="text-xs" />
+                        </div>
+                      </div>
 
-                  <FaArrowRight
-                    className="shrink-0 text-[10px] text-slate-300 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-[#B61B1F]"
+                      <div>
+                        <h3
+                          className="font-display mb-1.5 text-base font-bold text-white transition-colors duration-300 sm:text-lg"
+                          style={{ color: hovered === dept.slug ? dept.color : undefined }}
+                        >
+                          {dept.name}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
+                          {dept.desc}
+                        </p>
+                      </div>
+
+                      <div className="mt-auto flex items-center justify-between border-t border-white/5 pt-4">
+                        <span
+                          className="rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest"
+                          style={{ background: `${dept.color}18`, color: dept.color }}
+                        >
+                          View Department
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* pagination */}
+          <div className="mt-10 flex flex-col items-center justify-between gap-5 sm:mt-14 sm:flex-row sm:gap-6">
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalPages }).map((_, i) => (
+                <button key={i} onClick={() => setSpecPage(i)} aria-label={`Page ${i + 1}`}>
+                  <div
+                    className="rounded-full transition-all duration-300"
+                    style={{
+                      width: i === specPage ? "36px" : "8px",
+                      height: "8px",
+                      background: i === specPage ? "linear-gradient(90deg,#B61B1F,#C9962B)" : "rgba(255,255,255,0.15)",
+                    }}
                   />
-                </Link>
-              </motion.div>
-            ))}
+                </button>
+              ))}
+              <span className="ml-3 text-sm text-slate-500">{specPage + 1} / {totalPages}</span>
+            </div>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setSpecPage((p) => Math.max(0, p - 1))}
+                disabled={specPage === 0}
+                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
+                style={{
+                  borderColor: specPage === 0 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
+                  background: specPage === 0 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
+                }}
+              >
+                <FaChevronLeft className="text-sm text-white transition-transform group-hover:-translate-x-0.5" />
+              </button>
+              <button
+                onClick={() => setSpecPage((p) => Math.min(totalPages - 1, p + 1))}
+                disabled={specPage === totalPages - 1}
+                className="group flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-30 sm:h-12 sm:w-12"
+                style={{
+                  borderColor: specPage === totalPages - 1 ? "rgba(255,255,255,0.1)" : "rgba(182,27,31,0.4)",
+                  background: specPage === totalPages - 1 ? "rgba(255,255,255,0.03)" : "rgba(182,27,31,0.08)",
+                }}
+              >
+                <FaChevronRight className="text-sm text-white transition-transform group-hover:translate-x-0.5" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -1050,6 +1156,7 @@ export default function Home() {
               { icon: <FaFlask />, title: "Blood Bank", desc: "NABH-accredited blood bank with all blood groups and modern storage infrastructure.", link: "/facilities/blood-bank", color: "from-[#D65A5A] to-[#B61B1F]" },
               { icon: <FaBed />, title: "Premium Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-[#D9B45B] to-[#A87A1E]" },
               { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-[#1D469E] to-[#14357F]" },
+              { icon: <FaShieldAlt />, title: "Insurance & Cashless", desc: "Empaneled with major insurance providers and TPAs for seamless cashless hospitalization.", link: "/facilities/insurance", color: "from-[#0F2C6A] to-[#1D469E]" },
               { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-[#0F2C6A] to-[#B61B1F]" },
             ].map((f, i) => (
               <motion.div

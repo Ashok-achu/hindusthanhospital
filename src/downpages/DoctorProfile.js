@@ -57,7 +57,7 @@ export default function DoctorProfile() {
   }
 
   return (
-    <div className="font-[Poppins] bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen pt-[10rem] pb-20">
+    <div className="font-[Poppins] bg-gradient-to-b from-white via-gray-50 to-gray-100 min-h-screen pt-4 sm:pt-6 pb-20">
 
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-6">

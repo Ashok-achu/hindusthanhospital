@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaBriefcase, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import hero from "../assets/hero.jpg";
-import cimg from "../assets/hospital.jpg";
+import hero from "../assets/bannerimage/career.png";
+import cimg from "../assets/bannerimage/trustedcare.png";
 
 export default function Careers() {
   const jobs = [
@@ -30,7 +30,7 @@ export default function Careers() {
   ];
 
   return (
-    <div className="pt-[9rem] pb-20 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
+    <div className="pt-2 sm:pt-4 pb-20 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
       
       {/* ================= HERO ================= */}
       <section className="max-w-7xl mx-auto px-6">

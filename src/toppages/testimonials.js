@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/bannerimage/testimonial.png";
 import timg from "../assets/team.jpg";
+import trustedCareImg from "../assets/bannerimage/trustedcare.png";
 
 export default function Testimonials() {
 
@@ -49,7 +50,7 @@ export default function Testimonials() {
 
   return (
 
-<div className="pt-[9rem] pb-24 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
+<div className="pt-4 sm:pt-6 pb-24 font-[Poppins] bg-gradient-to-b from-gray-50 to-blue-50/40 min-h-screen">
 
 {/* ================= HERO ================= */}
 
@@ -133,11 +134,9 @@ className="group bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-7 border b
 
 <div className="flex items-center gap-4">
 
-<img
-src={timg}
-alt={it.name}
-className="w-16 h-16 rounded-full border-4 border-white shadow-lg object-cover group-hover:scale-105 transition"
-/>
+<div className="w-16 h-16 rounded-full border-4 border-white shadow-lg flex items-center justify-center bg-blue-100 text-blue-900 font-bold text-2xl group-hover:scale-105 transition">
+  {it.name.charAt(0)}
+</div>
 
 <div>
 
@@ -192,7 +191,7 @@ className="w-16 h-16 rounded-full border-4 border-white shadow-lg object-cover g
 <div className="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border border-gray-200 p-10 flex flex-col md:flex-row gap-10 items-center">
 
 <img
-src={timg}
+src={trustedCareImg}
 alt="appointment"
 className="w-full md:w-80 h-60 object-cover rounded-2xl shadow-xl"
 />

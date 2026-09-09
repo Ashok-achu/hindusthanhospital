@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import news1 from "../assets/hospital.jpg";
+import trustedCareImg from "../assets/bannerimage/trustedcare.png";
 import news2 from "../assets/pediatrics.jpg";
 import news3 from "../assets/surgery.jpg";
 
@@ -52,7 +53,7 @@ export default function News() {
   }, []);
 
   return (
-    <div className="pt-[10rem] font-[Poppins]">
+    <div className="pt-4 sm:pt-6 font-[Poppins]">
 
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-6">
@@ -130,7 +131,7 @@ export default function News() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 px-6">
 
           <img
-            src={news1}
+            src={trustedCareImg}
             alt="Hospital"
             className="w-full md:w-1/3 rounded-2xl shadow-lg"
           />
