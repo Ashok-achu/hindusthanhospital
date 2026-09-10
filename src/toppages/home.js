@@ -21,6 +21,7 @@ import "slick-carousel/slick/slick-theme.css";
 import doctorTeams from "../assets/Final/DSC03825.jpg";
 
 import hero3 from "../assets/set1/hero3.png";
+import icuImg from "../assets/set1/Icu_.jpg";
 import why1 from "../assets/set1/NICU PHOTOTHERAPY.jpg";
 import why2 from "../assets/set1/Radiology_(1).jpg";
 import why3 from "../assets/set1/Radiology_(2).jpg";
@@ -230,6 +231,11 @@ const DEPARTMENTS = [
   { name: "Surgical Oncology", slug: "surgical-oncology", icon: <FaUserMd />, color: "#6E1013", desc: "Comprehensive cancer surgery care" },
   { name: "Urology", slug: "urology", icon: <FaProcedures />, color: "#B61B1F", desc: "Urinary tract and urological treatments" },
 ];
+
+// Mapping of department slug to custom image (if any)
+const DEPT_IMAGE_MAP = {
+  icu: icuImg,
+};
 
 const PAGE_SIZE = 9;
 
