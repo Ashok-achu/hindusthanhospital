@@ -14,7 +14,7 @@ import eq7 from "../assets/Equipments/Equipments-7.jpg";
 import eq8 from "../assets/Equipments/Equipments-8.jpg";
 import eq9 from "../assets/Equipments/Equipments-9.jpg";
 import eq10 from "../assets/Equipments/Equipments-10.jpg";
-import eq11 from "../assets/Equipments/Equipments-11.jpg";
+import eq11 from "../assets/bannerimage/Equipments-11.jpg";
 import eq12 from "../assets/Equipments/Equipments-12.jpg";
 import eq13 from "../assets/Equipments/Equipments-13.jpg";
 import cardiologyImg from "../assets/Equipments/Cardiology_.jpg";

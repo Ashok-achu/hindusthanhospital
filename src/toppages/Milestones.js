@@ -9,11 +9,7 @@ export default function Milestones() {
   };
 
   const milestones = [
-    {
-      year: "1980",
-      title: "Launch of Hindusthan Hospital",
-      desc: "Launch of Hindusthan Hospital (HH), laying the foundation of dedicated and compassionate healthcare in Coimbatore.",
-    },
+    
     {
       year: "1992",
       title: "The Beginning of HECT",
@@ -23,6 +19,11 @@ export default function Milestones() {
       year: "2000",
       title: "Institutional Expansion",
       desc: "The group rapidly expanded into engineering, management, arts & science, and various specialized educational institutions.",
+    },
+    {
+      year: "2018",
+      title: "Launch of Hindusthan Hospital",
+      desc: "Launch of Hindusthan Hospital (HH), laying the foundation of dedicated and compassionate healthcare in Coimbatore.",
     },
     {
       year: "2024",

@@ -211,7 +211,6 @@ function StatCard({ icon, value, suffix, label, delay }) {
 const DEPARTMENTS = [
   { name: "Anaesthesiology", slug: "anaesthesiology", icon: <FaUserMd />, color: "#1D469E", desc: "Perioperative care and pain management" },
   { name: "Cardiology", slug: "cardiology", icon: <FaHeartbeat />, color: "#B61B1F", desc: "Advanced cardiac care and interventions" },
-  { name: "Dental & Facial Maxillary", slug: "dentistry", icon: <FaTooth />, color: "#D65A5A", desc: "Comprehensive dental and maxillofacial care" },
   { name: "Diabetology & General Medicine", slug: "diabetology-general-medicine", icon: <FaStethoscope />, color: "#8F1519", desc: "Diabetes and internal medicine specialists" },
   { name: "Emergency Care", slug: "emergency-care", icon: <FaAmbulance />, color: "#6E1013", desc: "24/7 emergency and trauma services" },
   { name: "ENT & Head and Neck Surgery", slug: "ent", icon: <FaUserMd />, color: "#0F2C6A", desc: "Expert ENT and head-neck surgical care" },
@@ -224,7 +223,6 @@ const DEPARTMENTS = [
   { name: "Orthopaedics", slug: "orthopaedics", icon: <FaBone />, color: "#C9962B", desc: "Bone, joint and trauma specialists" },
   { name: "Neonatology & Paediatrics", slug: "neonatology-paediatrics", icon: <FaBaby />, color: "#A87A1E", desc: "Comprehensive child and newborn care" },
   { name: "Paediatric Surgery", slug: "paediatric-surgery", icon: <FaUserMd />, color: "#8F1519", desc: "Specialized surgical care for children" },
-  { name: "Plastic & Reconstructive Surgery", slug: "plastic-surgery", icon: <FaUserMd />, color: "#D65A5A", desc: "Cosmetic and reconstructive procedures" },
   { name: "Pulmonology", slug: "pulmonology", icon: <FaLungs />, color: "#14357F", desc: "Respiratory and lung disease treatment" },
   { name: "Radiology", slug: "radiology", icon: <FaMicroscope />, color: "#1D469E", desc: "Advanced diagnostic imaging services" },
   { name: "Physical Medicine & Rehabilitation", slug: "rehab", icon: <FaWheelchair />, color: "#3F68BE", desc: "Physiotherapy and rehabilitation services" },
@@ -309,19 +307,36 @@ const BREADCRUMB_SCHEMA = {
 ───────────────────────────────────────── */
 const FOOT_LAB_PACKAGES = [
   {
-    title: "Foot Lab Package 1", tests: "10 Tests", price: "₹1,500",
+    title: "Foot Lab Package 1", tests: "3 Tests", price: "₹3,000",
     icon: <FaHeartbeat />, color: "from-rose-500 to-rose-700",
-    features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"],
+    features: [
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan"
+    ],
   },
   {
-    title: "Foot Lab Package 2", tests: "12 Tests", price: "₹2,750",
+    title: "Foot Lab Package 2", tests: "4 Tests", price: "₹5,000",
     icon: <FaStar />, color: "from-rose-600 to-orange-500",
-    features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"],
+    features: [
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan",
+      "Pedia Scan"
+    ],
   },
   {
-    title: "Foot Lab Package 3", tests: "13 Tests", price: "₹4,500",
+    title: "Foot Lab Package 3", tests: "7 Tests", price: "₹7,500",
     icon: <FaMedal />, color: "from-rose-700 to-pink-600",
-    features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting", "Physician Consultation"],
+    features: [
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan",
+      "Pedia Scan",
+      "Cardiac Autonomic Neuropathy Test",
+      "Medical Pedicure",
+      "Neurostimulation"
+    ],
   },
 ];
 
@@ -402,8 +417,8 @@ function HomeHealthPackagesSection({ navigate }) {
     activeTab === "mhc"
       ? MHC_PACKAGES
       : activeTab === "cancerscreening"
-      ? CANCER_SCREENING_PACKAGES
-      : FOOT_LAB_PACKAGES;
+        ? CANCER_SCREENING_PACKAGES
+        : FOOT_LAB_PACKAGES;
 
   return (
     <section className="relative overflow-hidden bg-mist py-12 sm:py-24 lg:py-32">
@@ -425,31 +440,28 @@ function HomeHealthPackagesSection({ navigate }) {
           <div className="mt-5 flex w-full flex-wrap sm:flex-nowrap rounded-2xl bg-white p-1 shadow-md border border-slate-200 sm:mt-8 sm:inline-flex sm:w-auto sm:p-1.5">
             <button
               onClick={() => setActiveTab("mhc")}
-              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
-                activeTab === "mhc"
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${activeTab === "mhc"
                   ? "bg-gradient-to-r from-[#B61B1F] to-[#7A1216] text-white shadow-lg"
                   : "text-slate-500 hover:text-[#B61B1F]"
-              }`}
+                }`}
             >
               MHC Packages
             </button>
             <button
               onClick={() => setActiveTab("footlab")}
-              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
-                activeTab === "footlab"
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${activeTab === "footlab"
                   ? "bg-gradient-to-r from-rose-600 to-orange-500 text-white shadow-lg"
                   : "text-slate-500 hover:text-rose-600"
-              }`}
+                }`}
             >
               Foot Lab Packages
             </button>
             <button
               onClick={() => setActiveTab("cancerscreening")}
-              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${
-                activeTab === "cancerscreening"
+              className={`flex-1 rounded-xl px-3 py-2 text-xs font-bold transition-all duration-300 sm:flex-none sm:px-6 sm:py-2.5 sm:text-sm ${activeTab === "cancerscreening"
                   ? "bg-gradient-to-r from-purple-600 to-indigo-700 text-white shadow-lg"
                   : "text-slate-500 hover:text-purple-600"
-              }`}
+                }`}
             >
               Cancer Screening
             </button>
@@ -803,7 +815,7 @@ export default function Home() {
                   className="h-full w-full object-cover transition duration-700 hover:scale-[1.04]"
                 />
               </div>
-              
+
             </motion.div>
 
             <motion.div
@@ -821,15 +833,7 @@ export default function Home() {
                   for a better tomorrow
                 </span>
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-slate-600 sm:mt-6 sm:text-lg">
-                At Hindusthan Hospital, we believe in a holistic approach to healing. Our dedicated
-                team of specialists utilizes cutting-edge technology to diagnose, treat, and
-                rehabilitate patients with the utmost care and compassion.
-              </p>
-              <p className="mt-4 text-[15px] leading-relaxed text-slate-600 sm:text-base">
-                Whether it is complex surgery or routine checkups, our mission is to provide
-                accessible, affordable, and high-quality healthcare to every individual.
-              </p>
+
               <ul className="mt-7 space-y-3.5 sm:mt-8 sm:space-y-4">
                 {["24/7 Emergency & Trauma Care", "Advanced Robotic Surgery Units", "Comprehensive Diagnostic Services", "Patient-Centric Recovery Plans"].map((item, i) => (
                   <motion.li
@@ -859,7 +863,7 @@ export default function Home() {
         </div>
       </section>
 
-      
+
 
       {/* ════════ MEDICAL SPECIALITIES ════════ */}
       <section id="specialities" className="relative overflow-hidden bg-ink py-16 sm:py-24 lg:py-32">
@@ -893,7 +897,7 @@ export default function Home() {
           >
             <div className="flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                
+
                 <h2 className="font-display text-[clamp(1.9rem,7vw,3.75rem)] font-extrabold leading-[1] tracking-tight text-white">
                   Medical
                   <br />
@@ -906,7 +910,7 @@ export default function Home() {
                 </h2>
               </div>
               <p className="max-w-md text-sm leading-relaxed text-slate-400 sm:text-base lg:text-right lg:text-lg">
-                21 specialized departments staffed by senior consultants, equipped with cutting-edge medical technology.
+                Specialized departments staffed by senior consultants, equipped with cutting-edge medical technology.
               </p>
             </div>
           </motion.div>
@@ -1072,7 +1076,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              
+
 
               <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-tight text-ink">
                 Meet Our
@@ -1113,16 +1117,6 @@ export default function Home() {
                     We uphold the highest standards of integrity, transparency, and patient confidentiality.
                   </p>
                 </div>
-
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <h4 className="text-lg font-bold text-ink">
-                    Continuous Innovation
-                  </h4>
-                  <p className="mt-2 text-sm text-slate-600">
-                    Our medical team embraces the latest advancements to deliver safer, smarter, and more effective care.
-                  </p>
-                </div>
-
               </div>
             </motion.div>
 
@@ -1145,7 +1139,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-10 text-center sm:mb-16"
           >
-            
+
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-white">
               World-Class{" "}
               <span className="bg-gradient-to-r from-[#E88585] to-[#EFDFB0] bg-clip-text text-transparent">
@@ -1160,10 +1154,9 @@ export default function Home() {
             {[
               { icon: <FaAmbulance />, title: "24/7 Ambulance", desc: "Fleet of fully-equipped incubator and D Level ambulance with trained paramedics available round the clock", link: "/facilities/ambulance", color: "from-[#B61B1F] to-[#7A1216]" },
               { icon: <FaFlask />, title: "Blood Bank", desc: "NABH-accredited blood bank with all blood groups and modern storage infrastructure.", link: "/facilities/blood-bank", color: "from-[#D65A5A] to-[#B61B1F]" },
-              { icon: <FaBed />, title: "Premium Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-[#D9B45B] to-[#A87A1E]" },
+              { icon: <FaBed />, title: "Rooms", desc: "Private, semi-private and general wards equipped with modern amenities for comfort.", link: "/facilities/rooms", color: "from-[#D9B45B] to-[#A87A1E]" },
               { icon: <FaSyringe />, title: "Pharmacy", desc: "In-house 24/7 pharmacy stocked with all medications and medical supplies.", link: "/facilities/pharmacy", color: "from-[#1D469E] to-[#14357F]" },
               { icon: <FaShieldAlt />, title: "Insurance & Cashless", desc: "Empaneled with major insurance providers and TPAs for seamless cashless hospitalization.", link: "/facilities/insurance", color: "from-[#0F2C6A] to-[#1D469E]" },
-              { icon: <FaWheelchair />, title: "Rehabilitation", desc: "Comprehensive physiotherapy and rehabilitation centre with experienced therapists.", link: "/departments/rehab", color: "from-[#0F2C6A] to-[#B61B1F]" },
             ].map((f, i) => (
               <motion.div
                 key={i}
@@ -1204,21 +1197,21 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-7 flex flex-col items-center text-center sm:mb-10">
-            
+
             <h2 className="font-display text-xl font-extrabold text-white sm:text-3xl lg:text-4xl">
               Trusted Care, <span className="text-[#EFDFB0]">Measured in Results</span>
             </h2>
           </div>
 
-          
+
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-  {[
-    { icon: <FaUser />, value: 50000, suffix: "+", label: "Patients Treated", delay: 0 },
-    { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
-    { icon: <FaBed />, value: 200, suffix: "+", label: "Hospital Beds", delay: 0.12 },
-  ].map((s, i) => <StatCard key={i} {...s} />)}
-</div>
+            {[
+              { icon: <FaUser />, value: 150000, suffix: "+", label: "Patients Treated", delay: 0 },
+              { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
+              { icon: <FaBed />, value: 200, suffix: "+", label: "Hospital Beds", delay: 0.12 },
+            ].map((s, i) => <StatCard key={i} {...s} />)}
+          </div>
         </div>
       </section>
 
@@ -1296,7 +1289,7 @@ export default function Home() {
             </div>
             {/* ── COPY + FEATURE GRID ── */}
             <div className="order-1 lg:order-2">
-              
+
               <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold leading-[1.15] tracking-tight text-ink">
                 Redefining Healthcare
                 <br />
@@ -1310,7 +1303,7 @@ export default function Home() {
               </p>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
                 {[
-                  { title: "World-Class Doctors", icon: <FaUserMd />, desc: "Expert specialists from around the globe." },
+                  { title: "World-Class Doctors", icon: <FaUserMd />, desc: " Beautifully appointed Wards , Diagnostic and Therapeutic wings." },
                   { title: "24/7 Emergency", icon: <FaAmbulance />, desc: "Round-the-clock critical care support." },
                   { title: "Advanced Tech", icon: <FaMicroscope />, desc: "Cutting-edge diagnostic equipment." },
                   { title: "Advanced Hospital Beds", icon: <FaHandHoldingHeart />, desc: "Supporting modern medical care." },
@@ -1352,7 +1345,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-10 text-center sm:mb-16"
           >
-            
+
             <h2 className="font-display text-[clamp(1.6rem,6vw,3rem)] font-extrabold text-ink">
               Awards & <span className="text-[#B61B1F]">Certifications</span>
             </h2>
@@ -1383,7 +1376,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
         </div>
       </section>
 
@@ -1691,7 +1684,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 flex flex-col gap-4 sm:mb-14 md:flex-row md:items-end md:justify-between">
             <div>
-              
+
               <h2 className="font-display text-[clamp(1.75rem,5vw,2.75rem)] font-extrabold leading-tight text-ink">
                 Latest Hospital{" "}
                 <span className="bg-gradient-to-r from-[#B61B1F] to-[#C9962B] bg-clip-text text-transparent">

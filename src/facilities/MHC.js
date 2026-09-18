@@ -9,64 +9,43 @@ import {
 const FOOT_LAB_PACKAGES = [
   {
     name: "Foot Lab Package 1",
-    price: "₹1,500",
-    tests: "10 Tests",
+    price: "₹3,000",
+    tests: "3 Tests",
     color: "from-rose-500 to-rose-700",
     icon: <FaHeartbeat />,
     items: [
-      "Blood Grouping & Rh Typing",
-      "RBS (Random Blood Sugar)",
-      "Complete Blood Count",
-      "LDL Cholesterol",
-      "Serum Creatinine",
-      "Total Cholesterol",
-      "Triglycerides",
-      "Urine Complete Analysis",
-      "ECG",
-      "Physician Consultation"
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan"
     ]
   },
   {
     name: "Foot Lab Package 2",
-    price: "₹2,750",
-    tests: "12 Tests",
+    price: "₹5,000",
+    tests: "4 Tests",
     color: "from-rose-600 to-orange-500",
     icon: <FaStar />,
     items: [
-      "FBS",
-      "PPBS",
-      "Blood Urea",
-      "Complete Blood Count",
-      "Liver Function Test",
-      "Lipid Profile",
-      "Serum Creatinine",
-      "TSH",
-      "Urine Complete Analysis",
-      "Chest PA",
-      "ECG",
-      "Physician Consultation"
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan",
+      "Pedia Scan"
     ]
   },
   {
     name: "Foot Lab Package 3",
-    price: "₹4,500",
-    tests: "13 Tests",
+    price: "₹7,500",
+    tests: "7 Tests",
     color: "from-rose-700 to-pink-600",
     icon: <FaMedal />,
     items: [
-      "FBS",
-      "PPBS",
-      "HbA1c",
-      "Liver Function Test",
-      "Lipid Profile",
-      "Renal Function Test",
-      "TSH",
-      "CBC",
-      "Chest PA",
-      "USG Abdomen",
-      "ECG",
-      "ECHO + Reporting",
-      "Physician Consultation"
+      "Biothesiometer Test",
+      "ABI / TBI Doppler Test",
+      "Fundus Scan",
+      "Pedia Scan",
+      "Cardiac Autonomic Neuropathy Test",
+      "Medical Pedicure",
+      "Neurostimulation"
     ]
   },
 ];
