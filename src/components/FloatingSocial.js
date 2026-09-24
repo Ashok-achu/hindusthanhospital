@@ -22,7 +22,6 @@ import {
 const DEPARTMENTS = [
   { id: "anaesthesiology", name: "Anaesthesiology", doctors: ["Dr. S. Saranya Vishumathy", "Dr. N. Madhan"] },
   { id: "cardiology", name: "Cardiology", doctors: ["Dr. Meera Nair", "Dr. Arjun Rao", "Senior Cardiologist"] },
-  { id: "dentistry", name: "Dental & Facial Maxillary", doctors: ["Dr. Senthil Kumar", "Dental Specialist"] },
   { id: "diabetology", name: "Diabetology & General Medicine", doctors: ["Dr. Priya Krishnan", "Dr. Vinod Kumar"] },
   { id: "emergency", name: "Emergency & Trauma Care", doctors: ["24x7 Emergency Consultant", "Dr. Rajesh V"] },
   { id: "ent", name: "ENT & Head and Neck Surgery", doctors: ["Dr. K. Swaminathan", "Dr. Divya S"] },
@@ -35,7 +34,6 @@ const DEPARTMENTS = [
   { id: "ortho", name: "Orthopaedics & Joint Replacement", doctors: ["Dr. Suresh Iyer", "Dr. Kavya Menon"] },
   { id: "peds", name: "Neonatology & Paediatrics", doctors: ["Dr. Anjali Pillai", "Dr. Deepa K"] },
   { id: "peds_surg", name: "Paediatric Surgery", doctors: ["Dr. Mohan Ram", "Paediatric Surgical Specialist"] },
-  { id: "plastic", name: "Plastic & Reconstructive Surgery", doctors: ["Dr. Hariharan", "Dr. Sandeep"] },
   { id: "pulmono", name: "Pulmonology", doctors: ["Dr. K. Srikanth", "Dr. Balaji T"] },
   { id: "radio", name: "Radiology & Imaging", doctors: ["Dr. Vignesh W", "Radiology Consultant"] },
   { id: "rehab", name: "Physical Medicine & Rehabilitation", doctors: ["Dr. Preethi M", "Rehab Specialist"] },

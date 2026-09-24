@@ -2,6 +2,8 @@
   {
     "slug": "anaesthesiology",
     "name": "Anaesthesiology",
+    "hideKeyServices": true,
+    "hidePatientJourney": true,
     "seo": {
       "title": "Anaesthesiology Department in Coimbatore | Hindusthan Hospitals",
       "description": "Anaesthesiology at Hindusthan Hospitals, Coimbatore covers general, regional, obstetric, paediatric, cardiac and critical care anaesthesia with a strong focus on patient safety.",
@@ -23,14 +25,15 @@
         "ICU Anaesthesia",
         "Preoperative Evaluation",
         "Postoperative Pain Management",
+        "Anaesthetist in Coimbatore",
         "Anaesthesiologist in Coimbatore",
         "Day Care Surgery",
         "Hindusthan Hospitals Coimbatore"
       ]
     },
     "image": "assets/bannerimage/1.png",
-    "description": "\n Best Anaesthesiology  in Coimbatore\n\nThe Department of Anaesthesiology at Hindusthan Hospitals, Coimbatore provides comprehensive anaesthesia and perioperative care for patients undergoing minor, major and complex surgical procedures. Our experienced anaesthesiologists are committed to delivering safe, evidence-based anaesthesia while ensuring maximum patient comfort, faster recovery and the highest standards of surgical safety.\n\nOur department supports multiple surgical specialties including General Surgery, Orthopaedics, Cardiology, Neurosurgery, ENT, Obstetrics & Gynaecology, Oncology, Urology and Paediatric Surgery. Every patient receives an individualized anaesthesia plan based on their medical condition, age and surgical requirements.\n\nComprehensive Anaesthesia Services\n\nGeneral Anaesthesia\n\nGeneral anaesthesia is administered for major and complex surgeries where complete unconsciousness is required. Our specialists use advanced monitoring systems to continuously assess heart rate, oxygen saturation, blood pressure and respiratory function throughout the procedure.\n\nRegional Anaesthesia\n\nRegional anaesthesia techniques including spinal anaesthesia, epidural anaesthesia and peripheral nerve blocks provide excellent pain relief while allowing faster recovery, reduced complications and early mobilization after surgery.\n\nMonitored Anaesthesia Care (MAC)\n\nFor minimally invasive procedures, our Monitored Anaesthesia Care (MAC) provides sedation and pain control while allowing patients to remain comfortable, responsive and medically stable.\n\nPre-operative Evaluation\n\nEvery patient undergoes a comprehensive pre-operative assessment including medical history review, physical examination, laboratory investigations and anaesthesia risk evaluation to ensure maximum safety before surgery.\n\nAcute & Post-operative Pain Management\n\nOur pain management specialists provide personalized treatment plans using advanced medications, nerve blocks and multimodal pain relief techniques that reduce discomfort and accelerate recovery after surgery.\n\nObstetric Anaesthesia\n\nWe provide safe epidural and spinal anaesthesia for normal delivery and Caesarean section while ensuring the comfort and wellbeing of both mother and baby.\n\nPaediatric Anaesthesia\n\nChildren require specialized anaesthesia care. Our paediatric anaesthesiologists provide age-specific anaesthesia using child-friendly protocols with continuous monitoring and compassionate care.\n\nCardiac Anaesthesia\n\nOur cardiac anaesthesia team provides specialized care for CABG, valve replacement surgery, angioplasty support, pacemaker implantation, ICD procedures and other complex cardiovascular interventions.\n\nNeuro Anaesthesia\n\nNeuroanaesthesia focuses on maintaining cerebral blood flow, brain protection and neurological stability during brain and spine surgeries using advanced anaesthesia techniques.\n\nOnco Anaesthesia\n\nCancer surgeries require meticulous perioperative planning. Our specialists provide personalized anaesthesia for oncology procedures while managing associated medical conditions and postoperative recovery.\n\nCritical Care & Intensive Care\n\nOur anaesthesiologists are an integral part of the Intensive Care Unit (ICU), managing critically ill patients requiring mechanical ventilation, haemodynamic monitoring, emergency airway management and life-support systems.\n\nDay Care Anaesthesia\n\nWe offer advanced day care anaesthesia for minimally invasive procedures such as Endoscopy, Colonoscopy, Bronchoscopy and Thoracoscopy, enabling faster recovery and same-day discharge whenever appropriate.\n\nWhy Choose Hindusthan Hospitals?\n\n• Experienced Anaesthesiologists\n\n• Advanced Operation Theatres\n\n• State-of-the-Art Monitoring Equipment\n\n• Comprehensive Critical Care Support\n\n• Modern Pain Management Techniques\n\n• Dedicated ICU Services\n\n• Safe Day Care Procedures\n\n• Personalized Patient Care\n\n• International Safety Standards\n\n• Multidisciplinary Surgical Team\n\nPatient-Centred Care\n\nPatient safety is our highest priority. From pre-operative counselling to post-operative recovery, our anaesthesia team ensures clear communication, compassionate care and continuous monitoring throughout every stage of treatment.\n\nEducation & Research\n\nThe Department of Anaesthesiology actively participates in medical education, clinical research and continuous professional development to introduce advanced anaesthesia techniques, improve patient outcomes and maintain the highest standards of healthcare delivery.\n\nWhether you require general anaesthesia, regional anaesthesia, obstetric anaesthesia, paediatric anaesthesia, cardiac anaesthesia or critical care support, Hindusthan Hospitals is committed to providing safe, modern and evidence-based anaesthesia care in Coimbatore.\n",
-    "overview": "The Department of Anaesthesia provides comprehensive anaesthesia and perioperative care, including general anaesthesia, regional anaesthesia, monitored anaesthesia care, preoperative evaluation and acute pain management. Specialized services are available for obstetric, paediatric, cardiovascular, oncology and neurosurgical procedures. The department also supports critical care and day-care procedures such as thoracoscopy, bronchoscopy, endoscopy and colonoscopy, with a focus on patient safety, comfort, rapid recovery and compassionate care.",
+    "description": "\n Best Anaesthesiology  in Coimbatore\n\nThe Department of Anaesthesiology at Hindusthan Hospitals, Coimbatore provides comprehensive anaesthesia and perioperative care for patients undergoing minor, major and complex surgical procedures. Our experienced Anaesthetists and Anaesthesiologists are committed to delivering safe, evidence-based anaesthesia while ensuring maximum patient comfort, faster recovery and the highest standards of surgical safety.\n\nOur department supports multiple surgical specialties including General Surgery, Orthopaedics, Cardiology, Neurosurgery, ENT, Obstetrics & Gynaecology, Oncology, Urology and Paediatric Surgery. Every patient receives an individualized anaesthesia plan based on their medical condition, age and surgical requirements.\n\nComprehensive Anaesthesia Services\n\nGeneral Anaesthesia\n\nGeneral anaesthesia is administered for major and complex surgeries where complete unconsciousness is required. Our specialists use advanced monitoring systems to continuously assess heart rate, oxygen saturation, blood pressure and respiratory function throughout the procedure.\n\nRegional Anaesthesia\n\nRegional anaesthesia techniques including spinal anaesthesia, epidural anaesthesia and peripheral nerve blocks provide excellent pain relief while allowing faster recovery, reduced complications and early mobilization after surgery.\n\nMonitored Anaesthesia Care (MAC)\n\nFor minimally invasive procedures, our Monitored Anaesthesia Care (MAC) provides sedation and pain control while allowing patients to remain comfortable, responsive and medically stable.\n\nPre-operative Evaluation\n\nEvery patient undergoes a comprehensive pre-operative assessment including medical history review, physical examination, laboratory investigations and anaesthesia risk evaluation to ensure maximum safety before surgery.\n\nAcute & Post-operative Pain Management\n\nOur pain management specialists provide personalized treatment plans using advanced medications, nerve blocks and multimodal pain relief techniques that reduce discomfort and accelerate recovery after surgery.\n\nObstetric Anaesthesia\n\nWe provide safe epidural and spinal anaesthesia for normal delivery and Caesarean section while ensuring the comfort and wellbeing of both mother and baby.\n\nPaediatric Anaesthesia\n\nChildren require specialized anaesthesia care. Our paediatric anaesthesiologists provide age-specific anaesthesia using child-friendly protocols with continuous monitoring and compassionate care.\n\nCardiac Anaesthesia\n\nOur cardiac anaesthesia team provides specialized care for CABG, valve replacement surgery, angioplasty support, pacemaker implantation, ICD procedures and other complex cardiovascular interventions.\n\nNeuro Anaesthesia\n\nNeuroanaesthesia focuses on maintaining cerebral blood flow, brain protection and neurological stability during brain and spine surgeries using advanced anaesthesia techniques.\n\nOnco Anaesthesia\n\nCancer surgeries require meticulous perioperative planning. Our specialists provide personalized anaesthesia for oncology procedures while managing associated medical conditions and postoperative recovery.\n\nCritical Care & Intensive Care\n\nOur anaesthesiologists are an integral part of the Intensive Care Unit (ICU), managing critically ill patients requiring mechanical ventilation, haemodynamic monitoring, emergency airway management and life-support systems.\n\nDay Care Anaesthesia\n\nWe offer advanced day care anaesthesia for minimally invasive procedures such as Endoscopy, Colonoscopy, Bronchoscopy and Thoracoscopy, enabling faster recovery and same-day discharge whenever appropriate.\n\nWhy Choose Hindusthan Hospitals?\n\n• Experienced Anaesthetists and Anaesthesiologists\n\n• The modular OT complex\n\n• State-of-the-Art Monitoring Equipment\n\n• Comprehensive Critical Care Support\n\n• Modern Pain Management Techniques\n\n• Dedicated ICU Services\n\n• Safe Day Care Procedures\n\n• Personalized Patient Care\n\n• International Safety Standards\n\n• Multidisciplinary Surgical Team\n\nPatient-Centred Care\n\nPatient safety is our highest priority. From pre-operative counselling to post-operative recovery, our anaesthesia team ensures clear communication, compassionate care and continuous monitoring throughout every stage of treatment.\n\nEducation & Research\n\nThe Department of Anaesthesiology actively participates in medical education, clinical research and continuous professional development to introduce advanced anaesthesia techniques, improve patient outcomes and maintain the highest standards of healthcare delivery.\n\nWhether you require general anaesthesia, regional anaesthesia, obstetric anaesthesia, paediatric anaesthesia, cardiac anaesthesia or critical care support, Hindusthan Hospitals is committed to providing safe, modern and evidence-based anaesthesia care in Coimbatore.\n",
+    "overview": "The Department of Anaesthesia provides comprehensive anaesthesia and perioperative care, including general anaesthesia, regional anaesthesia, monitored anaesthesia care, preoperative evaluation and acute pain management. Specialized services are available for obstetric, paediatric, cardiovascular, oncology and neurosurgical procedures. The department also supports critical care and day-care procedures such as thoracoscopy, bronchoscopy, endoscopy and colonoscopy, with a focus on patient safety, comfort, rapid recovery and compassionate care. The modular OT complex supports a wide range of surgical specialties.",
     "highlights": [
       "General Anaesthesia for Major & Complex Surgeries",
       "Regional Anaesthesia (Spinal, Epidural & Nerve Blocks)",
@@ -57,9 +60,9 @@
     "doctors": [
       {
         "name": "S.SARANYA VISHUMATHY",
-        "designation": "Senior Anaesthesiologist",
+        "designation": "Senior Anaesthetist",
         "image": "assets/Final/DR. S.SARANYA VISHUMATHY.jpg",
-        "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+        "description": "Experienced anaesthetist specializing in perioperative anesthesia care and critical care management."
       },
       {
         "name": "DR. N. MADHAN",
@@ -73,6 +76,8 @@
   {
     "slug": "cardiology",
     "name": "Cardiology",
+    "hidePatientJourney": true,
+    "hideKeyServices": true,
     "seo": {
       "title": "Best Cardiology Hospital in Coimbatore | Hindusthan Hospitals",
       "description": "Advanced cardiology care in Coimbatore with expert cardiologists, 24x7 emergency support, Cath Lab, angiogram, angioplasty, pacemaker implantation, ECG, Echo and heart failure care at Hindusthan Hospitals.",
@@ -104,7 +109,7 @@
       ]
     },
     "image": "assets/bannerimage/2.png",
-    "description": "\nBest Cardiology Hospital in Coimbatore\n\nThe Department of Cardiology at Hindusthan Hospitals provides comprehensive heart care for the diagnosis, treatment and management of cardiovascular diseases. With experienced cardiologists, advanced cardiac diagnostic facilities, 24x7 emergency support and a fully functional Cath Lab, we provide timely and patient-focused cardiac care in Coimbatore.\n\nComprehensive Heart Care\n\nOur Cardiology Department focuses on preventive cardiology, non-invasive cardiology, interventional cardiology, heart failure management and cardiac rehabilitation. Patients receive personalized evaluation and treatment based on their cardiac condition and individual healthcare requirements.\n\nAdvanced Cardiac Diagnostics\n\nEarly and accurate diagnosis plays an important role in managing heart disease. Our cardiac diagnostic services include 12 Lead ECG, 2D Echocardiogram, TMT (Stress Test), Holter Monitoring and Ambulatory Blood Pressure Monitoring (ABPM).\n\nThese investigations help our cardiologists evaluate heart rhythm abnormalities, cardiac function, blood pressure variations and other cardiovascular conditions.\n\nCath Lab & Interventional Cardiology\n\nHindusthan Hospitals is equipped with a fully functional Cath Lab for advanced cardiac evaluation and interventional procedures.\n\nOur Cath Lab services include:\n\n• Coronary Angiogram\n• Coronary Angioplasty\n• Pacemaker Implantation\n\nCoronary Angiography\n\nCoronary angiography helps cardiologists identify narrowing or blockages in the coronary arteries and determine the appropriate treatment plan.\n\nCoronary Angioplasty\n\nCoronary angioplasty is a minimally invasive cardiac procedure used to restore blood flow through narrowed or blocked coronary arteries.\n\nPacemaker Implantation\n\nPacemaker implantation is available for patients with certain abnormal or slow heart rhythms requiring electrical support to maintain an appropriate heartbeat.\n\nHeart Failure Management\n\nOur cardiology team provides evaluation, treatment and long-term monitoring for patients with heart failure. Treatment plans may include medications, lifestyle modifications, cardiac monitoring and rehabilitation based on the patient's condition.\n\nPreventive Cardiology\n\nPrevention and early detection are important components of cardiovascular care. Our cardiologists focus on identifying and managing risk factors associated with heart disease and encourage appropriate lifestyle modifications and regular cardiac evaluation.\n\nCardiac Rehabilitation\n\nCardiac rehabilitation supports patients recovering from cardiac conditions and procedures through supervised recovery, lifestyle modification and long-term cardiovascular risk management.\n\nWhy Choose Hindusthan Hospitals for Cardiology in Coimbatore?\n\n• Experienced Cardiologists\n• Advanced Cardiac Diagnostic Facilities\n• Fully Functional Cath Lab\n• Coronary Angiography & Angioplasty\n• Pacemaker Implantation\n• 24x7 Emergency Support\n• Heart Failure Management\n• Preventive Cardiology\n• Cardiac Rehabilitation\n• Multidisciplinary Hospital Support\n\nThe Department of Cardiology at Hindusthan Hospitals is committed to providing comprehensive cardiac care from early diagnosis and prevention to advanced interventional treatment and long-term heart health management.\n",
+    "description": "\nBest Cardiology Hospital in Coimbatore\n\nThe Department of Cardiology at Hindusthan Hospitals provides comprehensive heart care for the diagnosis, treatment and management of cardiovascular diseases. With experienced cardiologists, advanced cardiac diagnostic facilities, 24 hours Emergency & Cath Lab Service and a fully functional Cath Lab, we provide timely and patient-focused cardiac care in Coimbatore.\n\nComprehensive Heart Care\n\nOur Cardiology Department focuses on preventive cardiology, non-invasive cardiology, interventional cardiology, heart failure management and cardiac rehabilitation. Patients receive personalized evaluation and treatment based on their cardiac condition and individual healthcare requirements.\n\nAdvanced Cardiac Diagnostics\n\nEarly and accurate diagnosis plays an important role in managing heart disease. Our cardiac diagnostic services include 12 Lead ECG, 2D Echocardiogram, TMT (Stress Test), Holter Monitoring and Ambulatory Blood Pressure Monitoring (ABPM).\n\nThese investigations help our cardiologists evaluate heart rhythm abnormalities, cardiac function, blood pressure variations and other cardiovascular conditions.\n\nCath Lab & Interventional Cardiology\n\nHindusthan Hospitals is equipped with a fully functional Cath Lab for advanced cardiac evaluation and interventional procedures.\n\nOur Cath Lab services include:\n\n• 24 hours Emergency & Cath Lab Service\n• Coronary Angiogram\n• Coronary Angioplasty\n• CRT\n• Primary & Temporary Pacemaker Implantation\n• ICD Implantation\n\nCoronary Angiography\n\nCoronary angiography helps cardiologists identify narrowing or blockages in the coronary arteries and determine the appropriate treatment plan.\n\nCoronary Angioplasty\n\nCoronary angioplasty is a minimally invasive cardiac procedure used to restore blood flow through narrowed or blocked coronary arteries.\n\nPacemaker Implantation\n\nPrimary and temporary pacemaker implantation is available for patients with certain abnormal or slow heart rhythms requiring electrical support to maintain an appropriate heartbeat.\n\nICD Implantation\n\nImplantable Cardioverter-Defibrillator (ICD) implantation is available for selected patients requiring device-based cardiac therapy.\n\nCRT\n\nCRT (Cardiac Resynchronization Therapy) is available for appropriate patients with heart failure and electrical conduction abnormalities.\n\nHeart Failure Management\n\nOur cardiology team provides evaluation, treatment and long-term monitoring for patients with heart failure. Treatment plans may include medications, lifestyle modifications, cardiac monitoring and rehabilitation based on the patient's condition.\n\nPreventive Cardiology\n\nPrevention and early detection are important components of cardiovascular care. Our cardiologists focus on identifying and managing risk factors associated with heart disease and encourage appropriate lifestyle modifications and regular cardiac evaluation.\n\nCardiac Rehabilitation\n\nCardiac rehabilitation supports patients recovering from cardiac conditions and procedures through supervised recovery, lifestyle modification and long-term cardiovascular risk management.\n\nWhy Choose Hindusthan Hospitals for Cardiology in Coimbatore?\n\n• Experienced Cardiologists\n• Advanced Cardiac Diagnostic Facilities\n• 24 hours Emergency & Cath Lab Service\n• Fully Functional Cath Lab\n• Coronary Angiography & Angioplasty\n• CRT\n• Primary & Temporary Pacemaker Implantation\n• ICD Implantation\n• Heart Failure Management\n• Preventive Cardiology\n• Cardiac Rehabilitation\n• Multidisciplinary Hospital Support\n\nThe Department of Cardiology at Hindusthan Hospitals is committed to providing comprehensive cardiac care from early diagnosis and prevention to advanced interventional treatment and long-term heart health management.\n",
     "overview": "The Department of Cardiology provides diagnosis and treatment for disorders of the heart and blood vessels. Services include 12-lead ECG, 2D echocardiogram, TMT, Stress ECHO, TEE, Holter monitoring, ABPM, coronary angiogram and angioplasty, EPS with RFA, ICD and primary and temporary pacemaker implantation. The department also offers Adult Cardiology, Interventional Cardiology, Non-Invasive Cardiology, Heart Failure Treatment and Cardiac Rehabilitation.",
     "highlights": [
       "12-Lead ECG & 2D Echocardiogram",
@@ -114,6 +119,7 @@
       "EPS, RFA, ICD & Pacemakers"
     ],
     "services": [
+      "24 hours Emergency & Cath Lab Service",
       "12 Lead ECG",
       "2D Echocardiogram",
       "TMT (Stress Test)",
@@ -121,12 +127,11 @@
       "Ambulatory Blood Pressure Monitoring (ABPM)",
       "Stress ECHO & Transoesophageal Echocardiogram (TEE)",
       "Electrophysiology Study (EPS) & Radiofrequency Ablation (RFA)",
-      "ICD Implantation & Temporary Pacemaker Implantation"
-    ],
-    "cathLab": [
       "Coronary Angiogram",
       "Coronary Angioplasty",
-      "Pacemaker Implantation"
+      "CRT",
+      "Primary & Temporary Pacemaker Implantation",
+      "ICD Implantation"
     ],
     "subSpecialities": [
       "Interventional Cardiology",
@@ -153,68 +158,6 @@
       "assets/set2/Cardiology edited2.jpg",
       "assets/set2/ECG & DEFIBRILATOR.jpg"
     ]
-  },
-  {
-    "slug": "dentistry",
-    "name": "Dental & Facio Maxillary",
-    "overview": "The Department of Dental and Facio Maxillary Care provides comprehensive oral healthcare for patients of all ages. Services include preventive dentistry, restorative treatment, root canal therapy, periodontal care, tooth replacement, oral surgery and treatment for conditions affecting the teeth, gums, jaws and facial structures. The department focuses on accurate diagnosis, comfortable treatment and personalised plans that support lasting oral health and confident smiles.",
-    "seo": {
-      "title": "Best Dental Hospital in Coimbatore | Hindusthan Hospitals",
-      "description": "Comprehensive dental care in Coimbatore at Hindusthan Hospitals with dental check-ups, root canal treatment, dental implants, teeth whitening, cosmetic dentistry and paediatric dentistry.",
-      "keywords": [
-        "Best Dental Hospital in Coimbatore",
-        "Best Dentist in Coimbatore",
-        "Dental Hospital Coimbatore",
-        "Dental Clinic Coimbatore",
-        "Dentist in Coimbatore",
-        "Dentist Near Me",
-        "Dental Specialist Coimbatore",
-        "Dental & Facio Maxillary Coimbatore",
-        "Facio Maxillary Surgery Coimbatore",
-        "Root Canal Treatment Coimbatore",
-        "Root Canal Specialist Coimbatore",
-        "Dental Implants Coimbatore",
-        "Dental Implant Hospital Coimbatore",
-        "Teeth Cleaning Coimbatore",
-        "Scaling and Polishing Coimbatore",
-        "Dental Fillings Coimbatore",
-        "Tooth Extraction Coimbatore",
-        "Teeth Whitening Coimbatore",
-        "Cosmetic Dentistry Coimbatore",
-        "Paediatric Dentist Coimbatore",
-        "Paediatric Dentistry Coimbatore",
-        "Children Dentist Coimbatore",
-        "Oral Healthcare Coimbatore",
-        "Hindusthan Hospitals Dental",
-        "Hindusthan Hospital Coimbatore"
-      ]
-    },
-    "image": "assets/bannerimage/3.png",
-    "description": "\nBest Dental Hospital in Coimbatore\n\nThe Department of Dental & Facio Maxillary at Hindusthan Hospitals provides comprehensive oral and dental healthcare for patients of all age groups. Our dental team focuses on preventive, restorative, cosmetic and surgical dental care using modern dental equipment and patient-friendly treatment techniques.\n\nComprehensive Dental Care\n\nGood oral health plays an important role in overall health and wellbeing. Our dental services focus on identifying dental problems early, providing appropriate treatment and helping patients maintain healthy teeth and gums through regular dental care and oral hygiene education.\n\nDental Check-ups\n\nRegular dental examinations help identify common dental problems at an early stage. Our dental team evaluates the teeth, gums and overall oral health and recommends suitable treatment based on the patient's individual requirements.\n\nScaling & Polishing\n\nProfessional scaling and polishing help remove plaque and deposits from the teeth while supporting better gum health and oral hygiene.\n\nRoot Canal Treatment\n\nRoot canal treatment is provided for teeth requiring treatment of the internal dental tissues. The aim is to treat the affected tooth while preserving its structure whenever clinically appropriate.\n\nDental Fillings\n\nDental fillings are offered to restore teeth affected by cavities or minor damage and help restore normal dental function.\n\nDental Extractions\n\nWhen a tooth cannot be appropriately restored or requires removal, dental extraction may be recommended following clinical evaluation.\n\nDental Implants\n\nDental implants provide a treatment option for replacing missing teeth. Our dental team evaluates patients individually and recommends an appropriate treatment plan based on their oral health requirements.\n\nCosmetic Dentistry\n\nOur cosmetic dental services focus on improving the appearance of the teeth and smile while maintaining oral health and dental function.\n\nTeeth Whitening\n\nProfessional teeth whitening is available for patients looking to improve the appearance and brightness of their smile following dental assessment.\n\nPaediatric Dentistry\n\nChildren require dental care appropriate to their age and oral development. Our paediatric dental services focus on preventive care, dental evaluation, treatment and developing healthy oral hygiene habits from an early age.\n\nPreventive Dental Care\n\nPrevention is an important part of long-term oral health. Regular dental check-ups, professional cleaning and proper oral hygiene practices can help identify problems early and support healthy teeth and gums.\n\nWhy Choose Hindusthan Hospitals for Dental Care in Coimbatore?\n\n• Comprehensive Dental Services\n• Dental Check-ups\n• Root Canal Treatment\n• Dental Implants\n• Scaling & Polishing\n• Dental Fillings\n• Dental Extractions\n• Cosmetic Dentistry\n• Teeth Whitening\n• Paediatric Dentistry\n• Patient-Friendly Dental Care\n• Multidisciplinary Hospital Support\n\nThe Department of Dental & Facio Maxillary at Hindusthan Hospitals is committed to providing comprehensive dental care for children, adults and older patients with a focus on oral health, comfort and long-term dental wellbeing.\n",
-    "services": [
-      "Dental Check-ups",
-      "Scaling & Polishing",
-      "Root Canal Treatment",
-      "Dental Fillings",
-      "Extractions",
-      "Dental Implants",
-      "Teeth Whitening",
-      "Cosmetic Dentistry",
-      "Paediatric Dentistry"
-    ],
-    "doctors": [
-      {
-        "name": "Dr. Pradeep Raja S",
-        "designation": "Dental & Facio Maxillary",
-        "image": "assets/Final/DR. PRADEEP RAJA.jpg"
-      },
-      {
-        "name": "Dr. Manasa V Prabhu",
-        "designation": "Dental & Facio Maxillary",
-        "image": "assets/Final/Dummydoctor.jpg"
-      }
-    ],
-    "gallery": []
   },
   {
     "slug": "diabetology-general-medicine",
@@ -279,7 +222,8 @@
       "Geriatric Care",
       "Adult Vaccinations",
       "Preventive Health Checkups",
-      "Autoimmune & Deficiency Disorder Treatment"
+      "Autoimmune & Deficiency Disorder Treatment",
+      "Diabetic Foot Lab"
     ],
     "doctors": [
       {
@@ -290,8 +234,11 @@
       }
     ],
     "gallery": [
-      "assets/set2/Diabteology.jpg"
-    ]
+      "assets/set2/Diabteology.jpg",
+      "assets/set1/bed4.jpeg"
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "emergency-care",
@@ -339,7 +286,9 @@
     "gallery": [
       "assets/set2/Emergency medicine edited.jpg",
       "assets/set2/EMR_.jpg"
-    ]
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "ent",
@@ -398,16 +347,25 @@
       "Phonosurgery",
       "Mastoid & Middle-ear Surgery",
       "Salivary Gland Treatment",
-      "Allergy, Vertigo & Nasal Condition Care",
-      "Head & Neck Cancer Surgery"
+      "common OPD procedure like wax removal/ Foreign body removal / Ear lobe / biopsies / co2 Laser for Tonsillectomy",
+      "Salivary gland disorders and treatment",
+      "Voice Improvement Surgery",
+      "Treatment of snoring | sleep Surgery",
+      "Allergy Diagnosis & treatment",
+      "Nasal polyps / Nasal Masses.",
+      "Treatment of Cancers of mouth and throat",
+      "Vertigo diagnose | Treatment /Rehabilitation",
+      "Headache dignosis &tratment",
+      "Neck Swelling-Dignosis& reatment",
+      "Thyroid disorder"
     ],
     "subSpecialities": [
       "Paediatric ENT",
-      "Neuro ENT",
+      "Mauro ENT",
       "Head & Neck Surgery",
       "Laryngology",
       "Endocrine Surgery",
-      "Skull Base Surgery"
+      "Skull base surgery"
     ],
     "doctors": [
       {
@@ -417,7 +375,9 @@
         "description": "Experienced endoscopic ENT surgeon specializing in sinus surgery, voice disorders and head & neck conditions."
       }
     ],
-    "gallery": []
+    "gallery": [],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "neuro",
@@ -463,31 +423,8 @@
     "image": "assets/bannerimage/7.png",
     "overview": "The Centre of Excellence in Neuroscience at Hindusthan Hospitals offers world-class, integrated medical and surgical care for complex diseases affecting the brain, spine, spinal cord, peripheral nerves, and neuromuscular system. Our state-of-the-art department integrates Neurosurgery, Neurology, Neuro Critical Care (Neuro ICU), Neuro Interventional Radiology, Neuro-Psychiatry, and Specialized Neuro-Rehabilitation to deliver 24x7 emergency stroke thrombolysis, complex brain tumor resections, minimally invasive spine surgeries, and pediatric neurosurgical procedures.",
     "description": "\nComprehensive Neuroscience & Brain-Spine Care in Coimbatore\n\nThe Department of Neuroscience at Hindusthan Hospitals stands as a premier tertiary neuro-care center dedicated to delivering advanced diagnostic, medical, and surgical management for the full spectrum of neurological, neurovascular, and spinal conditions.\n\nOur team of highly qualified Neurosurgeons, Neurologists, Neuro-Intensivists, and Rehabilitation Specialists work in a synchronized multidisciplinary model to ensure early accurate diagnosis, rapid emergency intervention, precision microsurgery, and dedicated post-operative functional rehabilitation.\n\n1. 24x7 Head Injury & Neuro-Trauma Care\n\nOur Level-1 Trauma Emergency care unit provides round-the-clock rapid triage and surgical intervention for severe head injury, skull fractures, intracranial hematomas (EDH, SDH, ICH), and diffuse axonal injury. Surgical management includes urgent decompressive craniectomy, hematoma evacuation, intracranial pressure (ICP) monitoring, and skull reconstructive cranioplasty.\n\n2. Advanced Neurosurgery & Brain Tumor Surgery\n\nEquipped with high-definition surgical microscopes, neuro-navigation guidance, and endoscopic surgical tools, our neurosurgical unit performs precision procedures for benign and malignant brain tumors, including Gliomas, Meningiomas, Pituitary Adenomas, Acoustic Neuromas, and Metastatic lesions. We emphasize organ-preserving micro-neurosurgery to maximize tumor resection while shielding critical neural pathways.\n\n3. Comprehensive Spine & Spinal Cord Surgery\n\nWe offer specialized surgical solutions for degenerative, traumatic, and neoplastic spine conditions. Services range from keyhole micro-discectomy for herniated lumbar/cervical discs to complex spinal fusion, laminoplasty, spinal cord tumor excision, and congenital spinal dysraphism corrections.\n\n4. 24x7 Hyperacute Stroke Unit & Neurovascular Interventions\n\nOur dedicated Hyperacute Stroke Care Unit provides rapid IV thrombolysis for acute ischemic stroke within the golden window period, alongside emergency surgical decompression for massive hemispheric strokes. Neurovascular procedures address cerebral aneurysms, arteriovenous malformations (AVMs), and carotid artery stenosis.\n\n5. Clinical Neurology & Movement Disorders\n\nOur neurology specialists provide expert medical evaluation and long-term care for complex neurological illnesses including Epilepsy & Refractory Seizure Disorders, Parkinson's Disease & Movement Disorders, Multiple Sclerosis, Guillain-Barré Syndrome, Myasthenia Gravis, Peripheral Neuropathies, and Migraine/Headache disorders.\n\n6. Dedicated Neuro ICU & Neuro-Rehabilitation\n\nOur positive-pressure Neuro Intensive Care Unit features continuous multi-parameter hemodynamic and neurological monitoring, invasive ICP monitoring, non-invasive/invasive mechanical ventilation, and dedicated neuro-nursing care. Post-acute recovery is accelerated by specialized Neuro-Physiotherapy, Speech Therapy, and Occupational Rehabilitation.\n",
-    "highlights": [
-      "24x7 Emergency Stroke & Head Injury Trauma Unit",
-      "Micro-Neurosurgery & Endoscopic Skull Base Surgery",
-      "Minimally Invasive Spine & Disc Surgery",
-      "Dedicated Neuro ICU with ICP Monitoring",
-      "Comprehensive Epilepsy, Parkinson's & Vertigo Clinics",
-      "Full-Spectrum Neuro-Rehabilitation & Physiotherapy"
-    ],
-    "services": [
-      "24x7 Emergency Neuro-Trauma & Head Injury Care",
-      "Microscopic Brain Tumor Resection",
-      "Minimally Invasive Spine & Disc Surgery (Micro-discectomy)",
-      "Endoscopic Brain & Skull Base Surgery",
-      "24x7 Hyperacute Stroke Thrombolysis",
-      "Neurovascular Surgery & Aneurysm Management",
-      "Epilepsy & Seizure Disorder Management",
-      "Parkinson's Disease & Movement Disorder Care",
-      "Headache, Migraine & Vertigo Clinics",
-      "Diabetic Neuropathy & Nerve Conduction Care",
-      "Pediatric Neurosurgery & Hydrocephalus VP Shunt",
-      "Neuro ICU & Critical Life Support Care",
-      "Neuro-Psychiatry & Behavioral Health Services",
-      "Post-Stroke & Post-Spine Rehabilitation",
-      "Neurophysiotherapy & Gait Retraining"
-    ],
+    "highlights": [],
+    "services": [],
     "subSpecialities": [
       "Neurosurgery & Skull Base Surgery",
       "Clinical Neurology",
@@ -497,26 +434,8 @@
       "Neuro-Psychiatry",
       "Neuro-Rehabilitation & Physiotherapy"
     ],
-    "procedures": [
-      "Decompressive Craniectomy & Hematoma Evacuation",
-      "Microscopic Brain Tumor Excision",
-      "Endoscopic Transsphenoidal Pituitary Surgery",
-      "Lumbar & Cervical Micro-Discectomy",
-      "Spinal Fusion & Instrumentation",
-      "Ventriculoperitoneal (VP) Shunt Implantation",
-      "Intravenous Thrombolysis for Acute Stroke",
-      "Nerve Conduction Velocity (NCV) & EMG Testing",
-      "Electroencephalogram (EEG) Monitoring",
-      "Intracranial Pressure (ICP) Monitoring"
-    ],
-    "equipments": [
-      "High-Precision Neuro-Surgical Microscope",
-      "Endoscopic Neurosurgery Suite",
-      "Multi-Slice CT & Neuro-MRI Imaging Integration",
-      "Digital EEG & EMG / NCV Diagnostic Workstation",
-      "Advanced Intracranial Pressure (ICP) Monitors",
-      "Dedicated Isolation Neuro ICU Beds with Mechanical Ventilators"
-    ],
+    "procedures": [],
+    "equipments": [],
     "doctors": [
       {
         "name": "Dr. G. Murugesan",
@@ -535,12 +454,6 @@
         "designation": "Consultant Neurosurgeon & Spine Specialist",
         "image": "assets/Final/DR. ESWARAN MOORTHY.jpg",
         "description": "Specialist in complex spinal instrumentation, cervical and lumbar discectomy, spinal cord tumor surgery, and emergency neuro critical care."
-      },
-      {
-        "name": "Dr. Selva Kumar",
-        "designation": "Consultant Neurologist",
-        "image": "assets/Final/Dummydoctor.jpg",
-        "description": "Consultant Neurologist specializing in hyperacute stroke care, refractory epilepsy management, Parkinson's disease, and clinical neurophysiology."
       }
     ],
     "gallery": [],
@@ -556,6 +469,34 @@
       {
         "question": "Does Hindusthan Hospitals offer minimally invasive brain and spine surgery?",
         "answer": "Yes, our neurosurgical operating rooms are equipped with advanced surgical microscopes and endoscopes allowing micro-discectomy, endoscopic pituitary tumor removal, and keyhole brain surgeries with minimal tissue disruption."
+      }
+    ],
+    "hidePatientJourney": true,
+    "hideKeyServices": true,
+    "subDivisions": [
+      {
+        "title": "Neuro Surgery",
+        "badge": "Surgical Division",
+        "description": "Comprehensive surgical interventions for complex conditions affecting the brain, spine, spinal cord, and peripheral nervous system utilizing advanced micro-neurosurgery, neuro-navigation, and minimally invasive keyhole procedures.",
+        "features": [
+          "Brain Tumor Surgery & Skull Base Resections (Gliomas, Meningiomas, Pituitary Tumors)",
+          "Advanced Spine & Spinal Cord Surgery (Micro-discectomy, Spinal Fusion, Tumor Removal)",
+          "24x7 Emergency Neuro-Trauma & Head Injury Surgical Management",
+          "Minimally Invasive Endoscopic Brain & Spine Surgeries",
+          "Neurovascular Surgery & Endovascular Aneurysm Interventions"
+        ]
+      },
+      {
+        "title": "Neurology",
+        "badge": "Medical & Clinical Division",
+        "description": "Expert non-surgical medical management, diagnostic neurophysiology, emergency stroke interventions, and long-term care for acute and chronic neurological and movement disorders.",
+        "features": [
+          "24x7 Hyperacute Stroke Unit & IV Thrombolysis (Golden Hour Care)",
+          "Epilepsy & Refractory Seizure Disorders Clinic",
+          "Parkinson's Disease & Movement Disorders Evaluation",
+          "Multiple Sclerosis & Neuro-Immunology Treatment",
+          "Dedicated Neuro ICU & Comprehensive Functional Neuro-Rehabilitation"
+        ]
       }
     ]
   },
@@ -646,7 +587,9 @@
         "image": "assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg"
       }
     ],
-    "gallery": []
+    "gallery": [],
+    "hidePatientJourney": true,
+    "hideKeyServices": true
   },
   {
     "slug": "gastroenterology",
@@ -698,7 +641,9 @@
       "Pancreatic Disorders",
       "Biliary Disorders"
     ],
-    "gallery": []
+    "gallery": [],
+    "hidePatientJourney": true,
+    "hideKeyServices": true
   },
   {
     "slug": "icu",
@@ -767,7 +712,9 @@
     ],
     "gallery": [
       "assets/set1/Icu.jpg"
-    ]
+    ],
+    "hidePatientJourney": true,
+    "hideKeyServices": true
   },
   {
     "slug": "nephrology",
@@ -821,7 +768,10 @@
       "Renal Biopsy",
       "Dialysis Catheter Placement",
       "AV Fistula Creation",
-      "Plasmapheresis"
+      "Plasmapheresis",
+      "Glomerulo Nephritis",
+      "Nephrolic Syndrome",
+      "SLE (Systemic Lupus Erythematous)"
     ],
     "subSpecialities": [
       "Clinical Nephrology",
@@ -837,7 +787,9 @@
         "description": "Specialist in kidney diseases, dialysis care and chronic kidney disease management."
       }
     ],
-    "gallery": []
+    "gallery": [],
+    "hidePatientJourney": true,
+    "hideKeyServices": true
   },
   {
     "slug": "obgyn",
@@ -884,7 +836,14 @@
       "Caesarean Delivery",
       "Laparoscopic Gynaecology",
       "Menopause Care",
-      "Cancer Screening"
+      "Cancer Screening",
+      "Routine obstetrics card",
+      "Prenatal care and postnatal Care",
+      "High risk and obstetric Critical care",
+      "Advanced care in Neonatology",
+      "Gynaec Care",
+      "Pelvic pain, Infection (ST,s), menstrual irregularities, and abnormal uterine bleeding, PLOD, Fibroid Hysteroscopy",
+      "Routine gynaec cme"
     ],
     "subSpecialities": [
       "Obstetrics",
@@ -923,7 +882,9 @@
     "gallery": [
       "assets/set2/Gynaecology.jpg",
       "assets/set2/LABOUR & DELIVERY ROOM.jpg"
-    ]
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "orthopaedics",
@@ -988,7 +949,12 @@
       "Paediatric Orthopaedics",
       "Spine Surgery",
       "Deformity Correction",
-      "Bone Tumour Management"
+      "Bone Tumour Management",
+      "Total shoulder replacement",
+      "Revision hip and knee replacement",
+      "Treatment of cerebral palsy",
+      "Treatment of limb length discrepancy",
+      "Treatment of ligament injuries"
     ],
     "subSpecialities": [
       "Joint Replacement Surgery",
@@ -1010,7 +976,9 @@
         "image": "assets/Final/Dummydoctor.jpg"
       }
     ],
-    "gallery": []
+    "gallery": [],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "neonatology-paediatrics",
@@ -1049,7 +1017,12 @@
       "Growth & Development Monitoring",
       "Management of Childhood Diseases",
       "Chronic Pediatric Care",
-      "Nutrition & Adolescent Health Care"
+      "Nutrition & Adolescent Health Care",
+      "20 bedded NICU & 2 bedded PICU (with ventilator, multiple CPAP, and HFNC machines, multichannel monitors, Infusion and syringe pumps)",
+      "Management of extreme preterm,and neonates",
+      "Well baby Clinic providing all Vaccination services.",
+      "24 hours paediatric emergency service",
+      "Transport incubator facility"
     ],
     "doctors": [
       {
@@ -1078,7 +1051,9 @@
       "assets/set2/NICU PHOTOTHERAPY.jpg",
       "assets/set2/TRANSPORT INCUBATOR.jpg",
       "assets/set2/RADIANT WARMER paediatrics_.jpg"
-    ]
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "paediatric-surgery",
@@ -1114,6 +1089,21 @@
     ],
     "gallery": [
       "assets/set2/Paediatrics_.jpg"
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true,
+    "surgicalServices": [
+      "All new boar surgeries Preterm babies surgeries Hernia, hydrocele",
+      "Undescended testis",
+      "Appendicitis",
+      "All Laparoscopic surgeries",
+      "Thyroid surgery",
+      "Head rock and thoracic surgeries",
+      "Urethroplasty",
+      "Pyeloplasty",
+      "Ano rectal surgeries",
+      "Gall bladder surgeries",
+      "All other paediatric surgeries"
     ]
   },
   {
@@ -1152,49 +1142,6 @@
         "designation": "Consultant Neurologist",
         "image": "assets/Final/Dummydoctor.jpg",
         "description": "Consultant Neurologist specializing in stroke care, epilepsy, headache disorders, movement disorders, and neuro rehabilitation."
-      }
-    ],
-    "gallery": []
-  },
-  {
-    "slug": "plastic-surgery",
-    "name": "Plastic & Reconstructive Surgery",
-    "overview": "The Department of Plastic Surgery provides specialized reconstructive, restorative and aesthetic surgical care. The department offers both reconstructive and cosmetic procedures using advanced surgical techniques and modern infrastructure, with individualized treatment planning focused on achieving optimal functional and aesthetic outcomes.",
-    "seo": {
-      "title": "Plastic & Reconstructive Surgery in Coimbatore | Hindusthan",
-      "description": "Plastic and reconstructive surgery in Coimbatore for cosmetic procedures, reconstruction, burn care and scar revision with personalised treatment at Hindusthan Hospitals.",
-      "keywords": [
-        "Plastic Surgeon Coimbatore",
-        "Plastic Surgery Hospital Coimbatore",
-        "Plastic Surgeon Near Me",
-        "Reconstructive Surgery Coimbatore",
-        "Cosmetic Surgery Coimbatore",
-        "Cosmetic Surgeon Coimbatore",
-        "Burn Care Coimbatore",
-        "Burn Treatment Coimbatore",
-        "Scar Revision Coimbatore",
-        "Scar Treatment Coimbatore",
-        "Hindusthan Hospitals Plastic Surgery"
-      ]
-    },
-    "image": "assets/bannerimage/16.png",
-    "description": "\nPlastic & Reconstructive Surgery in Coimbatore\n\nThe Department of Plastic & Reconstructive Surgery at Hindusthan Hospitals provides comprehensive reconstructive and cosmetic surgical care focused on restoring form, function and appearance.\n\nReconstructive Surgery\n\nReconstructive procedures are offered for appropriate conditions requiring restoration of function or physical structure. Treatment plans are individualized according to each patient's clinical requirements.\n\nCosmetic Surgery\n\nOur department provides cosmetic surgical procedures for patients seeking appropriate aesthetic improvement following specialist consultation and evaluation.\n\nBurn Care\n\nSpecialized care is available for patients requiring treatment and reconstruction following burn injuries.\n\nScar Revision\n\nScar revision procedures are available for selected patients to improve the appearance and function of scars.\n\nWhy Choose Hindusthan Hospitals?\n\n• Plastic & Reconstructive Surgery\n• Cosmetic Surgery\n• Burn Care\n• Scar Revision\n• Individualized Treatment Planning\n• Multidisciplinary Hospital Support\n\nThe department is committed to achieving appropriate functional and aesthetic outcomes through personalized surgical care.\n",
-    "services": [
-      "Cosmetic Surgery",
-      "Reconstructive Surgery",
-      "Burn Care",
-      "Scar Revision"
-    ],
-    "doctors": [
-      {
-        "name": "Dr. Rajesh Kumar",
-        "designation": "Consultant Plastic & Reconstructive Surgeon",
-        "image": "assets/Final/Dummydoctor.jpg"
-      },
-      {
-        "name": "Dr. Raghu",
-        "designation": "Consultant Plastic & Reconstructive Surgeon",
-        "image": "assets/Final/Dummydoctor.jpg"
       }
     ],
     "gallery": []
@@ -1256,14 +1203,16 @@
       "Pulmonary Rehabilitation"
     ],
     "services": [
+      "Advanced Pulmonory function",
+      "Pulmonary Function Lab",
+      "Spirometry, oscillometry, diffusion studies, Fe No, 6 MWT",
+      "Adult vaccination (Clinic)",
       "Asthma & COPD Clinics",
       "Interstitial Lung Disease (ILD) Clinic",
       "Tuberculosis Clinic",
       "Smoking Cessation Services",
       "Allergy Testing & Desensitization",
-      "Advanced Pulmonary Function Testing",
       "Pulmonary Rehabilitation",
-      "Adult Vaccination",
       "Clinical & Academic Research"
     ],
     "doctors": [
@@ -1294,7 +1243,9 @@
       "assets/set2/PFT PROCEDURE_.jpg",
       "assets/set2/SPIROMETRY pulmo.jpg",
       "assets/set2/SCOPE STORAGE CABINET pulmo.jpg"
-    ]
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true
   },
   {
     "slug": "radiology",
@@ -1346,6 +1297,14 @@
       "assets/set1/Radiology_(3).jpg",
       "assets/set1/Radiology_(4).jpg",
       "assets/set1/Radiology_(5).jpg"
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true,
+    "specialFocus": [
+      "Neonatal care",
+      "Oncology",
+      "Renal Transplant",
+      "Cardio Thoracic Studies"
     ]
   },
   {
@@ -1395,50 +1354,6 @@
       "assets/set2/Physiotherapy_(1).jpg",
       "assets/set2/Physiotherapy_(2).jpg"
     ]
-  },
-  {
-    "slug": "surgical-oncology",
-    "name": "Surgical Oncology",
-    "overview": "The Department of Surgical Oncology provides specialized surgical management for various cancers with an emphasis on evidence-based and patient-centred care. Services include cancer diagnosis, staging, curative and palliative surgeries and post-operative care, supported by advanced surgical techniques, safety standards and compassionate patient care.",
-    "seo": {
-      "title": "Cancer & Surgical Oncology Hospital in Coimbatore | Hindusthan",
-      "description": "Surgical oncology in Coimbatore for tumour removal, breast cancer, head and neck cancer and GI cancer surgery with multidisciplinary cancer care at Hindusthan Hospitals.",
-      "keywords": [
-        "Surgical Oncologist Coimbatore",
-        "Cancer Surgeon Coimbatore",
-        "Cancer Surgery Coimbatore",
-        "Cancer Hospital Coimbatore",
-        "Oncologist Coimbatore",
-        "Oncologist Near Me",
-        "Tumour Removal Coimbatore",
-        "Tumor Surgery Coimbatore",
-        "Breast Cancer Surgery Coimbatore",
-        "Breast Cancer Surgeon Coimbatore",
-        "Head and Neck Cancer Surgery Coimbatore",
-        "GI Cancer Surgery Coimbatore",
-        "Gastrointestinal Cancer Surgery Coimbatore",
-        "Palliative Care Coimbatore",
-        "Hindusthan Hospitals Oncology"
-      ]
-    },
-    "image": "assets/bannerimage/20.png",
-    "description": "\nSurgical Oncology & Cancer Surgery in Coimbatore\n\nThe Department of Surgical Oncology at Hindusthan Hospitals provides comprehensive surgical care for patients with cancer through a patient-centred and multidisciplinary approach.\n\nCancer Surgery\n\nOur surgical oncology team provides evaluation and surgical management for appropriate cancers requiring tumour removal and other oncological procedures.\n\nTumour Removal\n\nSurgical removal of tumours is performed based on the location, stage and clinical requirements of the individual patient.\n\nBreast Cancer Surgery\n\nSurgical care is available for appropriate breast cancer conditions following specialist evaluation and treatment planning.\n\nHead & Neck Oncology\n\nThe department provides surgical management for appropriate cancers involving the head and neck region.\n\nGastrointestinal Cancer Surgery\n\nGI cancer surgery is provided for appropriate cancers affecting the gastrointestinal system.\n\nPalliative Care\n\nPalliative care forms part of comprehensive cancer management with a focus on patient comfort and quality of life.\n\nWhy Choose Hindusthan Hospitals for Surgical Oncology?\n\n• Surgical Oncology Care\n• Tumour Removal\n• Breast Cancer Surgery\n• Head & Neck Oncology\n• GI Cancer Surgery\n• Multidisciplinary Cancer Care\n• Palliative Care\n• Patient-Centred Treatment\n",
-    "services": [
-      "Tumour Removal",
-      "Breast Cancer Surgery",
-      "Head & Neck Oncology",
-      "GI Cancer Surgery",
-      "Palliative Care"
-    ],
-    "doctors": [
-      {
-        "name": "Dr. N. Selvaraj",
-        "designation": "Oncologist",
-        "image": "assets/Final/DR.N.SELVARAJ.jpg",
-        "description": "Specialist in surgical oncology and multidisciplinary cancer treatment."
-      }
-    ],
-    "gallery": []
   },
   {
     "slug": "urology",
@@ -1512,6 +1427,16 @@
     "gallery": [
       "assets/dept/robo1.JPG",
       "assets/dept/robo2.JPG"
+    ],
+    "hideKeyServices": true,
+    "hidePatientJourney": true,
+    "opFacilities": [
+      "Cystoscopy",
+      "Ultra sound scan",
+      "Urodynamic study",
+      "Uro flowmetry",
+      "Penile Doppler",
+      "Trus"
     ]
   },
   {
@@ -1749,14 +1674,7 @@
       "Hepatology & Liver Failure",
       "Transplant Critical Care"
     ],
-    "doctors": [
-      {
-        "name": "Dr. S. Balakumar",
-        "designation": "Senior Gastro & HPB Surgeon",
-        "image": "assets/Final/DR. S. BALAKUMAR.jpg",
-        "description": "Senior Gastro and Hepatobiliary Surgeon specializing in complex liver resection, gastrointestinal surgery, and liver transplant care."
-      }
-    ],
+    
     "gallery": []
   },
   {
@@ -1787,7 +1705,8 @@
       "Laparoscopic Donor Nephrectomy",
       "24x7 Hemodialysis & Dialysis Access (AV Fistula / Permcath)",
       "Plasmapheresis & Immunosuppression Protocols",
-      "Post-Transplant Graft Surveillance & Clinic"
+      "Post-Transplant Graft Surveillance & Clinic",
+      "Live (Cadaver / ABO compatible)"
     ],
     "subSpecialities": [
       "Transplant Nephrology",

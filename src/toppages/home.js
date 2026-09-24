@@ -214,7 +214,7 @@ const DEPARTMENTS = [
   { name: "Diabetology & General Medicine", slug: "diabetology-general-medicine", icon: <FaStethoscope />, color: "#8F1519", desc: "Diabetes and internal medicine specialists" },
   { name: "Emergency Care", slug: "emergency-care", icon: <FaAmbulance />, color: "#6E1013", desc: "24/7 emergency and trauma services" },
   { name: "ENT & Head and Neck Surgery", slug: "ent", icon: <FaUserMd />, color: "#0F2C6A", desc: "Expert ENT and head-neck surgical care" },
-  { name: "Neuroscience", slug: "neuro", icon: <FaBrain />, color: "#14357F", desc: "Brain, spine and neurological care" },
+  { name: "Neuroscience", slug: "neuro", icon: <FaBrain />, color: "#14357F", desc: "Neuro Surgery & Neurology divisions" },
   { name: "General & Laparoscopic Surgery", slug: "general-surgery", icon: <FaStethoscope />, color: "#3F68BE", desc: "Minimally invasive and general surgery" },
   { name: "Gastroenterology", slug: "gastroenterology", icon: <FaUserMd />, color: "#C9962B", desc: "Digestive and gastrointestinal care" },
   { name: "Intensive Care Unit", slug: "icu", icon: <FaHandHoldingHeart />, color: "#0F2C6A", desc: "Critical care and intensive monitoring" },
@@ -226,7 +226,6 @@ const DEPARTMENTS = [
   { name: "Pulmonology", slug: "pulmonology", icon: <FaLungs />, color: "#14357F", desc: "Respiratory and lung disease treatment" },
   { name: "Radiology", slug: "radiology", icon: <FaMicroscope />, color: "#1D469E", desc: "Advanced diagnostic imaging services" },
   { name: "Physical Medicine & Rehabilitation", slug: "rehab", icon: <FaWheelchair />, color: "#3F68BE", desc: "Physiotherapy and rehabilitation services" },
-  { name: "Surgical Oncology", slug: "surgical-oncology", icon: <FaUserMd />, color: "#6E1013", desc: "Comprehensive cancer surgery care" },
   { name: "Urology", slug: "urology", icon: <FaProcedures />, color: "#B61B1F", desc: "Urinary tract and urological treatments" },
 ];
 

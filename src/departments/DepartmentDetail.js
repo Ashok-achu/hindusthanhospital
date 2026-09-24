@@ -101,6 +101,103 @@ function getKeyServices(department) {
   return source;
 }
 
+/* Renders a labeled list section for OP Facilities / Special Focus / Sub-divisions etc. */
+function LabeledSection({ title, items }) {
+  if (!items || items.length === 0) return null;
+  return (
+    <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
+      <h3 className="text-lg font-bold text-slate-800 mb-4">{title}</h3>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-gray-700 text-sm sm:text-base">
+        {items.map((item, i) => (
+          <li key={i} className="list-none flex items-start gap-2">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#0E3B39] shrink-0" />
+            <span>{typeof item === "object" && item !== null ? item.title || item.name : item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+/* Highlighted Divisions section — renders key sub-specialities/divisions like Neuro Surgery & Neurology */
+function DivisionsSection({ departmentName, items }) {
+  if (!items || items.length === 0) return null;
+
+  return (
+    <section className="rounded-3xl border border-teal-100 bg-gradient-to-br from-white via-teal-50/20 to-[#f0f9f8] p-6 shadow-md sm:p-8">
+      <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-teal-100/80 pb-4">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0E5260]">
+            Core Speciality Divisions
+          </p>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
+            {departmentName} Divisions
+          </h2>
+        </div>
+        <span className="self-start sm:self-auto bg-[#0E3B39] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-sm">
+          Highlighted Divisions
+        </span>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {items.map((item, i) => {
+          const isObject = typeof item === "object" && item !== null;
+          const title = isObject ? item.title || item.name : item;
+          const description = isObject ? item.description : null;
+          const features = isObject && Array.isArray(item.features) ? item.features : null;
+          const badge = isObject ? item.badge : null;
+
+          return (
+            <div
+              key={i}
+              className="relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0E3B39] via-[#0E5260] to-[#22a66c]" />
+              <div>
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#0E3B39]/10 text-[#0E3B39] flex items-center justify-center font-extrabold text-lg shrink-0">
+                      {i + 1}
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0E3B39] transition">
+                      {title}
+                    </h3>
+                  </div>
+                  {badge && (
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-800 border border-amber-200 px-2.5 py-1 rounded-full shrink-0">
+                      {badge}
+                    </span>
+                  )}
+                </div>
+
+                {description && (
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    {description}
+                  </p>
+                )}
+
+                {features && features.length > 0 && (
+                  <div className="mt-3 pt-3 border-t border-slate-100">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#0E5260] mb-2.5">Key Services &amp; Treatments</p>
+                    <ul className="space-y-2">
+                      {features.map((feat, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#22a66c] shrink-0" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 /* Generic, index-based blurbs for the patient-journey steps. The
    data model doesn't carry a per-step description, so these read
    sensibly against almost any department's quick-nav items. */
@@ -261,7 +358,7 @@ function ServiceCard({ title, blurb, image, index, onClick }) {
    Renders identically on every department page. */
 function InfoSidebar({ department }) {
   const whyChooseUs = getWhyChooseUs(department);
-  const keyServices = getKeyServices(department).slice(0, 7);
+  const keyServices = department.hideKeyServices ? [] : getKeyServices(department).slice(0, 7);
   const technology = Array.isArray(department.technology) ? department.technology : [];
 
   return (
@@ -278,7 +375,7 @@ function InfoSidebar({ department }) {
         </ul>
       </div>
 
-      {keyServices.length > 0 && (
+      {!department.hideKeyServices && keyServices.length > 0 && (
         <div className="bg-white rounded-lg shadow-sm p-5 sm:p-6">
           <h3 className="text-xs font-bold tracking-[0.15em] text-gray-500 mb-4">KEY SERVICES</h3>
           <ul className="space-y-3">
@@ -317,8 +414,6 @@ function InfoSidebar({ department }) {
 const SLUG_ALIASES = {
   "neurovascular-surgery": "neuro",
   "neuroscience": "neuro",
-  "dentistry": "dentistry",
-  "dental-facial-maxillary": "dentistry",
   "diabetology": "diabetology-general-medicine",
   "ent": "ent",
   "ent-head-neck-surgery": "ent",
@@ -326,8 +421,7 @@ const SLUG_ALIASES = {
   "general-laparoscopic-surgery": "general-surgery",
   "neonatology": "neonatology-paediatrics",
   "rehab": "rehab",
-  "physical-medicine-rehabilitation": "rehab",
-  "plastic-reconstructive-surgery": "plastic-surgery"
+  "physical-medicine-rehabilitation": "rehab"
 };
 
 export default function DepartmentDetail() {
@@ -512,6 +606,26 @@ export default function DepartmentDetail() {
               </section>
             )}
 
+            {/* ================= SUBDIVISIONS ================= */}
+            {Array.isArray(department.subDivisions) && department.subDivisions.length > 0 && (
+              <DivisionsSection departmentName={department.name} items={department.subDivisions} />
+            )}
+
+            {/* ================= OP FACILITIES ================= */}
+            {Array.isArray(department.opFacilities) && department.opFacilities.length > 0 && (
+              <LabeledSection title="OP Facilities" items={department.opFacilities} />
+            )}
+
+            {/* ================= SPECIAL FOCUS ================= */}
+            {Array.isArray(department.specialFocus) && department.specialFocus.length > 0 && (
+              <LabeledSection title="Special Focus" items={department.specialFocus} />
+            )}
+
+            {/* ================= SURGICAL SERVICES ================= */}
+            {Array.isArray(department.surgicalServices) && department.surgicalServices.length > 0 && (
+              <LabeledSection title="Surgical Services" items={department.surgicalServices} />
+            )}
+
             {/* ================= DOCTORS ================= */}
             {allDoctors.length > 0 && (
               <section>
@@ -541,7 +655,7 @@ export default function DepartmentDetail() {
             )}
 
             {/* ================= PATIENT JOURNEY ================= */}
-            {journeySteps.length > 0 && (
+            {!department.hidePatientJourney && journeySteps.length > 0 && (
               <section>
                 <div>
                   <p className="text-[11px] tracking-[0.2em] uppercase text-red-600 font-semibold mb-1">
