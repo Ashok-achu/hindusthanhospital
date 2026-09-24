@@ -611,6 +611,11 @@ export default function DepartmentDetail() {
               <DivisionsSection departmentName={department.name} items={department.subDivisions} />
             )}
 
+            {/* ================= SUB SPECIALITIES ================= */}
+            {Array.isArray(department.subSpecialities) && department.subSpecialities.length > 0 && (
+              <LabeledSection title="Sub Specialities" items={department.subSpecialities} />
+            )}
+
             {/* ================= OP FACILITIES ================= */}
             {Array.isArray(department.opFacilities) && department.opFacilities.length > 0 && (
               <LabeledSection title="OP Facilities" items={department.opFacilities} />
