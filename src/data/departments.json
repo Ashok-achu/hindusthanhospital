@@ -706,7 +706,7 @@
       {
         "name": "Dr. Alwin",
         "designation": "Intensivist",
-        "image": "assets/Final/Dummydoctor.jpg",
+        "image": "assets/Final/Dr. Alwin.png",
         "description": "Specialist in intensive care medicine, critical care monitoring, ventilator support and multidisciplinary ICU management."
       }
     ],
@@ -1234,7 +1234,7 @@
       {
         "name": "Dr. V. Nandagopal",
         "designation": "Consultant Pulmonologist",
-        "image": "assets/Final/Dr.nandhagopal.jpeg"
+        "image": "assets/Final/Dr. Nandagopal.png"
       }
     ],
     "gallery": [

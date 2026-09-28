@@ -18,7 +18,7 @@
     "name": "Dr. V. Nandagopal",
     "speciality": "Pulmonology",
     "gender": "Male",
-    "image": "assets/Final/Dr.nandhagopal.jpeg"
+    "image": "assets/Final/Dr. Nandagopal.png"
   },
   {
     "id": 4,
@@ -124,6 +124,13 @@
     "speciality": "Intensivists",
     "gender": "Male",
     "image": "assets/Final/DR. N. MADHAN.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Dr. Alwin",
+    "speciality": "Intensivists",
+    "gender": "Male",
+    "image": "assets/Final/Dr. Alwin.png"
   },
   {
     "id": 19,
