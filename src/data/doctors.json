@@ -128,9 +128,16 @@
   {
     "id": 41,
     "name": "Dr. Alwin",
-    "speciality": "Intensivists",
+    "speciality": "Anaesthesiology & Intensivists",
     "gender": "Male",
     "image": "assets/Final/Dr. Alwin.png"
+  },
+  {
+    "id": 42,
+    "name": "Dr. Venkatesh",
+    "speciality": "Anaesthesiology",
+    "gender": "Male",
+    "image": "assets/Final/DR. V. VENKATRAMAN.jpg"
   },
   {
     "id": 19,

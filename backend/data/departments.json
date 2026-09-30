@@ -34,6 +34,18 @@
         "designation": "Intensivists",
         "image": "/static/media/DR. N. MADHAN.27b200f76bf9241ef870.jpg",
         "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+      },
+      {
+        "name": "Dr. Alwin",
+        "designation": "Intensivist & Anaesthesiologist",
+        "image": "assets/Final/Dr. Alwin.png",
+        "description": "Specialist in intensive care medicine, critical care monitoring, ventilator support and perioperative anesthesia care."
+      },
+      {
+        "name": "Dr. Venkatesh",
+        "designation": "Anaesthesiologist",
+        "image": "assets/Final/DR. V. VENKATRAMAN.jpg",
+        "description": "Experienced anaesthesiologist specializing in general, regional and emergency anesthesia care."
       }
     ],
     "visitingConsultants": [],

@@ -20,7 +20,7 @@ import {
  */
 
 const DEPARTMENTS = [
-  { id: "anaesthesiology", name: "Anaesthesiology", doctors: ["Dr. S. Saranya Vishumathy", "Dr. N. Madhan"] },
+  { id: "anaesthesiology", name: "Anaesthesiology", doctors: ["Dr. S. Saranya Vishumathy", "Dr. N. Madhan", "Dr. Alwin", "Dr. Venkatesh"] },
   { id: "cardiology", name: "Cardiology", doctors: ["Dr. Meera Nair", "Dr. Arjun Rao", "Senior Cardiologist"] },
   { id: "diabetology", name: "Diabetology & General Medicine", doctors: ["Dr. Priya Krishnan", "Dr. Vinod Kumar"] },
   { id: "emergency", name: "Emergency & Trauma Care", doctors: ["24x7 Emergency Consultant", "Dr. Rajesh V"] },

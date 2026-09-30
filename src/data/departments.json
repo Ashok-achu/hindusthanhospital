@@ -69,6 +69,18 @@
         "designation": "Intensivists",
         "image": "assets/Final/DR. N. MADHAN.jpg",
         "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
+      },
+      {
+        "name": "Dr. Alwin",
+        "designation": "Intensivist & Anaesthesiologist",
+        "image": "assets/Final/Dr. Alwin.png",
+        "description": "Specialist in intensive care medicine, critical care monitoring, ventilator support and perioperative anesthesia care."
+      },
+      {
+        "name": "Dr. Venkatesh",
+        "designation": "Anaesthesiologist",
+        "image": "assets/Final/DR. V. VENKATRAMAN.jpg",
+        "description": "Experienced anaesthesiologist specializing in general, regional and emergency anesthesia care."
       }
     ],
     "gallery": []
@@ -1019,7 +1031,7 @@
       "Chronic Pediatric Care",
       "Nutrition & Adolescent Health Care",
       "20 bedded NICU & 2 bedded PICU (with ventilator, multiple CPAP, and HFNC machines, multichannel monitors, Infusion and syringe pumps)",
-      "Management of extreme preterm,and neonates",
+      "Management of extreme preterm,and Sick neonates",
       "Well baby Clinic providing all Vaccination services.",
       "24 hours paediatric emergency service",
       "Transport incubator facility"
@@ -1098,7 +1110,7 @@
       "Appendicitis",
       "All Laparoscopic surgeries",
       "Thyroid surgery",
-      "Head rock and thoracic surgeries",
+      "Head Neck and thoracic surgeries",
       "Urethroplasty",
       "Pyeloplasty",
       "Ano rectal surgeries",
