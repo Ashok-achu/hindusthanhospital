@@ -403,6 +403,22 @@ function InfoSidebar({ department }) {
         </div>
       )}
 
+      {department.opTimings && (
+        <div className="bg-teal-50/80 border border-teal-200/80 rounded-lg p-5 flex items-start gap-3.5">
+          <div className="w-9 h-9 rounded-full bg-[#0E3B39] text-white flex items-center justify-center shrink-0">
+            <Icon name="clock" className="w-4 h-4 text-white" />
+          </div>
+          <div>
+            <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#0E5260]">
+              OP Consultations
+            </h4>
+            <p className="text-sm font-semibold text-slate-800 mt-0.5">
+              {department.opTimings}
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 flex items-center gap-4">
         <span className="text-2xl font-bold text-[#0E3B39]">24/7</span>
         <span className="text-sm text-gray-600">Emergency care &amp; support available</span>
@@ -577,9 +593,17 @@ export default function DepartmentDetail() {
             {/* ================= DEPARTMENT OVERVIEW ================= */}
             {department.overview && (
               <section className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm sm:p-8">
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E5260]">
-                  Department Overview
-                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0E5260]">
+                    Department Overview
+                  </p>
+                  {department.opTimings && (
+                    <span className="self-start sm:self-auto inline-flex items-center gap-1.5 bg-teal-50 text-[#0E3B39] border border-teal-200/70 text-xs font-semibold px-3 py-1 rounded-full">
+                      <Icon name="clock" className="w-3.5 h-3.5 text-[#0E5260]" />
+                      OP: {department.opTimings}
+                    </span>
+                  )}
+                </div>
                 <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">
                   {department.name}
                 </h2>

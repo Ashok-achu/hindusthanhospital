@@ -466,6 +466,12 @@
         "designation": "Consultant Neurosurgeon & Spine Specialist",
         "image": "assets/Final/DR. ESWARAN MOORTHY.jpg",
         "description": "Specialist in complex spinal instrumentation, cervical and lumbar discectomy, spinal cord tumor surgery, and emergency neuro critical care."
+      },
+      {
+        "name": "Dr. Ram Kumar",
+        "designation": "Neurologist",
+        "image": "assets/Final/Dummydoctor.jpg",
+        "description": "Expert Neurologist providing comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep."
       }
     ],
     "gallery": [],
@@ -501,13 +507,13 @@
       {
         "title": "Neurology",
         "badge": "Medical & Clinical Division",
-        "description": "Expert non-surgical medical management, diagnostic neurophysiology, emergency stroke interventions, and long-term care for acute and chronic neurological and movement disorders.",
+        "description": "Led by Dr. Ram Kumar, Neurologist, providing comprehensive care for disorders of the brain, spinal cord, nerves, muscles, and sleep, supported by EEG & NCS diagnostics, headache clinics, and ICU care.",
         "features": [
-          "24x7 Hyperacute Stroke Unit & IV Thrombolysis (Golden Hour Care)",
-          "Epilepsy & Refractory Seizure Disorders Clinic",
-          "Parkinson's Disease & Movement Disorders Evaluation",
-          "Multiple Sclerosis & Neuro-Immunology Treatment",
-          "Dedicated Neuro ICU & Comprehensive Functional Neuro-Rehabilitation"
+          "Assessment & Management of Headache Disorders, Migraine & Trigeminal Neuralgia",
+          "Vertigo, Dizziness, Imbalance & Neuro-Ophthalmological Disorders",
+          "Stroke Management, Seizure Evaluation & Brain-Wave (EEG) Studies",
+          "Parkinson's Disease, Movement Disorders & Dementia Care",
+          "Peripheral Neuropathy, Myopathy, NCS Studies & Sleep-Related Neurological Care"
         ]
       }
     ]
@@ -1121,39 +1127,104 @@
   {
     "slug": "neurology",
     "name": "Neurology",
-    "overview": "The Department of Neurology provides diagnosis, treatment and long-term management for conditions affecting the brain, spinal cord, nerves and muscles. Services include stroke care, headache and migraine management, epilepsy care, movement disorder evaluation, neuropathy treatment, memory assessment and rehabilitation support. Patients receive coordinated, personalised care focused on early diagnosis, symptom relief, recovery and improved quality of life.",
+    "overview": "The Department of Neurology provides comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep. Led by Dr. Ram Kumar, Neurologist, the department offers expert evaluation and treatment for both common neurological symptoms and complex acute or chronic neurological illnesses. Our services include assessment and management of headache disorders—including migraine, chronic daily headache, trigeminal neuralgia, and other facial pain syndromes—along with vertigo, dizziness, imbalance, and other vestibular disorders. We also offer focused care for neuro-ophthalmological problems such as visual loss, double vision, abnormal eye movements, optic nerve disorders, and neurological causes of visual symptoms. Evaluation and treatment of sleep-related neurological disorders are also available. The department manages a wide spectrum of conditions, including stroke, epilepsy and seizures, Parkinson’s disease and other movement disorders, dementia and memory problems, neuropathy, myopathy, multiple sclerosis, infections of the nervous system, and neuromuscular disorders. We provide neurological consultation and ongoing care for admitted patients, including patients requiring high-dependency and intensive care unit (ICU) support. Diagnostic facilities include EEG (electroencephalography) for seizure and brain-wave evaluation, and NCS (nerve conduction studies) for assessment of peripheral nerve and neuromuscular disorders. Care is individualized, with emphasis on accurate diagnosis, patient education, preventive treatment, and coordinated multidisciplinary management when needed. Outpatient consultations are available daily from 10:00 AM to 5:00 PM.",
+    "opTimings": "Daily from 10:00 AM to 5:00 PM",
     "seo": {
-      "title": "Neurology Department in Coimbatore | Hindusthan Hospitals",
-      "description": "Neurology care at Hindusthan Hospitals, Coimbatore for stroke, epilepsy, migraine, Parkinson's disease and other brain, spinal cord and nerve disorders.",
+      "title": "Best Neurology Hospital in Coimbatore | Dr. Ram Kumar | Hindusthan Hospitals",
+      "description": "Department of Neurology at Hindusthan Hospitals Coimbatore, led by Dr. Ram Kumar, Neurologist. Comprehensive care for stroke, headache, migraine, epilepsy, vertigo, neuro-ophthalmology, Parkinson's disease, sleep disorders, EEG and NCS testing.",
       "keywords": [
-        "neurologist Coimbatore",
-        "stroke treatment Coimbatore",
-        "epilepsy treatment Coimbatore",
-        "migraine clinic Coimbatore",
-        "Parkinson's disease care",
-        "Hindusthan Hospitals neurology"
+        "Best Neurology Hospital in Coimbatore",
+        "Neurology Department Coimbatore",
+        "Dr. Ram Kumar Neurologist",
+        "Dr Ram Kumar Hindusthan Hospital",
+        "Best Neurologist in Coimbatore",
+        "Neurologist Near Me",
+        "Stroke Treatment Coimbatore",
+        "Epilepsy and Seizure Care Coimbatore",
+        "Headache and Migraine Clinic Coimbatore",
+        "Trigeminal Neuralgia Treatment Coimbatore",
+        "Vertigo and Dizziness Treatment Coimbatore",
+        "Neuro Ophthalmology Coimbatore",
+        "Parkinson's Disease Care Coimbatore",
+        "Dementia and Memory Assessment Coimbatore",
+        "Neuropathy and Myopathy Care Coimbatore",
+        "Multiple Sclerosis Treatment Coimbatore",
+        "EEG Test Coimbatore",
+        "NCS Test Coimbatore",
+        "Nerve Conduction Studies Coimbatore",
+        "Sleep Neurological Disorders Coimbatore",
+        "Hindusthan Hospitals Neurology"
       ]
     },
     "image": "assets/bannerimage/16.png",
-    "description": "\nThe Department of Neurology provides comprehensive diagnosis and treatment for disorders affecting the brain, spinal cord, nerves, and muscles. Our specialists manage both acute neurological emergencies and chronic neurological conditions using advanced diagnostic facilities and evidence-based treatment.\n\nThe department is committed to providing personalized care with a multidisciplinary approach, ensuring better outcomes and improved quality of life for patients.\n",
+    "description": "\nDepartment of Neurology in Coimbatore\n\nThe Department of Neurology at Hindusthan Hospitals provides comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep. Led by Dr. Ram Kumar, Neurologist, the department offers expert evaluation and treatment for both common neurological symptoms and complex acute or chronic neurological illnesses.\n\nComprehensive Neurology Services\n\nOur services include assessment and management of headache disorders—including migraine, chronic daily headache, trigeminal neuralgia, and other facial pain syndromes—along with vertigo, dizziness, imbalance, and other vestibular disorders. We also offer focused care for neuro-ophthalmological problems such as visual loss, double vision, abnormal eye movements, optic nerve disorders, and neurological causes of visual symptoms. Evaluation and treatment of sleep-related neurological disorders are also available.\n\nWide Spectrum of Conditions Managed\n\nThe department manages a wide spectrum of conditions, including stroke, epilepsy and seizures, Parkinson’s disease and other movement disorders, dementia and memory problems, neuropathy, myopathy, multiple sclerosis, infections of the nervous system, and neuromuscular disorders. We provide neurological consultation and ongoing care for admitted patients, including patients requiring high-dependency and intensive care unit (ICU) support.\n\nDiagnostic Facilities (EEG & NCS)\n\nDiagnostic facilities include EEG (electroencephalography) for seizure and brain-wave evaluation, and NCS (nerve conduction studies) for assessment of peripheral nerve and neuromuscular disorders.\n\nIndividualized Patient-Centred Care\n\nCare is individualized, with emphasis on accurate diagnosis, patient education, preventive treatment, and coordinated multidisciplinary management when needed.\n\nOutpatient Consultations\n\nOutpatient consultations are available daily from 10:00 AM to 5:00 PM.\n\nWhy Choose Hindusthan Hospitals for Neurology?\n\n• Led by Expert Neurologist Dr. Ram Kumar\n• Comprehensive Care for Brain, Spine, Nerves, Muscles & Sleep\n• Advanced Diagnostic Facilities (EEG & NCS)\n• Specialized Headache, Vertigo & Neuro-Ophthalmology Care\n• Inpatient & High-Dependency ICU Neurological Support\n• Outpatient Consultations Daily: 10:00 AM to 5:00 PM\n",
+    "highlights": [
+      "Led by Dr. Ram Kumar, Neurologist",
+      "Headache, Migraine & Facial Pain Care",
+      "Vertigo, Imbalance & Vestibular Disorders",
+      "Stroke, Epilepsy & Critical Care (ICU) Support",
+      "Diagnostic EEG & Nerve Conduction Studies (NCS)"
+    ],
     "services": [
-      "Stroke Management",
-      "Epilepsy Treatment",
-      "Headache & Migraine Clinic",
-      "Parkinson's Disease Care",
-      "Peripheral Neuropathy",
-      "Movement Disorder Management",
-      "Vertigo Evaluation",
-      "Dementia Assessment",
-      "Neuro Rehabilitation",
-      "Neurological Consultation"
+      "Headache Disorders Management (Migraine, Chronic Daily Headache)",
+      "Trigeminal Neuralgia & Facial Pain Syndromes",
+      "Vertigo, Dizziness, Imbalance & Vestibular Disorders",
+      "Neuro-Ophthalmology (Visual Loss, Double Vision, Optic Nerve Disorders)",
+      "Sleep-Related Neurological Disorders Evaluation & Care",
+      "Stroke Management & Cerebrovascular Care",
+      "Epilepsy & Seizures Management",
+      "Parkinson’s Disease & Movement Disorders Evaluation",
+      "Dementia & Memory Problems Assessment",
+      "Neuropathy & Myopathy Treatment",
+      "Multiple Sclerosis & Neuro-Immunology Care",
+      "Infections of the Nervous System",
+      "Neuromuscular Disorders Management",
+      "Inpatient Neurological Consultation & High-Dependency ICU Care",
+      "EEG (Electroencephalography) Seizure & Brain-Wave Evaluation",
+      "NCS (Nerve Conduction Studies) Peripheral Nerve Assessment"
+    ],
+    "specialFocus": [
+      "Headache Disorders, Migraine & Trigeminal Neuralgia",
+      "Vertigo, Dizziness, Imbalance & Vestibular Disorders",
+      "Neuro-Ophthalmology (Visual Loss, Double Vision, Optic Nerve Disorders)",
+      "Sleep-Related Neurological Disorders",
+      "Stroke & Acute Cerebrovascular Disease",
+      "Epilepsy, Seizures & Brain-Wave Assessment",
+      "Parkinson’s Disease, Tremors & Movement Disorders",
+      "Dementia, Memory Loss & Cognitive Impairment",
+      "Peripheral Neuropathy, Myopathy & Neuromuscular Illnesses",
+      "Multiple Sclerosis & Central Nervous System Infections"
+    ],
+    "opFacilities": [
+      "Daily Outpatient Consultations: 10:00 AM to 5:00 PM",
+      "Specialized Headache & Facial Pain Clinic",
+      "Vertigo & Vestibular Function Evaluation",
+      "Neuro-Ophthalmology & Visual Disorder Assessment",
+      "EEG (Electroencephalography) Suite for Seizure & Brain-Wave Evaluation",
+      "NCS (Nerve Conduction Studies) Facility for Peripheral Nerve Testing",
+      "Sleep-Related Neurological Disorders Clinic",
+      "Inpatient & High-Dependency ICU Neurological Support"
+    ],
+    "technology": [
+      "EEG (Electroencephalography) - Seizure & Brain-Wave Evaluation",
+      "NCS (Nerve Conduction Studies) - Peripheral Nerve & Neuromuscular Assessment",
+      "High-Dependency & Intensive Care Unit (ICU) Neurological Monitoring",
+      "Neuro-Ophthalmological Diagnostic Tools"
+    ],
+    "advantages": [
+      "Led by Expert Neurologist Dr. Ram Kumar",
+      "Comprehensive Care for Brain, Spine, Nerves, Muscles & Sleep",
+      "Advanced Diagnostic Facilities (EEG & NCS)",
+      "Specialized Headache, Vertigo & Neuro-Ophthalmology Care",
+      "Inpatient & High-Dependency ICU Neurological Support",
+      "Outpatient Consultations Daily: 10:00 AM to 5:00 PM"
     ],
     "doctors": [
       {
-        "name": "Dr. Ram Kumar S",
-        "designation": "Consultant Neurologist",
+        "name": "Dr. Ram Kumar",
+        "designation": "Neurologist",
         "image": "assets/Final/Dummydoctor.jpg",
-        "description": "Consultant Neurologist specializing in stroke care, epilepsy, headache disorders, movement disorders, and neuro rehabilitation."
+        "description": "Expert Neurologist providing comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep."
       }
     ],
     "gallery": []

@@ -89,5 +89,54 @@
       "/uploads/departments/1786980073003-852213a2-d568-4d19-9ee4-19f89acdc311.jpg"
     ],
     "createdAt": "2026-08-17T15:21:13.117Z"
+  },
+  {
+    "_id": "c18b7654-e69a-4c22-b521-789a40530970",
+    "name": "Neurology",
+    "slug": "neurology",
+    "description": "\r\nDepartment of Neurology in Coimbatore\r\n\r\nThe Department of Neurology at Hindusthan Hospitals provides comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep. Led by Dr. Ram Kumar, Neurologist, the department offers expert evaluation and treatment for both common neurological symptoms and complex acute or chronic neurological illnesses.\r\n\r\nComprehensive Neurology Services\r\n\r\nOur services include assessment and management of headache disorders—including migraine, chronic daily headache, trigeminal neuralgia, and other facial pain syndromes—along with vertigo, dizziness, imbalance, and other vestibular disorders. We also offer focused care for neuro-ophthalmological problems such as visual loss, double vision, abnormal eye movements, optic nerve disorders, and neurological causes of visual symptoms. Evaluation and treatment of sleep-related neurological disorders are also available.\r\n\r\nWide Spectrum of Conditions Managed\r\n\r\nThe department manages a wide spectrum of conditions, including stroke, epilepsy and seizures, Parkinson’s disease and other movement disorders, dementia and memory problems, neuropathy, myopathy, multiple sclerosis, infections of the nervous system, and neuromuscular disorders. We provide neurological consultation and ongoing care for admitted patients, including patients requiring high-dependency and intensive care unit (ICU) support.\r\n\r\nDiagnostic Facilities (EEG & NCS)\r\n\r\nDiagnostic facilities include EEG (electroencephalography) for seizure and brain-wave evaluation, and NCS (nerve conduction studies) for assessment of peripheral nerve and neuromuscular disorders.\r\n\r\nIndividualized Patient-Centred Care\r\n\r\nCare is individualized, with emphasis on accurate diagnosis, patient education, preventive treatment, and coordinated multidisciplinary management when needed.\r\n\r\nOutpatient Consultations\r\n\r\nOutpatient consultations are available daily from 10:00 AM to 5:00 PM.\r\n\r\nWhy Choose Hindusthan Hospitals for Neurology?\r\n\r\n• Led by Expert Neurologist Dr. Ram Kumar\r\n• Comprehensive Care for Brain, Spine, Nerves, Muscles & Sleep\r\n• Advanced Diagnostic Facilities (EEG & NCS)\r\n• Specialized Headache, Vertigo & Neuro-Ophthalmology Care\r\n• Inpatient & High-Dependency ICU Neurological Support\r\n• Outpatient Consultations Daily: 10:00 AM to 5:00 PM\r\n",
+    "services": [
+      "Headache Disorders Management (Migraine, Chronic Daily Headache)",
+      "Trigeminal Neuralgia & Facial Pain Syndromes",
+      "Vertigo, Dizziness, Imbalance & Vestibular Disorders",
+      "Neuro-Ophthalmology (Visual Loss, Double Vision, Optic Nerve Disorders)",
+      "Sleep-Related Neurological Disorders Evaluation & Care",
+      "Stroke Management & Cerebrovascular Care",
+      "Epilepsy & Seizures Management",
+      "Parkinson’s Disease & Movement Disorders Evaluation",
+      "Dementia & Memory Problems Assessment",
+      "Neuropathy & Myopathy Treatment",
+      "Multiple Sclerosis & Neuro-Immunology Care",
+      "Infections of the Nervous System",
+      "Neuromuscular Disorders Management",
+      "Inpatient Neurological Consultation & High-Dependency ICU Care",
+      "EEG (Electroencephalography) Seizure & Brain-Wave Evaluation",
+      "NCS (Nerve Conduction Studies) Peripheral Nerve Assessment"
+    ],
+    "advantages": [
+      "Led by Expert Neurologist Dr. Ram Kumar",
+      "Comprehensive Care for Brain, Spine, Nerves, Muscles & Sleep",
+      "Advanced Diagnostic Facilities (EEG & NCS)",
+      "Specialized Headache, Vertigo & Neuro-Ophthalmology Care",
+      "Inpatient & High-Dependency ICU Neurological Support",
+      "Outpatient Consultations Daily: 10:00 AM to 5:00 PM"
+    ],
+    "technology": [
+      "EEG (Electroencephalography) - Seizure & Brain-Wave Evaluation",
+      "NCS (Nerve Conduction Studies) - Peripheral Nerve & Neuromuscular Assessment",
+      "High-Dependency & Intensive Care Unit (ICU) Neurological Monitoring",
+      "Neuro-Ophthalmological Diagnostic Tools"
+    ],
+    "doctors": [
+      {
+        "name": "Dr. Ram Kumar",
+        "designation": "Neurologist",
+        "image": "assets/Final/Dummydoctor.jpg",
+        "description": "Expert Neurologist providing comprehensive, compassionate, and evidence-based care for disorders of the brain, spinal cord, nerves, muscles, and sleep."
+      }
+    ],
+    "visitingConsultants": [],
+    "gallery": [],
+    "createdAt": "2026-10-13T19:30:00.000Z"
   }
 ]
