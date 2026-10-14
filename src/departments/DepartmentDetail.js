@@ -735,18 +735,13 @@ export default function DepartmentDetail() {
               </span>
             </div>
 
-            <div className={`grid grid-cols-1 gap-3 sm:grid-cols-4 ${hasSingleGalleryImage ? "" : "sm:min-h-[340px]"}`}>
-              {displayedGallery.slice(0, 4).map((image, index) => (
+            <div className={`grid gap-3 ${hasSingleGalleryImage ? "grid-cols-1" : "grid-cols-2 sm:grid-cols-3"}`}>
+              {displayedGallery.map((image, index) => (
                 <button
                   key={`${image}-${index}`}
                   type="button"
                   onClick={() => setLightboxIndex(index)}
-                  className={`group relative overflow-hidden rounded-2xl bg-slate-100 text-left ring-1 ring-black/5 shadow-[0_10px_28px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(15,23,42,0.18)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${hasSingleGalleryImage
-                      ? "w-full aspect-[16/9] md:aspect-[21/9] sm:col-span-4"
-                      : index === 0
-                        ? "sm:col-span-2 sm:row-span-2 aspect-[16/9] sm:aspect-auto"
-                        : "aspect-[16/9]"
-                    }`}
+                  className={`group relative overflow-hidden rounded-2xl bg-slate-100 text-left ring-1 ring-black/5 shadow-[0_10px_28px_rgba(15,23,42,0.12)] transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(15,23,42,0.18)] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 aspect-[4/3] ${hasSingleGalleryImage ? "col-span-full aspect-[16/9]" : ""}`}
                   aria-label={`Open gallery image ${index + 1}`}
                 >
                   <img
@@ -754,9 +749,9 @@ export default function DepartmentDetail() {
                     alt={`${department.name} gallery ${index + 1}`}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                  <span className="absolute bottom-4 left-4 rounded-full bg-white/95 px-3.5 py-2 text-xs font-bold text-[#0E3B39] shadow-lg">
-                    View gallery ↗
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="absolute bottom-3 left-3 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-[#0E3B39] shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Click to enlarge ↗
                   </span>
                 </button>
               ))}

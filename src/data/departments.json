@@ -59,16 +59,10 @@
     ],
     "doctors": [
       {
-        "name": "S.SARANYA VISHUMATHY",
+        "name": "Dr. S. Saranya Vishumathy",
         "designation": "Senior Anaesthetist",
         "image": "assets/Final/DR. S.SARANYA VISHUMATHY.jpg",
         "description": "Experienced anaesthetist specializing in perioperative anesthesia care and critical care management."
-      },
-      {
-        "name": "DR. N. MADHAN",
-        "designation": "Intensivists",
-        "image": "assets/Final/DR. N. MADHAN.jpg",
-        "description": "Experienced anaesthesiologist specializing in perioperative anesthesia care and critical care management."
       },
       {
         "name": "Dr. Alwin",
@@ -247,7 +241,14 @@
     ],
     "gallery": [
       "assets/set2/Diabteology.jpg",
-      "assets/set1/bed4.jpeg"
+      "assets/set1/bed4.jpeg",
+      "assets/generalmedicine/ABI.jpeg",
+      "assets/generalmedicine/Biothesimeter.jpeg",
+      "assets/generalmedicine/cardiac_test.jpeg",
+      "assets/generalmedicine/fundis_scan.jpeg",
+      "assets/generalmedicine/neurolite.jpeg",
+      "assets/generalmedicine/neurostim.jpeg",
+      "assets/generalmedicine/podiastat.jpeg"
     ],
     "hideKeyServices": true,
     "hidePatientJourney": true
@@ -456,18 +457,6 @@
         "description": "Leading Neurosurgeon with extensive expertise in neurovascular surgery, brain tumor micro-surgery, complex skull base procedures, and neuro-trauma management."
       },
       {
-        "name": "Dr. A. Anand Shanmugaraj",
-        "designation": "Senior Consultant Neurosurgeon & Endovascular Specialist",
-        "image": "assets/Final/DR. ANAND SHANMUGARAJ.jpg",
-        "description": "Expert in neuro-endovascular interventions, brain aneurysm coiling, vascular malformation treatments, and minimally invasive brain surgery."
-      },
-      {
-        "name": "Dr. S. Eswaran Moorthy",
-        "designation": "Consultant Neurosurgeon & Spine Specialist",
-        "image": "assets/Final/DR. ESWARAN MOORTHY.jpg",
-        "description": "Specialist in complex spinal instrumentation, cervical and lumbar discectomy, spinal cord tumor surgery, and emergency neuro critical care."
-      },
-      {
         "name": "Dr. Ram Kumar",
         "designation": "Neurologist",
         "image": "assets/Final/Dummydoctor.jpg",
@@ -603,6 +592,12 @@
         "name": "Dr. V.P. Shanmuga Sundaram",
         "designation": "General & Laparoscopic Surgeon",
         "image": "assets/Final/DR. V.P.SHANUMGA SUNDARAM.jpg"
+      },
+      {
+        "name": "Dr. Ravikumar",
+        "designation": "Endocrine & General Surgeon",
+        "image": "assets/Final/Dummydoctor.jpg",
+        "description": "Specialist in endocrine surgery, thyroid surgery, parathyroid and general surgical care."
       }
     ],
     "gallery": [],
@@ -659,6 +654,14 @@
       "Pancreatic Disorders",
       "Biliary Disorders"
     ],
+    "doctors": [
+      {
+        "name": "Dr. Raja",
+        "designation": "Consultant Gastroenterologist",
+        "image": "assets/Final/Dummydoctor.jpg",
+        "description": "Specialist in medical gastroenterology, hepatology, digestive disorders and advanced endoscopy."
+      }
+    ],
     "gallery": [],
     "hidePatientJourney": true,
     "hideKeyServices": true
@@ -714,12 +717,6 @@
         "designation": "Senior Anaesthesiologist",
         "image": "assets/Final/DR. S.SARANYA VISHUMATHY.jpg",
         "description": "Experienced anaesthesiologist specializing in perioperative anaesthesia, intensive care and critical care management."
-      },
-      {
-        "name": "Dr. N. Madhan",
-        "designation": "Intensivist",
-        "image": "assets/Final/DR. N. MADHAN.jpg",
-        "description": "Consultant Intensivist with expertise in advanced critical care, ventilator management, sepsis care and emergency intensive care."
       },
       {
         "name": "Dr. Alwin",
@@ -887,7 +884,7 @@
         "image": "assets/Final/DR.K.KOKILA.jpg"
       },
       {
-        "name": "Dr. Geetharani",
+        "name": "Dr. Geetharaani",
         "designation": "Obstetrician & Gynaecologist",
         "image": "assets/Final/Dummydoctor.jpg"
       },
@@ -1310,14 +1307,14 @@
         "image": "assets/Final/DR. K.SRIKANTH.jpg"
       },
       {
-        "name": "Dr. S. Nagarajan",
-        "designation": "Pulmonologist",
-        "image": "assets/Final/DR. S. NAGARAJAN.jpg"
-      },
-      {
         "name": "Dr. V. Nandagopal",
         "designation": "Consultant Pulmonologist",
         "image": "assets/Final/Dr. Nandagopal.png"
+      },
+      {
+        "name": "Dr. S. Nagarajan",
+        "designation": "Pulmonologist",
+        "image": "assets/Final/DR. S. NAGARAJAN.jpg"
       }
     ],
     "gallery": [
@@ -1668,7 +1665,14 @@
       "Cancer Screening & Early Detection",
       "Supportive & Palliative Care"
     ],
-    "doctors": [],
+    "doctors": [
+      {
+        "name": "Dr. Manivannan",
+        "designation": "Medical Oncologist",
+        "image": "assets/Final/Dummydoctor.jpg",
+        "description": "Consultant Medical Oncologist specializing in systemic cancer therapy, chemotherapy, targeted therapies and comprehensive oncology care."
+      }
+    ],
     "gallery": []
   },
   {

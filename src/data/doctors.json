@@ -28,18 +28,18 @@
     "image": "assets/Final/DR. S. NAGARAJAN.jpg"
   },
   {
-    "id": 6,
-    "name": "Dr. P.R. Vaidyanathan",
-    "speciality": "Cardiology",
-    "gender": "Male",
-    "image": "assets/Final/DR. P.R.VAIDYNATHAN.jpg"
-  },
-  {
     "id": 5,
     "name": "Dr. M. Sathish Kumar",
     "speciality": "Cardiology",
     "gender": "Male",
     "image": "assets/Final/DR.  M.SATHISH KUMAR .jpg"
+  },
+  {
+    "id": 6,
+    "name": "Dr. P.R. Vaidyanathan",
+    "speciality": "Cardiology",
+    "gender": "Male",
+    "image": "assets/Final/DR. P.R.VAIDYNATHAN.jpg"
   },
   {
     "id": 7,
@@ -63,20 +63,6 @@
     "image": "assets/Final/DR. K.VINODH.jpg"
   },
   {
-    "id": 10,
-    "name": "Dr. N. Balasubramanian",
-    "speciality": "Orthopaedics",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Dr. Jeff Walter Rajadurai",
-    "speciality": "Orthopaedics",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
-  },
-  {
     "id": 12,
     "name": "Dr. M. Senthil Kumar",
     "speciality": "Diabetology & General Medicine",
@@ -98,20 +84,6 @@
     "image": "assets/Final/DR.G. MURUGESAN.jpg"
   },
   {
-    "id": 15,
-    "name": "Dr. A. Anand Shanmugaraj",
-    "speciality": "Neuro & Endovascular Surgery",
-    "gender": "Male",
-    "image": "assets/Final/DR. ANAND SHANMUGARAJ.jpg"
-  },
-  {
-    "id": 16,
-    "name": "Dr. S. Eswaran Moorthy",
-    "speciality": "Neuro & Endovascular Surgery",
-    "gender": "Male",
-    "image": "assets/Final/DR. ESWARAN MOORTHY.jpg"
-  },
-  {
     "id": 18,
     "name": "Dr. Ram Kumar",
     "speciality": "Neurology",
@@ -119,39 +91,11 @@
     "image": "assets/Final/Dummydoctor.jpg"
   },
   {
-    "id": 17,
-    "name": "Dr. N. Madhan",
-    "speciality": "Intensivists",
-    "gender": "Male",
-    "image": "assets/Final/DR. N. MADHAN.jpg"
-  },
-  {
-    "id": 41,
-    "name": "Dr. Alwin",
-    "speciality": "Anaesthesiology & Intensivists",
-    "gender": "Male",
-    "image": "assets/Final/Dr. Alwin.png"
-  },
-  {
-    "id": 42,
-    "name": "Dr. Venkatesh",
-    "speciality": "Anaesthesiology",
-    "gender": "Male",
-    "image": "assets/Final/DR. V. VENKATRAMAN.jpg"
-  },
-  {
     "id": 19,
     "name": "Dr. V. Venkataraman",
     "speciality": "ENT",
     "gender": "Male",
     "image": "assets/Final/DR. V. VENKATRAMAN.jpg"
-  },
-  {
-    "id": 20,
-    "name": "Prof. Dr. Ganesan K.S",
-    "speciality": "Cardiovascular & Thoracic Surgery",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
   },
   {
     "id": 22,
@@ -245,13 +189,6 @@
     "image": "assets/Final/DR.R. JAYAKUMAR.jpg"
   },
   {
-    "id": 34,
-    "name": "Dr. S. Rajakumar",
-    "speciality": "Psychiatry",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
-  },
-  {
     "id": 35,
     "name": "Dr. Pradeep Raja S",
     "speciality": "Dental & Facio Maxillary",
@@ -266,24 +203,59 @@
     "image": "assets/Final/Dummydoctor.jpg"
   },
   {
-    "id": 38,
-    "name": "Dr. V. Radhakrishnan",
-    "speciality": "Dermatology",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
-  },
-  {
-    "id": 39,
-    "name": "Prof. Dr. R. Senthil Kumar",
-    "speciality": "Dermatology",
-    "gender": "Male",
-    "image": "assets/Final/Dummydoctor.jpg"
-  },
-  {
     "id": 40,
     "name": "Dr. N. Selvaraj",
     "speciality": "Oncology",
     "gender": "Male",
     "image": "assets/Final/DR.N.SELVARAJ.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Dr. Alwin",
+    "speciality": "Intensivists",
+    "gender": "Male",
+    "image": "assets/Final/Dr. Alwin.png"
+  },
+  {
+    "id": 42,
+    "name": "Dr. Venkatesh",
+    "speciality": "Anaesthesiology",
+    "gender": "Male",
+    "image": "assets/Final/DR. V. VENKATRAMAN.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Dr. S. Saranya Vishumathy",
+    "speciality": "Anaesthesiology",
+    "gender": "Female",
+    "image": "assets/Final/DR. S.SARANYA VISHUMATHY.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Dr. Manivannan",
+    "speciality": "Oncology",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Dr. Raja",
+    "speciality": "Gastroenterology",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Dr. Ravikumar",
+    "speciality": "Endocrine Surgery",
+    "gender": "Male",
+    "image": "assets/Final/Dummydoctor.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Dr. Geetharaani",
+    "speciality": "Obstetrics & Gynaecology",
+    "gender": "Female",
+    "image": "assets/Final/Dummydoctor.jpg"
   }
 ]

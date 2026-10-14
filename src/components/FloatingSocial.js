@@ -20,7 +20,7 @@ import {
  */
 
 const DEPARTMENTS = [
-  { id: "anaesthesiology", name: "Anaesthesiology", doctors: ["Dr. S. Saranya Vishumathy", "Dr. N. Madhan", "Dr. Alwin", "Dr. Venkatesh"] },
+  { id: "anaesthesiology", name: "Anaesthesiology", doctors: ["Dr. S. Saranya Vishumathy", "Dr. Alwin", "Dr. Venkatesh"] },
   { id: "cardiology", name: "Cardiology", doctors: ["Dr. Meera Nair", "Dr. Arjun Rao", "Senior Cardiologist"] },
   { id: "diabetology", name: "Diabetology & General Medicine", doctors: ["Dr. Priya Krishnan", "Dr. Vinod Kumar"] },
   { id: "emergency", name: "Emergency & Trauma Care", doctors: ["24x7 Emergency Consultant", "Dr. Rajesh V"] },
@@ -28,7 +28,7 @@ const DEPARTMENTS = [
   { id: "neuro", name: "Neuroscience & Neurology", doctors: ["Dr. Ramesh Babu", "Dr. Anand P"] },
   { id: "surgery", name: "General & Laparoscopic Surgery", doctors: ["Dr. V.P. Shanmugasundaram", "Dr. Karthik M"] },
   { id: "gastro", name: "Gastroenterology", doctors: ["Dr. Prakash Raj", "Dr. Nithya R"] },
-  { id: "icu", name: "Intensive Care Unit (ICU)", doctors: ["Dr. N. Madhan", "ICU Specialist Team"] },
+  { id: "icu", name: "Intensive Care Unit (ICU)", doctors: ["Dr. Alwin", "ICU Specialist Team"] },
   { id: "nephro", name: "Nephrology", doctors: ["Dr. Gokulnath", "Dr. Saravanan"] },
   { id: "obgyn", name: "Obstetrics & Gynaecology", doctors: ["Dr. Abinaya", "Dr. Radhika S"] },
   { id: "ortho", name: "Orthopaedics & Joint Replacement", doctors: ["Dr. Suresh Iyer", "Dr. Kavya Menon"] },

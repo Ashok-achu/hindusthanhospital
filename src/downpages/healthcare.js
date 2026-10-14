@@ -39,7 +39,7 @@ export default function Healthcare() {
         return doctorsData.map((doc) => ({
             ...doc,
             image: resolveImage(doc.image)
-        })).sort((a, b) => a.speciality.localeCompare(b.speciality) || a.name.localeCompare(b.name));
+        })).sort((a, b) => a.speciality.localeCompare(b.speciality));
     }, []);
 
     // ⭐ AUTO SPECIALITY DROPDOWN
