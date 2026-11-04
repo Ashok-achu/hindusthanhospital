@@ -343,7 +343,7 @@ const MHC_PACKAGES = [
   { title: "Silver", tests: "40 Tests", price: "₹1,500", icon: <FaHeartbeat />, color: "from-slate-400 to-slate-500", features: ["Blood Grouping & Rh Typing", "RBS (Random Blood Sugar)", "Complete Blood Count", "LDL Cholesterol", "Serum Creatinine", "Total Cholesterol", "Triglycerides", "Urine Complete Analysis", "ECG", "Physician Consultation"] },
   { title: "Gold", tests: "56 Tests", price: "₹2,750", icon: <FaStar />, color: "from-[#D9B45B] to-[#C9962B]", features: ["FBS", "PPBS", "Blood Urea", "Complete Blood Count", "Liver Function Test", "Lipid Profile", "Serum Creatinine", "TSH", "Urine Complete Analysis", "Chest PA", "ECG", "Physician Consultation"] },
   { title: "Platinum", tests: "45 Tests", price: "₹4,500", icon: <FaMedal />, color: "from-[#3F68BE] to-[#14357F]", features: ["FBS", "PPBS", "HbA1c", "Liver Function Test", "Lipid Profile", "Renal Function Test", "TSH", "CBC", "Chest PA", "USG Abdomen", "ECG", "ECHO + Reporting"] },
-  { title: "Diamond", tests: "65 Tests", price: "₹7,000", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
+  { title: "Diamond", tests: "65 Tests", price: "₹7,500", icon: <FaTrophy />, color: "from-[#0F2C6A] to-[#B61B1F]", features: ["FBS", "PPBS", "Blood Grouping & Rh Typing", "CBC", "HbA1c", "Liver Profile", "Lipid Profile", "PSA (Total)", "Renal Function Test", "Serum Uric Acid", "Thyroid Profile (T3, T4, TSH)", "Urine Complete Analysis"] },
 ];
 
 const CANCER_SCREENING_PACKAGES = [

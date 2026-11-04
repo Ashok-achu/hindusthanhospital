@@ -116,7 +116,7 @@ const MHC_PACKAGES = [
   },
   {
     name: "Diamond",
-    price: "₹7,000",
+    price: "₹7,500",
     tests: "65 Tests",
     color: "from-[#0F2C6A] to-[#B61B1F]",
     icon: <FaTrophy />,

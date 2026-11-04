@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import logo from "../assets/set1/logos.jpg";
 import {
   X,
   Send,
@@ -9,9 +8,71 @@ import {
   MapPin,
   Phone,
   RotateCcw,
-  Loader2,
-  CheckCircle2
+  Loader2
 } from "lucide-react";
+
+/**
+ * Hospital-themed AI Chatbot Icon:
+ * Features a friendly medical AI robot with a doctor's headset, glowing digital eyes,
+ * warm smile, hospital red cross emblem badge, and a stethoscope.
+ */
+function HospitalBotIcon({ className = "w-full h-full" }) {
+  return (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      <defs>
+        <linearGradient id="hhBotGrad" x1="12" y1="16" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#0F2C6A" />
+          <stop offset="100%" stopColor="#1E3A8A" />
+        </linearGradient>
+        <linearGradient id="hhCrossGrad" x1="40" y1="8" x2="56" y2="24" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#EF4444" />
+          <stop offset="100%" stopColor="#B61B1F" />
+        </linearGradient>
+      </defs>
+
+      {/* Headset top antenna */}
+      <path d="M32 16 V 11" stroke="#0F2C6A" strokeWidth="2.5" strokeLinecap="round" />
+      <circle cx="32" cy="9.5" r="3" fill="#B61B1F" />
+      <circle cx="32" cy="9.5" r="1.2" fill="#FFFFFF" />
+
+      {/* Headset headband */}
+      <path d="M12 30 C 12 17, 52 17, 52 30" stroke="#0F2C6A" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+
+      {/* Headset ear cushions */}
+      <rect x="8" y="26" width="5" height="12" rx="2.5" fill="#0F2C6A" />
+      <rect x="51" y="26" width="5" height="12" rx="2.5" fill="#0F2C6A" />
+
+      {/* Main Bot Head Shape */}
+      <rect x="13" y="17" width="38" height="31" rx="13" fill="url(#hhBotGrad)" />
+
+      {/* Face Screen Visor */}
+      <rect x="17" y="22" width="30" height="21" rx="8" fill="#FFFFFF" />
+
+      {/* Cheerful Expressive Eyes */}
+      <path d="M22 30.5 C 22 28, 27 28, 27 30.5" stroke="#0F2C6A" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <path d="M37 30.5 C 37 28, 42 28, 42 30.5" stroke="#0F2C6A" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+
+      {/* Friendly Smile */}
+      <path d="M28 36.5 C 30 38.5, 34 38.5, 36 36.5" stroke="#B61B1F" strokeWidth="2" strokeLinecap="round" fill="none" />
+
+      {/* Blushing Cheeks */}
+      <circle cx="21" cy="35" r="1.5" fill="#FCA5A5" />
+      <circle cx="43" cy="35" r="1.5" fill="#FCA5A5" />
+
+      {/* Support Mic */}
+      <path d="M51 34 C 51 43, 45 46.5, 39 46.5" stroke="#0F2C6A" strokeWidth="2" fill="none" strokeLinecap="round" />
+      <circle cx="38" cy="46.5" r="2" fill="#B61B1F" />
+
+      {/* Hospital Red Cross Emblem Badge */}
+      <circle cx="48" cy="16" r="7.5" fill="url(#hhCrossGrad)" stroke="#FFFFFF" strokeWidth="1.8" />
+      <path d="M48 12.5 V 19.5 M44.5 16 H 51.5" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" />
+
+      {/* Stethoscope looped around neck */}
+      <path d="M23 49 C 23 57, 41 57, 41 49" stroke="#0F2C6A" strokeWidth="2.2" fill="none" strokeLinecap="round" />
+      <circle cx="32" cy="56.5" r="2.5" fill="#B61B1F" stroke="#FFFFFF" strokeWidth="1" />
+    </svg>
+  );
+}
 
 /**
  * HindusthanHospitals — AI Assistant
@@ -455,10 +516,9 @@ export default function FloatingSocial() {
           >
             <div className="flex items-center gap-2.5">
               <div
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20"
-                style={{ background: "rgba(255,255,255,0.15)" }}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white p-1 shadow-inner"
               >
-                <Stethoscope size={18} />
+                <HospitalBotIcon className="h-full w-full" />
               </div>
               <div>
                 <p className="text-sm font-bold leading-tight">Hindusthan Hospitals</p>
@@ -615,10 +675,16 @@ export default function FloatingSocial() {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="flex h-[64px] w-[64px] items-center justify-center rounded-full bg-white shadow-2xl border-[3px] border-[#B61B1F] transition hover:scale-110 overflow-hidden p-[2px]"
-          aria-label="Open chat"
+          className="group relative flex h-[64px] w-[64px] items-center justify-center rounded-full bg-white shadow-2xl border-[3px] border-[#B61B1F] transition hover:scale-110 p-2"
+          aria-label="Open Hospital Chatbot"
+          title="Chat with Hindusthan Hospitals Assistant"
         >
-          <img src={logo} alt="Chat with us" className="h-full w-full rounded-full object-contain bg-white" />
+          <HospitalBotIcon className="h-full w-full" />
+          {/* Online active status indicator badge */}
+          <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex h-4 w-4 rounded-full border-2 border-white bg-emerald-500" />
+          </span>
         </button>
       )}
     </div>
