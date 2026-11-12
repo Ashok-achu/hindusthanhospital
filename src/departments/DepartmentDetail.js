@@ -21,7 +21,7 @@ const resolveImage = (path) => {
 /* ------------------------------------------------------------------
    EDIT THESE TO MATCH YOUR SITE
 ------------------------------------------------------------------- */
-const APPOINTMENT_LINK = "/appointment"; // your booking / enquiry route
+const APPOINTMENT_LINK = "/contact"; // updated to contact page
 const HOSPITAL_PHONE = "+91-00000-00000"; // shown on the floating call button + sidebar
 const HOSPITAL_PHONE_DISPLAY = "0422 432 7799  "; // shown as text
 const HOSPITAL_EMAIL = "hindusthanreception@gmail.com";
@@ -726,9 +726,7 @@ export default function DepartmentDetail() {
           <section className="mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-white to-[#f7f4ef] p-5 shadow-[0_18px_50px_rgba(14,59,57,0.10)] sm:p-8">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-red-600">Department Gallery</p>
-                <h2 className="mt-2 font-serif text-2xl text-[#5c1029] sm:text-3xl">A Closer Look at Our Care</h2>
-                <p className="mt-2 text-sm text-slate-500">Thoughtfully designed spaces for comfortable, expert-led care.</p>
+                <h2 className="text-lg sm:text-xl font-bold tracking-[0.18em] text-[#5c1029] uppercase">Department Gallery</h2>
               </div>
               <span className="rounded-full border border-[#0E3B39]/10 bg-white px-3.5 py-2 text-xs font-bold text-[#0E3B39] shadow-sm">
                 {gallery.length} facility {gallery.length === 1 ? "photo" : "photos"}

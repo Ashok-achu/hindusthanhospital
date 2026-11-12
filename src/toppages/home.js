@@ -187,7 +187,7 @@ function StatCard({ icon, value, suffix, label, delay }) {
       </div>
 
       <div className="font-display text-[clamp(1.6rem,6vw,2.6rem)] font-extrabold leading-none tracking-tight">
-        {count.toLocaleString()}<span className="ml-0.5 text-[#EFDFB0]">{suffix}</span>
+        {count.toLocaleString("en-IN")}<span className="ml-0.5 text-[#EFDFB0]">{suffix}</span>
       </div>
 
       {/* mini pulse trace — same signature line as PulseDivider, at card scale */}
@@ -596,7 +596,6 @@ export default function Home() {
     department: "",
     doctor: "",
     date: "",
-    timeSlot: "",
     message: ""
   });
   const [bookingSuccess, setBookingSuccess] = useState(false);
@@ -620,13 +619,12 @@ export default function Home() {
 🏥 *Department*: ${bookingForm.department || "General"}
 👨‍⚕️ *Doctor*: ${bookingForm.doctor || "Any Available"}
 📅 *Preferred Date*: ${bookingForm.date || "N/A"}
-⏰ *Time Slot*: ${bookingForm.timeSlot || "N/A"}
 💬 *Symptoms/Notes*: ${bookingForm.message || "None"}`;
 
     window.open(`https://wa.me/916380015975?text=${encodeURIComponent(message)}`, "_blank");
     setBookingSuccess(true);
     setBookingForm({
-      name: "", phone: "", email: "", age: "", gender: "", department: "", doctor: "", date: "", timeSlot: "", message: ""
+      name: "", phone: "", email: "", age: "", gender: "", department: "", doctor: "", date: "",  message: ""
     });
     setTimeout(() => setBookingSuccess(false), 5000);
   };
@@ -1146,7 +1144,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-400 sm:mt-4 sm:text-lg">
-              Everything you need for complete care — under one roof
+              You need for complete care — under one roof
             </p>
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
@@ -1206,7 +1204,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
-              { icon: <FaUser />, value: 150000, suffix: "+", label: "Patients Treated", delay: 0 },
+              { icon: <FaUser />, value: 200000, suffix: "+", label: "Patients Treated", delay: 0 },
               { icon: <FaUserMd />, value: 45, suffix: "+", label: "Specialist Doctors", delay: 0.06 },
               { icon: <FaBed />, value: 200, suffix: "+", label: "Hospital Beds", delay: 0.12 },
             ].map((s, i) => <StatCard key={i} {...s} />)}
@@ -1355,7 +1353,7 @@ export default function Home() {
           <div className="mb-10 grid gap-4 sm:mb-14 sm:grid-cols-2 sm:gap-6">
             {[
               { icon: <FaMedal />, title: "NABH Accredited", desc: "National Accreditation Board for Hospitals & Healthcare Providers.", color: "from-[#D9B45B] to-[#C9962B]" },
-              { icon: <FaTrophy />, title: "CAHO Certified", desc: "Certified for advancing healthcare quality, patient safety, and diagnostic excellence in India and beyond.", color: "from-[#B61B1F] to-[#8F1519]" },
+              { icon: <FaTrophy />, title: "CAHO Certified", desc: "Certified for Quality Initiative for the Central Sterile Services Department (CSSD).", color: "from-[#B61B1F] to-[#8F1519]" },
             ].map((award, i) => (
               <motion.div
                 key={i}
@@ -1532,7 +1530,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Date & Time Slot */}
+                  {/* Date */}
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                     <div>
                       <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Preferred Date</label>
@@ -1544,20 +1542,7 @@ export default function Home() {
                         className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
                       />
                     </div>
-                    <div>
-                      <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Time Slot</label>
-                      <select
-                        name="timeSlot"
-                        value={bookingForm.timeSlot}
-                        onChange={handleBookingChange}
-                        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-900 transition focus:border-[#B61B1F] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#B61B1F]/20 sm:text-sm"
-                      >
-                        <option value="">Select Time Slot</option>
-                        <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
-                        <option value="Afternoon (12:00 PM - 04:00 PM)">Afternoon (12:00 PM - 04:00 PM)</option>
-                        <option value="Evening (04:00 PM - 08:00 PM)">Evening (04:00 PM - 08:00 PM)</option>
-                      </select>
-                    </div>
+                    
                   </div>
 
                   {/* Symptoms / Notes */}

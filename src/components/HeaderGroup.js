@@ -181,7 +181,7 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
 
                         {/* Appointment */}
                         <button
-                            onClick={() => navigate("/appointment")}
+                            onClick={() => navigate("/contact")}
                             className="flex items-center gap-2 rounded-full bg-gradient-to-r from-rose-600 to-purple-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg hover:-translate-y-0.5 transition-all"
                         >
                             <FaCalendarCheck />
@@ -302,7 +302,7 @@ ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[80px] opacity-100 py-3"}`}>
                             <FaPhoneAlt className="text-sm" />
                         </a>
                         <button
-                            onClick={() => navigate("/appointment")}
+                            onClick={() => navigate("/contact")}
                             aria-label="Book an appointment"
                             className="flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-2 text-xs font-bold shadow flex-shrink-0"
                         >

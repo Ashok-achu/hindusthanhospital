@@ -31,9 +31,15 @@ export default function Milestones() {
       desc: "Inauguration of Hindusthan Hospital Mettupalayam branch, expanding high-quality medical care to Mettupalayam and surrounding regions.",
     },
     {
-      year: "Today",
+      year: "2025",
       title: "Continuing Legacy",
       desc: "Hindusthan continues to lead in education and healthcare, serving thousands of patients and students with excellence every year.",
+    },
+
+    {
+      year: "2026",
+      title: "Robotic Surgery",
+      desc: "Advancing precision, minimally invasive procedures, and patient care through cutting-edge robotic technology.",
     },
   ];
 

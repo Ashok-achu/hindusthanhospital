@@ -24,7 +24,6 @@ export default function Contact() {
     department: "",
     doctor: "",
     date: "",
-    timeSlot: "",
     message: "",
   });
 
@@ -51,7 +50,6 @@ Age: ${form.age || "N/A"} | Gender: ${form.gender || "N/A"}
 Department: ${form.department || "General"}
 Doctor: ${form.doctor || "Any Available"}
 Preferred Date: ${form.date || "N/A"}
-Time Slot: ${form.timeSlot || "N/A"}
 Symptoms / Message: ${form.message || "None"}
     `.trim();
 
@@ -68,6 +66,9 @@ Symptoms / Message: ${form.message || "None"}
     )
     .then(() => {
       setSuccess(true);
+      // Send email via mailto to the specified address
+      const mailtoLink = `mailto:ashokachu.17@gmail.com?subject=Appointment%20Request&body=${encodeURIComponent(formattedMessage)}`;
+      window.open(mailtoLink, "_blank");
       setForm({
         name: "",
         email: "",
@@ -77,7 +78,7 @@ Symptoms / Message: ${form.message || "None"}
         department: "",
         doctor: "",
         date: "",
-        timeSlot: "",
+       
         message: "",
       });
       setLoading(false);
@@ -94,11 +95,14 @@ Symptoms / Message: ${form.message || "None"}
 🏥 *Department*: ${form.department || "General"}
 👨‍⚕️ *Doctor*: ${form.doctor || "Any Available"}
 📅 *Preferred Date*: ${form.date || "N/A"}
-⏰ *Time Slot*: ${form.timeSlot || "N/A"}
+
 💬 *Message*: ${form.message || "None"}`;
 
       window.open(`https://wa.me/916380015975?text=${encodeURIComponent(waMsg)}`, "_blank");
       setSuccess(true);
+      // Send email via mailto to the specified address
+      const mailtoLink = `mailto:ashokachu.17@gmail.com?subject=Appointment%20Request&body=${encodeURIComponent(formattedMessage)}`;
+      window.open(mailtoLink, "_blank");
       setLoading(false);
       setTimeout(() => setSuccess(false), 5000);
     });
@@ -250,20 +254,7 @@ Symptoms / Message: ${form.message || "None"}
                   className="w-full border border-gray-200 bg-slate-50 p-3 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm"
                 />
               </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">Time Slot</label>
-                <select
-                  name="timeSlot"
-                  value={form.timeSlot}
-                  onChange={handleChange}
-                  className="w-full border border-gray-200 bg-slate-50 p-3 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-600 focus:outline-none text-sm"
-                >
-                  <option value="">Select Time Slot</option>
-                  <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
-                  <option value="Afternoon (12:00 PM - 04:00 PM)">Afternoon (12:00 PM - 04:00 PM)</option>
-                  <option value="Evening (04:00 PM - 08:00 PM)">Evening (04:00 PM - 08:00 PM)</option>
-                </select>
-              </div>
+              
             </div>
 
             {/* Message */}
@@ -335,4 +326,4 @@ Symptoms / Message: ${form.message || "None"}
       </section>
     </div>
   );
-}
+}
