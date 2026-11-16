@@ -99,7 +99,7 @@ export default function HeaderGroup() {
                 { label: "Careers", to: "/careers" },
                 { label: "Testimonials", to: "/testimonials" },
                 { label: "Reach Us", to: "/contact" },
-                { label: "Feedback", to: "/" },
+                { label: "Feedback", to: "https://search.google.com/local/writereview?placeid=ChIJE-vWuoRZqDsRJmGPDzMdEnQ", external: true },
             ],
         },
     ];

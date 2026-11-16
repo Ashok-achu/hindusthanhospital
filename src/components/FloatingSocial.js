@@ -677,7 +677,7 @@ export default function FloatingSocial() {
           onClick={() => setOpen(true)}
           className="group relative flex h-[64px] w-[64px] items-center justify-center rounded-full bg-white shadow-2xl border-[3px] border-[#B61B1F] transition hover:scale-110 p-2"
           aria-label="Open Hospital Chatbot"
-          title="Chat with Hindusthan Hospitals Assistant"
+          title="Chat with Hindusthan Hospital Assistant"
         >
           <HospitalBotIcon className="h-full w-full" />
           {/* Online active status indicator badge */}

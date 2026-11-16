@@ -26,21 +26,22 @@ export default function Milestones() {
       desc: "Launch of Hindusthan Hospital (HH), laying the foundation of dedicated and compassionate healthcare in Coimbatore.",
     },
     {
+      year: "2023",
+      title: "Robotic Surgery",
+      desc: "Advancing precision, minimally invasive procedures, and patient care through cutting-edge robotic technology.",
+    },
+    {
       year: "2024",
       title: "Inauguration of HH Mettupalayam",
       desc: "Inauguration of Hindusthan Hospital Mettupalayam branch, expanding high-quality medical care to Mettupalayam and surrounding regions.",
     },
     {
-      year: "2025",
+      year: "Today",
       title: "Continuing Legacy",
       desc: "Hindusthan continues to lead in education and healthcare, serving thousands of patients and students with excellence every year.",
     },
 
-    {
-      year: "2026",
-      title: "Robotic Surgery",
-      desc: "Advancing precision, minimally invasive procedures, and patient care through cutting-edge robotic technology.",
-    },
+    
   ];
 
   return (
